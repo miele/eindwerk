@@ -1,0 +1,46 @@
+   
+   <% @subjects.each do |subject| %>
+   <article class="post">
+        
+            <h2><a href="#"><%= subject.name %></a></h2>
+            
+            <%= link_to(image_tag(subject.photo.url(:thumb), :class => "thumbnail alignleft"), subject.photo.url(:large), :class => "top_up") 				unless subject.photo.nil? %>
+            
+            <p><%= subject.position %></p>
+            
+            <p><%= subject.visible %></p>
+            
+            <div class="clear"></div>  
+            
+            <footer class="postmeta">
+                <span class="btn alignleft">
+                	In <a href="#">Category</a> by <a href="#">Miele</a> on <time datetime="2010-09-05" pubdate><%= subject.created_at %></time>
+				</span>
+                <a href="#" class="more-link alignright">Lees meer</a>
+            </footer> <!-- end post meta -->
+        
+        </article> <!-- end post 1 -->
+    <% end %>
+    
+     </div> <!-- end main -->
+    
+    <div id="sidebar" class="grid_4 omega">
+    
+        <aside class="widget">
+            <h3>Laatste tweets</h3>
+            <ul>
+            <% @tweets.each do |tweet| %>
+                <li><a href="#"><%= tweet.content %></a></li>
+             <% end %>
+             </ul>
+        </aside> <!-- end widget -->
+        <aside class="widget">
+            <h3>Widget</h3>
+            
+            <p>
+                Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.
+                One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. 
+            </p>
+        </aside> <!-- end widget -->
+    
+    </div> <!-- end sidebar -->

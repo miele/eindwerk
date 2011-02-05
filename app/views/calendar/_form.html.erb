@@ -1,0 +1,22 @@
+<table summary="update event">
+		<tr>
+			<th>Name</th>
+			<td><%= e.text_field(:name)%></td>
+		</tr>
+		<tr>
+			<th>Start_At</th>
+			<td><%= e.text_field(:start_at, :class => "datum")%></td>
+		</tr>
+		<tr>
+			<th>End_At</th>
+			<td><%= e.text_field(:end_at, :class => "datum")%></td>
+		</tr>
+		<tr>
+			<th>Place</th>
+			<td><%= e.text_field(:place)%></td>
+		</tr>
+		<tr>
+			<th>Aanvang</th>
+			<td><%= e.text_field(:aanvang, :class => "tijd")%></td>
+		</tr>
+	</table>

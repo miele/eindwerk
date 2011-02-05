@@ -1,0 +1,9 @@
+<div class="new tweet">
+<h2>Create Tweet</h2>
+
+<%= form_for(:tweet, :url => {:action => 'post_update'}) do |t| %>
+	<%= render(:partial => 'form', :locals => {:t => t}) %>
+<%= submit_tag("Create Tweet")%>
+	</div>
+<% end %>
+</div>

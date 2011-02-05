@@ -1,0 +1,14 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+    date:
+      formats:
+        default: "%e/%m/%Y"
+
+      day_names: [Maandag, Dinsdag, Woensdag, Donderdag, Vrijdag, Zaterdag, Zondag]
+      abbr_day_names: [Ma, Din, Woe, Don, Vri, Zat, Zon]
+
+      # Don't forget the nil at the beginning; there's no such thing as a 0th month
+      month_names: [~, Januari, Februari, Maart, April, Mei, Juni, Juli, Augustus, September, Oktober, November, December]
+      abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]

@@ -1,0 +1,14 @@
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'back-link') %>
+
+<div class="update event">
+<h2>Update Event</h2>
+
+<%= form_for(:event, :url => {:action => 'update', :id => @event.id}) do |e| %>
+	
+	<%= render(:partial => 'form', :locals => {:e => e}) %>
+	
+		<div class="form-buttons">
+		<%= submit_tag("Create Event")%>
+	</div>
+<% end %>
+</div>

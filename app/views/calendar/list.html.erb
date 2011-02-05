@@ -1,0 +1,30 @@
+<%= @page_title = "Event List" %>
+<div class="subject list">
+	<h2>Events</h2>
+	<%= link_to("Add New Event", {:action => 'new'}, :class => 'action_new') %>
+	<table class="listing" summary="Event list">
+	<tr class="header">
+		<th>&nbsp;</th>
+		<th>Name</th>
+		<th>Start_At</th>
+		<th>End_At</th>
+		<th>Place</th>
+		<th>Aanvang</th>
+	</tr>
+	<% @events.each do |event| %>
+	<tr>
+		<td>&nbsp;</td>
+		<td><%= event.name %>&nbsp;</td>
+		<td><%= event.start_at %>&nbsp;</td>
+		<td><%= event.end_at %>&nbsp;</td>
+		<td><%= event.place %>&nbsp;</td>
+		<td><%= event.aanvang %></td>
+		<td class="actions">
+		<%= link_to("Show", {:action => 'show', :id => event.id}, :class => 'action show')%>
+		<%= link_to("Edit", {:action => 'edit', :id => event.id}, :class => 'action edit')%>
+		<%= link_to("Delete",{:action => 'delete' , :id => event.id}, :class => 'action delete')%>
+		</td>
+	</tr>
+	<% end %>
+	</table>
+</div>
