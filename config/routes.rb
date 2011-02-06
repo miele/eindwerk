@@ -1,6 +1,9 @@
 Skarminkels::Application.routes.draw do
 
-  devise_for :users
+# separate the devise logic from the user crud
+# devise has a prefix now example "localhost:3000/admin/users/sign_in"
+  devise_for :users, :path_prefix => "/admin"
+  resources :users
 
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 

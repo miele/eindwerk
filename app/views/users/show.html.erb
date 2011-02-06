@@ -1,0 +1,21 @@
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'back-link') %>
+
+<div class="user show">
+
+<h2>Show User</h2>
+
+<table summary="User detail view">
+	<tr>
+		<th>Email</th>
+		<td><%= @user.email %></td>
+	</tr>
+	<tr>
+		<th>Encrypted Password</th>
+		<td><%= @user.encrypted_password %></td>
+	</tr>
+	<tr>
+		<th>Password_salt</th>
+		<td><%= @user.password_salt %></td>
+	</tr>
+</table>
+</div>
