@@ -12,6 +12,8 @@ gem 'event-calendar', :require => 'event_calendar'
 gem 'grackle', :require => 'grackle'
 gem 'whenever', :require => 'whenever'
 gem 'devise'
+gem 'will_paginate', '3.0.pre2'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'

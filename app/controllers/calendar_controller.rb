@@ -1,6 +1,6 @@
 class CalendarController < ApplicationController
 
-before_filter :authenticate_user!, :expect => [:show,:list]
+before_filter :authenticate_user!, :except => [:index,:show]
 
 layout 'html5'
   

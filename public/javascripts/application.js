@@ -1,6 +1,24 @@
 $(document).ready(function() {
-			$("input.datum").datepicker({ dateFormat: 'yy-mm-dd' });
-			
+
+$("#subjects th a, #subjects .pagination a").live("click", function(){
+ $.getScript(this.href);
+ return false;
+});
+
+$("#subjects_search input").keyup(function(){
+	$.get($("#subjects_search").attr("action"), $("#subjects_search").serialize(),null,"script");
+	return false;
+});
+
+TopUp.addPresets({
+        "#main a": {
+        x : 350,
+        layout: "quicklook",
+          effect: "fade"
+        }
+      });
+
+			$("input.datum").datepicker({ dateFormat: 'yy-mm-dd' });	
 			
 			/**
  * Character Counter for inputs and text areas

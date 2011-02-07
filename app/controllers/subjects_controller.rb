@@ -2,6 +2,8 @@ class SubjectsController < ApplicationController
 
 layout 'html5'
 
+helper_method :sort_column, :sort_direction
+
 def index
 	list
 	render('list')
@@ -13,7 +15,7 @@ def top
 end
 
 def list
- @subjects = Subject.order("subjects.position ASC")
+ @subjects = Subject.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3,:page => params[:page])
 end
 
 def show
@@ -58,5 +60,17 @@ def destroy
   flash[:notice] = "Subject has been deleted succesfully"
   redirect_to(:action => 'list')
 end
+
+private
+
+def sort_column
+ Subject.column_names.include?(params[:sort]) ?  params[:sort] : "name"
+end
+
+def sort_direction
+%w[asc,desc].include?(params[:direction]) ? params[:direction] : "asc"
+end
+
+
 
 end

@@ -42,18 +42,21 @@
                 <li>
                 	<a href="/subjects/list/">Subjects</a>
                     <ul>
-                        <li><a href="/subjects/edit/">Bewerk</a></li>
                         <li><a href="/subjects/new/">Toevoegen</a></li>
                     </ul>
                 </li>
                 <li>
                 	<a href="/calendar">Events</a>
                     <ul>
-                        <li><a href="/calendar/edit/">Bewerk</a></li>
                         <li><a href="/calendar/new/">Toevoegen</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li>
+                	<a href="/users">Users</a>
+                    <ul>
+                        <li><a href="/users/edit/">Toevoegen</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <br class="clear" />
@@ -90,15 +93,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 <%= javascript_include_tag "http://gettopup.com/releases/latest/top_up-min.js" %>
-<script type="text/javascript">
-      TopUp.addPresets({
-        "#main a": {
-        x : 200,
-        layout: "quicklook",
-          effect: "fade"
-        }
-      });
-    </script>
+
 
 
 </body>

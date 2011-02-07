@@ -4,7 +4,7 @@
         
             <h2><a href="#"><%= subject.name %></a></h2>
             
-            <%= link_to(image_tag(subject.photo.url(:thumb), :class => "thumbnail alignleft"), subject.photo.url(:large), :class => "top_up") 				unless subject.photo.nil? %>
+            <%= link_to(image_tag(subject.photo.url(:thumb), :class => "thumbnail alignleft"), subject.photo.url(:large), :class => "fancybox") 				unless subject.photo.nil? %>
             
             <p><%= subject.position %></p>
             

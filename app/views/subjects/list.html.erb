@@ -1,27 +1,13 @@
 <%= @page_title = "Subject List" %>
-<div class="subject list">
-	<h2>Subjects</h2>
-	<%= link_to("Add New Subject", {:action => 'new'}, :class => 'action_new') %>
-	<table class="listing" summary="Subject list">
-	<tr class="header">
-		<th>&nbsp;</th>
-		<th>Subject</th>
-		<th>Visible</th>
-		<th>Pages</th>
-		<th>Actions</th>
-	</tr>
-	<% @subjects.each do |subject| %>
-	<tr>
-		<td><%= subject.position %></td>
-		<td><%= subject.name %></td>
-		<td class="center"><%= subject.visible ? 'Yes' : 'No' %></td>
-		<td class="center"><%= subject.pages.size %></td>
-		<td class="actions">
-		<%= link_to("Show", {:action => 'show', :id => subject.id}, :class => 'action show')%>
-		<%= link_to("Edit", {:action => 'edit', :id => subject.id}, :class => 'action edit')%>
-		<%= link_to("Delete",{:action => 'delete' , :id => subject.id}, :class => 'action delete')%>
-		</td>
-	</tr>
-	<% end %>
-	</table>
+
+<%= form_for(:subject,:html => {:method => :get, :id => "subjects_search"}) do %>
+  <%= hidden_field_tag :direction, params[:direction] %>  
+  <%= hidden_field_tag :sort, params[:sort] %>   
+  <p>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Search", :name => nil %>  
+  </p>  
+<% end %>
+<div class="subject list" id="subjects">
+<%= render "lijst" %>
 </div>

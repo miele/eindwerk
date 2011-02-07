@@ -7,4 +7,12 @@ class Subject < ActiveRecord::Base
  scope :search, lambda {|query| where(["name LIKE ?", "%#{query}%"])}
  has_attached_file :photo, :styles => { :large => "800x600", :medium => "300x300>", :thumb => "200x200>" }
  
+ def self.search(search)
+ 	if search
+ 		where('name LIKE ?', "%#{search}%")
+ 	else
+ 		scoped
+ 	end
+ end
+ 
 end
