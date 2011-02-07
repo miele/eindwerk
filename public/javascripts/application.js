@@ -10,13 +10,13 @@ $("#subjects_search input").keyup(function(){
 	return false;
 });
 
-TopUp.addPresets({
-        "#main a": {
-        x : 350,
-        layout: "quicklook",
-          effect: "fade"
-        }
-      });
+    $("a#single").fancybox({
+		'transitionIn'	:	'elastic',
+		'transitionOut'	:	'elastic',
+		'speedIn'		:	600, 
+		'speedOut'		:	400, 
+		'overlayShow'	:	true
+	});
 
 			$("input.datum").datepicker({ dateFormat: 'yy-mm-dd' });	
 			

@@ -1,17 +1,15 @@
 <%= @page_title = "User List" %>
 <div class="User list">
 	<h2>Users</h2>
-	<%= link_to("Add New User", {:action => 'new'}, :class => 'action_new') %>
+	<%= link_to "New User", "/admin/users/sign_up" %>
 	<table class="listing" summary="User list">
 	<tr class="header">
 		<th>Email</th>
-		<th>Password</th>
 		<th>Actions</th>
 		</tr>
 	<% @users.each do |user| %>
 	<tr>
 		<td><%= user.email %>&nbsp;&nbsp;</td>
-		<td><%= user.encrypted_password %></td>
 		<td class="actions">
 		<%= link_to("Show", {:action => 'show', :id => user.id}, :class => 'action show')%>
 		<%= link_to("Edit", {:action => 'edit', :id => user.id}, :class => 'action edit')%>
