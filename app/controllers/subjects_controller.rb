@@ -12,6 +12,7 @@ end
 def top
  @subjects = Subject.order("subjects.id DESC").limit(2)
  @tweets = Tweet.order("tweets.created DESC").limit(5)
+ @events = Event.order("events.id DESC").limit(5)
 end
 
 def list

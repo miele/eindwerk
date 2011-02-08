@@ -35,12 +35,11 @@
              </ul>
         </aside> <!-- end widget -->
         <aside class="widget">
-            <h3>Widget</h3>
-            
-            <p>
-                Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.
-                One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. 
-            </p>
-        </aside> <!-- end widget -->
+            <h3>Upcoming Gigs</h3>
+            <ul>
+            <% @events.each do |event| %>
+                <li><a href="/calendar/show/<%= event.id %>"><%= event.name %></a></li>
+             <% end %>
+             </ul>        </aside> <!-- end widget -->
     
     </div> <!-- end sidebar -->
