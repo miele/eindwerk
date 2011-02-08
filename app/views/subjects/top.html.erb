@@ -6,15 +6,13 @@
             
             <%= link_to(image_tag(subject.photo.url(:thumb), :class => "thumbnail alignleft"), subject.photo.url(:large), :id => "single") 				unless subject.photo.nil? %>
             
-            <p><%= subject.position %></p>
-            
-            <p><%= subject.visible %></p>
+            <p><%= subject.content %></p>
             
             <div class="clear"></div>  
             
             <footer class="postmeta">
                 <span class="btn alignleft">
-                	In <a href="#">Category</a> by <a href="#">Miele</a> on <time datetime="2010-09-05" pubdate><%= subject.created_at %></time>
+                	<time pubdate><%= subject.created_at %></time>
 				</span>
                 <a href="#" class="more-link alignright">Lees meer</a>
             </footer> <!-- end post meta -->

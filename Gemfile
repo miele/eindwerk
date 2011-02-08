@@ -13,6 +13,8 @@ gem 'grackle', :require => 'grackle'
 gem 'whenever', :require => 'whenever'
 gem 'devise'
 gem 'will_paginate', '3.0.pre2'
+gem 'prawn'
+gem 'rack-offline'
 
 
 # Use unicorn as the web server

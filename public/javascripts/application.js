@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
 $("#subjects th a, #subjects .pagination a").live("click", function(){
  $.getScript(this.href);
  return false;
@@ -14,7 +15,7 @@ $("#subjects_search input").keyup(function(){
 		'transitionIn'	:	'elastic',
 		'transitionOut'	:	'elastic',
 		'speedIn'		:	600, 
-		'speedOut'		:	400, 
+		'speedOut'		:	600, 
 		'overlayShow'	:	true
 	});
 
@@ -42,10 +43,20 @@ $('.word_count').each(function(){
 		//var new_length = $(this).val().split(/\b[\s,\.-:;]*/).length;
 		// update
 		current = max - new_length;
+		if(current == 0){
+			alert("maximum is bereikt");
+			$(this).disable();
+		}
 		$(this).parent().find('.counter').html( current + ' characters to go');
 	});
 });
-			
+		
+		
+$(window.applicationCache.bind('error', function () {  
+    alert('There was an error when loading the cache manifest.');  
+  }));
+  
+ localStorage.setItem("name", "Hello World!");
 			
 			
 			

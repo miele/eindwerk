@@ -12,6 +12,7 @@ def list
  @users = User.order("users.email DESC")
 end
 
+
 def show
  @user = User.find(params[:id])
 end

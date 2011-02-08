@@ -1,8 +1,13 @@
 class SubjectsController < ApplicationController
 
+
 layout 'html5'
 
+
+
 helper_method :sort_column, :sort_direction
+
+respond_to :html, :xml, :json
 
 def index
 	list
@@ -16,7 +21,7 @@ def top
 end
 
 def list
- @subjects = Subject.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 3,:page => params[:page])
+ @subjects = Subject.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 4,:page => params[:page])
 end
 
 def show

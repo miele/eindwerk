@@ -1,6 +1,5 @@
 class TweetController < ApplicationController
 
-
 layout 'html5'
 
  def post_update

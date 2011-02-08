@@ -1,5 +1,7 @@
 Skarminkels::Application.routes.draw do
 
+ match "/application.manifest" => Rails::Offline
+ 
 # separate the devise logic from the user crud
 # devise has a prefix now example "localhost:3000/admin/users/sign_in"
   devise_for :users, :path_prefix => "/admin"
@@ -69,5 +71,6 @@ Skarminkels::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
+  
   match ':controller(/:action(/:id(.:format)))'
 end
