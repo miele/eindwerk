@@ -1,13 +1,13 @@
-<p>
-  <b>Name:</b>
-  <%=h @album.name %><br />
-  
-  <% @album.pictures.each do |picture| %>
-    <h3><%=h picture.name %></h3>
-    <%= image_tag picture.upload.url(:small) %>
-  <% end %>
-</p>
-
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>
+
+<div class="container"> 
+<ul class="thumb">
+<% @album.pictures.each do |picture| %>
+	<li><%= link_to(image_tag(picture.upload.url(:small), :class => "nest"), picture.upload.url(:large), :id => "single") 				unless picture.upload.nil? %></li> 
+  <% end %>
+</ul> 
+<div id="main_view"> 
+	</div> 
+</div>

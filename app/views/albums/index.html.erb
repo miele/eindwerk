@@ -10,9 +10,9 @@
 <% @albums.each do |album| %>
   <tr>
     <td><%=h album.name %></td>
-  <% album.pictures.each do |photo| %>
-    <td><%=h photo.name %></td>
-    <td><%= image_tag photo.upload.url(:thumb) %></td>
+  <% album.pictures.each do |picture| %>
+    <td><%=h picture.name %></td>
+    <td><%= image_tag picture.upload.url(:thumb) %></td>
   <% end %>
     <td><%= link_to 'Show', album %></td>
     <td><%= link_to 'Edit', edit_album_path(album) %></td>

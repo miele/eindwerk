@@ -5,8 +5,10 @@ belongs_to :album
                     :url => "/images/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/images/:id/:style/:basename.:extension",
                     :styles => {
-                      :thumb => "75x75>",
-                      :small => "200x200>"
+                      :thumb => "200x200>",
+                      :small => "300x300>",
+                      :large => "800x600>"
+
                     }
 
 end
