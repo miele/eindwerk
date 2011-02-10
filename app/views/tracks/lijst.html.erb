@@ -1,0 +1,13 @@
+<%= @page_title = "Track List" %>
+
+<%= form_for(:track,:html => {:method => :get, :id => "tracks_search"}) do %>
+  <%= hidden_field_tag :direction, params[:direction] %>  
+  <%= hidden_field_tag :sort, params[:sort] %>  
+  <p>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Search", :name => nil %>  
+  </p>
+<% end %>
+<div class="track list" id="tracks">
+<%= render "lijst" %>
+</div>

@@ -1,0 +1,29 @@
+<%= link_to("<< Back to list", {:action => 'lijst'}, :class => 'back-link') %>
+
+<div class="track show">
+
+<h2>Show Track</h2>
+
+<table summary="Track detail view">
+	<tr>
+		<th>Name</th>
+		<td><%= @track.name %></td>
+	</tr>
+	<tr>
+		<th>MP3</th>
+		<td><%= @track.mp3 %></td>
+	</tr>
+	<tr>
+		<th>OGA</th>
+		<td><%= @track.oga %></td>
+	</tr>
+	<tr>
+		<th>Created</th>
+		<td><%= @track.created_at %></td>
+	</tr>
+	<tr>
+		<th>Updated</th>
+		<td><%= @track.updated_at %></td>
+	</tr>
+	</table>
+</div>

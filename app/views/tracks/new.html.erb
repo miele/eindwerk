@@ -1,0 +1,9 @@
+<div class="new track">
+<h2>Create Track</h2>
+
+<%= form_for(:track, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
+	<%= render(:partial => 'form', :locals => {:f => f}) %>
+<%= submit_tag("Create Track")%>
+	</div>
+<% end %>
+</div>

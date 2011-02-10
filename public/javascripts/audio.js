@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-$.getJSON('http://localhost:3000/tracks.json', function(data) {
+$.getJSON('http://localhost:3000/convert.json', function(data) {
 
 
 

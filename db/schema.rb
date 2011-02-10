@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110208210945) do
+ActiveRecord::Schema.define(:version => 20110210075210) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -31,6 +31,23 @@ ActiveRecord::Schema.define(:version => 20110208210945) do
   end
 
   add_index "admin_users_pages", ["admin_user_id", "page_id"], :name => "index_admin_users_pages_on_admin_user_id_and_page_id"
+
+  create_table "albums", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
+  end
+
+  create_table "albums_pictures", :id => false, :force => true do |t|
+    t.integer "album_id"
+    t.integer "picture_id"
+  end
+
+  add_index "albums_pictures", ["album_id", "picture_id"], :name => "index_albums_pictures_on_album_id_and_picture_id"
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -54,6 +71,17 @@ ActiveRecord::Schema.define(:version => 20110208210945) do
 
   add_index "pages", ["permalink"], :name => "index_pages_on_permalink"
   add_index "pages", ["subject_id"], :name => "index_pages_on_subject_id"
+
+  create_table "pictures", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "album_id"
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
+  end
 
   create_table "section_edits", :force => true do |t|
     t.integer  "admin_user_id"
@@ -97,6 +125,10 @@ ActiveRecord::Schema.define(:version => 20110208210945) do
     t.string   "oga"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "song_file_name"
+    t.string   "song_content_type"
+    t.integer  "song_file_size"
+    t.datetime "song_updated_at"
   end
 
   create_table "tweets", :force => true do |t|

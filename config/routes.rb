@@ -1,15 +1,22 @@
 Skarminkels::Application.routes.draw do
 
-  get "songs/index"
+  resources :albums do
+  resources :pictures
+end
 
+  get "tracks/player"
+  get "albums/list"
+ 
+  
  match "/application.manifest" => Rails::Offline
  
 # separate the devise logic from the user crud
 # devise has a prefix now example "localhost:3000/admin/users/sign_in"
   devise_for :users, :path_prefix => "/admin"
   resources :users
-  resources :tracks
-
+  #resources :tracks # takes care off the routes for responses/get calls
+ resources :convert
+ 
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   get "testier/index"

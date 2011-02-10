@@ -690,78 +690,31 @@ code .nc { color: #A78352; }  /* CSS class */
 code .m  { color: #DE8E50; } /* CSS value */
 code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 
-/*============================*/
-/*=== Custom Slider Styles ===*/
-/*============================*/
-#slider-wrapper {
-    background:url(images/slider.png) no-repeat;
-    width:998px;
-    height:392px;
-    margin:0 auto;
-    padding-top:74px;
-    margin-top:50px;
+ul.thumb {
+	float: left;
+	list-style: none;
+	margin: 0; padding: 10px;
+	width: 360px;
 }
-
-#slider {
-	position:relative;
-    width:618px;
-    height:246px;
-    margin-left:190px;
-	background:url(images/loading.gif) no-repeat 50% 50%;
+ul.thumb li {
+	margin: 0; padding: 5px;
+	float: left;
+	position: relative;  /* Set the absolute positioning base coordinate */
+	width: 110px;
+	height: 110px;
 }
-#slider img {
-	position:absolute;
-	top:0px;
-	left:0px;
-	display:none;
+ul.thumb li img {
+	width: 100px; height: 100px; /* Set the small thumbnail size */
+	-ms-interpolation-mode: bicubic; /* IE Fix for Bicubic Scaling */
+	border: 1px solid #ddd;
+	padding: 5px;
+	background: #f0f0f0;
+	position: absolute;
+	left: 0; top: 0;
 }
-#slider a {
-	border:0;
-	display:block;
-}
-
-.nivo-controlNav {
-	position:absolute;
-	left:260px;
-	bottom:-42px;
-}
-.nivo-controlNav a {
-	display:block;
-	width:22px;
-	height:22px;
-	background:url(images/bullets.png) no-repeat;
-	text-indent:-9999px;
-	border:0;
-	margin-right:3px;
-	float:left;
-}
-.nivo-controlNav a.active {
-	background-position:0 -22px;
-}
-
-.nivo-directionNav a {
-	display:block;
-	width:30px;
-	height:30px;
-	background:url(images/arrows.png) no-repeat;
-	text-indent:-9999px;
-	border:0;
-}
-a.nivo-nextNav {
-	background-position:-30px 0;
-	right:15px;
-}
-a.nivo-prevNav {
-	left:15px;
-}
-
-.nivo-caption {
-    text-shadow:none;
-    font-family: Helvetica, Arial, sans-serif;
-}
-.nivo-caption a { 
-    color:#efe9d1;
-    text-decoration:underline;
+ul.thumb li img.hover {
+	background:url(thumb_bg.png) no-repeat center center;  /* Image used as background on hover effect
+	border: none; /* Get rid of border on hover */
 }
 
 

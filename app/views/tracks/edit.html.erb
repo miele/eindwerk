@@ -1,0 +1,14 @@
+<%= link_to("<< Back to list", {:action => 'lijst'}, :class => 'back-link') %>
+
+<div class="update track">
+<h2>Update Subject</h2>
+
+<%= form_for(:track, :url => {:action => 'update', :id => @track.id}) do |f| %>
+	
+	<%= render(:partial => 'form', :locals => {:f => f}) %>
+	
+		<div class="form-buttons">
+		<%= submit_tag("Create Track")%>
+	</div>
+<% end %>
+</div>

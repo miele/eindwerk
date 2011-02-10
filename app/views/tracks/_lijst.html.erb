@@ -1,0 +1,23 @@
+
+	<h2>Tracks</h2>
+	<%= link_to("Add New Track", {:action => 'new'}, :class => 'action_new') %>
+	<table class="listing" summary="Track list">
+	<tr class="header">
+		
+		<th><%= sortable "name" %></th>
+		<th><%= sortable "mp3" %></th>
+		<th>Actions</th>
+	</tr>
+	<% @tracks.each do |track| %>
+	<tr>
+		<td><%= track.name %>&nbsp;</td>
+		<td><%= track.mp3 %>&nbsp;</td>
+		<td class="actions">
+		<%= link_to("Show", {:action => 'show', :id => track.id}, :class => 'action show')%>
+		<%= link_to("Edit", {:action => 'edit', :id => track.id}, :class => 'edit')%>
+		<%= link_to("Delete",{:action => 'delete' , :id => track.id}, :class => 'action delete')%>
+		</td>
+	</tr>
+	<% end %>
+	</table>
+	<%= will_paginate @tracks %>
