@@ -1,0 +1,25 @@
+	<h2>Band</h2>
+	<%= link_to("Add New Member", {:action => 'new'}, :class => 'action_new') %>
+	<table class="listing" summary="Subject list">
+	<tr class="header">
+		<th>&nbsp;</th>
+		<th><%= sortable "name" %></th>
+		<th><%= sortable "birthday" %></th>
+		<th>&nbsp;Pages</th>
+		<th>Actions</th>
+	</tr>
+	<% @bands.each do |band| %>
+	<tr>
+		<td><%= band.name %>&nbsp;</td>
+		<td><%= band.birthday %>&nbsp;</td>
+		<td ><%= band.content %>&nbsp;</td>
+		<td >&nbsp;<%= band.instrument %></td>
+		<td class="actions">
+		<%= link_to("Show", {:action => 'show', :id => band.id}, :class => 'action show')%>
+		<%= link_to("Edit", {:action => 'edit', :id => band.id}, :class => 'edit')%>
+		<%= link_to("Delete",{:action => 'delete' , :id => band.id}, :class => 'action delete')%>
+		</td>
+	</tr>
+	<% end %>
+	</table>
+	<%= will_paginate @bands %>

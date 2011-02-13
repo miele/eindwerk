@@ -3,17 +3,16 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Photo Title</th>
-    <th>Photos</th>
+    <th>Aantal&nbsp;</th>
+    <th>Actions</th>
   </tr>
 
 <% @albums.each do |album| %>
   <tr>
-    <td><%=h album.name %></td>
-  <% album.pictures.each do |picture| %>
-    <td><%=h picture.name %></td>
-    <td><%= image_tag picture.upload.url(:thumb) %></td>
-  <% end %>
+    <td><%=h album.name %>&nbsp;</td>
+  
+    <td><%= h album.pictures.size %>&nbsp;</td>
+  
     <td><%= link_to 'Show', album %></td>
     <td><%= link_to 'Edit', edit_album_path(album) %></td>
     <td><%= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete %></td>

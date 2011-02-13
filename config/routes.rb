@@ -6,7 +6,7 @@ end
 
   get "tracks/player"
   get "albums/list"
- 
+
   
  match "/application.manifest" => Rails::Offline
  

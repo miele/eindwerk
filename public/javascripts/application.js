@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+$('article.text').jTruncate({
+  length: 450,
+  minTrail: 0,
+  moreText: "[lees meer]",
+  lessText: "[verberg]",
+  ellipsisText: "",
+  moreAni: "slow",
+  lessAni: 2000
+ });
+
 $("ul.thumb li").hover(function() {
 	$(this).css({'z-index' : '10'});
 	$(this).find('img').addClass("hover").stop()
@@ -27,11 +37,21 @@ $("ul.thumb li").hover(function() {
 		}, 400);
 });
 
+$("a.group").fancybox({
+'allowfullscreen'	: 'true'
+});
+
 
 
 function remove_field(element, item) {
+  alert(element);
   element.up(item).remove();
 }
+
+$("#bands th a, #bands .pagination a").live("click", function(){
+ $.getScript(this.href);
+ return false;
+});
 
 $("#albums th a, #albums .pagination a").live("click", function(){
  $.getScript(this.href);
@@ -46,6 +66,11 @@ $("#subjects th a, #subjects .pagination a").live("click", function(){
 $("#tracks th a, #tracks .pagination a").live("click", function(){
  $.getScript(this.href);
  return false;
+});
+
+$("#bands_search input").keyup(function(){
+	$.get($("#bands_search").attr("action"), $("#bands_search").serialize(),null,"script");
+	return false;
 });
 
 $("#subjects_search input").keyup(function(){

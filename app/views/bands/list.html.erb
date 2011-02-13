@@ -1,0 +1,13 @@
+<%= @page_title = "Band List" %>
+
+<%= form_for(:band,:html => {:method => :get, :id => "bands_search"}) do %>
+  <%= hidden_field_tag :direction, params[:direction] %>  
+  <%= hidden_field_tag :sort, params[:sort] %>   
+  <p>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Search", :name => nil %>  
+  </p>  
+<% end %>
+<div class="band list" id="bands">
+<%= render "lijst" %>
+</div>

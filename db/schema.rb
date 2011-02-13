@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110210075210) do
+ActiveRecord::Schema.define(:version => 20110211144340) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -48,6 +48,19 @@ ActiveRecord::Schema.define(:version => 20110210075210) do
   end
 
   add_index "albums_pictures", ["album_id", "picture_id"], :name => "index_albums_pictures_on_album_id_and_picture_id"
+
+  create_table "bands", :force => true do |t|
+    t.string   "name"
+    t.string   "content"
+    t.date     "birthday"
+    t.string   "instrument"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "name"

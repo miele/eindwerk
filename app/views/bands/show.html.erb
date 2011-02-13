@@ -1,0 +1,29 @@
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'back-link') %>
+
+<div class="band show">
+
+<h2>Show Member</h2>
+
+<table summary="Member detail view">
+	<tr>
+		<th>Name</th>
+		<td><%= @band.name %></td>
+	</tr>
+	<tr>
+		<th>Content</th>
+		<td><%= @band.content %></td>
+	</tr>
+	<tr>
+		<th>Instrument</th>
+		<td><%= @band.instrument %></td>
+	</tr>
+	<tr>
+		<th>Birthday</th>
+		<td><%= @band.birthday %></td>
+	</tr>
+	<tr>
+		<th>Photo</th><br/>
+		<td></br><%= link_to(image_tag(@band.picture.url(:thumb), :class => "thumbnail alignleft"), @band.picture.url(:large), :id => "single") 				unless @band.picture.nil? %></td>
+	</tr>
+</table>
+</div>

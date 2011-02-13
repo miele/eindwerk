@@ -6,7 +6,7 @@
             
             <%= link_to(image_tag(subject.photo.url(:thumb), :class => "thumbnail alignleft"), subject.photo.url(:large), :id => "single") 				unless subject.photo.nil? %>
             
-            <p><%= subject.content %></p>
+            <article class="text" ><%= subject.content %></article>
             
             <div class="clear"></div>  
             

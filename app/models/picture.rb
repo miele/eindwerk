@@ -8,7 +8,7 @@ belongs_to :album
                       :thumb => "200x200>",
                       :small => "300x300>",
                       :large => "800x600>"
-
                     }
+
 
 end

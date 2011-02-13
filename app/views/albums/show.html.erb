@@ -5,7 +5,7 @@
 <div class="container"> 
 <ul class="thumb">
 <% @album.pictures.each do |picture| %>
-	<li><%= link_to(image_tag(picture.upload.url(:small), :class => "nest"), picture.upload.url(:large), :id => "single") 				unless picture.upload.nil? %></li> 
+	<li><%= link_to(image_tag(picture.upload.url(:small), :class => "nest"), picture.upload.url(:large),:class => "group") 				unless picture.upload.nil? %></li> 
   <% end %>
 </ul> 
 <div id="main_view"> 

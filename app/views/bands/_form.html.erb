@@ -1,0 +1,22 @@
+<table summary="update member">
+		<tr>
+			<th>Name</th>
+			<td><%= f.text_field(:name)%></td>
+		</tr>
+		<tr>
+			<th>Content</th>
+			<td><%= f.text_field(:content)%></td>
+		</tr>
+		<tr>
+			<th>Birthday</th>
+			<td><%= f.text_field(:birthday, :class => "datum")%></td>
+		</tr>
+		<tr>
+			<th>Instrument</th>
+			<td><%= f.text_field(:instrument)%></td>
+		</tr>
+		<tr>
+			<th>Photo</th>
+			<td><%= f.file_field :picture %></td>
+		</tr>
+	</table>
