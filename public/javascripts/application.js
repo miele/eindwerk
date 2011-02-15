@@ -45,7 +45,7 @@ $("a.group").fancybox({
 
 function remove_field(element, item) {
   alert(element);
-  element.up(item).remove();
+  element.SlideUp(item).remove();
 }
 
 $("#bands th a, #bands .pagination a").live("click", function(){
