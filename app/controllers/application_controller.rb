@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 
+
 layout 'html5'
 
 def tester

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @contact.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @contact.email %>
+</p>
+
+<p>
+  <b>Info:</b>
+  <%= @contact.info %>
+</p>
+
+<p>
+  <b>Tel:</b>
+  <%= @contact.tel %>
+</p>
+
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>
+<%= link_to 'Create PDF document', index_pdf_path(@contact,:id => @contact.id, :format => :pdf) %>

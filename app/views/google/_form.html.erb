@@ -1,0 +1,19 @@
+<% form_for 'event', :url => {:action => :save} do |e| %>
+<% if not @event.id; @account.check_public = false %>
+<p>Calendar: <%= select_tag 'calendar_id', options_for_select(@account.calendars.collect{|c| [c.title, c.id]}) %></p>
+<% end; @account.check_public = true %>
+<%= hidden_field_tag 'event_id', @event.id %>
+<p>Title: <%= e.text_field :title %></p>
+<p>Where: <%= e.text_field :where %></p>
+<p>Notes: <%= e.text_area :content %></p>
+<p>All Day Event: <%= e.select :all_day, [['Yes', 'true'], ['No', 'false']] %></p>
+<p>Recurring Event: <%= select_tag :recurrence, options_for_select([['No', 0], ['Yes', 1]]) %></p>
+<p>Start Date/Time: <%= e.text_field :start_time %></p>
+<p>End Date/Time: <%= e.text_field :end_time %></p>
+<p>Recurrence Start Date/Time: <%= text_field_tag :recurrence_start %></p>
+<p>Recurrence End Date/Time: <%= text_field_tag :recurrence_end %></p>
+<p>Recurrence Frequency: <%= select_tag :recurrence_freq, options_for_select(['Weekly', 'Daily']) %> on <%= select_tag :recurrence_on, options_for_select(['MO', 'TU', 'WE', 'TH', 'FR', 'SA', "SU"])%> 
+</p>
+<p>Recur until: <%= text_field_tag :recurrence_until %></p>
+<%= submit_tag 'Save' %>
+<% end %>

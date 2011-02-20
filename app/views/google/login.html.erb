@@ -1,0 +1,8 @@
+<p>This is an example browser application for Google Calendar built using the GCal4Ruby Gem.</p>
+<p>You can get the source code for this example here: <a href='http://cookingandcoding.com/examples/gcal4ruby_example.zip'>example source</a>.</p>
+<p>Enter your google calendar credentials below.  All information is stored by session only - no personal information is saved.  But obviously use a test account - this is not production code, so don't be suprised if something doesn't work like you expect it to.</p>
+<% form_for '', :url => {:action => :verify} do %>
+	<p>Username: <%= text_field_tag :username, @username %></p>
+	<p>Password: <%= password_field_tag :password, @password %></p>
+	<%= submit_tag 'Login' %>
+<% end %>

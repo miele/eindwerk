@@ -1,11 +1,17 @@
 Skarminkels::Application.routes.draw do
 
+  resources :contacts
+
+  resources :supports
+
   resources :albums do
   resources :pictures
 end
 
   get "tracks/player"
   get "albums/list"
+  
+  match "/download_pdf/:id/(.:format)" => 'contacts#index_pdf', :method => :get, :as=>:index_pdf
 
   
  match "/application.manifest" => Rails::Offline

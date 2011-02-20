@@ -1,0 +1,8 @@
+<ul>
+	<% @calendars.each do |cal| %>
+	<li>
+		<%= link_to cal.title, :action => :events, :calendar_id => cal.id %>
+		(<%= link_to 'X', {:action => :delete_calendar, :calendar_id => cal.id}, :confirm => 'Are you sure you want to delete this calendar?' -%>)
+	</li>
+	<% end %>
+</ul>

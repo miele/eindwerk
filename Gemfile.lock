@@ -38,6 +38,10 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     event-calendar (2.3.2)
+    gcal4ruby (0.5.5)
+      gdata4ruby (>= 0.1.5)
+    gdata (1.1.1)
+    gdata4ruby (0.1.5)
     grackle (0.1.10)
       json
       mime-types
@@ -59,13 +63,6 @@ GEM
       activerecord
       activesupport
     polyglot (0.3.1)
-    prawn (0.8.4)
-      prawn-core (>= 0.8.4, < 0.9)
-      prawn-layout (>= 0.8.4, < 0.9)
-      prawn-security (>= 0.8.4, < 0.9)
-    prawn-core (0.8.4)
-    prawn-layout (0.8.4)
-    prawn-security (0.8.4)
     rack (1.2.1)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
@@ -96,6 +93,7 @@ GEM
       aaronh-chronic (>= 0.3.9)
       activesupport (>= 2.3.4)
     will_paginate (3.0.pre2)
+    wkhtmltopdf (0.1.2)
 
 PLATFORMS
   ruby
@@ -103,12 +101,14 @@ PLATFORMS
 DEPENDENCIES
   devise
   event-calendar
+  gcal4ruby
+  gdata
   grackle
   jquery-rails (>= 0.2.6)
   mysql2
   paperclip (~> 2.3)
-  prawn
   rack-offline
   rails (= 3.0.3)
   whenever
   will_paginate (= 3.0.pre2)
+  wkhtmltopdf
