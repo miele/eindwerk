@@ -156,7 +156,7 @@ before_filter :authenticate, :except => [:login, :verify]
   
   def search
     if params[:search]
-      @account.check_public = false
+      @account.check_public = true
       @events = []
       args = {}
       args['start-min'] = Time.parse(params[:start]).utc.xmlschema if params[:start] and params[:start] != ''

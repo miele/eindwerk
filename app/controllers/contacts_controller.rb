@@ -4,8 +4,15 @@ layout 'html5'
 
 	def index_pdf
 	@contact = Contact.find(params[:id])
-	render :pdf => "my_pdf",:layout => false,:template => '/contacts/index_pdf',:footer => {:center =>
-	"Center", :left => "Left", :right => "Right"}
+	render 	:pdf => "my_pdf",
+			:layout => false,
+			:template => '/contacts/index_pdf',
+			:footer => {
+						 :center =>"Center",
+						 :left => "Left",
+						 :right => "Right"},
+			:disposition => "attachment"
+		
 	end
 
   # GET /contacts
@@ -89,4 +96,5 @@ end
       format.xml  { head :ok }
     end
   end
+  
 end

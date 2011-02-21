@@ -1,0 +1,18 @@
+<h1>Facebook Events</h1>
+
+  <h1><%= @page.name %></h1>
+  <storng>Upcoming Events:</strong> <br />
+  <hr />
+    <% @upcoming_events.each do |event| %>
+      <%= event.name %> - <%= event.start_time %> <br />
+      <%= event.location %>
+      <%= image_tag(event.picture) %>
+   <% end %>
+ <br />
+ <br />
+ <storng>Past Events:</strong> <br />
+ <hr />
+   <% @past_events.each do |event| %>
+     <%= event.name %> - <%= event.start_time %> <br />
+    <%= image_tag(event.picture) %>
+   <% end %>

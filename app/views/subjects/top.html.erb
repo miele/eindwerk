@@ -18,6 +18,7 @@
             </footer> <!-- end post meta -->
         
         </article> <!-- end post 1 -->
+        <%= facebook_like %>
     <% end %>
     
      </div> <!-- end main -->
@@ -28,7 +29,7 @@
             <h3>Laatste tweets</h3>
             <ul>
             <% @tweets.each do |tweet| %>
-                <li><a href="#"><%= tweet.content %></a></li>
+                <li><a href="#"><%= display_content_with_links(tweet)%></a></li>
              <% end %>
              </ul>
         </aside> <!-- end widget -->

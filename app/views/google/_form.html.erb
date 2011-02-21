@@ -1,5 +1,5 @@
 <% form_for 'event', :url => {:action => :save} do |e| %>
-<% if not @event.id; @account.check_public = false %>
+<% if not @event.id; @account.check_public = true %>
 <p>Calendar: <%= select_tag 'calendar_id', options_for_select(@account.calendars.collect{|c| [c.title, c.id]}) %></p>
 <% end; @account.check_public = true %>
 <%= hidden_field_tag 'event_id', @event.id %>
