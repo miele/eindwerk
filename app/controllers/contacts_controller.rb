@@ -4,15 +4,17 @@ layout 'html5'
 
 	def index_pdf
 	@contact = Contact.find(params[:id])
+    File.makedirs("#{RAILS_ROOT}/public/report") 
+	File.open("#{RAILS_ROOT}/public/report/" + "booking_" + @contact.id.to_s + ".pdf", "w") { |file| file.write(
 	render 	:pdf => "my_pdf",
 			:layout => false,
 			:template => '/contacts/index_pdf',
 			:footer => {
 						 :center =>"Center",
 						 :left => "Left",
-						 :right => "Right"},
-			:disposition => "attachment"
-		
+						 :right => "Right"} #,
+			#:disposition => "attachment" takes care off the download window in your browser
+	) }	
 	end
 
   # GET /contacts
