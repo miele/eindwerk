@@ -15,6 +15,7 @@ layout 'html5'
 						 :right => "Right"} #,
 			#:disposition => "attachment" takes care off the download window in your browser
 	) }	
+	ContactMailer.registration_confirmation(@contact).deliver
 	end
 
   # GET /contacts
