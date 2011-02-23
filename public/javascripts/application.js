@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+	$('.delete_post').bind('ajax:success', function() {
+		$(this).closest('td').fadeOut();
+	});
+
+
 $('article.text').jTruncate({
   length: 450,
   minTrail: 0,

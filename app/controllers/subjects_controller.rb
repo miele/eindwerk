@@ -64,7 +64,10 @@ def destroy
   @subject = Subject.find(params[:id])
   @subject.destroy
   flash[:notice] = "Subject has been deleted succesfully"
-  redirect_to(:action => 'list')
+  respond_to do |format|
+      format.html { redirect_to(subjects_url) }
+      format.js   { render :nothing => true }
+    end
 end
 
 private

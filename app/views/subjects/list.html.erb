@@ -1,6 +1,6 @@
 <%= @page_title = "Subject List" %>
 
-<%= form_for(:subject,:html => {:method => :get, :id => "subjects_search"}) do %>
+<%= form_for(:subject,:remote => true,:html => {:method => :get, :id => "subjects_search"}) do %>
   <%= hidden_field_tag :direction, params[:direction] %>  
   <%= hidden_field_tag :sort, params[:sort] %>   
   <p>  

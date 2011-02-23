@@ -25,14 +25,15 @@ def new
 end
 
 def create
- @track = Track.new(params[:track])
- if @track.save
- 	flash[:notice] = "Track has been created succesfully"
- 	redirect_to(:action => 'lijst')
- else
- 	render('new')
- end
-end
+  @track = Track.new(params[:track])
+      if @track.save
+        flash[:notice] = 'Track was successfully created.'
+        @tracks = Track.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 4,:page => params[:page])
+        render :action => "lijst"
+      else
+        render :action => "new"
+      end
+    end
 
 def edit
  @track = Track.find(params[:id]) 

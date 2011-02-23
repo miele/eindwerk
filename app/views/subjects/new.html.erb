@@ -1,7 +1,7 @@
 <div class="new subject">
 <h2>Create Subject</h2>
 
-<%= form_for(:subject, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
+<%= form_for(:subject, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>   
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
 <%= submit_tag("Create Subject")%>
 	</div>
