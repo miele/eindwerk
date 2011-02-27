@@ -1,13 +1,24 @@
-<%= @page_title = "Subject List" %>
+<!-- =Message board -->
+			<aside>
+				<h2 class="grid_12 message_board clearfix">Admin Panel Subjects</h2>
+			</aside>
+<section id="left_col" class="grid_12">
+<section id="contact_form">
 
+<div class="hr dotted clearfix">&nbsp;</div>
+
+<%= @page_title = "Subject List" %>
+<div class="hr dotted clearfix">&nbsp;</div>
 <%= form_for(:subject,:remote => true,:html => {:method => :get, :id => "subjects_search"}) do %>
   <%= hidden_field_tag :direction, params[:direction] %>  
   <%= hidden_field_tag :sort, params[:sort] %>   
   <p>  
-    <%= text_field_tag :search, params[:search] %>  
-    <%= submit_tag "Search", :name => nil %>  
+    <%= text_field_tag :search, params[:search],:id => "search_form" %>  
+    <%= submit_tag "Search", :name => nil,:id => "search_button"%>  
   </p>  
 <% end %>
+<div class="hr dotted clearfix">&nbsp;</div>
 <div class="subject list" id="subjects">
 <%= render "lijst" %>
-</div>
+</section>
+</section>

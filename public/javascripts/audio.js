@@ -126,15 +126,20 @@ $.getJSON('http://localhost:3000/convert.json', function(data) {
 	};
 
 
-	var audioPlaylist = new Playlist("2",[( 
-	for (var q=0; q < data.track.length;q++){
-	alert(data[q].track.name);
-	name: data[q].track.name,
-	mp3: data[q].track.mp3,
-	oga: data[q].track.oga
-	}
+	var audioPlaylist = new Playlist("2", [
+		{
+			name:data[0].track.name,
+			mp3: data[0].track.mp3,
+			oga: data[0].track.oga
+		},
+		{
+			name:data[1].track.name,
+			mp3: data[1].track.mp3,
+			oga: data[1].track.oga
+		}
 	
-	)], {
+
+	], {
 		ready: function() {
 			audioPlaylist.displayPlaylist();
 			audioPlaylist.playlistInit(false); // Parameter is a boolean for autoplay.

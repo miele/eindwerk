@@ -1,9 +1,19 @@
-<div class="new subject">
-<h2>Create Subject</h2>
+<!-- =Message board -->
+			<aside>
+				<h2 class="grid_12 message_board clearfix">Admin Panel Subjects</h2>
+			</aside>
 
-<%= form_for(:subject, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>   
+			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
+<section id="left_col" class="grid_12">
+<section id="contact_form">
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4 class="form_title">Create Subject</h4>
+<div class="hr dotted clearfix">&nbsp;</div>
+
+<%= form_for(:subject, :html => { :multipart => true, :id => "contact_form_id" }, :url => {:action => 'create'}) do |f| %>   
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
-<%= submit_tag("Create Subject")%>
-	</div>
+<%= submit_tag("Create",:class => "sendButton")%>
+
 <% end %>
-</div>
+</section>
+</section>

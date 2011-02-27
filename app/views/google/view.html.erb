@@ -1,35 +1,146 @@
-<% @title = 'Event Details' %>
-<%= button_to_function 'Edit', "window.location = '#{url_for(:action => :edit, :event_id => @event.id)}';"%>
-<p>Title: <%= @event.title %></p>
-<p>Notes: <%= @event.content %></p>
-<p>Calendar: <%= link_to @event.calendar.title, :action => :events, :calendar_id => @event.calendar.id %></p>
-<p>Published: <%= @event.published.strftime("%m/%d/%Y @ %I:%M %p") %></p>
-<p>Updated: <%= @event.updated.strftime("%m/%d/%Y @ %I:%M %p") %></p>
-<p>Edited: <%= @event.edited.strftime("%m/%d/%Y @ %I:%M %p") %></p>
-<p>Start Date/Time: <%= @event.start_time ? @event.start_time.strftime("%m/%d/%Y @ %I:%M %p") : @event.recurrence.start.strftime("%m/%d/%Y @ %I:%M %p") %></p>
-<p>End Date/Time: <%= @event.end_time ? @event.end_time.strftime("%m/%d/%Y @ %I:%M %p") : @event.recurrence.end.strftime("%m/%d/%Y @ %I:%M %p") %></p>
-<p>All Day Event: <%= @event.all_day %></p>
-<p>Status: <%= @event.status %></p>
-<p>Where: <%= @event.where %></p>
-<p>Recurrence: <%= @event.recurrence.to_s %></p>
-<p>Reminder: 
-<div><% form_for '', :url => {:action => :add_recurrence, :event_id => @event.id} do %>
-Method: <%= select_tag 'method', options_for_select(["email", "alert", "none"]) %> Mintues Before: <%= select_tag 'minutes', options_for_select(@minutes) %> <%= submit_tag 'Save'%>
-<% end %>
-</div>
-<ul><% @event.reminder.each do |r| %>
-	<li><%= "#{r[:method]} #{r[:minutes]} minutes before" %> (<%= link_to 'X', :action => :remove_reminder, :event_id => @event.id, :method => r[:method], :minutes => r[:minutes] %>)</li>
-	<% end %>
-	</ul></p>
-	
-<p>Attendees:
-<div><% form_for '', :url => {:action => :add_attendee, :event_id => @event.id} do %>
-Name: <%= text_field_tag 'name' %> Email: <%= text_field_tag 'email' %> <%= submit_tag 'Add'%>
-<% end %>
-</div>
+<!-- =Message board -->
+			<aside>
+				<h2 class="grid_12 message_board clearfix">Admin Panel Google Event</h2>
+			</aside>
+
+			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
+<section id="left_col" class="grid_12">
+<section id="contact_form">
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4 class="form_title"><% @title = 'Event Details' %></h4>
+<div class="hr dotted clearfix">&nbsp;</div>
+<%= button_to_function 'Edit', "window.location = '#{url_for(:action => :edit, :event_id => @event.id)}';", :class => "sendButton"%>
 <ul>
-	<% @event.attendees.each do |e| %>
-		<li>(<%= e[:status].capitalize %>) <%= e[:name] %> - <%= e[:role] %> (<%= link_to 'X', :action => :remove_attendee, :email => e[:email], :event_id => @event.id %>)</li>
-	<% end %>
+						<li class="clearfix">
+						<label for="name">Title</label>
+						<%= @event.title %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Content</label>
+						<%= @event.content %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Calendar</label>
+						<%= link_to @event.calendar.title, :action => :events, :calendar_id => @event.calendar.id %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Published:</label>
+						<%= @event.published.strftime("%m/%d/%Y @ %I:%M %p") %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Updated:</label>
+						<%= @event.updated.strftime("%m/%d/%Y @ %I:%M %p") %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Edited:</label>
+						<%= @event.edited.strftime("%m/%d/%Y @ %I:%M %p") %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Start Date/Time:</label>
+						<%= @event.start_time ? @event.start_time.strftime("%m/%d/%Y @ %I:%M %p") : @event.recurrence.start.strftime("%m/%d/%Y @ %I:%M %p") %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">End Date/Time:</label>
+						<%= @event.end_time ? @event.end_time.strftime("%m/%d/%Y @ %I:%M %p") : 						@event.recurrence.end.strftime("%m/%d/%Y @ %I:%M %p") %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">All Day:</label>
+						<%= @event.all_day %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Status:</label>
+						<%= @event.status %></p>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Where:</label>
+						<%= @event.where %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Recurrence:</label>
+						<%= @event.recurrence.to_s %>
+						<div class="clear"></div>
+						</li>
 </ul>
-</p>
+<p>Reminder: 
+<div><% form_for '', :url => {:action => :add_recurrence, :event_id => @event.id, :id => "contact_form_id" } do %>
+<ul>
+						<li class="clearfix">
+						<label for="name">Reminders</label>
+						<%= select_tag 'method', options_for_select(["email", "alert", "none"]) %>
+						<%= select_tag 'minutes', options_for_select(@minutes) %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<%= submit_tag 'Save',:class => "sendButton"%>
+						<div class="clear"></div>
+						</li>
+<% end %>
+</ul>
+</div>
+					<ul>
+						<% @event.reminder.each do |r| %>
+						<li><%= "#{r[:method]} #{r[:minutes]} minutes before" %> 
+						(<%= link_to 'X', :action => :remove_reminder, :event_id => @event.id, :method => r[:method], :minutes => r[:minutes] %>)</li>
+						<% end %>
+					
+	
+						
+						</ul>
+					<% form_for '',:id => "contact_form_id", :url => {:action => :add_attendee, :event_id => @event.id} do %>
+					<ul>
+						<li class="clearfix">
+						<label for="name">Attendees</label>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Name</label>
+						<%= text_field_tag 'name' %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Email</label>
+						<%= text_field_tag 'email' %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<%= submit_tag 'Add',:class => "sendButton"%>
+						</li>
+					</ul>
+					<% end %>
+					
+					<ul>
+						<% @event.attendees.each do |e| %>
+						<li>(<%= e[:status].capitalize %>) <%= e[:name] %> - <%= e[:role] %> (<%= link_to 'X', :action => :remove_attendee, :email => e[:email], :event_id => @event.id %>)
+						</li>
+						<% end %>
+					</ul>
+
+
+</section>
+</section>

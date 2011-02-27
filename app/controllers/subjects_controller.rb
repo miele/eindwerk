@@ -1,13 +1,18 @@
+require 'GCal4Ruby'
 class SubjectsController < ApplicationController
-
-
+include GCal4Ruby
 layout 'html5'
-
 
 
 helper_method :sort_column, :sort_direction
 
 respond_to :html, :xml, :json
+
+  
+ def events
+  
+  end
+
 
 def index
 	list
@@ -15,13 +20,21 @@ def index
 end
 
 def top
- @subjects = Subject.order("subjects.id DESC").limit(2)
- @tweets = Tweet.order("tweets.created DESC").limit(5)
- @events = Event.order("events.id DESC").limit(5)
+ inlog()
+ @subjects = Subject.order("subjects.id DESC").limit(4)
+ @tweets = Tweet.order("tweets.created DESC").limit(2)
+   @calendar = Calendar.find(@account, {:id => 'terrormic@gmail.com'})
+    @calendars = []
+    @events = @calendar.events
+# @events = Event.order("events.id DESC").limit(2)
 end
 
 def list
  @subjects = Subject.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 4,:page => params[:page])
+end
+
+def news
+@subjects = Subject.order("subjects.id DESC").paginate(:per_page => 5,:page => params[:page])
 end
 
 def show
@@ -80,6 +93,15 @@ def sort_direction
 %w[asc,desc].include?(params[:direction]) ? params[:direction] : "asc"
 end
 
+def inlog
+	@account = Service.new()
+    @account.debug = true
+    @account.authenticate('terrormic@gmail.com','bogaert')
+    @account.check_public = false
+    @calendars = @account.calendars
+    @events = @account.events
+    @account.check_public = true
+end
 
 
 end

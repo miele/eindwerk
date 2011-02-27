@@ -1,23 +1,34 @@
-<%= form_for(@contact) do |f| %>
+<%= form_for(@contact ,:html => { :id => "contact_form_id" }) do |f| %>
 <%= render "shared/error_messages" , :target => @contact %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :info %><br />
+<ul>
+  	<li class="clearfix">
+	<label for="name">Name</label>
+    <%= f.text_field :name,{:id => "name"} %>
+  	<div class="clear"></div>
+	</li>
+	
+	<li class="clearfix">
+	<label for="name">Email</label>
+    <%= f.text_field :email,{:id => "name"} %>
+  	<div class="clear"></div>
+	</li>
+	
+  	<li class="clearfix">
+	<label for="name">Info</label>
     <%= f.text_area :info %>
-  </div>
-  <div class="field">
-    <%= f.label :tel %><br />
-    <%= f.text_field :tel %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  	<div class="clear"></div>
+	</li>
+	
+  	<li class="clearfix">
+	<label for="name">Phone</label>
+    <%= f.text_field :tel ,{:id => "name"}%>
+  	<div class="clear"></div>
+	</li>
+	
+  	<li class="clearfix">
+    <%= f.submit "Submit" ,:class => "sendButton"%>
+ 	<div class="clear"></div>
+	</li>
+	
+</ul>
 <% end %>

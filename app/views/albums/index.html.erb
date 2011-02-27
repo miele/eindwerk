@@ -1,4 +1,13 @@
-<h1>Listing albums</h1>
+<!-- =Message board -->
+			<aside>
+				<h2 class="grid_12 message_board clearfix">Admin Panel Albums</h2>
+			</aside>
+<section id="left_col" class="grid_12">
+<section id="contact_form">
+
+<div class="hr dotted clearfix">&nbsp;</div>
+<%= @page_title = "ALbums List" %>
+<div class="hr dotted clearfix">&nbsp;</div>
 
 <table>
   <tr>
@@ -6,20 +15,24 @@
     <th>Aantal&nbsp;</th>
     <th>Actions</th>
   </tr>
-
+ 
 <% @albums.each do |album| %>
-  <tr>
-    <td><%=h album.name %>&nbsp;</td>
   
-    <td><%= h album.pictures.size %>&nbsp;</td>
   
-    <td><%= link_to 'Show', album %></td>
-    <td><%= link_to 'Edit', edit_album_path(album) %></td>
-    <td><%= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><div class="hr dotted clearfix">&nbsp;</div><%=h album.name %>&nbsp;</td>
+  
+    <td><div class="hr dotted clearfix">&nbsp;</div><%= h album.pictures.size %>&nbsp;</td>
+  
+    <td><div class="hr dotted clearfix">&nbsp;</div><%= link_to 'Show', album, :class => 'textlink' %></td>
+    <td><div class="hr dotted clearfix">&nbsp;</div><%= link_to 'Edit', edit_album_path(album), :class => 'textlink' %></td>
+    <td><div class="hr dotted clearfix">&nbsp;</div><%= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete , :class => 'textlink'%></td>
   </tr>
+  
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New album', new_album_path %>
+<%= link_to 'New album', new_album_path , :class => 'textlink'%>
+</section>
+</section>

@@ -1,1 +1,59 @@
-(function($){$.fn.jTruncate=function(h){var i={length:300,minTrail:20,moreText:"more",lessText:"less",ellipsisText:"...",moreAni:"",lessAni:""};var h=$.extend(i,h);return this.each(function(){obj=$(this);var a=obj.html();if(a.length>h.length+h.minTrail){var b=a.indexOf(' ',h.length);if(b!=-1){var b=a.indexOf(' ',h.length);var c=a.substring(0,b);var d=a.substring(b,a.length-1);obj.html(c+'<span class="truncate_ellipsis">'+h.ellipsisText+'</span>'+'<span class="truncate_more">'+d+'</span>');obj.find('.truncate_more').css("display","none");obj.append('<div class="clearboth">'+'<a href="#" class="truncate_more_link">'+h.moreText+'</a>'+'</div>');var e=$('.truncate_more_link',obj);var f=$('.truncate_more',obj);var g=$('.truncate_ellipsis',obj);e.click(function(){if(e.text()==h.moreText){f.show(h.moreAni);e.text(h.lessText);g.css("display","none")}else{f.hide(h.lessAni);e.text(h.moreText);g.css("display","inline")}return false})}}})}})(jQuery);
+(function($){
+	$.fn.jTruncate = function(options) {
+	   
+		var defaults = {
+			length: 300,
+			minTrail: 20,
+			moreText: "",
+			lessText: "",
+			ellipsisText: "...",
+			moreAni: "",
+			lessAni: ""
+		};
+		
+		var options = $.extend(defaults, options);
+	   
+		return this.each(function() {
+			obj = $(this);
+			var body = obj.html();
+			
+			if(body.length > options.length + options.minTrail) {
+				var splitLocation = body.indexOf(' ', options.length);
+				if(splitLocation != -1) {
+					// truncate tip
+					var splitLocation = body.indexOf(' ', options.length);
+					var str1 = body.substring(0, splitLocation);
+					var str2 = body.substring(splitLocation, body.length - 1);
+					obj.html(str1 + '<span class="truncate_ellipsis">' + options.ellipsisText + 
+						'</span>' + '<span class="truncate_more">' + str2 + '</span>');
+					obj.find('.truncate_more').css("display", "none");
+					
+					// insert more link
+					obj.append(
+						'<div class="clearboth">' +
+							'<a href="#" class="truncate_more_link">' + options.moreText + '</a>' +
+						'</div>'
+					);
+
+					// set onclick event for more/less link
+					var moreLink = $('.truncate_more_link', obj);
+					var moreContent = $('.truncate_more', obj);
+					var ellipsis = $('.truncate_ellipsis', obj);
+					moreLink.click(function() {
+						if(moreLink.text() == options.moreText) {
+							moreContent.show(options.moreAni);
+							moreLink.text(options.lessText);
+							ellipsis.css("display", "none");
+						} else {
+							moreContent.hide(options.lessAni);
+							moreLink.text(options.moreText);
+							ellipsis.css("display", "inline");
+						}
+						return false;
+				  	});
+				}
+			} // end if
+			
+		});
+	};
+})(jQuery);

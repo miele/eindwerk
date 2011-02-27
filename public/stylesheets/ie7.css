@@ -1,0 +1,103 @@
+/* IE7 FIXES
+ *
+ * DON'T TOUCH! (Seriously.. it's IE)
+ * 
+--------------------------------------------------------- */
+/* =Menu =navigation
+-------------------------------------------------------------- */
+/* =submenu */
+ul#navigation ul {width: 170px;}
+
+ul#navigation ul ul {
+	left: 170px;
+	width: 175px;
+	}
+
+ul#navigation ul li {width: 100%;}
+
+ul#navigation ul li a,
+ul#navigation ul ul li a {
+	margin: 0 -5px 0 0;
+	}
+
+ul#navigation ul ul ul {
+	left: 100%;
+	top: -4px;
+	}
+
+/* =li */
+li {list-style-image: none;}
+
+/* =Sub Navigation
+-------------------------------------------------------------- */
+ul.sidebar {
+	list-style: none;
+	}
+
+ul.sidebar li {
+	list-style: none
+	}
+
+ul.sidebar li a {margin-left: -16px;}
+
+ul.sidebar a {display: inline-block;}
+
+/* Disable =styleswitcher
+-------------------------------------------------------------- */
+#styleswitcher li {margin-left: -10px;}
+
+/*img {display: none}*/
+
+/* =tag_bg =skins */
+.sub .tag_bg {
+	width: 5px;
+	float: left;
+	}
+
+.commentlink {margin-top: -20px;}
+
+.postdate {margin-top: -40px;}
+
+p.utilities {padding-bottom: 10px;}
+
+/*.history,*/
+.history p {line-height: 24px;}
+
+#contact_form ul li,
+#comment_form ul li {float: left;}
+
+#contact_form input#name,
+#contact_form input#email,
+#contact_form input#subject,
+#comment_form input#name,
+#comment_form input#email,
+#comment_form input#subject,
+#comment_form input#website {
+	width: 600px;
+	}
+
+#contact_form textarea,
+#comment_form textarea {width: 600px;}
+
+p.error {width: 300px;}
+
+.sendButton {width: 120px;text-align:center;margin: 20px 0 0 0;}
+
+ul.project_info li.title,
+ul.project_info li.client,
+ul.project_info li.release_date {
+	margin-left: 5px;
+	}
+
+ul.contact_data {
+	margin-left: -10px;
+	margin-top: -10px
+	}
+
+ul.contact_data li {
+	list-style: none;
+	margin-left: 0;
+	}
+
+/* =utilities */
+p.utilities {margin-bottom: 30px;}

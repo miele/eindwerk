@@ -1,13 +1,23 @@
-<%= @page_title = "Band List" %>
+<!-- =Message board -->
+			<aside>
+				<h2 class="grid_12 message_board clearfix">Admin Panel Band</h2>
+			</aside>
+<section id="left_col" class="grid_12">
+<section id="contact_form">
 
+<div class="hr dotted clearfix">&nbsp;</div>
+<%= @page_title = "Band List" %>
+<div class="hr dotted clearfix">&nbsp;</div>
 <%= form_for(:band,:html => {:method => :get, :id => "bands_search"}) do %>
   <%= hidden_field_tag :direction, params[:direction] %>  
   <%= hidden_field_tag :sort, params[:sort] %>   
   <p>  
-    <%= text_field_tag :search, params[:search] %>  
-    <%= submit_tag "Search", :name => nil %>  
+    <%= text_field_tag :search, params[:search],:id => "search_form" %>  
+    <%= submit_tag "Search", :name => nil,:id => "search_button" %>  
   </p>  
 <% end %>
+<div class="hr dotted clearfix">&nbsp;</div>
 <div class="band list" id="bands">
 <%= render "lijst" %>
-</div>
+</section>
+</section>

@@ -1,23 +1,32 @@
 <%= render "shared/error_messages" , :target => @band %>
-<table summary="update member">
-		<tr>
-			<th>Name</th>
-			<td><%= f.text_field(:name)%></td>
-		</tr>
-		<tr>
-			<th>Content</th>
-			<td><%= f.text_field(:content)%></td>
-		</tr>
-		<tr>
-			<th>Birthday</th>
-			<td><%= f.text_field(:birthday, :class => "datum")%></td>
-		</tr>
-		<tr>
-			<th>Instrument</th>
-			<td><%= f.text_field(:instrument)%></td>
-		</tr>
-		<tr>
-			<th>Photo</th>
-			<td><%= f.file_field :picture %></td>
-		</tr>
-	</table>
+<ul>						
+			<li class="clearfix">
+			<label for="name">Name</label>
+			<%= f.text_field(:name,{:id => "name"})%>
+			<div class="clear"></div>
+			</li>
+		
+			<li class="clearfix">
+			<label for="name">Content</label>
+			<%= f.text_field(:content,{:id => "name"})%>
+			<div class="clear"></div>
+			</li>
+			
+			<li class="clearfix">
+			<label for="name">Birthday</label>
+			<%= f.text_field(:birthday, :class => "datum",:id => "name")%>
+			<div class="clear"></div>
+			</li>
+			
+			<li class="clearfix">
+			<label for="name">Instrument</label>
+			<%= f.text_field(:instrument,{:id => "name"})%>
+			<div class="clear"></div>
+			</li>
+			
+			<li class="clearfix">
+			<label for="name">Photo</label>
+			<%= f.file_field :picture %>
+			<div class="clear"></div>
+			</li>
+	</ul>

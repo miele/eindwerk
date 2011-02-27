@@ -1,19 +1,84 @@
-<% form_for 'event', :url => {:action => :save} do |e| %>
+<% form_for 'event',:html => { :id => "contact_form_id" }, :url => {:action => :save} do |e| %>
+<ul>
 <% if not @event.id; @account.check_public = true %>
-<p>Calendar: <%= select_tag 'calendar_id', options_for_select(@account.calendars.collect{|c| [c.title, c.id]}) %></p>
+
+						<li class="clearfix">
+						<label for="name">Name</label>
+						<%= select_tag 'calendar_id', options_for_select(@account.calendars.collect{|c| [c.title, c.id]}) %>
+						<div class="clear"></div>
+						</li>
+						
 <% end; @account.check_public = true %>
-<%= hidden_field_tag 'event_id', @event.id %>
-<p>Title: <%= e.text_field :title %></p>
-<p>Where: <%= e.text_field :where %></p>
-<p>Notes: <%= e.text_area :content %></p>
-<p>All Day Event: <%= e.select :all_day, [['Yes', 'true'], ['No', 'false']] %></p>
-<p>Recurring Event: <%= select_tag :recurrence, options_for_select([['No', 0], ['Yes', 1]]) %></p>
-<p>Start Date/Time: <%= e.text_field :start_time %></p>
-<p>End Date/Time: <%= e.text_field :end_time %></p>
-<p>Recurrence Start Date/Time: <%= text_field_tag :recurrence_start %></p>
-<p>Recurrence End Date/Time: <%= text_field_tag :recurrence_end %></p>
-<p>Recurrence Frequency: <%= select_tag :recurrence_freq, options_for_select(['Weekly', 'Daily']) %> on <%= select_tag :recurrence_on, options_for_select(['MO', 'TU', 'WE', 'TH', 'FR', 'SA', "SU"])%> 
-</p>
-<p>Recur until: <%= text_field_tag :recurrence_until %></p>
-<%= submit_tag 'Save' %>
-<% end %>
+
+						<%= hidden_field_tag 'event_id', @event.id %>
+
+						<li class="clearfix">
+						<label for="name">Titel</label>
+						<%= e.text_field :title,{:id => "name"} %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Where</label>
+						<%= e.text_field :where,{:id => "name"} %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Content</label>
+						<%= e.text_area :content %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">All Day?</label>
+						<%= e.select :all_day, [['Yes', 'true'], ['No', 'false']] %>
+						<div class="clear"></div>
+						</li>
+						
+						
+						<li class="clearfix">
+						<label for="name">Start Date/Time</label>
+						<%= e.text_field :start_time,{:id => "name"} %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">End Date/Time</label>
+						<%= e.text_field :end_time,{:id => "name"} %>
+						<div class="clear"></div>
+						</li>
+						
+						
+						<li class="clearfix">
+						<label for="name">Recurring Event</label>
+						<%= select_tag :recurrence, options_for_select([['No', 0], ['Yes', 1]]) %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Recurrence Start Date/Time</label>
+						<%= text_field_tag :recurrence_start %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Recurrence End Date/Time</label>
+						<%= text_field_tag :recurrence_end %>
+						<div class="clear"></div>
+						</li>
+						
+						<li class="clearfix">
+						<label for="name">Frequency</label>
+						<%= select_tag :recurrence_freq, options_for_select(['Weekly', 'Daily']) %> on <%= select_tag :recurrence_on, options_for_select(['MO', 							'TU', 'WE', 'TH', 'FR', 'SA', "SU"])%>
+						<div class="clear"></div>
+						</li>
+
+						<li class="clearfix">
+						<label for="name">Recur until</label>
+						<%= text_field_tag :recurrence_until %>
+						<div class="clear"></div>
+						</li>
+</ul>
+						<%= submit_tag 'Save',:class => "sendButton" %>
+						<% end %>

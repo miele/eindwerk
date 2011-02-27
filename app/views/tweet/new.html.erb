@@ -1,9 +1,19 @@
-<div class="new tweet">
-<h2>Create Tweet</h2>
+<!-- =Message board -->
+			<aside>
+				<h2 class="grid_12 message_board clearfix">Create Tweet/Facebook Post</h2>
+			</aside>
 
-<%= form_for(:tweet, :url => {:action => 'post_update'}) do |t| %>
+			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
+<section id="left_col" class="grid_12">
+<section id="contact_form">
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4 class="form_title">Type your post:</h4>
+<div class="hr dotted clearfix">&nbsp;</div>
+<%= form_for(:tweet, :html => { :id => "contact_form_id" }, :url => {:action => 'post_update'}) do |t| %>
 	<%= render(:partial => 'form', :locals => {:t => t}) %>
-<%= submit_tag("Create Tweet")%>
-	</div>
+	<div class="clear"></div>
+<%= submit_tag("Submit",:class => "sendButton")%>
+
 <% end %>
-</div>
+</section>
+</section>

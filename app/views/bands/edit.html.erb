@@ -1,14 +1,21 @@
-<%= link_to("<< Back to list", {:action => 'list'}, :class => 'back-link') %>
+<!-- =Message board -->
+			<aside>
+				<h2 class="grid_12 message_board clearfix">Admin Panel Band</h2>
+			</aside>
+<section id="left_col" class="grid_12">
+<section id="contact_form">
 
-<div class="update member">
-<h2>Update Member</h2>
-
-<%= form_for(:band, :url => {:action => 'update', :id => @band.id}) do |f| %>
+<div class="hr dotted clearfix">&nbsp;</div>
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'textlink') %>
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4 class="form_title">Update Band Member</h4>
+<div class="hr dotted clearfix">&nbsp;</div>
+<%= form_for(:band ,:html => { :id => "contact_form_id" }, :url => {:action => 'update', :id => @band.id}) do |f| %>
 	
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
 	
-		<div class="form-buttons">
-		<%= submit_tag("Update Member")%>
-	</div>
+		<%= submit_tag("Update",:class => "sendButton")%>
+
 <% end %>
-</div>
+</section>
+</section>

@@ -1,18 +1,47 @@
-<h1>Facebook Events</h1>
+<!-- =Message board -->
+			<aside>
+				<h2 class="grid_12 message_board clearfix">Upcoming Events</h2>
+			</aside>
 
-  <h1><%= @page.name %></h1>
-  <storng>Upcoming Events:</strong> <br />
-  <hr />
+			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
+<section id="left_col" class="grid_12">
+<section id="contact_form">
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4 class="form_title"><%= @page.name %></h4>
+<div class="hr dotted clearfix">&nbsp;</div>
+
+  <h6><strong>Upcoming Events:</strong></h6> <br />
+ 
+  <ul>
     <% @upcoming_events.each do |event| %>
+      <li>
       <%= event.name %> - <%= event.start_time %> <br />
+       </li>
+       <li>
       <%= event.location %>
+      </li>
+      <li>
       <%= image_tag(event.picture) %>
+     </li>
    <% end %>
+   </ul>
  <br />
  <br />
- <storng>Past Events:</strong> <br />
- <hr />
+ <h6><strong>Past Events:</strong></h6> <br />
+
    <% @past_events.each do |event| %>
-     <%= event.name %> - <%= event.start_time %> <br />
-    <%= image_tag(event.picture) %>
+    <ul>
+   <li><%= event.name %></li>
+     <li>
+     	<%= image_tag(event.picture) %>
+       </li>
+       <li><%= event.start_time %></li>
+       <li>
+      <%= event.location %>
+     </li>
+     </ul>
+     <hr/>
    <% end %>
+   
+</section>
+</section>

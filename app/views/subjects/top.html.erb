@@ -1,44 +1,65 @@
-   
+   <!-- =Message board -->
+			<aside>
+				<h2 class="grid_12 message_board clearfix">Skarminkels on Rails baby!</h2>
+			</aside>
+
+			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
+			<!-- =Slider -->
+			<section id="featured" class="clearfix grid_12">
+			<div class="coin-slider" id="coin-slider-coin-slider">
+				<div id="coin-slider">
+				 <% @subjects.each do |subject| %>
+					<article>
+						<a href="/Subjects/show/<%= subject.id %>" target="_self">
+							<%= image_tag(subject.photo.url(:large)) %>
+							<span><%= subject.name %></span>
+						</a>
+					</article>
+					<% end %>
+				</div><!-- coin-slider -->
+				</div>
+	
+			</section><!-- #featured/slider -->
+			
+				<!-- =BOXES RECENT ENTRIES -->
+			<section class="box_entries grid_12">
+			
+				<!-- FIRST ROW -->
+				<header><h4 class="box_title">RECENT NEWS</h4></header>
+        
+
    <% @subjects.each do |subject| %>
-   <article class="post">
-        
-            <h2><a href="#"><%= subject.name %></a></h2>
-            
-            <%= link_to(image_tag(subject.photo.url(:thumb), :class => "thumbnail alignleft"), subject.photo.url(:large), :id => "single") 				unless subject.photo.nil? %>
-            
-            <article class="text" ><%= subject.content %></article>
-            
-            <div class="clear"></div>  
-            
-            <footer class="postmeta">
-                <span class="btn alignleft">
-                	<time pubdate><%= subject.created_at %></time>
-				</span>
-                <a href="#" class="more-link alignright">Lees meer</a>
-            </footer> <!-- end post meta -->
-        
-        </article> <!-- end post 1 -->
-        <%= facebook_like %>
+   
+   <article>
+					<a class="boxgrid box alpha tl tooltip" href="/Subjects/show/<%= subject.id %>" title="<%= subject.name %>">
+						<h4 class="title nocufon"><%= subject.name %></h4>
+						<p class"sub"><%= subject.content %></p>
+						<figure><%= image_tag(subject.photo.url(:thumb)) %></figure>
+					</a>
+				</article>
     <% end %>
-    
-     </div> <!-- end main -->
-    
-    <div id="sidebar" class="grid_4 omega">
-    
-        <aside class="widget">
-            <h3>Laatste tweets</h3>
-            <ul>
-            <% @tweets.each do |tweet| %>
-                <li><a href="#"><%= display_content_with_links(tweet)%></a></li>
-             <% end %>
-             </ul>
-        </aside> <!-- end widget -->
-        <aside class="widget">
-            <h3>Upcoming Gigs</h3>
-            <ul>
-            <% @events.each do |event| %>
-                <li><a href="/calendar/show/<%= event.id %>"><%= event.name %></a></li>
-             <% end %>
-             </ul>        </aside> <!-- end widget -->
-    
-    </div> <!-- end sidebar -->
+   <% @tweets.each do |tweet| %>
+   <article>
+					<a class="boxgrid box alpha tl tooltip" href="#" title="tweet">
+						<h4 class="title nocufon"><%= tweet.id %></h4>
+						<p><%= tweet.content %></p>
+					</a>
+				</article>
+   
+   <% end %>
+ <% @events.each do |event| %>
+	<article>
+	<a class="boxgrid box alpha tl tooltip" href="#" title="<%= event.title %>">
+			<h4><%= event.start_time.strftime("%d") %></h4>
+			<h4><%= event.start_time.strftime("%m") %></h4>
+			<p><%= event.title %></p>
+			<p><%= event.start_time.strftime("%I:%M %p") %> - <%= event.end_time.strftime("%I:%M %p") %></p>
+			<p><%= event.where %></p>
+			</a>
+	</article>
+<% end %>
+
+   <aside class="grid_12 view_all"><a href="blog.html" class="textlink">View all Entries</a></aside><!-- .grid_12 .view_all -->
+		
+			<section class="box_entries grid_12">
+      
