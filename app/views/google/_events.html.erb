@@ -1,4 +1,6 @@
 <ul>
+<%= link_to("Add New Event", {:action => 'new'}, :class => 'textlink') %>
+<div class="hr dotted clearfix">&nbsp;</div>
 <% @events.sort{|a,b| b.start_time <=> a.start_time}.each do |event| %>
 	<li><strong><%= event.start_time.strftime("%m/%d/%Y") %></strong>
 		<% if event.all_day %>

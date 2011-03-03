@@ -10,6 +10,9 @@
 <%= @page_title = "Subject List" %>
 <div class="hr dotted clearfix">&nbsp;</div>
 <%= form_for(:subject,:remote => true,:html => {:method => :get, :id => "subjects_search"}) do %>
+<% if flash[:notice] %>
+    <p class="flash-notice"><%= flash[:notice] %></p>
+  <% end %>
   <%= hidden_field_tag :direction, params[:direction] %>  
   <%= hidden_field_tag :sort, params[:sort] %>   
   <p>  

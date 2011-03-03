@@ -1,0 +1,12 @@
+					<%= fb_connect_async_js %>
+<% if current_facebook_user %>
+   <%= "Hello #{fb_profile_pic(current_facebook_user)}!" # link to facebook profile
+    %>
+
+<% else
+   # you must explicitly request permissions for facebook user fields.
+   # here we instruct facebook to ask the user for permission for our website
+   # to access the user's facebook email and birthday
+   %>
+  <%= fb_login_and_redirect('localhost:3000', :perms => 'email,user_birthday') %>
+<% end %>

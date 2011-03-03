@@ -25,7 +25,7 @@
 	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
 	<%= javascript_include_tag 'modernizr-1.5.min.js'%>
 	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-	<%= javascript_include_tag :defaults,'coin-slider.min','cufon-yui','jquery.jplayer.min','jquery.jtruncate.pack','jquery.prettyPhoto','lab.font','nt_nav','tooltip.min','styleswitcher' %>
+	<%= javascript_include_tag :defaults,'coin-slider.min','cufon-yui','jquery.jplayer.min','jquery.jtruncate.pack','jquery.prettyPhoto','lab.font','nt_nav','tooltip.min','styleswitcher','swfobject' %>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
@@ -43,7 +43,16 @@
 		
 				<!-- =Logo -->
 				<h1 id="logo" class="grid_4">
-					
+		<%= fb_connect_async_js %>
+<% if current_facebook_user != nil %>
+    <%= fb_logout_link("Logout", request.url) %><br />
+<% else
+   # you must explicitly request permissions for facebook user fields.
+   # here we instruct facebook to ask the user for permission for our website
+   # to access the user's facebook email and birthday
+   %>
+  <%= fb_login_and_redirect(:root, :perms => 'email,user_birthday,user_photos,manage_pages,create_event') %>
+<% end %>
 				</h1>
 
 				<!-- =Menu -->

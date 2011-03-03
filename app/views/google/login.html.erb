@@ -1,6 +1,30 @@
-Google Account Login.</p>
-<% form_for '', :url => {:action => :verify} do %>
-	<p>Username: <%= text_field_tag :username, @username %></p>
-	<p>Password: <%= password_field_tag :password, @password %></p>
-	<%= submit_tag 'Login' %>
+<!-- =Message board -->
+			<aside>
+				<h2 class="grid_12 message_board clearfix">Google Login</h2>
+			</aside>
+
+			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
+<section id="left_col" class="grid_12">
+<section id="contact_form">
+<div class="hr dotted clearfix">&nbsp;</div>
+<h4 class="form_title">Login</h4>
+<div class="hr dotted clearfix">&nbsp;</div>
+<% form_for '', :html => { :id => "contact_form_id" }, :url => {:action => :verify} do %>
+<ul>
+			<li class="clearfix">
+			<label for="name">Username</label>
+			<%= text_field_tag :username, @username,{:id => "name"} %>
+			<div class="clear"></div>
+			</li>
+			<li class="clearfix">
+			<label for="name">Password</label>
+			<%= password_field_tag :password, @password,{:id => "name"} %>
+			<div class="clear"></div>
+			</li>
+			<li class="clearfix">
+			<%= submit_tag 'Login',:class => "sendButton" %>
+			</li>
+</ul>
 <% end %>
+</section>
+</section>

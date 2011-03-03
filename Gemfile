@@ -19,6 +19,9 @@ gem 'gdata'
 gem 'gcal4ruby'
 gem 'fb_graph'
 gem 'gdocs4ruby'
+gem 'facebooker2'
+gem 'mogli'
+
 
 
 

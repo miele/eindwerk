@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110215154558) do
+ActiveRecord::Schema.define(:version => 20110301110854) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -77,6 +77,11 @@ ActiveRecord::Schema.define(:version => 20110215154558) do
     t.date     "end_at"
     t.string   "place"
     t.time     "aanvang"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "googles", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -151,6 +156,10 @@ ActiveRecord::Schema.define(:version => 20110215154558) do
     t.string   "song_content_type"
     t.integer  "song_file_size"
     t.datetime "song_updated_at"
+    t.string   "sound_file_name"
+    t.string   "sound_content_type"
+    t.integer  "sound_file_size"
+    t.datetime "sound_updated_at"
   end
 
   create_table "tweets", :force => true do |t|
@@ -177,6 +186,7 @@ ActiveRecord::Schema.define(:version => 20110215154558) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "facebook_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

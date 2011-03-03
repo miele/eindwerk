@@ -1,12 +1,15 @@
 <aside>
 		<h2 class="grid_12 message_board clearfix">News Overview</h2>
 </aside>
-
-<section id="left_col" class="grid_12">
-<div class="hr dotted clearfix">&nbsp;</div>
 <% @subjects.each do |subject| %>
 
+<section id="left_col" class="grid_6">
+
+
+
 <article>
+<div class="hr dotted clearfix">&nbsp;</div>
+
 		<h4 class="form_title"><%= subject.name %></h4>
 		<p><a class="portfolio_item" href="<%= subject.photo.url(:original) %>" rel="prettyPhoto[mixed]" title="<%= subject.name %>">
 		<img class="float_left" title="" src="<%= subject.photo.url(:large)%>" alt="" />
@@ -18,8 +21,12 @@
 		<p>Aangemaakt op : <%= subject.created_at %></p>
 		<%= link_to("Read more", '/Subjects/show/' + subject.id.to_s, :class => 'textlink') %>
 		<div class="hr dotted clearfix">&nbsp;</div>
+
 		<hr/>
 </article>
+
+
+</section>
 <% end %>
-<%= will_paginate @subjects %>
-</section>	
+<div class="hr dotted clearfix">&nbsp;</div>
+<div><%= will_paginate @subjects %></div>

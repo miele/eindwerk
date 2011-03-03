@@ -3,7 +3,7 @@ class SubjectsController < ApplicationController
 include GCal4Ruby
 layout 'html5'
 
-
+#before_filter :ensure_authenticated
 helper_method :sort_column, :sort_direction
 
 respond_to :html, :xml, :json
@@ -20,13 +20,22 @@ def index
 end
 
 def top
- inlog()
+ 
  @subjects = Subject.order("subjects.id DESC").limit(4)
  @tweets = Tweet.order("tweets.created DESC").limit(2)
-   @calendar = Calendar.find(@account, {:id => 'terrormic@gmail.com'})
+  # @events = Event.order("events.id DESC").limit(2)
+end
+
+def feed
+inlog()
+ @calendar = Calendar.find(@account, {:id => 'terrormic@gmail.com'})
     @calendars = []
     @events = @calendar.events
-# @events = Event.order("events.id DESC").limit(2)
+
+respond_to do |format|
+  format.html { render :layout => false }
+end
+
 end
 
 def list
@@ -34,7 +43,7 @@ def list
 end
 
 def news
-@subjects = Subject.order("subjects.id DESC").paginate(:per_page => 5,:page => params[:page])
+@subjects = Subject.order("subjects.id DESC").paginate(:per_page => 6,:page => params[:page])
 end
 
 def show
@@ -63,7 +72,8 @@ def update
 	 @subject = Subject.find(params[:id])
 	 if @subject.update_attributes(params[:subject])
 	 flash[:notice] = "Subject has been updated succesfully"
- 	redirect_to(:action => 'show', :id => @subject.id)
+ 	#redirect_to(:action => 'show', :id => @subject.id)
+ 	redirect_to(:action => 'list')
  else
  	render('edit')
  end
@@ -78,7 +88,7 @@ def destroy
   @subject.destroy
   flash[:notice] = "Subject has been deleted succesfully"
   respond_to do |format|
-      format.html { redirect_to(subjects_url) }
+      format.html { redirect_to(:action => "list") }
       format.js   { render :nothing => true }
     end
 end

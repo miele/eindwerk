@@ -1,5 +1,7 @@
 Skarminkels::Application.routes.draw do
 
+  get "promo/index"
+
   get "fb/index"
 
   resources :contacts
