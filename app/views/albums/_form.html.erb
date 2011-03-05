@@ -1,21 +1,21 @@
-<%= form_for(@album, :html => { :multipart => true }) do |f| %>
-  <%= render "shared/error_messages" , :target => @album %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  
-  <h2>Photo(s)</h2>
-    <div id="pictures">
-      <% if @album.new_record? %>
-         <%= render :partial => 'picture', :locals => { :form => f, :picture => @album.pictures.build } %>
-      <% else %>
-        <% @album.pictures.each do |picture| %>
-          <%= image_tag picture.upload.url(:small) %>
-        <% end %>
+<%= form_for(@album) do |f| %>
+  <% if @album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
+
+      <ul>
+      <% @album.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
-  <%= add_object_link("New Photo", f, @album.pictures.build, "picture", "#pictures") %>
-  
-  <p><%= f.submit %></p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

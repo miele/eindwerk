@@ -1,5 +1,9 @@
 Skarminkels::Application.routes.draw do
 
+  get "backend/index"
+
+  get "backend/subjects"
+
   get "promo/index"
 
   get "fb/index"
@@ -8,9 +12,9 @@ Skarminkels::Application.routes.draw do
 
   resources :supports
 
-  resources :albums do
+  resources :albums
   resources :pictures
-end
+
 
   get "tracks/player"
   get "albums/list"

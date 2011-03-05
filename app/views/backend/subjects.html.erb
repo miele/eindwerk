@@ -1,0 +1,38 @@
+
+					<hr />
+		  
+					
+					<h1>Admin News</h1>
+
+					<table class="normal tablesorter">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Photo</th>
+								<th>Content</th>
+								<th>Content type</th>
+								<th>Created At</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+						<% @subjects.each do |subject| %>
+							<tr class="odd">
+								<td><%= subject.id %></td>
+								<td><%= subject.name %></td>
+								<td><%= image_tag(subject.photo.url(:thumb)) %></td>
+								<td><%= subject.content %></td>
+								<td><%= subject.photo_content_type %></td>
+								<td><%= subject.created_at %></td>
+								<td>
+									<a href="/Subjects/edit/<%= subject.id %>" title="Edit <%= subject.name %>" class="tooltip table_icon"><%= image_tag('assets/icons/actions_small/pencil.png')%></a> 
+									<a href="/Subjects/destroy/<%= subject.id %>" title="Delete <%= subject.name %>" class="tooltip table_icon"><%= image_tag('assets/icons/actions_small/trash.png')%></a>
+								</td>
+							</tr>
+						<% end %>
+							
+						</tbody>
+					</table>
+         			<%= will_paginate @subjects %>
+

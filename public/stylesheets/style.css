@@ -102,10 +102,11 @@ hr {
     display:block;
     height:1px;
     border:0;   
-    border-top:1px solid #cccccc;
+    border-top:1px solid black;
     margin:1em 0;
     padding:0;
 }
+
 
 input, select {
     vertical-align:middle;
@@ -122,6 +123,9 @@ article, aside, section, footer, header, hgroup, nav, figure {
 	padding: 0;
 	}
 
+article.news {
+padding:5px;
+}
 
 /* Global Styles =body =skins
 -------------------------------------------------------------- */
@@ -750,6 +754,7 @@ ul#navigation ul ul ul {
 	padding: 10px 0;
 	margin: 0 20px;
 	background: transparent;
+	float: right;
 	}
 
 ul.contact_data {
@@ -1708,6 +1713,31 @@ h3.form_title {padding-top: 20px}
 	}
 
 #contact_form input.textlink {float: right;}
+
+.upload {
+	position:relative;
+	width:664px;
+}
+.realupload {
+	position:absolute;
+	top:0;
+	right:0;
+
+	/* start of transparency styles */
+	opacity:0.5;
+	-moz-opacity:0.5;
+	filter:alpha(opacity:0.5);
+	/* end of transparency styles */
+
+	z-index:2; /* bring the real upload interactivity up front */
+	width:270px;
+}
+form .fakeupload {
+	background:url(../images/browse.png) no-repeat 100% 50%;
+}
+form .fakeupload input {
+	width:401px;
+}
 
 #search_form {
 float: left;

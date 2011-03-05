@@ -28,10 +28,9 @@ end
 
 def feed
 inlog()
- @calendar = Calendar.find(@account, {:id => 'terrormic@gmail.com'})
-    @calendars = []
-    @events = @calendar.events
-
+ @calendar = Calendar.find(@account,{:id => 'terrormic@gmail.com'})
+ @calendars = []
+ @events = @calendar.events
 respond_to do |format|
   format.html { render :layout => false }
 end
@@ -40,10 +39,12 @@ end
 
 def list
  @subjects = Subject.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 4,:page => params[:page])
+
 end
 
 def news
-@subjects = Subject.order("subjects.id DESC").paginate(:per_page => 6,:page => params[:page])
+@subjects = Subject.order("subjects.id DESC").paginate(:per_page => 4,:page => params[:page])
+  
 end
 
 def show
@@ -109,7 +110,9 @@ def inlog
     @account.authenticate('terrormic@gmail.com','bogaert')
     @account.check_public = false
     @calendars = @account.calendars
+    #GData4Ruby::Request.new(:get, "http://localhost:3000/", nil, nil, {"max_results" => "100"})
     @events = @account.events
+    #@events = Event.find(@account, "", {'start-min' => Time.parse("03/01/2011").utc.xmlschema, 'start-max' => Time.parse("06/06/2011").utc.xmlschema})
     @account.check_public = true
 end
 

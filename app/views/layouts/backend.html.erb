@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	
+	<title>Skarminkels Back-end</title>
+<%= stylesheet_link_tag('backend/style.css','backend/css/jquery.cleditor')%>
+<%= javascript_include_tag 'modernizr-1.5.min.js'%>
+		<%= javascript_include_tag :defaults,'backend/js/cufon-yui',
+	'backend/js/colaboratelight_400.font','backend/js/easytooltip','backend/js/visualize.jquery',
+	'backend/js/jquery.cleditor.min'%>
+
+<meta charset="UTF-8"></head>
+
+<body>
+
+	<div id="container">
+		<div id="bgwrap">
+			<div id="primary_left">
+        
+				<div id="logo">
+					
+				</div> <!-- logo end -->
+
+				<div id="menu"> <!-- navigation menu -->
+					<ul>
+						<li class="current"><a href="/backend" class="dashboard"><%= image_tag('assets/icons/small_icons_3/dashboard.png') %><span class="current">Dashboard</span></a></li>
+						<li><a href="#"><%= image_tag('assets/icons/small_icons_3/posts.png')%><span>News</span></a>
+						</li>
+						<li><a href="#"><%= image_tag('assets/icons/small_icons_3/media.png')%><span>Band</span></a>
+						</li>
+						<li class="tooltip" title="Menu items can also have a tooltip!"><a href="#"><%= image_tag('assets/icons/small_icons_3/notes.png')%><span>Music</span></a></li>
+						<li><a href="#"><%= image_tag('assets/icons/small_icons_3/coin.png')%><span>Social</span></a></li>
+						<li><a href="#"><%= image_tag('assets/icons/small_icons_3/users.png')%><span>Users</span></a></li>
+						<li><a href="#"><%= image_tag('assets/icons/small_icons_3/settings.png')%><span>Contacts</span></a></li>
+					</ul>
+				</div> <!-- navigation menu end -->
+			</div> <!-- sidebar end -->
+
+			<div id="primary_right">
+				<div class="inner">
+
+					<h1>Dashboard Elements</h1>
+
+					<ul class="dash">
+				
+						<li class="fade_hover tooltip" title="Write a new article">
+							<a href="/backend/subjects/">
+								<%= image_tag('assets/icons/dashboard/2.png')%>
+								<span>News</span>
+							</a>
+						</li>
+						
+						<li class="fade_hover tooltip" title="Manage the band">
+							<a href="#">
+								<%= image_tag('assets/icons/dashboard/3.png')%>
+								<span>Band</span>
+							</a>
+						</li>
+
+						<li class="fade_hover tooltip" title="Manage Users">
+							<!--<span class="bubble">3</span>-->
+							<a href="#">
+								<%= image_tag('assets/icons/dashboard/54.png')%>
+								<span>Users</span>
+							</a>
+						</li>
+
+						<li class="fade_hover tooltip" title="Manage Music">
+							<a href="#">
+								<%= image_tag('assets/icons/dashboard/81.png')%>
+								<span>Music</span>
+							</a>
+						</li>
+
+						<li class="fade_hover tooltip" title="Album">
+							<a href="#">
+								<%= image_tag('assets/icons/dashboard/21.png')%>
+								<span>Manage Albums</span>
+							</a>
+						</li>
+
+						<li class="fade_hover tooltip" title="Social Media">
+							<a href="#">
+								<%= image_tag('assets/icons/dashboard/25.png')%>
+								<span>Update Twitter/FB</span>
+							</a>
+						</li>
+ 
+						<li class="fade_hover tooltip" title="Manage Contacts">
+							<a href="#">
+								<%= image_tag('assets/icons/dashboard/36.png')%>
+								<span>Contacts</span>
+							</a>
+						</li>
+						<li class="fade_hover tooltip" title="Manage Google Calendar">
+							<a href="#">
+								<%= image_tag('assets/icons/dashboard/36.png')%>
+								<span>Google</span>
+							</a>
+						</li>
+						<li class="fade_hover tooltip" title="Manage Facebook">
+							<a href="#">
+								<%= image_tag('assets/icons/dashboard/36.png')%>
+								<span>Facebook</span>
+							</a>
+						</li>
+
+					</ul> <!-- end dashboard items -->
+					
+					<%= yield %>
+
+										
+				</div> <!-- inner -->
+			</div> <!-- primary_right -->
+		</div> <!-- bgwrap -->
+	</div> <!-- container -->
+</body>
+</html>

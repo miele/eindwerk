@@ -10,7 +10,7 @@ respond_with(@tracks)
 end
 
 def player
-@tracks = Track.order("tracks.id DESC").limit(2)
+@tracks = Track.order("tracks.id DESC")
 end
 
 def lijst

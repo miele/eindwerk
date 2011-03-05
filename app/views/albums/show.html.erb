@@ -1,13 +1,17 @@
+<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
-
-<div class="container"> 
-<ul class="thumb">
-<% @album.pictures.each do |picture| %>
-	<li><%= link_to(image_tag(picture.upload.url(:small), :class => "nest"), picture.upload.url(:large),:class => "group") 				unless picture.upload.nil? %></li> 
-  <% end %>
-</ul> 
-<div id="main_view"> 
-	</div> 
+<p>
+  <b>Name:</b>
+  <%= @album.name %>
+</p>
+<h3 id="uploads_count"><%= pluralize(@album.pictures.size, "upload")%></h3>
+<div id="uploads"> <%= render :partial => @album.pictures %>
 </div>
+<%= render :partial => "show" %>
+<h3>Upload a upload</h3> 
+<%= form_for Picture.new(:album_id => @album.id), :html => {:multipart => true} do |f| %> 
+	<%= f.hidden_field :album_id, "value" => @album.id %>
+<p>
+<%= f.file_field :upload %> </p>
+<p><%= f.submit "Upload" %></p> <% end %>
+<p><%= link_to "All albums", albums_path %></p>

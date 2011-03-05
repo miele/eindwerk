@@ -11,7 +11,7 @@ class DemoController < ApplicationController
   end
   
   def other_hello
-    render (:text => 'Hey hey iedereen')
+    render(:text => 'Hey hey iedereen')
   end
 
 end

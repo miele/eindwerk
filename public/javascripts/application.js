@@ -13,8 +13,6 @@ $("#ajax").load("/subjects/feed", function(response, status, xhr) {
 // fades out the flash notices
 $('p.flash-notice').fadeOut(2850);
 
-
-
 $('.word_count').each(function(){
 	// get current number of characters
 	var max = 140;

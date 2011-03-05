@@ -3,14 +3,18 @@
 </aside>
 
 <!-- Column -->
-		<section id="left_col" class="grid_12">
+		<section id="left_col" class="grid_8">
 		
 					<div class="hr dotted clearfix">&nbsp;</div>
 
 		<h4 class="form_title"><%= @subject.name %></h4>
 		
 		<!-- Floated Images within a paragraph -->
-			<p><a class="portfolio_item" href="<%= @subject.photo.url(:original) %>" rel="prettyPhoto[mixed]" title="<%= @subject.name %>"><img class="float_left" title="" src="<%= @subject.photo.url(:large)%>" alt="" /></a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor mattis neque at bibendum. Fusce uploadsus semper justo a dictum. Suspendisse pulvinar nisi nec arcu interdum laoreet. Ut at magna ut erat ultrices varius id vel nunc. Aliquam uploadsus euismod nunc, a convallis erat facilisis id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
+			<figure><a class="isphoto_m" href="<%= @subject.photo.url(:original) %>" rel="prettyPhoto[mixed]" title="<%= @subject.name %>"></a>
+			<span class="image-holder-medium"><img class="thumb" alt="" src="<%= @subject.photo.url(:large)%>" /></span>
+			</figure>
+				<div class="hr dotted clearfix">&nbsp;</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor mattis neque at bibendum. Fusce uploadsus semper justo a dictum. Suspendisse pulvinar nisi nec arcu interdum laoreet. Ut at magna ut erat ultrices varius id vel nunc. Aliquam uploadsus euismod nunc, a convallis erat facilisis id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Donec auctor mattis </strong>neque at bibendum. Fusce uploadsus semper justo a dictum. Suspendisse pulvinar nisi nec arcu interdum laoreet. Ut at magna ut erat ultrices varius id vel nunc.<%= @subject.content %></p>
 		
 		<p>Aangemaakt op : <%= @subject.created_at %></p>

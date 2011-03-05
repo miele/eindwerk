@@ -1,14 +1,6 @@
-<%= link_to("<< Back to list", {:action => 'list'}, :class => 'back-link') %>
+<h1>Editing Album</h1>
 
-<div class="update album">
-<h2>Update Member</h2>
+<%= render 'form' %>
 
-<%= form_for(:album, :url => {:action => 'update', :id => @album.id}) do |f| %>
-	
-	<%= render(:partial => 'form', :locals => {:f => f}) %>
-	
-		<div class="form-buttons">
-		<%= submit_tag("Update Album")%>
-	</div>
-<% end %>
-</div>
+<%= link_to 'Show', @album %> |
+<%= link_to 'Back', albums_path %>

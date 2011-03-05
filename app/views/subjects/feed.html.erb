@@ -1,4 +1,4 @@
- <% @events.each do |event| %>
+<% @events.sort{|a,b| b.start_time <=> a.start_time}.each do |event| %>
 	<article>
 	<a class="boxgrid box alpha tl tooltip" href="#" title="<%= event.title %>">
 			<h4><%= event.start_time.strftime("%d") %></h4>
