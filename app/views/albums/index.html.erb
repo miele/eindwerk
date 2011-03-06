@@ -1,23 +1,16 @@
-<h1>Listing albums</h1>
+<aside>
+		<h2 class="grid_12 message_board clearfix">Albums Overview</h2>
+</aside>
+<section id="left_col" class="grid_12">
+<div class="hr dotted clearfix">&nbsp;</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul class="polaroids">
 <% @albums.each do |album| %>
-  <tr>
-    <td><%= album.name %></td>
-    <td><%= link_to 'Show', album %></td>
-    <td><%= link_to 'Edit', edit_album_path(album) %></td>
-    <td><%= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<li>
+    <a title="<%= album.name %>" href="<%= 'albums/' + album.id.to_s %>"><img src="<%= 'system/uploads/' + album.foto.to_s + '/medium/' + album.upload_file_name %>" /></a>
+</li>
+
 <% end %>
-</table>
+</section>
+</ul>
 
-<br />
-
-<%= link_to 'New album', new_album_path %>

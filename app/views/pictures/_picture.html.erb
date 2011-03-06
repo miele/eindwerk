@@ -1,3 +1,7 @@
-<div class="picture"> 
-	<%= image_tag picture.upload.url(:medium) %>
-</div>
+
+
+<li>
+<a class="portfolio_item" href="<%= picture.upload.url(:original) %>" rel="prettyPhoto[mixed]">
+		<img class="float_left" title="" src="<%= picture.upload.url(:medium)%>" alt="" />
+		</a>
+</li>

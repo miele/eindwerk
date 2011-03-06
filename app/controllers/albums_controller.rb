@@ -1,14 +1,20 @@
 class AlbumsController < ApplicationController
+
+
+before_filter :authenticate_user!, :except => [:index,:show]
+
   # GET /albums
   # GET /albums.xml
   def index
-    @albums = Album.all
-
+   # @albums = Album.all
+	@albums = Album.find_by_sql('SELECT ALbums.id,Pictures.id AS foto,Pictures.upload_file_name,Albums.name from Albums
+	INNER JOIN Pictures ON Albums.id = Pictures.album_id GROUP BY ALbums.name')
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @albums }
     end
   end
+ 
 
   # GET /albums/1
   # GET /albums/1.xml
