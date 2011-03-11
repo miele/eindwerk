@@ -1,17 +1,16 @@
-<!-- =Message board -->
-			<aside>
-				<h2 class="grid_12 message_board clearfix">Admin Panel Subjects</h2>
-			</aside>
-<section id="left_col" class="grid_12">
-<section id="contact_form">
+<div class="inner">
+				
+										<h1>A full width table</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
 
-<div class="hr dotted clearfix">&nbsp;</div>
-
-<%= @page_title = "Subject List" %>
-<div class="hr dotted clearfix">&nbsp;</div>
 <%= form_for(:subject,:remote => true,:html => {:method => :get, :id => "subjects_search"}) do %>
 <% if flash[:notice] %>
-    <p class="flash-notice"><%= flash[:notice] %></p>
+<div class="notification success"> 
+<span></span> 
+<div class="text"> 
+<p><strong><%= flash[:notice] %></strong>.</p> 
+</div> 
+</div> 
   <% end %>
   <%= hidden_field_tag :direction, params[:direction] %>  
   <%= hidden_field_tag :sort, params[:sort] %>   
@@ -25,3 +24,4 @@
 <%= render "lijst" %>
 </section>
 </section>
+</div>

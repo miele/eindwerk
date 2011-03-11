@@ -1,19 +1,13 @@
-<!-- =Message board -->
-			<aside>
-				<h2 class="grid_12 message_board clearfix">Admin Panel Subjects</h2>
-			</aside>
+<div class="inner">
+				
+										<h1>Bring home the news!</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
 
-			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
-<section id="left_col" class="grid_12">
-<section id="contact_form">
-<div class="hr dotted clearfix">&nbsp;</div>
-<h4 class="form_title">Create Subject</h4>
-<div class="hr dotted clearfix">&nbsp;</div>
 
 <%= form_for(:subject, :html => { :multipart => true, :id => "contact_form_id" }, :url => {:action => 'create'}) do |f| %>   
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
-<%= submit_tag("Create",:class => "sendButton")%>
+<%= submit_tag("Create",:class => "button_link")%>
 
 <% end %>
 </section>
-</section>
+</div>

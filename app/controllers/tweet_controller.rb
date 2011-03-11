@@ -1,6 +1,6 @@
 class TweetController < ApplicationController
 
-layout 'html5'
+layout 'backend'
 
  def post_update
   	client.statuses.update! :status=> (params[:tweet][:content] + "#fb") #POST to http://twitter.com/statuses/update.json

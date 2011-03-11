@@ -38,7 +38,11 @@ end
 end
 
 def list
- @subjects = Subject.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 4,:page => params[:page])
+@subjects = Subject.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 4,:page => params[:page])
+respond_to do |format|
+format.html  { render :layout => 'backend' }
+format.js  { render :layout => 'backend' }
+end
 
 end
 
@@ -53,10 +57,14 @@ end
 
 def new
  @subject = Subject.new
+ respond_to do |format|
+format.html  { render :layout => 'backend' }
+end
 end
 
 def create
  @subject = Subject.new(params[:subject])
+ 
  if @subject.save
  	flash[:notice] = "Subject has been created succesfully"
  	redirect_to(:action => 'list')
@@ -66,22 +74,31 @@ def create
 end
 
 def edit
- @subject = Subject.find(params[:id]) 
+ @subject = Subject.find(params[:id])
+ respond_to do |format|
+format.html  { render :layout => 'backend' }
+end
 end
 
 def update
 	 @subject = Subject.find(params[:id])
+	 
+	 respond_to do |format|
 	 if @subject.update_attributes(params[:subject])
 	 flash[:notice] = "Subject has been updated succesfully"
- 	#redirect_to(:action => 'show', :id => @subject.id)
- 	redirect_to(:action => 'list')
- else
- 	render('edit')
- end
+ 	 format.html {redirect_to(:action => 'list')} 
+      else
+        format.html {redirect_to(:action => 'edit')}
+      end
+    end
 end
 
 def delete
-  @subject = Subject.find(params[:id]) 
+  @subject = Subject.find(params[:id])
+   respond_to do |format|
+format.html  { render :layout => 'backend' }
+end
+ 
 end
 
 def destroy

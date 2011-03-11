@@ -1,5 +1,16 @@
 $(document).ready(function() {
 
+		
+$("#subjects_search input").keyup(function(){
+	$.get($("#subjects_search").attr("action"), $("#subjects_search").serialize(),null,"script");
+	return false;
+});
+
+$("#subjects th a, #subjects .pagination a").live("click", function(){
+
+ $.getScript(this.href);
+ return false;
+});
 // loads google calendar events in the background for the index page
 // with spinner while it loads
 
@@ -39,16 +50,7 @@ $('.word_count').each(function(){
 		$(this).parent().find('.counter').html( current + ' characters to go');
 	});
 });
-		
-$("#subjects_search input").keyup(function(){
-	$.get($("#subjects_search").attr("action"), $("#subjects_search").serialize(),null,"script");
-	return false;
-});
 
-$("#subjects th a, #subjects .pagination a").live("click", function(){
- $.getScript(this.href);
- return false;
-});
 
 $('h4.title').jTruncate({  
 			length: 14,

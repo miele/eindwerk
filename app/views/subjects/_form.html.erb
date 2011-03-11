@@ -1,28 +1,28 @@
 <%= render "shared/error_messages" , :target => @subject %>
-<ul>						
-					<li class="clearfix">
-						<label for="name">Name</label>
-						<%= f.text_field(:name,{:id => "name"})%>
-						<div class="clear"></div>
-					</li>
-					<li class="clearfix">
-						<label for="name">Position</label>
-						<%= f.text_field(:position,{:id => "name"})%>
-						<div class="clear"></div>
-					</li>
-					<li class="clearfix">
-						<label for="name">Visible</label>
-						<%= f.text_field(:visible,{:id => "name"})%>
-						<div class="clear"></div>
-					</li>
-					<li class="clearfix">
-						<label for="name">Photo</label>
+<fieldset>
+						<legend>News</legend>
+						
+						<p>
+						<label>Name:</label>
+						<%= f.text_field(:name,{:class => "lf"})%>
+						</p>
+						<p>
+						<label>Position:</label>
+						<%= f.text_field(:position,{:class => "lf"})%>
+						</p>
+						<p>
+						<label>Visible:</label>
+						<%= f.text_field(:visible,{:class => "lf"})%>
+						</p>
+					
+						<p>
+						<label>Photo</label>
 						<%= f.file_field(:photo,{:id => "name"})%>
-						<div class="clear"></div>
-					</li>
-					<li class="clearfix">
-						<label for="name">Content</label>
-						<%= f.text_area(:content,{:id => "content"})%>
-						<div class="clear"></div>
-					</li>
-</ul>
+						</p>
+						
+						<p>
+						<label>Content</label><br/>
+						<%= f.text_area(:content,{:class => "editor"})%>
+						</p>
+						
+						

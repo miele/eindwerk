@@ -1,22 +1,15 @@
-<!-- =Message board -->
-			<aside>
-				<h2 class="grid_12 message_board clearfix">Admin Panel Subjects</h2>
-			</aside>
-<section id="left_col" class="grid_12">
-<section id="contact_form">
+<div class="inner">
+				
+										<h1>Delete the news!</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
 
-<div class="hr dotted clearfix">&nbsp;</div>
 
-<%= link_to("<< Back to list", {:action => 'list'}, :class => 'textlink') %>
-<div class="hr dotted clearfix">&nbsp;</div>
-<h4 class="form_title">Delete Subject</h4>
-<div class="hr dotted clearfix">&nbsp;</div>
-
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'button_link') %>
+<div>&nbsp;</div>
 <%= form_for(:subject,:html => { :id => "contact_form_id" }, :url => {:action => 'destroy', :id => @subject.id}) do |f| %>
 	<p>Are you sure you want to delete this record?</p>
 	<p class="reference-name"><%= @subject.name %></p>
 	<div class="form-buttons">
-		<%= submit_tag("Delete",:class => "sendButton")%>
+		<%= submit_tag("Delete",:class => "button_link")%>
 <% end %>
-</section>
-</section>
+</div>

@@ -1,19 +1,11 @@
-<!-- =Message board -->
-			<aside>
-				<h2 class="grid_12 message_board clearfix">Create Tweet/Facebook Post</h2>
-			</aside>
-
-			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
-<section id="left_col" class="grid_12">
-<section id="contact_form">
-<div class="hr dotted clearfix">&nbsp;</div>
-<h4 class="form_title">Type your post:</h4>
-<div class="hr dotted clearfix">&nbsp;</div>
+<div class="inner">
+				
+										<h1>A new social message!</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
 <%= form_for(:tweet, :html => { :id => "contact_form_id" }, :url => {:action => 'post_update'}) do |t| %>
 	<%= render(:partial => 'form', :locals => {:t => t}) %>
 	<div class="clear"></div>
 <%= submit_tag("Submit",:class => "sendButton")%>
 
 <% end %>
-</section>
-</section>
+</div>
