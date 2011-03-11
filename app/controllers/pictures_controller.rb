@@ -39,6 +39,19 @@ class PicturesController < ApplicationController
       newparams = coerce(params)
       @picture = Picture.new(newparams[:picture])
       if @picture.save
+      
+      access_token = '155275974530339|f91649e3004eddb324943b1f-100001712295014|5gVUPH4S7ysAnaz0iRPzNfmTSxo'
+      	
+   		me = FbGraph::User.me(access_token)
+      
+       	album = me.albums.first
+  		album.photo!(
+    	:access_token => access_token,
+    	:image => File.new('/Users/michiel_bogaert/Sites/skarminkels/public/system/uploads/' + @picture.id.to_s + '/medium/' + @picture.upload_file_name.to_s), 
+    	:message => 'Automatic uploadz'
+  		)
+      
+      
         flash[:notice] = "Successfully created Picture."
         respond_to do |format|
           format.html {redirect_to @picture.album}

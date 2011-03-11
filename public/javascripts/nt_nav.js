@@ -16,15 +16,16 @@ function nt_nav() {
  
 $(document).ready(function() {
 	nt_nav();
+	$('a#home').addClass('current');
 	});
 
 
 startList = function() {
-	if (document.all&&document.getElementById) {
+	if (document.all && document.getElementById) {
 	
 		navRoot = document.getElementById("nav");
 
-		for (i=0; i<navRoot.childNodes.length; i++) {
+		for (i=0; i <navRoot.childNodes.length; i++) {
 			node = navRoot.childNodes[i];
 			if (node.nodeName == "LI") {
 				node.onmouseover = function() {
@@ -38,4 +39,4 @@ startList = function() {
 	}
 }
 
-window.onload=startList;
+window.onload = startList;

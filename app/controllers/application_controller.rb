@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
 include Facebooker2::Rails::Controller
 
+
 helper:all
 
 
