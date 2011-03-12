@@ -7,7 +7,7 @@ include Facebooker2::Rails::Controller
 helper:all
 
 
-layout 'html5'
+layout 'backend'
 
 
 

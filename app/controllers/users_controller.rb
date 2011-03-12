@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 
-layout 'html5'
+layout 'backend'
 
 def index
 	list
@@ -18,7 +18,7 @@ def show
 end
 
 def new
- @subject = Subject.new
+ @user = User.new
 end
 
 def create

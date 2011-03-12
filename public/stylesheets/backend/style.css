@@ -23,6 +23,28 @@ body {
 	background:#f0f0f0;
 }
 
+.word_count {
+
+	float: left;
+	padding: 8px;
+	border: 1px solid #777c82;
+	margin-left: 0;
+	background: #f9f9f9;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	outline: none;
+	width: 400px;
+	height: 220px;
+	margin-right: 700px;
+	margin-bottom: 30px;
+
+}
+
+.counter {
+
+font-size: 40px;
+
+}
 
 
 hr {

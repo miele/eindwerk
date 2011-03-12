@@ -6,108 +6,68 @@
 				
 						<li class="fade_hover tooltip" title="Write a new article">
 							<a href="/Subjects/new">
-							<%= image_tag('/stylesheets/backend/assets/icons/dashboard/2.png') %>
+							<%= image_tag('/stylesheets/backend/assets/icons/dashboard/news.png') %>
 								
 								<span>New article</span>
 							</a>
 						</li>
 						
-						<li class="fade_hover tooltip" title="Check your notes">
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/3.png') %>
-								<span>My Notes</span>
+						<li class="fade_hover tooltip" title="Insert bandmember!">
+							<a href="/Bands/new">
+								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/band.png') %>
+								<span>The band</span>
 							</a>
 						</li>
 
-						<li class="fade_hover tooltip" title="Manage Users (3 new users)">
-							<span class="bubble">3</span>
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/54.png') %>
+						<li class="fade_hover tooltip" title="Manage Users">
+							<a href="/users">
+								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/users.png') %>
 								<span>Users</span>
 							</a>
 						</li>
 
 						<li class="fade_hover tooltip" title="Website Statistics">
 							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/81.png') %>
+								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/bar_chart.png') %>
 								<span>Statistics</span>
 							</a>
 						</li>
 
-						<li class="fade_hover tooltip" title="Your server's information">
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/21.png') %>
-								<span>Server Info</span>
+						<li class="fade_hover tooltip" title="Social Media">
+							<a href="/tweet/new">
+								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/twitter.png') %>
+								<span>Social</span>
 							</a>
 						</li>
 
-						<li class="fade_hover tooltip" title="No new warnings">
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/25.png') %>
-								<span>Warnings</span>
+						<li class="fade_hover tooltip" title="Insert new song">
+							<a href="/tracks/new">
+								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/music_folder.png') %>
+								<span>Songs</span>
 							</a>
 						</li>
  
-						<li class="fade_hover tooltip" title="Latest Downloads">
+						<li class="fade_hover tooltip" title="Google Agenda">
+							<a href="/google">
+								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/google.png') %>
+								<span>Google</span>
+							</a>
+						</li>
+						<li class="fade_hover tooltip" title="Picture Albums">
 							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/36.png') %>
-								<span>Downloads</span>
+								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/jpeg_image.png') %>
+								<span>Picture Albums</span>
+							</a>
+						</li>
+						<li class="fade_hover tooltip" title="Bookings">
+							<a href="/contacts">
+								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/booking.png') %>
+								<span>Bookings</span>
 							</a>
 						</li>
 
-						<li class="fade_hover tooltip" title="View all Listings">
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/42.png') %>
-								<span>Listings</span>
-							</a>
-						</li>
-
-						<li class="fade_hover tooltip" title="Manage user gallery">
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/27.png') %>
-								<span>Gallery</span>
-							</a>
-						</li>
-
-						<li class="fade_hover tooltip dialog_link" title="47 new messages!">
-							<span class="bubble">47</span>
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/75.png') %>
-								<span>Inbox</span>
-							</a>
-						</li>
-
-						<li class="fade_hover tooltip" title="Add / Remove Contacts">
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/123.png') %>
-								<span>Contacts</span>
-							</a>
-						</li>
-
-						<li class="fade_hover tooltip" title="Time Schedule">
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/14.png') %>
-								<span>Schedule</span>
-							</a>
-						</li>
-
-						<li class="fade_hover tooltip" title="17 new purchases">
-							<span class="bubble">17</span>
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/80.png') %>
-								<span>Earnings</span>
-							</a>
-						</li>
-						
-						<li class="fade_hover tooltip" title="Lorem Ipsum">
-							<a href="#">
-								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/18.png') %>
-								<span>Media</span>
-							</a>
-						</li>
-
-						<li class="fade_hover tooltip dialog_link" title="End current session">
-							<a href="#">
+						<li class="fade_hover tooltip" title="End current session">
+							<a href="/admin/users/sign_out">
 								<%= image_tag('/stylesheets/backend/assets/icons/dashboard/118.png') %>
 								<span>Logout</span>
 							</a>

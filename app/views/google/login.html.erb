@@ -1,30 +1,25 @@
-<!-- =Message board -->
-			<aside>
-				<h2 class="grid_12 message_board clearfix">Google Login</h2>
-			</aside>
+<div class="inner">
+<h1>Google Agenda Sync</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
 
-			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
-<section id="left_col" class="grid_12">
-<section id="contact_form">
-<div class="hr dotted clearfix">&nbsp;</div>
-<h4 class="form_title">Login</h4>
-<div class="hr dotted clearfix">&nbsp;</div>
+
+<div id="box"> 
+<fieldset>
+						<legend>Google Login</legend>
 <% form_for '', :html => { :id => "contact_form_id" }, :url => {:action => :verify} do %>
-<ul>
-			<li class="clearfix">
+			<p>
 			<label for="name">Username</label>
-			<%= text_field_tag :username, @username,{:id => "name"} %>
-			<div class="clear"></div>
-			</li>
-			<li class="clearfix">
+			<%= text_field_tag :username, @username,{:class => "lf"} %>
+			</p>
+			<p>
 			<label for="name">Password</label>
-			<%= password_field_tag :password, @password,{:id => "name"} %>
-			<div class="clear"></div>
-			</li>
-			<li class="clearfix">
-			<%= submit_tag 'Login',:class => "sendButton" %>
-			</li>
-</ul>
+			<%= password_field_tag :password, @password,{:class => "lf"} %>
+			</p>
+			<p>
+			<%= submit_tag 'Google Login',:class => "button_link" %>
+			</p>
 <% end %>
-</section>
-</section>
+</fieldset>
+</div> 
+
+</div>

@@ -1,27 +1,37 @@
-	<%= link_to("Add New Member", {:action => 'new'}, :class => 'textlink') %>
-	<div class="hr dotted clearfix">&nbsp;</div>
-
-	<table class="listing" summary="Subject list">
-	<tr class="header">
-		<th><%= sortable "name" %></th>
-		<th><%= sortable "birthday" %></th>
-		<th>Content&nbsp;</th>
-		<th>&nbsp;Instrument&nbsp;</th>
-		<th>Actions<div class="hr dotted clearfix">&nbsp;</div></th>
-	</tr>
+	<%= link_to("Add New Member", {:action => 'new'}, :class => 'button_link') %>
+	<div>&nbsp;</div>
+	<table class="normal tablesorter fullwidth">
+						<thead>
+							<tr>
+								
+								<th><%= sortable "name" %></th>
+								<th><%= sortable "birthday" %></th>
+								<th>Content&nbsp;</th>
+								<th>&nbsp;Instrument&nbsp;</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+	<tbody>
+	
 	<% @bands.each do |band| %>
-	<tr>
-		<td><%= band.name %>&nbsp;</td>
-		<td><%= band.birthday %>&nbsp;</td>
-		<td >&nbsp;<%= band.content %>&nbsp;</td>
-		<td >&nbsp;<%= band.instrument %>&nbsp;</td>
-		<td class="actions">
-		<%= link_to("Show", {:action => 'show', :id => band.id}, :class => 'textlink')%>
-		<%= link_to("Edit", {:action => 'edit', :id => band.id}, :class => 'textlink')%>
-		<%= link_to("Delete",{:action => 'delete' , :id => band.id}, :class => 'textlink')%>
-		<div class="hr dotted clearfix">&nbsp;</div>
-		</td>
-	</tr>
+
+	<tr class="odd">
+								
+								<td><%= band.name %>&nbsp;</td>
+								<td><%= band.birthday %>&nbsp;</td>
+								<td><%= band.content %>&nbsp;</td>
+								<td>&nbsp;<%= band.instrument %></td>
+								<td>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/preferences.png'),{:action => 'show', :id => band.id}, {:title => 'Show ' + band.name ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/pencil.png'),{:action => 'edit', :id => band.id}, {:title => 'Edit ' + band.name ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/trash.png'),{:action => 'delete', :id => band.id}, {:title => 'Delete ' + band.name ,:class => "tooltip table_icon"}) %>	
+								</td>
+							</tr>
+	
+	
+	
 	<% end %>
+	</tbody>
 	</table>
+
 	<%= will_paginate @bands %>

@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
 
-
+layout 'html5' 
 before_filter :authenticate_user!, :except => [:index,:show]
 
   # GET /albums
@@ -18,22 +18,27 @@ before_filter :authenticate_user!, :except => [:index,:show]
 
   # GET /albums/1
   # GET /albums/1.xml
+  # TODO 
   def show
     @album = Album.find(params[:id], :include => :pictures)
+    
+  end
+  
+  def detail
+   @album = Album.find(params[:id], :include => :pictures)
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @album }
     end
   end
-
   # GET /albums/new
   # GET /albums/new.xml
   def new
     @album = Album.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => 'backend' }
       format.xml  { render :xml => @album }
     end
   end

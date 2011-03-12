@@ -4,8 +4,7 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
 <%= form_for(:tweet, :html => { :id => "contact_form_id" }, :url => {:action => 'post_update'}) do |t| %>
 	<%= render(:partial => 'form', :locals => {:t => t}) %>
-	<div class="clear"></div>
-<%= submit_tag("Submit",:class => "sendButton")%>
+<%= submit_tag("Submit",:class => "button_link")%>
 
 <% end %>
 </div>

@@ -1,26 +1,31 @@
+<div class="inner">
 <p id="notice"><%= notice %></p>
-
+<%= link_to 'Back', contacts_path,{:class => 'button_link'} %>
+<div>&nbsp;</div>
+<fieldset>
+						<legend>Booking detail</legend>
+						
 <p>
-  <b>Name:</b>
+  <label>Name:</label>
   <%= @contact.name %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <label>Email:</label>
   <%= @contact.email %>
 </p>
 
 <p>
-  <b>Info:</b>
-  <%= @contact.info %>
+  <label>Info:</label>
+  <p><%= @contact.info %></p>
 </p>
 
 <p>
-  <b>Tel:</b>
+  <label>Tel:</label>
   <%= @contact.tel %>
 </p>
 
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
-<%= link_to 'Create PDF document', index_pdf_path(@contact,:id => @contact.id, :format => :pdf) %>
+<%= link_to (image_tag('/stylesheets/backend/assets/pdf_icon.png')), index_pdf_path(@contact,:id => @contact.id, :format => :pdf) %>
+</fieldset>
+</div>

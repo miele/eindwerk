@@ -11,6 +11,17 @@ $("#subjects th a, #subjects .pagination a").live("click", function(){
  $.getScript(this.href);
  return false;
 });
+
+$("#bands th a, #bands .pagination a").live("click", function(){
+ $.getScript(this.href);
+ return false;
+});
+
+$("#bands_search input").keyup(function(){
+	$.get($("#bands_search").attr("action"), $("#bands_search").serialize(),null,"script");
+	return false;
+});
+
 // loads google calendar events in the background for the index page
 // with spinner while it loads
 
@@ -126,10 +137,8 @@ function remove_field(element, item) {
   element.SlideUp(item).remove();
 }
 
-$("#bands th a, #bands .pagination a").live("click", function(){
- $.getScript(this.href);
- return false;
-});
+
+
 
 $("#albums th a, #albums .pagination a").live("click", function(){
  $.getScript(this.href);
@@ -143,10 +152,6 @@ $("#tracks th a, #tracks .pagination a").live("click", function(){
  return false;
 });
 
-$("#bands_search input").keyup(function(){
-	$.get($("#bands_search").attr("action"), $("#bands_search").serialize(),null,"script");
-	return false;
-});
 
 
 

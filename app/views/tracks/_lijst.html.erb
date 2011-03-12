@@ -1,23 +1,36 @@
 
-	<h2>Tracks</h2>
-	<%= link_to("Add New Track", {:action => 'new'}, :class => 'action_new') %>
-	<table class="listing" summary="Track list">
-	<tr class="header">
-		
-		<th><%= sortable "name" %></th>
-		<th><%= sortable "mp3" %></th>
-		<th>Actions</th>
-	</tr>
+	<%= link_to("Add New Track", {:action => 'new'}, :class => 'button_link') %>
+	
+	<div>&nbsp;</div>
+	<table class="normal tablesorter fullwidth">
+						<thead>
+							<tr>
+								
+								<th>ID</th>
+								<th><%= sortable "name" %></th>
+								<th><%= sortable "mp3" %></th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+	<tbody>
 	<% @tracks.each do |track| %>
-	<tr>
-		<td><%= track.name %>&nbsp;</td>
-		<td><%= track.mp3 %>&nbsp;</td>
-		<td class="actions">
-		<%= link_to("Show", {:action => 'show', :id => track.id}, :class => 'action show')%>
-		<%= link_to("Edit", {:action => 'edit', :id => track.id}, :class => 'edit')%>
-		<%= link_to("Delete",{:action => 'delete' , :id => track.id}, :class => 'action delete')%>
-		</td>
-	</tr>
+	
+								<tr class="odd">
+								
+								<td><%= track.id %>&nbsp;</td>
+								<td><%= track.name %>&nbsp;</td>
+								<td><%= track.mp3 %>&nbsp;</td>
+								<td>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/preferences.png'),{:action => 'show', :id => track.id}, {:title => 'Show ' + track.name ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/pencil.png'),{:action => 'edit', :id => track.id}, {:title => 'Edit ' + track.name ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/trash.png'),{:action => 'delete', :id => track.id}, {:title => 'Delete ' + track.name ,:class => "tooltip table_icon"}) %>	
+								</td>
+							</tr>
+	
+	
+	
 	<% end %>
+	</tbody>
 	</table>
+
 	<%= will_paginate @tracks %>

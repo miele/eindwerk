@@ -1,21 +1,56 @@
-<%= link_to("<< Back to list", {:action => 'list'}, :class => 'back-link') %>
+<div class="inner">
+				
+										<h1>Admin User Details</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
 
-<div class="user show">
+<%= link_to("<< Back to list", '/users', :class => 'button_link') %>
+
+<div>&nbsp;</div>
 
 <h2>Show User</h2>
 
-<table summary="User detail view">
-	<tr>
-		<th>Email</th>
-		<td><%= @user.email %></td>
-	</tr>
-	<tr>
-		<th>Encrypted Password</th>
-		<td><%= @user.encrypted_password %></td>
-	</tr>
-	<tr>
-		<th>Password_salt</th>
-		<td><%= @user.password_salt %></td>
-	</tr>
-</table>
+<fieldset>
+						<legend>Admin User</legend>
+		<p>
+		<label>Email</label>
+		<%= @user.email %>
+		</p>
+		
+		<p>
+		<label>Encrypted Password</label>
+		<%= @user.encrypted_password %>
+		</p>
+		
+		<p>
+		<label>Password_salt</label>
+		<%= @user.password_salt %>
+		</p>
+		
+		<p>
+		<label>Sign in Count</label>
+		<%= @user.sign_in_count %>
+		</p>
+		
+		<p>
+		<label>Current Signed at</label>
+		<%= @user.current_sign_in_at %>
+		</p>
+		
+		<p>
+		<label>Last Signed at</label>
+		<%= @user.last_sign_in_at %>
+		</p>
+		
+		<p>
+		<label>Current sing in IP</label>
+		<%= @user.current_sign_in_ip %>
+		</p>
+
+<p>
+		<label>Last Signed in IP</label>
+		<%= @user.last_sign_in_ip %>
+		</p>
+
+
+
 </div>

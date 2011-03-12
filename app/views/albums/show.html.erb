@@ -1,22 +1,15 @@
-<aside>
-		<h2 class="grid_12 message_board clearfix">Album <%= @album.name %></h2>
-</aside>
 
-<p id="notice"><%= notice %></p>
+<div class="inner">
+				
+										<h1>Bring home the news!</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
 
-<div class="hr dotted clearfix">&nbsp;</div>
-<section id="left_col" class="grid_12">
-<h4 class="form_title"><%= pluralize(@album.pictures.size, "photo's")%></h4>
-</section>
-<section id="left_col" class="grid_12">
 <ul class="polaroids">
 <%= render :partial => @album.pictures %>
 </ul>
 </section>
 <%= render :partial => "show" %>
 
-<section id="left_col" class="grid_12">
-<article>
 
 <h3>Upload a upload</h3> 
 <%= form_for Picture.new(:album_id => @album.id), :html => {:multipart => true} do |f| %> 
@@ -25,6 +18,4 @@
 <%= render :partial => "uploader",:locals => { :f => f} %>
 
 <% end %>
-
-</article>
-</section>
+</div>

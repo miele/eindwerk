@@ -1,19 +1,21 @@
 <%= render "shared/error_messages" , :target => @track %>
-<table summary="update track">
-		<tr>
-			<th>Name</th>
-			<td><%= f.text_field(:name)%></td>
-		</tr>
-		<tr>
-			<th>MP3</th>
-			<td><%= f.text_field(:mp3)%></td>
-		</tr>
-		<tr>
-			<th>OGA</th>
-			<td><%= f.text_field(:oga)%></td>
-		</tr>
-		<tr>
-			<th>Song</th>
-			<td><%= f.file_field(:song) %></td>
-		</tr>
-	</table>
+<fieldset>
+	<legend>Music</legend>
+						
+			<p>
+			<label>Name</label>
+			<%= f.text_field(:name,{:class => 'tf'})%>
+			</p>
+			<p>
+			<label>MP3</label>
+			<%= f.text_field(:mp3,{:class => 'tf'})%>
+			</p>
+			<p>
+			<label>OGA</label>
+			<%= f.text_field(:oga,{:class => 'tf'})%>
+			</p>
+		
+			<p>
+			<label>Song</label>
+			<%= f.file_field(:song) %>
+			</p>

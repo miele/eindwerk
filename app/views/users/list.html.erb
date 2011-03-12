@@ -1,21 +1,44 @@
-<%= @page_title = "User List" %>
-<div class="User list">
-	<h2>Users</h2>
-	<%= link_to "New User", "/admin/users/sign_up" %>
-	<table class="listing" summary="User list">
-	<tr class="header">
-		<th>Email</th>
-		<th>Actions</th>
-		</tr>
+
+
+<div class="inner">
+<h1>A users overview</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
+	
+	<%= link_to "New User", "/admin/users/sign_up",{:class => 'button_link'} %>
+	<div>&nbsp;</div>
+	<table class="normal tablesorter fullwidth">
+						<thead>
+							<tr>
+								
+								<th>ID</th>
+								<th>Email</th>
+								<th>Last sign in</th>
+								<th>Sign in Count</th>
+								<th>Current Sign in IP</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+	<tbody>
+
 	<% @users.each do |user| %>
-	<tr>
-		<td><%= user.email %>&nbsp;&nbsp;</td>
-		<td class="actions">
-		<%= link_to("Show", {:action => 'show', :id => user.id}, :class => 'action show')%>
-		<%= link_to("Edit", {:action => 'edit', :id => user.id}, :class => 'action edit')%>
-		<%= link_to("Delete",{:action => 'delete' , :id => user.id}, :class => 'action delete')%>
-		</td>
-	</tr>
+		<tr class="odd">
+								
+								<td><%= user.id %>&nbsp;</td>
+								<td><%= user.email %>&nbsp;</td>
+								<td><%= user.last_sign_in_at %>&nbsp;</td>
+								<td><%= user.sign_in_count %>&nbsp;</td>
+								<td><%= user.current_sign_in_ip %></td>
+								<td>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/preferences.png'),{:action => 'show', :id => user.id}, {:title => 'Show ' + user.email ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/pencil.png'),{:action => 'edit', :id => user.id}, {:title => 'Edit ' + user.email ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/trash.png'),{:action => 'delete', :id => user.id}, {:title => 'Delete ' + user.email ,:class => "tooltip table_icon"}) %>	
+								</td>
+							</tr>
+	
+	
+	
 	<% end %>
+	</tbody>
 	</table>
+
 </div>

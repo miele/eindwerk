@@ -1,5 +1,8 @@
 <h2>Sign in</h2>
-
+<div class="inner">
+<div id="box"> 
+<fieldset>
+						<legend>Log in</legend>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <p><%= f.label :email %><br />
   <%= f.text_field :email %></p>
@@ -13,5 +16,10 @@
 
   <p><%= f.submit "Sign in" %></p>
 <% end %>
+</fieldset>
+</div> 
+		
 
-<%= render :partial => "devise/shared/links" %>
+
+<% #render :partial => "devise/shared/links" %>
+</div>

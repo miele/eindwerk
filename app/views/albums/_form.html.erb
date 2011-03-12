@@ -1,3 +1,5 @@
+<fieldset>
+						<legend>Album</legend>
 <%= form_for(@album) do |f| %>
   <% if @album.errors.any? %>
     <div id="error_explanation">
@@ -16,6 +18,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="actions">
+  <div>&nbsp;</div>
     <%= f.submit %>
   </div>
 <% end %>
+</fieldset>

@@ -1,9 +1,12 @@
-<div class="new track">
-<h2>Create Track</h2>
+<div class="inner">
+				
+										<h1>Bring home the news!</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
+
 
 <%= form_for(:track, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
-<%= submit_tag("Create Track")%>
+<%= submit_tag("Create Track",{:class => 'button_link'})%>
 	</div>
 <% end %>
 </div>

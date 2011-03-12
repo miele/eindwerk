@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
 
+layout 'html5'
 respond_to :html, :json
 
 helper_method :sort_column, :sort_direction
@@ -15,6 +16,10 @@ end
 
 def lijst
  @tracks = Track.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 4,:page => params[:page])
+ respond_to do |format|
+format.html  { render :layout => 'backend' }
+format.js  { render :layout => 'backend' }
+end
 end
 
 def show
@@ -23,6 +28,9 @@ end
 
 def new
  @track = Track.new
+ respond_to do |format|
+format.html  { render :layout => 'backend' }
+end
 end
 
 def create
@@ -37,7 +45,11 @@ def create
     end
 
 def edit
- @track = Track.find(params[:id]) 
+ @track = Track.find(params[:id])
+ respond_to do |format|
+format.html  { render :layout => 'backend' }
+format.js  { render :layout => 'backend' }
+end
 end
 
 def update

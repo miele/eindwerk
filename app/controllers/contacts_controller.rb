@@ -21,10 +21,10 @@ layout 'html5'
   # GET /contacts
   # GET /contacts.xml
   def index
-    @contacts = Contact.all
+    @contacts = Contact.order("contacts.id DESC").paginate(:per_page => 4,:page => params[:page])
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render :layout => 'backend' }
       format.xml  { render :xml => @contacts }
     end
   end
@@ -34,7 +34,7 @@ layout 'html5'
   
   respond_to do |format|  
     if @contact.save  
-      ContactMailer.registration_confirmation(@contact).deliver  
+      ContactMailer.feedback_confirmation(@contact).deliver  
       format.html { redirect_to(@contact, :notice => 'Contact mail was successfully send.') }  
       format.xml  { render :xml => @contact, :status => :created, :location => @contact }  
     else  
@@ -50,7 +50,7 @@ end
     @contact = Contact.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout => 'backend' }
       format.xml  { render :xml => @contact }
     end
   end

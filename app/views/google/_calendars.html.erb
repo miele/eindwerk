@@ -1,8 +1,28 @@
-<ul>
+<table class="normal tablesorter fullwidth">
+						<thead>
+							<tr>
+								
+								<th>Name</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+	<tbody>
+<%= link_to("Add New Calendar", '/google/new_calendar', :class => 'button_link') %>
+<div>&nbsp;</div>
 	<% @calendars.each do |cal| %>
-	<li>
-		<%= link_to cal.title, :action => :events, :calendar_id => cal.id %>
-		(<%= link_to 'X', {:action => :delete_calendar, :calendar_id => cal.id}, :confirm => 'Are you sure you want to delete this calendar?' -%>)
-	</li>
+	
+	
+	<tr class="odd">
+								
+								<td><%= cal.title %></td>
+								<td>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/preferences.png'), {:action => :events, :calendar_id => cal.id},{:title => 'Show ' + cal.title ,:class => "tooltip table_icon"}) -%>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/trash.png'),{:action => :delete_calendar, :calendar_id => cal.id},{:title => 'Delete ' + cal.title ,:class => "tooltip table_icon"}, :confirm => 'Are you sure you want to delete this calendar?' ) -%></td>
+	</tr>
+	
+	
+	
 	<% end %>
-</ul>
+	</tbody>
+	</table>
+

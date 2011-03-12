@@ -12,7 +12,11 @@ def index
 end
 
 def list
- @bands = Band.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 2,:page => params[:page])
+ @bands = Band.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5,:page => params[:page])
+ respond_to do |format|
+format.html  { render :layout => 'backend' }
+format.js  { render :layout => 'backend' }
+end
 end
 
 def show
@@ -21,6 +25,9 @@ end
 
 def new
  @band = Band.new
+  respond_to do |format|
+      format.html { render :layout => 'backend' }
+    end
 end
 
 def create
@@ -34,21 +41,27 @@ def create
 end
 
 def edit
- @band = Band.find(params[:id]) 
+ @band = Band.find(params[:id])
+  respond_to do |format|
+format.html  { render :layout => 'backend' }
+end 
 end
 
 def update
 	 @band = Band.find(params[:id])
 	 if @band.update_attributes(params[:band])
 	 flash[:notice] = "Band has been updated succesfully"
- 	redirect_to(:action => 'show', :id => @band.id)
+ 	redirect_to(:action => 'list')
  else
  	render('edit')
  end
 end
 
 def delete
-  @band = Band.find(params[:id]) 
+  @band = Band.find(params[:id])
+  respond_to do |format|
+format.html  { render :layout => 'backend' }
+end 
 end
 
 def destroy
