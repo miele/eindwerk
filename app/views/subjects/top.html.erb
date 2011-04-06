@@ -1,18 +1,23 @@
    <!-- =Message board -->
-			<aside>
-				<h2 class="grid_12 message_board clearfix">Skarminkels on Rails baby!</h2>
-			</aside>
+<aside>
+				<h2 class="grid_12 message_board clearfix">Skarminkels on Rails!</h2>
+				<div>&nbsp;</div>
+			</aside>			
 
 			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
 			<!-- =Slider -->
 			<section id="featured" class="clearfix grid_12">
 			<div class="coin-slider" id="coin-slider-coin-slider">
 				<div id="coin-slider">
+				
 				 <% @subjects.each do |subject| %>
+				 
 					<article>
 						<a href="/Subjects/show/<%= subject.id %>" target="_self">
 							<%= image_tag(subject.photo.url(:large)) %>
 							<span><%= subject.name %></span>
+							
+							
 						</a>
 					</article>
 					<% end %>
@@ -21,13 +26,38 @@
 	
 			</section><!-- #featured/slider -->
 			
+			<aside>
+			<section class="box_entries grid_12">
+   
+   <article id="twitter_update_list">
+					<ul id="mycarousel" class="jcarousel-skin-name">
+					<% @tweets.each do |tweet| %>
+						<li><img src="images/twitter_home.png" /><p class="tweet_content"><% tweet.created.strftime("%d/%m/%Y") %><% tweet.created.strftime("@%H:%M") %>
+						<%= tweet.content %></p></li>
+						 <% end %>
+					</ul>
+				</article>
+   
+  
+   </section>
+				<h2 class="grid_12 message_board clearfix">Upcoming Gigs!</h2>
+				<div>&nbsp;</div>
+			</aside>
+			
 				<!-- =BOXES RECENT ENTRIES -->
 			<section class="box_entries grid_12">
 			
-				<!-- FIRST ROW -->
-				<header><h4 class="box_title">RECENT NEWS</h4></header>
+			
         
-
+   <div id="spinner"><img src="images/ajax-loader.gif" /></div>
+   <div id="ajax"></div>
+   </section>
+   
+   <aside>
+				<h2 class="grid_12 message_board clearfix">Recent News</h2>
+				<div>&nbsp;</div>
+			</aside>
+	<section class="box_entries grid_12">
    <% @subjects.each do |subject| %>
    
    <article>
@@ -38,15 +68,7 @@
 					</a>
 				</article>
     <% end %>
-   <% @tweets.each do |tweet| %>
-   <article>
-					<a class="boxgrid box alpha tl tooltip" href="#" title="tweet">
-						<h4 class="title nocufon"><%= tweet.id %></h4>
-						<p><%= tweet.content %></p>
-					</a>
-				</article>
+    </section>
+	
    
-   <% end %>
-   <div id="spinner"><img src="images/85.gif" /></div>
-   <div id="ajax"></div>
        

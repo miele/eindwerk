@@ -22,7 +22,7 @@ end
 def top
  
  @subjects = Subject.order("subjects.id DESC").limit(4)
- @tweets = Tweet.order("tweets.created DESC").limit(2)
+ @tweets = Tweet.order("tweets.created DESC").limit(10)
   # @events = Event.order("events.id DESC").limit(2)
 end
 
@@ -109,6 +109,18 @@ def destroy
       format.html { redirect_to(:action => "list") }
       format.js   { render :nothing => true }
     end
+end
+
+def rotate
+    photo   = Subject.find(params[:id])
+    degrees = if params[:direction] == 'left' then -90 else 90 end
+
+    #main photo
+    image   = Magick::ImageList.new(photo.file)
+    image   = image.rotate(degrees)
+    image.write(photo.file)
+
+    redirect_to :action => 'list'
 end
 
 private

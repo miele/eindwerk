@@ -10,7 +10,7 @@
 		<h4 class="form_title"><%= @subject.name %></h4>
 		
 		<!-- Floated Images within a paragraph -->
-			<figure><a class="isphoto_m" href="<%= @subject.photo.url(:original) %>" rel="prettyPhoto[mixed]" title="<%= @subject.name %>"></a>
+			<figure><a class="isphoto_m" href="<%= @subject.photo.url(:large) %>" rel="prettyPhoto[mixed]" title="<%= @subject.name %>"></a>
 			<span class="image-holder-medium"><img class="thumb" alt="" src="<%= @subject.photo.url(:medium)%>" /></span>
 			</figure>
 				<div class="hr dotted clearfix">&nbsp;</div>

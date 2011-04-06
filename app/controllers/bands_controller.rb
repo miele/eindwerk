@@ -7,12 +7,15 @@ helper_method :sort_column, :sort_direction
 respond_to :html, :json, :xml
 
 def index
-	list
-	render('list')
+ @bands = Band.order("bands.id DESC")
+	respond_to do |format|
+format.html  { render :layout => 'html5' }
+end
+
 end
 
 def list
- @bands = Band.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5,:page => params[:page])
+ @bands = Band.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 7,:page => params[:page])
  respond_to do |format|
 format.html  { render :layout => 'backend' }
 format.js  { render :layout => 'backend' }

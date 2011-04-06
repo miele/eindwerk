@@ -55,17 +55,15 @@ before_filter :authenticate_user!, :except => [:index,:show]
 
     respond_to do |format|
       if @album.save
+      
+    #token aangemaakt die niet expired om te syncen met Facebook
+    
     access_token = '155275974530339|f91649e3004eddb324943b1f-100001712295014|5gVUPH4S7ysAnaz0iRPzNfmTSxo'
-    #access_token = '117950878254050|6c20ed3fee3f7e48e87423b6-100001712295014|8UPhFpvVKP_gtlRGmB97--aOPNo'
- 
+  
+ 	# via graph api de gebruiken authenticaten
     me = FbGraph::User.me(access_token)
   
-   # event = me.event!(
-   # :name => 'FbGraph test event',
-   # :start_time => 1.week.from_now.to_i,
-   # :end_time => 2.week.from_now.to_i
-  #)
-  
+ 	# een nieuwe album wordt aangemaakt op de bijhorende facebookpagina
   album = me.album!(
     :name => params[:album][:name],
     :message => params[:album][:name]

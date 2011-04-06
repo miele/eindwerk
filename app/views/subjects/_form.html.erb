@@ -17,6 +17,8 @@
 					
 						<p>
 						<label>Photo</label>
+						<%= link_to image_tag('fancy_nav_left.png', {:alt => 'Rotate Clockwise'}), :action => 'rotate', :id => 								@subject.id, :deg => '-90' %>
+						<%= link_to image_tag('fancy_nav_right.png', {:alt => 'Rotate Clockwise'}), :action => 'rotate', :id => 								@subject.id, :deg => '90' %>
 						<%= f.file_field(:photo,{:id => "name"})%>
 						</p>
 						

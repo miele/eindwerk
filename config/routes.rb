@@ -22,7 +22,7 @@ Skarminkels::Application.routes.draw do
   match "/download_pdf/:id/(.:format)" => 'contacts#index_pdf', :method => :get, :as=>:index_pdf
 
   
- match "/application.manifest" => Rails::Offline
+ #match "/application.manifest" => Rails::Offline
  
 # separate the devise logic from the user crud
 # devise has a prefix now example "localhost:3000/admin/users/sign_in"

@@ -16,7 +16,7 @@ function nt_nav() {
  
 $(document).ready(function() {
 	nt_nav();
-	$('a#home').addClass('current');
+	
 	});
 
 

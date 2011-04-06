@@ -1,7 +1,7 @@
 <fieldset>
 						<legend>Google Agenda Event</legend>
 
-<% form_for 'event',:html => { :id => "contact_form_id" }, :url => {:action => :save} do |e| %>
+<%= form_for 'event',:html => { :id => "contact_form_id" }, :url => {:action => :save} do |e| %>
 
 <% if not @event.id; @account.check_public = true %>
 
@@ -36,7 +36,7 @@
 						
 						<p>
 						<label for="name">Start Date/Time</label>
-						<%= e.text_field :start_time,{:id => "name"} %>
+						<%= e.text_field :start_time,{:class => 'datum'} %>
 						</p>
 						
 						<p>

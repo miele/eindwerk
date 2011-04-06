@@ -11,6 +11,7 @@ before_filter :authenticate, :except => [:login, :verify]
     @password = ''
   end
   
+  #overzicht van google calendar & events die erbij horen
   def index
     @account.check_public = false
     @calendars = @account.calendars

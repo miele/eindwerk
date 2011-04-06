@@ -1,5 +1,20 @@
 $(document).ready(function() {
 
+function clearCurrentLink(){
+    var a = document.getElementsByTagName("A");
+    for(var i=0;i<a.length;i++)
+        if(a[i].href == window.location.href.split("#")[0])
+            removeNode(a[i]);
+}
+
+function removeNode(n){
+    if(n.hasChildNodes())
+        for(var i=0;i<n.childNodes.length;i++)
+            n.parentNode.insertBefore(n.childNodes[i].cloneNode(true),n);
+    n.parentNode.removeChild(n);
+}
+
+clearCurrentLink();
 		
 $("#subjects_search input").keyup(function(){
 	$.get($("#subjects_search").attr("action"), $("#subjects_search").serialize(),null,"script");
@@ -19,6 +34,16 @@ $("#bands th a, #bands .pagination a").live("click", function(){
 
 $("#bands_search input").keyup(function(){
 	$.get($("#bands_search").attr("action"), $("#bands_search").serialize(),null,"script");
+	return false;
+});
+
+$("#tracks th a, #tracks .pagination a").live("click", function(){
+ $.getScript(this.href);
+ return false;
+});
+
+$("#tracks_search input").keyup(function(){
+	$.get($("#tracks_search").attr("action"), $("#tracks_search").serialize(),null,"script");
 	return false;
 });
 
@@ -62,16 +87,38 @@ $('.word_count').each(function(){
 	});
 });
 
+function mycarousel_initCallback(carousel)
+{
+    // Disable autoscrolling if the user clicks the prev or next button.
+    carousel.buttonNext.bind('click', function() {
+        carousel.startAuto(0);
+    });
+ 
+    carousel.buttonPrev.bind('click', function() {
+        carousel.startAuto(0);
+    });
+ 
+    // Pause autoscrolling if the user moves with the cursor over the clip.
+    carousel.clip.hover(function() {
+        carousel.stopAuto();
+    }, function() {
+        carousel.startAuto();
+    });
+};
 
-$('h4.title').jTruncate({  
-			length: 14,
-			minTrail: 0,
-			moreText: "", //[see all]
-			lessText: "", //[hide extra]
-			ellipsisText: "", // (truncated)
-			moreAni: "", // fast
-			lessAni: 2000
-		});
+jQuery('#mycarousel').jcarousel({
+		visible: 2,
+        auto: 5,
+        animation: 1500,
+        easing: 'easeInOutElastic',
+        wrap: 'last',
+        initCallback: mycarousel_initCallback
+    });
+ 
+jQuery('#news_carousel').jcarousel({
+        vertical: true,
+        scroll: 2
+    });
 
 
 $("a .tooltip").addClass("tooltip");
@@ -93,13 +140,14 @@ $('#coin-slider').coinslider({
 		});
 
 
-Cufon.replace('h1, h2, h3, h4:not(.nocufon), h5, h6, .heading_page, .search_text');
-
 $("a.portfolio_item[rel^='prettyPhoto'], a.isphoto_m[rel^='prettyPhoto'], a.isphoto_b[rel^='prettyPhoto'], a.isvideo_m[rel^='prettyPhoto'], a.isvideo_b[rel^='prettyPhoto'], a.islink_mini[rel^='prettyPhoto'], a.islink_m[rel^='prettyPhoto']").prettyPhoto({
 			animationSpeed: 'slow',
 			theme: 'nitro_dark_rounded',
 			slideshow: 4000,
 			autoplay_slideshow: false});
+
+
+
 
 	$('.delete_post').bind('ajax:success', function() {
 		$(this).closest('td').fadeOut();
@@ -136,39 +184,17 @@ function remove_field(element, item) {
   alert(element);
   element.SlideUp(item).remove();
 }
-
-
-
+/*
 
 $("#albums th a, #albums .pagination a").live("click", function(){
  $.getScript(this.href);
  return false;
 });
 
-
-
-$("#tracks th a, #tracks .pagination a").live("click", function(){
- $.getScript(this.href);
- return false;
-});
-
-
-
-
 $("#albums_search input").keyup(function(){
 	$.get($("#albums_search").attr("action"), $("#albums_search").serialize(),null,"script");
 	return false;
 });
+*/
 
-$("#tracks_search input").keyup(function(){
-	$.get($("#tracks_search").attr("action"), $("#tracks_search").serialize(),null,"script");
-	return false;
-});
-
-
-$("input.datum").datepicker({ dateFormat: 'yy-mm-dd' });	
-			
-
-			
-			
 			});

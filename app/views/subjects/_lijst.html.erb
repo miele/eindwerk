@@ -8,8 +8,8 @@
 								
 								<th>ID</th>
 								<th><%= sortable "name" %></th>
-								<th><%= sortable "visible" %></th>
-								<th>&nbsp;Pages</th>
+								<th>Photo</th>
+								<th>Content</th>
 								<th>Actions</th>
 							</tr>
 						</thead>
@@ -21,8 +21,8 @@
 								
 								<td><%= subject.id %>&nbsp;</td>
 								<td><%= subject.name %>&nbsp;</td>
-								<td><%= subject.visible ? 'Yes' : 'No' %>&nbsp;</td>
-								<td>&nbsp;<%= subject.pages.size %></td>
+								<td><%= image_tag(subject.photo.url(:thumb)) %></td>
+								<td><%= subject.content %></td>
 								<td>
 								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/preferences.png'),{:action => 'show', :id => subject.id}, {:title => 'Show ' + subject.name ,:class => "tooltip table_icon"}) %>
 								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/pencil.png'),{:action => 'edit', :id => subject.id}, {:title => 'Edit ' + subject.name ,:class => "tooltip table_icon"}) %>

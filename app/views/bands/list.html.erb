@@ -12,13 +12,15 @@
 </div> 
 </div> 
   <% end %>
+  <fieldset><legend>Search</legend>
   <%= hidden_field_tag :direction, params[:direction] %>  
   <%= hidden_field_tag :sort, params[:sort] %>   
-  <p>  
+  <p>
     <%= text_field_tag :search, params[:search],:id => "search_form" %>  
-    <%= submit_tag "Search", :name => nil,:id => "search_button" %>  
+    <%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/search.png') %>
   </p>  
 <% end %>
+</fieldset>
 <div class="hr dotted clearfix">&nbsp;</div>
 <div class="band list" id="bands">
 <%= render "lijst" %>

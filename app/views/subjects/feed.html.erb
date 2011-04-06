@@ -1,11 +1,42 @@
+<!--
+%a Ð The abbreviated weekday name (ÒSunÓ)
+%A Ð The full weekday name (ÒSundayÓ)
+%b Ð The abbreviated month name (ÒJanÓ)
+%B Ð The full month name (ÒJanuaryÓ)
+%c Ð The preferred local date and time representation
+%d Ð Day of the month (01..31)
+%H Ð Hour of the day, 24-hour clock (00..23)
+%I Ð Hour of the day, 12-hour clock (01..12)
+%j Ð Day of the year (001..366)
+%m Ð Month of the year (01..12)
+%M Ð Minute of the hour (00..59)
+%p Ð Meridian indicator (ÒAMÓ or ÒPMÓ)
+%S Ð Second of the minute (00..60)
+%U Ð Week number of the current year, starting with the first Sunday as the first day of the first week (00..53)
+%W Ð Week number of the current year, starting with the first Monday as the first day of the first week (00..53)
+%w Ð Day of the week (Sunday is 0, 0..6)
+%x Ð Preferred representation for the date alone, no time
+%X Ð Preferred representation for the time alone, no date
+%y Ð Year without a century (00..99)
+%Y Ð Year with century
+%Z Ð Time zone name
+%% Ð Literal Ò%Ó character
+-->
+
+<% @i = 0 %>
 <% @events.sort{|a,b| b.start_time <=> a.start_time}.each do |event| %>
-	<article>
+	<article class="date">
+	<% break event if (@i.to_s == '4') %>
 	<a class="boxgrid box alpha tl tooltip" href="#" title="<%= event.title %>">
-			<h4><%= event.start_time.strftime("%d") %></h4>
-			<h4><%= event.start_time.strftime("%m") %></h4>
-			<p><%= event.title %></p>
-			<p><%= event.start_time.strftime("%I:%M %p") %> - <%= event.end_time.strftime("%I:%M %p") %></p>
-			<p><%= event.where %></p>
+			<h4 class="month"><%= event.start_time.strftime("%b") %></h4><br/>
+			<h4 class="day"><%= event.start_time.strftime("%d") %></h4>
+			<h4 class="year"><%= event.start_time.strftime("%Y") %></h4>
+			<div class="info_event">
+			<h4 class="e_title"><%= event.title %></h4>
+			<p class="e_time"><%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
+			<p class="e_loc"><%= event.where %></p>
+			</div>
 			</a>
 	</article>
+	<% @i +=1 %>
 <% end %>

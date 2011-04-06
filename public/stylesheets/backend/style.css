@@ -7,7 +7,7 @@
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,
 blockquote,pre,address,code,del,dfn,em,img,q,
 dl,dt,dd,ol,ul,li,
-table,caption,tbody,tfoot,thead,tr,th,td,br,fieldset,textarea{font-family:"Lucida Sans Unicode","Lucida Grande","Trebuchet MS", Helvetica, Arial, sans-serif;line-height:20px;letter-spacing:.1px;word-spacing:1px;margin:0;padding:0;border:0;vertical-align:baseline;}
+table,caption,tbody,tfoot,thead,tr,th,td,br,fieldset,textarea{font-family:"Lucida Sans Unicode","Lucida Grande","Trebuchet MS", Helvetica, Arial, sans-serif;line-height:20px;letter-spacing:.1px;word-spacing:1px;margin:0;padding:0;border:0;vertical-align:baseline;padding-bottom:2px;}
 h1,h2,h3,h4,h5,h6,hr,p,ul,ol,dl,pre,address,table,form{margin:0 0 20px}
 p,h1, h2, h3, h4, h5, h6, ul.check_list, ul.arrowlist{padding-left:2px;}
 strong, b{font-weight:bold;}
@@ -116,7 +116,7 @@ h1 span {
 	width:275px;
 	height:255px;
 	overflow:hidden;
-	background:url('assets/logo_boven.png') 0 0 no-repeat;
+	background:url('assets/skarminkels_backend.png') 0 0 no-repeat;
 	padding-top:15px;
 }
 
@@ -126,13 +126,37 @@ h1 span {
 	list-style-type:none;
 }
 
+#menu ul li:not(a) img{
+
+margin-right:  12px;
+
+}
+
+#menu ul li:not(a){
+
+margin-left: 20px;
+padding: 5px;
+	color:red;
+	text-shadow:#0A5482 1px 1px 0px;
+}
+
+#menu ul li a{
+color: fuchsia;
+margin-left: -20px;
+background:url('assets/menu_spacer.png') 0 100% no-repeat;
+}
+
 #menu ul li {
 	clear:both;
 	float:left;
-	background:url('assets/menu_spacer.png') 0 100% no-repeat;
+	/*background:url('assets/menu_spacer.png') 0 100% no-repeat;*/
 	width:220px;
 	padding:3px 0;
+	
+	
 }
+
+
 
 #menu ul li.nobg {
 	background:none;
@@ -165,14 +189,16 @@ h1 span {
 	font-family:Arial, Helvetica, sans-serif;
 }
 
-#menu ul li.current a span {
+
+
+.current span {
 	background:url('assets/menu_arrow.png')  100% 50% no-repeat;
 	color:#fff;
 	margin-left:5px;
 	text-shadow:#0A5482 1px 1px 0px;
 }
 
-#menu ul li.current a span {
+#menu ul li a:active span {
 	margin-left:5px!important;
 }
 
@@ -184,12 +210,12 @@ h1 span {
 	/*padding-left:43px;*/
 }
 
-#menu ul li.current {
+a.dashboard {
 	background:url('assets/menu_current.png') top right no-repeat;
 }
 
-#menu ul li.current li a {
-	
+a.bands:active {
+	background:url('assets/menu_current.png') top right no-repeat;
 }
 
 #menu ul ul {
@@ -525,7 +551,8 @@ h1 span {
 /* --- 4.x DASHBOARD ICONS MENU --- */
 
 ul.dash {
-	list-style-type:none;	
+	list-style-type:none;
+	width: 60%;	
 }
 
 ul.dash li {
@@ -666,6 +693,7 @@ table.normal thead th {
 	font-size:10px;
 	font-weight:normal;
 	border-bottom:1px solid #ccc;
+	border-right:1px solid #ccc;
 	text-shadow:-1px -1px #fff;
 	padding:5px 15px;
 	text-align:left;
@@ -688,6 +716,8 @@ table.normal tbody tr.odd td {
 table.normal tbody td {
 	font-size:11px;
 	vertical-align:middle;
+	border-right:1px solid #ccc;
+	padding-bottom: 20px;
 }
 
 fieldset {
@@ -746,7 +776,7 @@ input, select {
 	
 	border-width:1px;
 	border-style:solid;
-	border-color:#d9d9d9 #eaeaea white;
+	border-color:#d9d9d9 #eaeaea #eee;
 	
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -838,11 +868,13 @@ a.button_link, input[type="submit"], input[type="reset"], .ui-dialog .ui-dialog-
 	padding:8px 12px 6px 12px;
 	margin:0 10px 5px 0;
 	
-	background: #3aa3e6;
-	background: -moz-linear-gradient(top, #87c6ee, #3aa3e6 2%, #028fe8);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #87c6ee), color-stop(.01, #3aa3e6), to(#028fe8)); 
+	background: #333;
+	filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#333333,endColorStr=#333333); /* for IE */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#333333,endColorStr=#333333)"; /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#333333)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #333333,  #333333); /* for firefox 3.6+ */ 
 
-	border:1px solid #0082d5;
+	border: 1px solid #333;
 	
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -865,14 +897,16 @@ a.button_link, input[type="submit"], input[type="reset"], .ui-dialog .ui-dialog-
 }
 
 a.button_link:hover, input[type="submit"]:hover, input[type="reset"]:hover, .ui-dialog-buttonpane button:hover,.pagination a:hover {
-	text-shadow: 0 1px 1px #6f3a02;
+	text-shadow: 0 1px 1px #777c82;
+border: 1px solid #777c82;
 
-	border:1px solid #e6791c;
-	border-bottom:1px solid #d86f15;
-
-	background: #f48423;
-	background: -moz-linear-gradient(top, #ffdf9e, #f5b026 2%, #f48423);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffd683), color-stop(.01, #f5b026), to(#f48423)); 
+	border-bottom:1px solid #777c82;
+color: #333;
+	background: #f1f1f1; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#ffffff,endColorStr=#dddddd); /* for IE */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#ffffff,endColorStr=#dddddd)"; /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #fff,  #ddd); /* for firefox 3.6+ */
 	
 	cursor:pointer;
 
@@ -955,19 +989,19 @@ ul.paginator li a.current {
 	font-family:Arial, Helvetica, sans-serif;
 	font-weight:bold;
 	min-width:60px;
-	text-shadow: 0 1px 1px #6f3a02;
+	text-shadow: 0 1px 1px #000000;
 	line-height:16px;
 	z-index:100;
 
-	border:1px solid #e6791c;
-	border-bottom:1px solid #d86f15;
+	border:1px solid #000000;
+	border-bottom:1px solid #000000;
 
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	border-radius:10px;
-	background: #f48423;
-	background: -moz-linear-gradient(top, #ffdf9e, #f5b026 2%, #f48423);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffd683), color-stop(.01, #f5b026), to(#f48423)); 
+	background: #000000;
+	background: -moz-linear-gradient(top, #000000, #000000 2%, #000000);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000000), color-stop(.01, #000000), to(#000000)); 
 
 }
 
@@ -981,7 +1015,7 @@ ul.paginator li a.current {
 	width:0;
 	height:0;
 	border:8px solid transparent;
-	border-top-color:#b25708;
+	border-top-color:#000000;
 }
 
 #easyTooltip:after {
@@ -993,10 +1027,16 @@ ul.paginator li a.current {
 	width:0;
 	height:0;
 	border:7px solid transparent;
-	border-top-color:#f48423;
+	border-top-color:#000000;
 }
 
 table {
 	border-spacing:0;
 }
 
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }

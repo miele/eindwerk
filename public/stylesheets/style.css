@@ -1,20 +1,5 @@
-/*
-Template Name: Lab
-Template URI: http://demo.mattiaviviani.com/html_templates/lab/
-Description: Lab is a User-Friendly HTML5 Template.
-Author: Mattia Viviani
-Author URI: http://www.mattiaviviani.com
-Version: 1.0
-*/
 
 
-/* 
-html5doctor.com Reset Stylesheet
-v1.6.1
-Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
-Twitter: @rich_clark
-*/
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -352,11 +337,11 @@ ul.social_profiles img {border: none}
 
 h1 {font-size: 42px;}
 
-h2 {font-size: 36px;}
+h2 {font-size: 36px;font-family: 'Rock Salt', arial, serif;}
 
 h3 {font-size: 30px;}
 
-h4 {font-size: 24px;}
+h4 {font-size: 24px; }
 
 h5 {font-size: 21px;}
 
@@ -624,17 +609,16 @@ ul#navigation li {
 
 ul#navigation li a {
 	display: block;
-	font-family: 'Lucida Grande', Arial, Helvetica, sans-serif !important;
+	font-family: 'Rock Salt', arial, serif !important;
 	padding: 15px 30px 15px 30px;
 	text-decoration: none;
 	color: #bbb;
-	font-size: 14px;
+	font-size: 12px;
 	font-weight: bold;
 	}
 
 ul#navigation li a:hover {
 	color: #fff;
-	background: #000;
 	}
 
 ul#navigation li a.current {
@@ -885,6 +869,7 @@ h4.box_title {
 	padding-top: 20px;
 	font-weight: bold;
 	margin-bottom: 15px;
+	
 	}
 
 a .title {
@@ -892,6 +877,27 @@ a .title {
 	line-height: 24px;
 	font-size: 14px
 	}
+
+
+#navigation p:not(a){
+color : red;
+font-size: 30px;
+margin-top: 20px;
+font-family: 'Rock Salt', arial, serif;
+
+}
+#navigation li p a{
+
+margin-top: -10px;
+}
+
+#navigation li p a:hover{
+-moz-transform:  scale(1.3);
+-webkit-transform : scale(1.3);
+color : red ;
+margin-top: -10px;
+font-family: 'Rock Salt', arial, serif;
+}
 
 /*a .title:hover {color: #777c82;}*/
 
@@ -912,7 +918,29 @@ a .title {
 .boxgrid.tl {
 	-moz-border-radius-topleft: 6px;
 	-webkit-border-top-left-radius: 6px;
+	
 	}
+
+.boxgrid.tl:before {
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    border-width:0 16px 16px 0; /* This trick side-steps a webkit bug */
+    border-style:solid;
+    border-color:#D5D8DC #D5D8DC #3D3D3D #3D3D3D; /* A bit more verbose to work with .rounded too */
+    background:#3D3D3D; /* For Opera when also applying a border-radius */
+    display:block; width:0; /* Only for Firefox 3.0 damage limitation */
+    /* Optional: shadow */
+    -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+       -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+            box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+     border-width:8px; /* Triggers a 1px 'step' along the diagonal in Safari 5 (and Chrome 10) */
+    border-color:#D5D8DC #D5D8DC transparent transparent; /* Avoids the 1px 'step' in webkit. Background colour shows through */
+    -webkit-border-bottom-left-radius:4px;
+    -moz-border-radius:0 0 0 4px;
+    border-radius:0 0 0 4px;
+}
 
 .boxgrid.tr {
 	-moz-border-radius-topright: 6px;
@@ -936,6 +964,7 @@ a .title {
 	font-size: 12px;
 	color: #777c82;
 	text-decoration: none
+	font-family: 'Rock Salt', arial, serif;
 	}
 
 a.boxgrid {text-decoration: none}
@@ -967,6 +996,87 @@ a.boxgrid {text-decoration: none}
 
 .boxgrid .title {font-size: 14px}
 
+/* Dates
+---------------------------------------------------------------*/
+
+.date {
+  position: relative;
+  font-family: Georgia, serif;
+  color: #999;
+ }
+
+ 
+.day { 
+
+margin-top: -20px;
+float:left;
+  font-size: 50px;
+  padding: 0;
+
+  }
+ 
+.month {
+width: auto;
+margin-top: 2px;
+margin-left: 0;
+ 
+  font-size: 26px;
+  }
+
+.info_event{
+margin-top : 45px;
+padding-bottom: 4px;
+margin-bottom: 0;
+color: #999;
+}
+
+.e_title{
+margin-top: 0;
+padding-bottom: 10px;
+font-size: 20px;
+height: 50px;
+}
+
+p.e_loc{
+font-size: 14px;
+font-family: 'Rock Salt', arial, serif;
+
+}
+
+p.e_time{
+font-size: 14px;
+font-family: 'Rock Salt', arial, serif;
+}
+
+.year {
+margin-right: 40px;
+position: absolute;
+float:right;
+left: 63px;
+top: 38px;
+	height: 40px;
+  padding: 0;
+  font-size: 32px;
+  rotation: -90deg !important;
+  /* ** Hacks ** */
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);  
+  }
+  
+#twitter_update_list{
+width: 80%;
+}
+
+#twitter_update_list img{
+border: none;
+padding: 5px;
+float: left;
+}
+
+p.tweet_content{
+padding-top: 20px;
+font-family: 'Rock Salt', arial, serif;
+}
 
 /* Common =scroller styles
 -------------------------------------------------------------- */
@@ -2238,6 +2348,7 @@ li.t_skins {
 #spinner {
 padding: 30px;
 float: left;
+width: 100%;
 }
 
 #spinner img{
@@ -2287,5 +2398,201 @@ ul.polaroids { width: 960px; margin: 0 0 18px -30px; }
 		ol.code { background: rgba(0,0,0,.75); margin-bottom: 18px; border: solid rgba(0,0,0,.75); border-width: 1px 1px 0; -webkit-border-radius: 3px; -moz-border-radius: 3px; -webkit-box-shadow: 0 1px 1px rgba(255,255,255,.5); }
 		ol.code li, ol.code li code { font-size: 14px !important; }
 		ol.code code { background: none; }
+		
+.header{
+	text-align:center;
+	width:100%;
+	height:35px;
+	clear:both;
+	background:#000 url(../images/stripe.gif) repeat top left;
+	margin-bottom:20px;
+	border-bottom:7px solid #222;
+	font-size:11px;
+	line-height:35px;
+	font-style:italic;
+	text-shadow:1px 1px 1px #000;
+}
+.header a{
+	color:#aaa;
+	text-shadow:1px 1px 1px #000;
+	padding-right:20px;
+}
+.header a:hover{
+	color:#fff;
+}
+.container {
+	position:relative; /* needed for footer positioning*/
+	margin:0 auto; /* center, not in IE5 */
+	width:100%;
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treaded as min-height*/
+	min-height:100%; /* real browsers */
+}
+.left{
+	float:left;
+	margin-left:10px;
+}
+.back{
+	position:absolute;
+	right:10px;
+	top:0px;
+}
+.content > h1{
+	font-size:40px;
+	font-weight:normal;
+	text-shadow:0px 0px 1px #fff;
+	font-family: 'Raleway', arial, serif;
+	border-bottom:1px dotted #444;
+	padding:10px 20px;
+}
+.content > h3{
+	font-size:24px;
+	color:#aaa;
+	font-weight:normal;
+	padding:10px 20px;
+	text-shadow:1px 1px 1px #000;
+	font-family: 'Rock Salt', arial, serif;
+}
+h3 a{
+	font-size:14px;
+	padding-left:20px;
+}
+a{
+	color:#777;
+	text-decoration:none;
+}
+a:hover{
+	color:#fff;
+}
+.content {
+	margin:0 auto;
+	padding:0px 0px 58px 0px; /* Footer Padding */
+}
+
+/* Menu style */
+.ei_menu{
+	background:#111;
+	width:100%;
+	overflow:hidden;
+}
+.ei_menu ul{
+
+	margin: 0;
+	height:350px;
+	margin-left:50px;
+	position:relative;
+	display:block;
+	width:1300px;
+}
+.ei_menu ul li{
+list-style: none;
+	margin: 0;
+	float:left;
+	width:75px;
+	height:350px;
+	position:relative;
+	overflow:hidden;
+	border-right:2px solid #111;
+}
+.ei_preview{
+	width:75px;
+	height:350px;
+	cursor:pointer;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:transparent url(../images/bw.jpg) no-repeat top left;
+}
+.ei_image{
+	position:absolute;
+	left:75px;
+	top:0px;
+	width:75px;
+	height:350px;
+	opacity:0.2;
+	background:transparent url(../images/color.jpg) no-repeat top left;
+}
+.pos1 span{
+	background-position:0px 0px;
+}
+.pos2 span{
+	background-position:-75px 0px;
+}
+.pos3 span{
+	background-position:-152px 0px;
+}
+.pos4 span{
+	background-position:-227px 0px;
+}
+.pos5 span{
+	background-position:-302px 0px;
+}
+.pos6 span{
+	background-position:-377px 0px;
+}
+.ei_descr{
+	position:absolute;
+	width:278px;
+	height:310px;
+	border-right:7px solid #f0f0f0;
+	padding:20px;
+	left:75px;
+	top:0px;
+	background:#fff;
+}
+.ei_descr h2{
+	font-family: 'Rock Salt', arial, serif;
+	font-size:26px;
+	color:#333;
+	padding:10px;
+	text-shadow:0px 0px 1px #fff;
+	background:#fff url(../images/stripe_light.gif) repeat top left;
+}
+.ei_descr h3{
+	font-family: 'Raleway', arial, serif;
+	color:#fff;
+	text-shadow:0px 0px 1px #000;
+	font-style:normal;
+	padding:10px;
+	background:#333;
+}
+.ei_descr p{
+	color:#000;
+	padding:10px 5px 0px 5px;
+	line-height:18px;
+	font-size:11px;
+	font-family: Arial;
+}
+
+/* For the index_3 demo */
+ul.trigger_list{
+	position:absolute;
+	right:20px;
+	top:145px;
+}
+ul.trigger_list li{
+margin: 0;
+	float:left;
+	line-height:53px;
+	color:#ddd;
+	font-style:italic;
+}
+ul.trigger_list li a{
+	font-family: 'Rock Salt', arial, serif;
+	display:block;
+	background:#000;
+	color:#ddd;
+	line-height:35px;
+	padding:5px 10px;
+	margin:3px;
+	border-radius:5px 5px 5px 5px;
+	text-shadow:1px 1px 1px #000;
+}
+ul.trigger_list li a:hover{
+	background:#222;
+	color:#fff;
+
+}
+
 
 /* THE END */
