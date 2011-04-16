@@ -1,4 +1,4 @@
-   $(function() { 
+$(function() { 
         // Setup the player to autoplay the next track
         var a = audiojs.createAll({
           trackEnded: function() {
@@ -7,6 +7,7 @@
             next.addClass('playing').siblings().removeClass('playing');
             audio.load($('a', next).attr('data-src'));
             audio.play();
+            alert('aangemaakt');
           }
         });
         

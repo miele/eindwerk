@@ -7,6 +7,9 @@ helper_method :sort_column, :sort_direction
 respond_to :html, :json, :xml
 
 def index
+ @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(3)
+@page_title = 'Skarminkels Band'
  @bands = Band.order("bands.id DESC")
 	respond_to do |format|
 format.html  { render :layout => 'html5' }

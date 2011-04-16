@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-	<title>Skarminkels on Rails</title>
-	<meta charset="utf-8">
+	<title><%= @page_title %></title>
+	<meta charset="utf-8" name="description" content="Skarminkels Official Website, Ska Music Band,
+	Ruby on Rails 3, Everything about the Skarminkels">
+	<meta name="keywords" content="Skarminkels,Ska,Band,Bottelare,RoR3"
 
-	<link rel="shortcut icon" href="/favicon.ico">
-	<link rel="apple-touch-icon" href="/apple-touch-icon.jpg">
 
-	<!-- =styleswitcher -->
 	<%= stylesheet_link_tag('style.css?v=1','style','ie7','uploadify','skins/tango/skin',:media => 'all') %>
-	<%= stylesheet_link_tag('jplayer.blue.monday')%>
-	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css' />
+	<%= stylesheet_link_tag('mediaelementplayer.min')%>
+	
 		<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css' />
 
 	<!--[if IE]>
@@ -26,11 +25,16 @@
 	<!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
 	<%= javascript_include_tag 'modernizr-1.5.min'%>
 	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-	<%= javascript_include_tag :defaults,'coin-slider.min','cufon-yui','jquery.jplayer.min','jquery.jtruncate.pack','jquery.prettyPhoto','lab.font','nt_nav','tooltip.min','styleswitcher','swfobject','jquery.jcarousel.min' %>
-	<%= javascript_include_tag "uploadify/swfobject", "uploadify/jquery.uploadify.v2.1.0.js"%>
+	<%= javascript_include_tag :defaults,'coin-slider.min','jquery.jplayer.min','jquery.prettyPhoto','tooltip.min','swfobject','jquery.jcarousel.min','soundmanager/script/soundmanager2','ttwFullScreenMusic' %>
+<%= stylesheet_link_tag('jquery.fileupload-ui') %>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<%= javascript_include_tag 'jquery.fileupload', 'jquery.fileupload-ui' %>
+
 <%= csrf_meta_tag %>
+
+
+
 </head>
 <body>
 
@@ -43,9 +47,11 @@
 			<!-- =Header -->
 			<header id="header" class="grid_12">
 		
+
 				<!-- =Logo -->
-				<h1 id="logo" class="grid_4">
-										</h1>
+				<!--<h1 id="logo" class="grid_4">
+										</h1>-->
+
 
 				<!-- =Menu -->
 				<nav id="nt_nav">
@@ -57,10 +63,10 @@
 								<li><a href="portfolio_single.html">Portfolio Single</a></li>
 							</ul> -->
 						</li><!-- end social -->
-						<!--<li><a href="about.html"><br />About Lab</a>
+						<!--<li><a href="about.html"><br />Gigs</a>
 							<ul class="sub-menu"> 
-								<li><a href="full_width.html">Full Width Page</a></li>
-								<li><a href="single.html">Single Page</a></li>
+								<li><a href="#">Jan</a></li>
+								<li><a href="#">Feb</a></li>
 								<li><a href="#">Submenu</a>
 									<ul class="sub-menu"> 
 										<li><a href="#">Submenu Item</a></li>
@@ -69,7 +75,7 @@
 										<li><a href="#">Submenu Item</a></li>
 									</ul> 
 								</li>
-								<li><a href="typography.html">Typography</a></li>
+								<li><a href="#">Augmented Reality</a></li>
 							</ul> 
 						</li> --> <!-- end about -->
 						<li><p><a href="/albums"><br />Media</a></p></li>
@@ -89,18 +95,52 @@
     
    </section>			<div class="hr grid_12 clearfix">&nbsp;</div>
 		
+			<!--  Footer -->
+			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
+	<footer>
+			<div id="footer">
+				<div class="box_240px_left">
+				<h2>Headlines</h2>
+				<% @footer_subjects.each do |f_sub| %>
+					<div class="post">
+						
+						<a class="footer" href="/Subjects/news/<%= f_sub.id %>"><%= f_sub.name %>
+						<p class="footerdate"><%= f_sub.created_at.strftime("%d.%m.%y")%></p>
+
+						<p><%= f_sub.content %></p>
+						</a>
+					</div>
+				<% end %>	
+				</div>
+
+				<div class="box_240px_middle">
+					<h2>Twitter</h2>
+					<% @footer_tweets.each do |f_tweet| %>
+					<div class="post">
+						<p class="footerdate"><%= f_tweet.created.strftime("%H:%M - %d th %b")%></p>
+						<p><%= f_tweet.content %></p>
+					</div>
+					<% end %>
+				</div>
+				<div class="box_240px_right">
+					<h2>Follow Us!</h2>
+					<ul>
+					<li><a href="http://www.facebook.com/Skarminkels" target="_blank"><%= image_tag('facebook_footer.png') %></a></li>
+					<li><a href="http://twitter.com/skarminkels" target="_blank"><%= image_tag('twitter_footer.png') %></a></li>
+					<li><a href="#"></a><%= image_tag('mail_footer.png') %></a></li>
+					<li><a href="http://www.myspace.com/skarminkels" target="_blank"><%= image_tag('myspace_footer.png') %></a></li>
+					
+					</ul>
+				</div>
+			</div>
+		</footer>
+	<!-- // Footer -->
+	
+
 		</div><!-- #container -->
 		
-		<!-- =Footer -->
-		<footer class="container_12 clearfix">
-			<section class="footer">
-			</section><!-- footer -->
-		</footer>
-	
-	</div><!-- #wrapper -->
-	
-	
-	<!-- Javascript at the bottom for fast page loading -->	
+		</div><!-- #wrapper -->
+
 	
 	
 </body>

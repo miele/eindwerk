@@ -58,6 +58,9 @@ end
   # GET /contacts/new
   # GET /contacts/new.xml
   def new
+   @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(3)
+  @page_title = 'Skarminkels Bookings'
     @contact = Contact.new
 
     respond_to do |format|

@@ -1,8 +1,10 @@
    <!-- =Message board -->
+<!--
 <aside>
 				<h2 class="grid_12 message_board clearfix">Skarminkels on Rails!</h2>
 				<div>&nbsp;</div>
-			</aside>			
+			</aside>
+-->			
 
 			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
 			<!-- =Slider -->
@@ -32,7 +34,7 @@
    <article id="twitter_update_list">
 					<ul id="mycarousel" class="jcarousel-skin-name">
 					<% @tweets.each do |tweet| %>
-						<li><img src="images/twitter_home.png" /><p class="tweet_content"><% tweet.created.strftime("%d/%m/%Y") %><% tweet.created.strftime("@%H:%M") %>
+						<li><img src="images/twitter_home.png" alt="twitter_icon"/><p class="tweet_content"><% tweet.created.strftime("%d/%m/%Y") %><% tweet.created.strftime("@%H:%M") %>
 						<%= tweet.content %></p></li>
 						 <% end %>
 					</ul>

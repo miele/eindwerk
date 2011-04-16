@@ -13,6 +13,9 @@ class PicturesController < ApplicationController
   # GET /pictures/1
   # GET /pictures/1.xml
   def show
+  @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(3)
+@page_title = 'Skarminkels Band'
     @picture = Picture.find(params[:id], :include => :album)
     @total_pictures = Picture.find(:all, :conditions => { :album_id => @picture.album.id})
   end
@@ -36,6 +39,7 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.xml
   def create
+  
       newparams = coerce(params)
       @picture = Picture.new(newparams[:picture])
       if @picture.save

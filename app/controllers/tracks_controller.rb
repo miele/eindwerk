@@ -11,6 +11,9 @@ respond_with(@tracks)
 end
 
 def player
+ @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(3)
+@page_title = 'Skarminkels Music Player'
 @tracks = Track.order("tracks.id DESC")
 end
 
@@ -38,8 +41,15 @@ def create
       if @track.save
         flash[:notice] = 'Track was successfully created.'
         @tracks = Track.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 4,:page => params[:page])
-        render :action => "lijst"
+        @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+ 		@footer_subjects = Subject.order("subjects.id DESC").limit(3)
+		@page_title = 'Skarminkels Music Player'
+		render :layout => 'backend'
+        render :action => "lijst" 
       else
+       	@footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+ 		@footer_subjects = Subject.order("subjects.id DESC").limit(3)
+		@page_title = 'Skarminkels Music Player'
         render :action => "new"
       end
     end

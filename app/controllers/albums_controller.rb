@@ -6,6 +6,10 @@ before_filter :authenticate_user!, :except => [:index,:show]
   # GET /albums
   # GET /albums.xml
   def index
+   @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(3)
+@page_title = 'Skarminkels Band'
+  
    # @albums = Album.all
 	@albums = Album.find_by_sql('SELECT ALbums.id,Pictures.id AS foto,Pictures.upload_file_name,Albums.name from Albums
 	INNER JOIN Pictures ON Albums.id = Pictures.album_id GROUP BY ALbums.name')
@@ -20,6 +24,9 @@ before_filter :authenticate_user!, :except => [:index,:show]
   # GET /albums/1.xml
   # TODO 
   def show
+  @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(3)
+@page_title = 'Skarminkels Band'
     @album = Album.find(params[:id], :include => :pictures)
     
   end

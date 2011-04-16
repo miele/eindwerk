@@ -1,27 +1,43 @@
+	     <script type="text/javascript">
+
+        /**
+         * These are soundManager settings. There
+         * is no need to change them unless you have
+         * read the soundManager documentation
+         * **/
+
+        soundManager.flashVersion = 9;
+        soundManager.useHighPerformance = true;
+        soundManager.wmode = 'transparent';
+        soundManager.useFastPolling = true;
+        soundManager.url = '/javascripts/soundmanager/swf/';
+        soundManager.debugMode = false;
+
+        /**
+         * Fullscreen music initialization
+         * Always make sure this call is wrapped in
+         * soundManager.onload to ensure all dependencies are loaded
+         * */
+
+        soundManager.onload = function()
+        {
+            $('.playlist').ttwFullScreenMusic({style:'fullscreen'});
+        }
+		
+    </script>
 	<aside>
 				<h2 class="grid_12 message_board clearfix">Skarminkel Sounds</h2>
 			</aside>
 <section id="left_col" class="grid_12">
 <section>
-				<div id="audio_wrapper"> 
-      <h1>Songs</h1>
-      
-      
-      <audio preload></audio> 
-      <ol> 
-      <% @tracks.each do |track|%>
-     <li><a href="" data-src="<%= track.song.url %>"><%= track.name %></a></li>
-      <% end %>
-      </ol> 
-    </div> 
-    <div id="shortcuts"> 
-      <div> 
-        <h1>Keyboard shortcuts:</h1> 
-        <p><em>&rarr;</em> Next track</p> 
-        <p><em>&larr;</em> Previous track</p> 
-        <p><em>Space</em> Play/pause</p> 
-      </div> 
-    </div>
-    <%= javascript_include_tag 'audio','playlist'%>
+<div id="mp3_player">
+<ul class="playlist">
+<% @tracks.each do |track|%>
+	 <li>
+        <a href="<%= track.song.url %>" rel="/images/1.jpg" ><%= track.name %></a>
+    </li>
+  <% end %>
+  </ul>	
+</div>
      </section>
      </section>

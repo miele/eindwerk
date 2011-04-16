@@ -47,6 +47,12 @@ $("#tracks_search input").keyup(function(){
 	return false;
 });
 
+$("#news .pagination a").live("click", function(){
+
+ $.getScript(this.href);
+ return false;
+});
+
 // loads google calendar events in the background for the index page
 // with spinner while it loads
 
@@ -179,6 +185,8 @@ $("ul.thumb li").hover(function() {
 			padding: '5px'
 		}, 400);
 });
+
+$("#contact_form_id").formToWizard({ submitButton: 'contact_submit' });
 
 function remove_field(element, item) {
   alert(element);

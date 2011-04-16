@@ -20,10 +20,13 @@ def index
 end
 
 def top
- 
+ @page_title = 'Skarminkels Home'
  @subjects = Subject.order("subjects.id DESC").limit(4)
  @tweets = Tweet.order("tweets.created DESC").limit(10)
   # @events = Event.order("events.id DESC").limit(2)
+ @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(3)
+ 
 end
 
 def feed
@@ -48,11 +51,22 @@ end
 
 def news
 @subjects = Subject.order("subjects.id DESC").paginate(:per_page => 4,:page => params[:page])
-  
+@page_title = 'Skarminkels News'
+@footer_tweets = Tweet.order("tweets.created DESC").limit(2)
+@footer_subjects = Subject.order("subjects.id DESC").limit(2)
+
+respond_to do |format|
+format.html  { render :layout => 'html5' }
+format.js  { render :layout => 'html5' }
+end
+ 
 end
 
 def show
  @subject = Subject.find(params[:id])
+ @page_title = 'Skarminkels News Detail'
+ @footer_tweets = Tweet.order("tweets.created DESC").limit(2)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(2)
 end
 
 def new
