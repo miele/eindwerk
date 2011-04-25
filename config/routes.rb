@@ -12,7 +12,7 @@ Skarminkels::Application.routes.draw do
 
   resources :supports
 
-  resources :albums
+  resources :albums ,:only => [:index, :show]
   resources :pictures
 
 

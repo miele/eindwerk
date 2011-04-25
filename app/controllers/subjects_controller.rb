@@ -6,7 +6,7 @@ layout 'html5'
 #before_filter :ensure_authenticated
 helper_method :sort_column, :sort_direction
 
-respond_to :html, :xml, :json
+respond_to :html, :xml, :json, :mobile
 
   
  def events
@@ -26,7 +26,10 @@ def top
   # @events = Event.order("events.id DESC").limit(2)
  @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
  @footer_subjects = Subject.order("subjects.id DESC").limit(3)
- 
+ respond_to do |format|
+  format.html
+  format.mobile {render :layout => 'mobile'}
+end
 end
 
 def feed
@@ -58,6 +61,7 @@ def news
 respond_to do |format|
 format.html  { render :layout => 'html5' }
 format.js  { render :layout => 'html5' }
+format.mobile  { render :layout => 'mobile' }
 end
  
 end
@@ -67,6 +71,10 @@ def show
  @page_title = 'Skarminkels News Detail'
  @footer_tweets = Tweet.order("tweets.created DESC").limit(2)
  @footer_subjects = Subject.order("subjects.id DESC").limit(2)
+ respond_to do |format|
+  format.html
+  format.mobile {render :layout => 'mobile'}
+end
 end
 
 def new

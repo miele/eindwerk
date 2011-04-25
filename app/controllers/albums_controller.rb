@@ -3,6 +3,10 @@ class AlbumsController < ApplicationController
 layout 'html5' 
 before_filter :authenticate_user!, :except => [:index,:show]
 
+	def photo
+    @albums = Album.all
+  end
+
   # GET /albums
   # GET /albums.xml
   def index
@@ -28,10 +32,17 @@ before_filter :authenticate_user!, :except => [:index,:show]
  @footer_subjects = Subject.order("subjects.id DESC").limit(3)
 @page_title = 'Skarminkels Band'
     @album = Album.find(params[:id], :include => :pictures)
+     respond_to do |format|
+format.html  { render :layout => 'backend' }
+format.js  { render :layout => 'backend' }
+end
     
   end
   
   def detail
+  @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(3)
+@page_title = 'Skarminkels Band'
    @album = Album.find(params[:id], :include => :pictures)
 
     respond_to do |format|

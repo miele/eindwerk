@@ -3,13 +3,17 @@ class ApplicationController < ActionController::Base
 
 include Facebooker2::Rails::Controller
 
+before_filter :prepare_for_mobile
 
 helper:all
 
 
 layout 'backend'
 
-
+  def mobile_device?  
+    request.user_agent =~ /Mobile|webOS/  
+  end
+  helper_method :mobile_device?
 
 def tester
 end
@@ -27,5 +31,10 @@ end
 
  #end
  end
+
+  def prepare_for_mobile
+  request.format = :mobile if mobile_device?
+  end  
+
   
 end

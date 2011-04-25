@@ -1,0 +1,13 @@
+<ul data-role="listview" data-inset="true" data-theme="g" data-dividertheme="g">
+<% @subjects.each do |subject| %>
+		<li><a href="<%= '/Subjects/show/' + subject.id.to_s %>" title="<%= subject.name %>">
+		<img src="<%= subject.photo.url(:thumb)%>" alt="<%= subject.name %>" title="<%= subject.name %>"/>
+		<h1><%= subject.name %></h1>
+		<p><%= subject.content %></p>
+		<p>Gepost op : <%= subject.created_at %></p>
+		</a></li>
+		<hr/>
+<% end %>
+</ul>
+<div>&nbsp;</div>
+<div><%= will_paginate @subjects %></div>

@@ -152,57 +152,11 @@ $("a.portfolio_item[rel^='prettyPhoto'], a.isphoto_m[rel^='prettyPhoto'], a.isph
 			slideshow: 4000,
 			autoplay_slideshow: false});
 
-
-
-
 	$('.delete_post').bind('ajax:success', function() {
 		$(this).closest('td').fadeOut();
 	});
 
-$("ul.thumb li").hover(function() {
-	$(this).css({'z-index' : '10'});
-	$(this).find('img').addClass("hover").stop()
-		.animate({
-			marginTop: '-110px', 
-			marginLeft: '-110px', 
-			top: '50%', 
-			left: '50%', 
-			width: '174px', 
-			height: '174px',
-			padding: '20px' 
-		}, 200);
-	
-	} , function() {
-	$(this).css({'z-index' : '0'});
-	$(this).find('img').removeClass("hover").stop()
-		.animate({
-			marginTop: '0', 
-			marginLeft: '0',
-			top: '0', 
-			left: '0', 
-			width: '100px', 
-			height: '100px', 
-			padding: '5px'
-		}, 400);
-});
-
 $("#contact_form_id").formToWizard({ submitButton: 'contact_submit' });
 
-function remove_field(element, item) {
-  alert(element);
-  element.SlideUp(item).remove();
-}
-/*
-
-$("#albums th a, #albums .pagination a").live("click", function(){
- $.getScript(this.href);
- return false;
-});
-
-$("#albums_search input").keyup(function(){
-	$.get($("#albums_search").attr("action"), $("#albums_search").serialize(),null,"script");
-	return false;
-});
-*/
 
 			});

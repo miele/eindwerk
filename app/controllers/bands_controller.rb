@@ -4,7 +4,7 @@ layout 'html5'
 
 helper_method :sort_column, :sort_direction
 
-respond_to :html, :json, :xml
+respond_to :html, :json, :xml,:mobile
 
 def index
  @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
@@ -13,6 +13,7 @@ def index
  @bands = Band.order("bands.id DESC")
 	respond_to do |format|
 format.html  { render :layout => 'html5' }
+format.mobile  { render :layout => 'mobile' }
 end
 
 end

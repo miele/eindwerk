@@ -1,14 +1,13 @@
-
+<%= javascript_include_tag "plupload/plupload.full.min", "plupload/jquery.plupload.queue.min" %>
+<%= stylesheet_link_tag "plupload.queue" %>
 <div class="inner">
-				
-										<h1>Bring home the news!</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
-
-<ul class="polaroids">
-<%= render :partial => @album.pictures %>
-</ul>
-</section>
-
+<div>
+  <div id="filelist"></div>
+  <br />
+  <a id="pickfiles" href="#">[Select files]</a>
+  <a id="uploadfiles" href="#">[Upload files]</a>
+</div>
+</div>
 
 <%= form_for Picture.new(:album_id => @album.id), :html => {:multipart => true, :id => "file_upload"} do |f| %>
   <%= f.hidden_field :album_id, "value" => @album.id %>
@@ -19,4 +18,4 @@
   </div>
 <% end %>
 
-<table id="files"></table>
+

@@ -1,0 +1,38 @@
+<div data-role="header">
+  <h1>Index Page</h1>
+</div>
+
+<div class="coin-slider" id="coin-slider-coin-slider">
+				<div id="coin-slider">
+				
+				 <% @subjects.each do |subject| %>
+				 
+					<article>
+						<a href="/Subjects/show/<%= subject.id %>" target="_self">
+							<%= image_tag(subject.photo.url(:medium)) %>
+							<span><%= subject.name %></span>
+							
+							
+						</a>
+					</article>
+					<% end %>
+				</div><!-- coin-slider -->
+				</div>
+							
+			<div data-role="content">
+  <ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
+  <li data-role="list-divider">News</li>
+  <% @subjects.each do |subject| %> 
+			<li><a href="/Subjects/show/<%= subject.id %>"><%= subject.name %></a></li>	
+	<% end %>
+	</ul>
+ </div>
+ 
+ <div data-role="footer" class="ui-bar" data-position="fixed">
+	<a href="/Subjects/news" data-role="button">News</a>
+	<a href="/Bands" data-role="button">Band</a>
+	<a href="/Tracks/player" data-role="button">Music</a>
+	<a href="/Contacts/new" data-role="button">Book us!</a>
+</div
+
+

@@ -40,6 +40,8 @@ class PicturesController < ApplicationController
   # POST /pictures.xml
   def create
   
+  respond_to :js
+  
       newparams = coerce(params)
       @picture = Picture.new(newparams[:picture])
       if @picture.save
