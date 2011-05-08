@@ -1,0 +1,12 @@
+<div data-role="header">
+  <h1>Skarminkels Sounds</h1>
+</div>
+
+<div data-role="content">
+<% @tracks.each do |track|%>
+<div data-role="collapsible" data-state="collapsed">
+		<h3><%= track.name %></h3>
+	 <p><audio src="<%= track.song.url %>" controls="controls"></audio></p>
+</div>
+  <% end %>
+</div>

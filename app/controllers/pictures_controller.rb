@@ -7,6 +7,7 @@ class PicturesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pictures }
+      format.mobile { render :layout => 'mobile'}
     end
   end
 
@@ -18,6 +19,13 @@ class PicturesController < ApplicationController
 @page_title = 'Skarminkels Band'
     @picture = Picture.find(params[:id], :include => :album)
     @total_pictures = Picture.find(:all, :conditions => { :album_id => @picture.album.id})
+    
+ respond_to do |format|
+      format.html # new.html.erb
+      format.js
+      format.mobile { render :layout => 'mobile'}
+    end
+ 
   end
 
   # GET /pictures/new

@@ -1,8 +1,8 @@
 class AlbumsController < ApplicationController
 
 layout 'html5' 
-before_filter :authenticate_user!, :except => [:index,:show]
-
+# before_filter :authenticate_user!, :except => [:index,:show]
+respond_to :html, :xml, :json,:mobile
 	def photo
     @albums = Album.all
   end
@@ -20,6 +20,7 @@ before_filter :authenticate_user!, :except => [:index,:show]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @albums }
+      format.mobile  { render :layout => 'mobile'}
     end
   end
  
@@ -48,6 +49,7 @@ end
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @album }
+      format.mobile  { render :layout => 'mobile'}
     end
   end
   # GET /albums/new

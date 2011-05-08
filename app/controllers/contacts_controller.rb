@@ -3,6 +3,8 @@ class ContactsController < ApplicationController
 layout 'html5'
 
 	def index_pdf
+	t = Time.now  
+	@datum = t.strftime("%d/%m/%Y") #t.strftime("%d/%m/%Y %H:%M:%S") 
 	@contact = Contact.find(params[:id])
     File.makedirs("#{RAILS_ROOT}/public/report") 
 	File.open("#{RAILS_ROOT}/public/report/" + "booking_" + @contact.id.to_s + ".pdf", "w") { |file| file.write(
@@ -36,10 +38,12 @@ layout 'html5'
     if @contact.save  
       ContactMailer.feedback_confirmation(@contact).deliver  
       format.html { redirect_to(@contact, :notice => 'Contact mail was successfully send.') }  
-      format.xml  { render :xml => @contact, :status => :created, :location => @contact }  
+      format.xml  { render :xml => @contact, :status => :created, :location => @contact } 
+      format.mobile { redirect_to(@contact, :notice => 'Contact mail was successfully send.') }  
     else  
       format.html { render :action => "new" }  
-      format.xml  { render :xml => @contact.errors, :status => :unprocessable_entity }  
+      format.xml  { render :xml => @contact.errors, :status => :unprocessable_entity }
+      format.mobile { render :action => "new" }   
     end  
   end  
 end  
@@ -66,6 +70,7 @@ end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @contact }
+      format.mobile { render :layout => 'mobile'}
     end
   end
 
@@ -93,13 +98,14 @@ end
 
   # DELETE /contacts/1
   # DELETE /contacts/1.xml
-  def destroy
+  def delete
     @contact = Contact.find(params[:id])
     @contact.destroy
 
     respond_to do |format|
       format.html { redirect_to(contacts_url) }
       format.xml  { head :ok }
+      format.mobile { render :layout => 'mobile'}
     end
   end
   

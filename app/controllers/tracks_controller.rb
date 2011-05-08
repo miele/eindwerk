@@ -1,7 +1,7 @@
 class TracksController < ApplicationController
 
 layout 'html5'
-respond_to :html, :json
+respond_to :html, :json, :mobile
 
 helper_method :sort_column, :sort_direction
 
@@ -15,6 +15,10 @@ def player
  @footer_subjects = Subject.order("subjects.id DESC").limit(3)
 @page_title = 'Skarminkels Music Player'
 @tracks = Track.order("tracks.id DESC")
+ respond_to do |format|
+format.html  { render :layout => 'html5' }
+format.mobile  { render :layout => 'mobile' }
+end
 end
 
 def lijst

@@ -1,0 +1,13 @@
+<div data-role="header">
+  <h1><%= @album.name %></h1>
+</div>
+
+
+<div data-role="content">
+<h3><%= pluralize(@album.pictures.size, "foto's")%></h3>
+<% @album.pictures.each do |picture| %>
+<a href="<%= '/pictures/show/' + picture.id.to_s %>">
+<img class="float_left" title="" src="<%= picture.upload.url(:thumb)%>" alt="<%= @album.name %>" />
+</a>
+<% end %>
+</div>

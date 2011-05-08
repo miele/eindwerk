@@ -53,6 +53,34 @@ $("#news .pagination a").live("click", function(){
  return false;
 });
 
+function mycarousel_initCallback(carousel)
+{
+    // Disable autoscrolling if the user clicks the prev or next button.
+    carousel.buttonNext.bind('click', function() {
+        carousel.startAuto(0);
+    });
+ 
+    carousel.buttonPrev.bind('click', function() {
+        carousel.startAuto(0);
+    });
+ 
+    // Pause autoscrolling if the user moves with the cursor over the clip.
+    carousel.clip.hover(function() {
+        carousel.stopAuto();
+    }, function() {
+        carousel.startAuto();
+    });
+};
+
+$("#mycarousel").jcarousel({
+		visible: 2,
+        auto: 5,
+        animation: 1500,
+        easing: 'easeInOutElastic',
+        wrap: 'last',
+        initCallback: mycarousel_initCallback
+    });
+
 // loads google calendar events in the background for the index page
 // with spinner while it loads
 
@@ -92,40 +120,6 @@ $('.word_count').each(function(){
 		$(this).parent().find('.counter').html( current + ' characters to go');
 	});
 });
-
-function mycarousel_initCallback(carousel)
-{
-    // Disable autoscrolling if the user clicks the prev or next button.
-    carousel.buttonNext.bind('click', function() {
-        carousel.startAuto(0);
-    });
- 
-    carousel.buttonPrev.bind('click', function() {
-        carousel.startAuto(0);
-    });
- 
-    // Pause autoscrolling if the user moves with the cursor over the clip.
-    carousel.clip.hover(function() {
-        carousel.stopAuto();
-    }, function() {
-        carousel.startAuto();
-    });
-};
-
-jQuery('#mycarousel').jcarousel({
-		visible: 2,
-        auto: 5,
-        animation: 1500,
-        easing: 'easeInOutElastic',
-        wrap: 'last',
-        initCallback: mycarousel_initCallback
-    });
- 
-jQuery('#news_carousel').jcarousel({
-        vertical: true,
-        scroll: 2
-    });
-
 
 $("a .tooltip").addClass("tooltip");
 		tooltip();  	

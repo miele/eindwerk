@@ -1,0 +1,36 @@
+<div data-role="header">
+  <h1>Book Us!</h1>
+</div>
+
+<div data-role="content" data-theme="c">
+<%= form_for(@contact ,:html => { :id => "contact_form_mobile" }) do |f| %>
+	
+	<div>
+	<h3>Contact Details</h3>
+	<label for="name">Name</label>
+    <%= f.text_field :name,{:id => "name"} %>
+    </div>
+  	
+  	<div>
+	<label for="name">Email</label>
+    <%= f.email_field :email,{:id => "name"} %>
+  	</div>
+	
+	<h3>Booking Info</h3>
+	<div>
+	<label for="name">Info</label>
+    <%= f.text_area :info %>
+  	</div>
+	
+	<div>
+	<label for="name">Phone</label>
+    <%= f.telephone_field :tel ,{:id => "name"}%>
+  	</div>
+
+	<div>
+    <%= f.submit "Submit" ,:class => "mobileButton"%>
+ 	</div>
+<% end %>
+</div>
+
+
