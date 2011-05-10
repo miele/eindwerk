@@ -16,7 +16,7 @@ Henceforth individually and collectively called: &ldquo;The Skarminkels&rdquo;</
 
 <p>AND</p>
 
-<p><strong><%= @contact.name %></strong></h3>, whose primary Contact is<strong> <%= @contact.name %></strong>, whose address is ADDRESS and mobile number <strong><%= @contact.tel %></strong> and email address<strong><%= @contact.email %></strong>. Henceforth called: &ldquo;The Principal&rdquo;.
+<p><strong><%= @contact.name %></strong></h3>, whose primary Contact is<strong> <%= @contact.name %></strong>, whose address is ADDRESS and mobile number <strong><%= @contact.tel %></strong> and email address&nbsp;<strong><%= @contact.email %></strong>. Henceforth called: &ldquo;The Principal&rdquo;.
 
 The Skarminkels and The Principal may be referred to herein individually as a &ldquo;party&rdquo;, and together as the &ldquo;parties&rdquo;.
 
@@ -26,20 +26,25 @@ WHEREAS, the Principal desires to utilize the services of The Skarminkels as an 
 <h2>1.0	Article 1 &minus; Assignment:</h2>
 
 <p>1.1 	The Principal hereby requests, and The Skarminkels accept, the assignment to provide a performance:
-Date: xx
-Establishment Name: xx
-Address: xx
-Time the performance is scheduled to begin: xx
-Name and/or short description of the event: xx
+&bull;Date: <strong><%= @contact.datum_optreden %></strong><br/>
+&bull;Establishment Name: <strong><%= @contact.naam_optreden %></strong><br/>
+&bull;Address: <strong><%= @contact.adres_optreden %></strong><br/>
+&bull;Time the performance is scheduled to begin: <strong><%= @contact.aanvang_optreden %></strong><br/>
+&bull;Name and/or short description of the event: <strong><%= @contact.beschrijving_optreden %></strong><br/>
 Henceforth called: &ldquo;The Performance&rdquo;;</p>
 
 <p>
 1.2 	The Principal will take into account the provisions as mentioned in The Skarminkels Rider. The Skarminkels Rider is available on the website www.skarminkels.be. It is also added to this document as Annex I. 
-The Skarminkels will use their own PA system for The Performance / The Skarminkels will use a PA system as provided for by The Principal.</p>
+<% if @contact.pa == 1 %>
+The Skarminkels will use their own PA system for The Performance </p>
+<% else %>
+<p>The Skarminkels will use a PA system as provided for by The Principal.</p>
+<% end %>
+
 
 <h2>2.0	Article 2 &minus; Wage:</h2> 
 <p>
-2.1 	The Principal agrees to pay The Skarminkels a reimbursement Û XXXX for The Performance.</h2>
+2.1 	The Principal agrees to pay The Skarminkels a reimbursement &euro; <strong><%= @contact.loon %></strong> for The Performance.</h2>
 
 In case The Performance cannot take place on behalf of The Principal, and in case The Principal cannot clearly show the cancellation was outside of its will and control, then the Principal is bound to the payment of the above reimbursement. This, unless The Skarminkels relieves The Principal of this duty.
 </p>
@@ -176,17 +181,17 @@ Channels:</p>
 
 <h4>1.0 	Times</h4>
 
-<p>1.1 	Requested time of arrival of The Skarminkels: xx</p>
+<p>1.1 	Requested time of arrival of The Skarminkels: <strong><%= @contact.arriveren %></strong></p>
 
-<p>1.2 	Planned time for The Skarminkels sound check: xx</p>
+<p>1.2 	Planned time for The Skarminkels sound check: <strong><%= @contact.soundcheck %></strong></p>
 
-<p>1.3 	Details if a meal or snack is presented to The Skarminkels: xx</p>
+<p>1.3 	Details if a meal or snack is presented to The Skarminkels: <%= @contact.eten_info %></strong></p>
 
 
 
 <h4>2.0 	Guest list</h4>
 
-<p>2.1 	XXX persons have free access to the event, by invitation of The Skarminkels.</p>
+<p>2.1 	<strong><%= @contact.guest_list %></strong> persons have free access to the event, by invitation of The Skarminkels.</p>
 
 
 

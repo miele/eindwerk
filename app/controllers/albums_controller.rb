@@ -81,13 +81,21 @@ end
     access_token = '155275974530339|f91649e3004eddb324943b1f-100001712295014|5gVUPH4S7ysAnaz0iRPzNfmTSxo'
   
  	# via graph api de gebruiken authenticaten
-    me = FbGraph::User.me(access_token)
+    #me = FbGraph::User.me(access_token)
+    
+   page = FbGraph::Page.new('168360839849478', :access_token => access_token)
+  
+  album = page.album!(
+  :name => 'FbGraph test',
+  :message => 'hello world!',
+  :description => 'hello world!'
+)
   
  	# een nieuwe album wordt aangemaakt op de bijhorende facebookpagina
-  album = me.album!(
-    :name => params[:album][:name],
-    :message => params[:album][:name]
-  ) 
+ #  page.album!(
+#     :name => params[:album][:name],
+#     :message => params[:album][:name]
+#   ) 
   
 
         format.html { redirect_to(@album, :notice => 'Album was successfully created.') }

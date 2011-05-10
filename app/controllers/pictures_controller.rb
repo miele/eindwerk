@@ -58,17 +58,26 @@ class PicturesController < ApplicationController
       	
    		me = FbGraph::User.me(access_token)
       
-       	album = me.albums.first
-  		album.photo!(
-    	:access_token => access_token,
-    	:image => File.new('/Users/michiel_bogaert/Sites/skarminkels/public/system/uploads/' + @picture.id.to_s + '/medium/' + @picture.upload_file_name.to_s), 
-    	:message => 'Automatic uploadz'
-  		)
+       # 	album = me.albums.first
+#   		album.photo!(
+#     	:access_token => access_token,
+#     	:image => File.new('/Users/michiel_bogaert/Sites/skarminkels/public/system/uploads/' + @picture.id.to_s + '/medium/' + @picture.upload_file_name.to_s), 
+#     	:message => 'Automatic uploadz'
+#   		)
+  		
+	page = me.accounts.detect do |p| 
+	  p.name == 'Grawiiti' 
+	end 
+
+		page.photo!( 
+ 		:image => File.new('/Users/michiel_bogaert/Sites/skarminkels/public/system/uploads/' + @picture.id.to_s + '/medium/' + 								@picture.upload_file_name.to_s),
+ 		:message => 'Automatic uploadz'
+		) 
       
       
         flash[:notice] = "Successfully created Picture."
-        respond_to do |format|
-          format.html {redirect_to @picture.album}
+         respond_to do |format|
+          format.html # {redirect_to @picture.album}
           format.json {render :json => { :result => 'success', :picture => pictures_path(@picture) } }
         end
       else

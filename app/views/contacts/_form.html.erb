@@ -1,39 +1,90 @@
 <%= form_for(@contact ,:html => { :id => "contact_form_id" }) do |f| %>
 <%= render "shared/error_messages" , :target => @contact %>
-<ul>
-	<fieldset>
+<fieldset>
 	<legend>Contact Details</legend>
-  	<li class="clearfix">
+  	<p>
 	<label for="name">Name</label>
     <%= f.text_field :name,{:id => "name"} %>
-  	<div class="clear"></div>
-	</li>
+  	</p>
 	
-	<li class="clearfix">
+	<p>
 	<label for="name">Email</label>
     <%= f.text_field :email,{:id => "name"} %>
-  	<div class="clear"></div>
-	</li>
-	</fieldset>
-	
-	<fieldset>
+  	</p>
+
 	<legend>Booking Info</legend>
-  	<li class="clearfix">
+	<br/>
+  	<p>
 	<label for="name">Info</label>
-    <%= f.text_area :info %>
-  	<div class="clear"></div>
-	</li>
+    <%= f.text_area(:info,{:class => "editor"}) %>
+  	</p>
 	
-  	<li class="clearfix">
+  	<p>
 	<label for="name">Phone</label>
     <%= f.text_field :tel ,{:id => "name"}%>
-  	<div class="clear"></div>
-	</li>
+  	</p>
+  	
+  	<legend>Voor opstellen contract</legend>
+  	<br/>
+  	<p>
+	<label for="name">Datum optreden</label>
+    <%= f.text_field :datum_optreden,{:id => "name"} %>
+  	</p>
+  	
+  	<p>
+	<label for="name">Naam optreden</label>
+    <%= f.text_field :naam_optreden,{:id => "name"} %>
+  	</p>
+  	
+  	<p>
+	<label for="name">Adres optreden</label>
+    <%= f.text_field :adres_optreden,{:id => "name"} %>
+  	</p>
+  	
+  	<p>
+	<label for="name">Aanvang optreden</label>
+    <%= f.text_field :aanvang_optreden,{:id => "name"} %>
+  	</p>
+  	
+  	<p>
+	<label for="name">Beschrijving optreden</label>
+    <%= f.text_field :beschrijving_optreden,{:id => "name"} %>
+  	</p>
+  	
+  	<p>
+	<label for="name">Loon optreden</label>
+    <%= f.text_field :loon,{:id => "name"} %>
+  	</p>
+  	<p>
+  	<%= check_box_tag(:pa,1) %>
+<%= label_tag(:pa, "I own a dog") %>
+<%= check_box_tag(:pa,0) %>
+<%= label_tag(:pa, "I own a cat") %>
+</p>
 
-	</fieldset>
-	<li class="clearfix">
+  	
+  	<p>
+	<label for="name">Arriveren ter plaatse</label>
+    <%= f.text_field :arriveren,{:id => "name"} %>
+  	</p>
+  	
+  	<p>
+	<label for="name">Soundcheck</label>
+    <%= f.text_field :soundcheck,{:id => "name"} %>
+  	</p>
+  	
+  	<p>
+	<label for="name">(optioneel) Eten</label>
+    <%= f.text_field :eten_info,{:id => "name"} %>
+  	</p>
+  	
+  	<p>
+	<label for="name">Aantal personen guestlist</label>
+    <%= f.text_field :guest_list,{:id => "name"} %>
+  	</p>
+
+	<p>
     <%= f.submit "Submit" ,:class => "sendButton"%>
- 	<div class="clear"></div>
-	</li>
-</ul>
+ 	</p>
+
 <% end %>

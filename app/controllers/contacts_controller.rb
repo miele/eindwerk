@@ -77,6 +77,10 @@ end
   # GET /contacts/1/edit
   def edit
     @contact = Contact.find(params[:id])
+    
+   respond_to do |format|
+format.html  { render :layout => 'backend' }
+end
   end
 
 

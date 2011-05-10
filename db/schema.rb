@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110311091555) do
+ActiveRecord::Schema.define(:version => 20110510160757) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -69,6 +69,17 @@ ActiveRecord::Schema.define(:version => 20110311091555) do
     t.string   "tel"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "datum_optreden"
+    t.string   "naam_optreden"
+    t.string   "adres_optreden"
+    t.datetime "aanvang_optreden"
+    t.integer  "loon"
+    t.datetime "arriveren"
+    t.datetime "soundcheck"
+    t.string   "eten_info"
+    t.integer  "guest_list"
+    t.string   "beschrijving_optreden"
+    t.integer  "pa"
   end
 
   create_table "events", :force => true do |t|

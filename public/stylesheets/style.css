@@ -1109,6 +1109,8 @@ float: left;
 p.tweet_content{
 padding-top: 20px;
 font-family: 'Rock Salt', arial, serif;
+height: 80px;
+overflow: hidden;
 }
 
 /* Common =scroller styles

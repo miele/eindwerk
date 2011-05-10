@@ -15,6 +15,33 @@ function removeNode(n){
 }
 
 clearCurrentLink();
+
+$('.word_count').each(function(){
+	// get current number of characters
+	var max = 140;
+	var current;
+	var init;
+	var length = $(this).val().length;
+	init = max - length;
+	// get current number of words
+	//var length = $(this).val().split(/\b[\s,\.-:;]*/).length;
+	// update characters
+	$(this).parent().find('.counter').html( init + ' characters to go');
+	// bind on key up event
+	$(this).keyup(function(){
+		// get new length of characters
+		var new_length = $(this).val().length;
+		// get new length of words
+		//var new_length = $(this).val().split(/\b[\s,\.-:;]*/).length;
+		// update
+		current = max - new_length;
+		if(current == 0){
+			alert("maximum is bereikt");
+			$(this).disable();
+		}
+		$(this).parent().find('.counter').html( current + ' characters to go');
+	});
+});
 		
 $("#subjects_search input").keyup(function(){
 	$.get($("#subjects_search").attr("action"), $("#subjects_search").serialize(),null,"script");
@@ -94,32 +121,7 @@ $("#ajax").load("/subjects/feed", function(response, status, xhr) {
 // fades out the flash notices
 $('p.flash-notice').fadeOut(2850);
 
-$('.word_count').each(function(){
-	// get current number of characters
-	var max = 140;
-	var current;
-	var init;
-	var length = $(this).val().length;
-	init = max - length;
-	// get current number of words
-	//var length = $(this).val().split(/\b[\s,\.-:;]*/).length;
-	// update characters
-	$(this).parent().find('.counter').html( init + ' characters to go');
-	// bind on key up event
-	$(this).keyup(function(){
-		// get new length of characters
-		var new_length = $(this).val().length;
-		// get new length of words
-		//var new_length = $(this).val().split(/\b[\s,\.-:;]*/).length;
-		// update
-		current = max - new_length;
-		if(current == 0){
-			alert("maximum is bereikt");
-			$(this).disable();
-		}
-		$(this).parent().find('.counter').html( current + ' characters to go');
-	});
-});
+
 
 $("a .tooltip").addClass("tooltip");
 		tooltip();  	

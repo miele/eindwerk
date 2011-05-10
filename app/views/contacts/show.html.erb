@@ -25,6 +25,11 @@
   <%= @contact.tel %>
 </p>
 
+<p>
+  <label>PA:</label>
+  <%= @contact.pa %>
+</p>
+
 
 <%= link_to (image_tag('/stylesheets/backend/assets/pdf_icon.png')), index_pdf_path(@contact,:id => @contact.id, :format => :pdf) %>
 </fieldset>
