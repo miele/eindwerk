@@ -1,5 +1,7 @@
 Skarminkels::Application.routes.draw do
 
+  get "gigs/index"
+
   get "backend/index"
 
   get "backend/subjects"

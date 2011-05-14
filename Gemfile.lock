@@ -57,6 +57,8 @@ GEM
       gdata4ruby (>= 0.1.5)
     gdata (1.1.2)
     gdata4ruby (0.1.5)
+    gmaps4rails (0.8.4)
+      crack
     grackle (0.1.10)
       json
       mime-types
@@ -135,6 +137,7 @@ DEPENDENCIES
   fb_graph
   gcal4ruby
   gdata
+  gmaps4rails
   grackle
   haml
   jquery-rails (>= 0.2.6)

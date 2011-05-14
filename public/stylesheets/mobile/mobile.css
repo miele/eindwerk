@@ -201,3 +201,8 @@ border-radius: 15px;
 .mobileButton{
 background-color: red;
 }
+
+.navi span.ui-btn-inner ui-btn-corner-all{
+background-color: transparent;
+padding: 0;
+}

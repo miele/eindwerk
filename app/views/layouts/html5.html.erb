@@ -25,7 +25,7 @@
 	<%= javascript_include_tag 'modernizr-1.5.min'%>
 	<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
 	<%= javascript_include_tag :defaults,'coin-slider.min','jquery.prettyPhoto','tooltip.min','swfobject','jquery.jcarousel.min' %>
-	
+	<%= yield :head %>
 <%= csrf_meta_tag %>
 
 
@@ -76,6 +76,7 @@
 						</li> --> <!-- end about -->
 						<li><p><a href="/albums"><br />Media</a></p></li>
 						<li><p><a href="/Bands"><br />Band</a></p></li>
+						<li><p><a href="/Gigs"><br />Gigs</a></p></li>
 						<li><p><a href="/Subjects/news"><br />News</a></p></li>
 						<li><p><a href="/" id="home"><br />Home <%= @page_title if mobile_device? %></a></p></li>
 					</ul>
@@ -94,6 +95,7 @@
 			<!--  Footer -->
 			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
 	<footer>
+	<%= yield :scripts %>
 			<div id="footer">
 				<div class="box_240px_left">
 				<h2>Headlines</h2>

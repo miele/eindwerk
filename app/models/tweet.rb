@@ -12,6 +12,9 @@ class Tweet < ActiveRecord::Base
         Tweet.create({:content => t.text, :created => created })
        end
     end
+    
+    
+	 
   end
   
   private

@@ -1,0 +1,24 @@
+<div data-role="header">
+  <h1>Index Page</h1>
+</div>
+
+<div data-role="content">
+<ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
+  <li data-role="list-divider">Gigs</li>
+<% @googles.each do |event| %>
+	<!-- <li><a href="/Gigs/show/<% event.id %>"><% event.title %></a></li> -->
+		<li><a href="#"><%= event.title %></a></li>
+<% end %>
+</ul>
+<div>&nbsp;</div>
+
+</div>
+
+<div data-role="footer" data-position="fixed">
+	<a class='navi' href="/Subjects/news"><%= image_tag 'mobile/news.png' %></a>
+	<a class='navi' href="/Bands" data-role="button"><%= image_tag 'mobile/band.png' %></a>
+	<a class='navi' href="/Bands" data-role="button"><%= image_tag 'mobile/gigs.png' %></a>
+	<a class='navi' href="/albums" data-role="button"><%= image_tag 'mobile/media.png' %></a>
+	<a class='navi' href="/Tracks/player" data-role="button"><%= image_tag 'mobile/music.png' %></a>
+	<a class='navi' href="/Contacts/new" data-role="button"><%= image_tag 'mobile/contact.png' %></a>
+</div>

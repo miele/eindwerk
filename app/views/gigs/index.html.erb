@@ -1,0 +1,106 @@
+<h2 class="grid_12 message_board clearfix">Upcoming Gigs!</h2>
+<div>&nbsp;</div>
+
+
+  <section id="options" class="clearfix">
+    
+    <ul id="sort" class="sort option-set">
+      <li>
+        <ul class="sort asc option-set floated clearfix">
+          <li><a href="#original-order" class="selected">original-order (asc)</a></li>
+          <li><a href="#name">name (asc)</a></li>
+          <li><a href="#day">day (asc)</a></li>
+          <li><a href="#month">month (asc)</a></li>
+          <li><a href="#year">year (asc)</a></li>
+          <li><a href="#where">where (asc)</a></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="sort desc option-set floated clearfix">
+          <li><a href="#original-order">original-order (desc)</a></li>
+          <li><a href="#name">name (desc)</a></li>
+          <li><a href="#day">day (desc)</a></li>
+          <li><a href="#month">month (desc)</a></li>
+          <li><a href="#year">year (desc)</a></li>
+          <li><a href="#where">where (desc)</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </section> <!-- #options -->
+<div id="isotope" class="clearfix">
+<% @googles.each do |event| %>
+	<article class="date">
+	<a class="boxgrid box alpha tl tooltip" href="/Gigs/show/<%= event.id.to_s %>" title="<%= event.id.to_s %>" data-day="hier" data-category="transition">
+      <h4 class="month"><%= event.start_time.strftime("%b") %></h4>
+      <h4 class="day"><%= event.start_time.strftime("%d") %></h4>
+      <h4 class="year"><%= event.start_time.strftime("%Y") %></h4>
+      <p>&nbsp;</p>
+      <div class="info_event">
+			<h4 class="name"><%= event.title%></h4>
+			<p class="e_time"><%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
+			<p class="where"><%= event.where %></p>
+			</div>   
+    </a>
+    </article>
+<% end %>
+</div>
+<%= javascript_include_tag 'jquery.isotope' %>
+<script>
+
+    var $isotope = $('#isotope');
+    
+    
+      // sorting
+      $('#sort a').click(function(){
+        // get href attribute, minus the #
+        var $this = $(this),
+            sortName = $this.attr('href').slice(1),
+            asc = $this.parents('.sort').hasClass('asc');
+        $isotope.isotope({ 
+          sortBy : sortName,
+          sortAscending : asc
+        });
+        return false;
+      });
+    
+    
+      // switches selected class on buttons
+      $('#options').find('.option-set a').click(function(){
+        var $this = $(this);
+
+        // don't proceed if already selected
+        if ( !$this.hasClass('selected') ) {
+          $this.parents('.option-set').find('.selected').removeClass('selected');
+          $this.addClass('selected');
+        }
+
+      });
+
+  
+    $(function(){
+      
+      $isotope.isotope({
+        itemSelector : '.boxgrid',
+        getSortData : {
+          day : function( $elem ) {
+            return $elem.attr('data-day');
+          },
+          where : function( $elem ) {
+            return $elem.find('.where').text();
+          },
+          month : function( $elem ) {
+            return parseInt( $elem.find('.month').text(), 10 );
+          },
+          year : function( $elem ) {
+            return parseFloat( $elem.find('.year').text().replace( /[\(\)]/g, '') );
+          },
+          name : function ( $elem ) {
+            return $elem.find('.name').text();
+          }
+        }
+      });
+      
+    });
+  </script>
+

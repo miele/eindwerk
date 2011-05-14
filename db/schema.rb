@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110510160757) do
+ActiveRecord::Schema.define(:version => 20110514145734) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -102,6 +102,13 @@ ActiveRecord::Schema.define(:version => 20110510160757) do
   create_table "googles", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "title"
+    t.string   "where"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
   end
 
   create_table "pages", :force => true do |t|
