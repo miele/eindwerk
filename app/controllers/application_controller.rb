@@ -5,6 +5,8 @@ include Facebooker2::Rails::Controller
 
 before_filter :prepare_for_mobile
 
+respond_to :html, :xml, :json, :mobile
+
 helper:all
 
 

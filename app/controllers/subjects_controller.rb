@@ -38,17 +38,17 @@ inlog()
  @calendars = []
  @events = @calendar.events
  
- @events.each do |event|
- 	
- 	 start_time = event.start_time.strftime("%Y-%m-%d %H:%M:%S")
- 	 end_time = event.end_time.strftime("%Y-%m-%d %H:%M:%S")
- 	 title = event.title
- 	 where = event.where
- 	 
- 	 unless Google.exists?(["start_time=?", start_time])
-        Google.create({:start_time => start_time, :end_time => end_time, :title => title, :where => where })
-	 end				
- 	end
+ # @events.each do |event|
+#  	
+#  	 start_time = event.start_time.strftime("%Y-%m-%d %H:%M:%S")
+#  	 end_time = event.end_time.strftime("%Y-%m-%d %H:%M:%S")
+#  	 title = event.title
+#  	 where = event.where
+#  	 
+#  	 unless Google.exists?(["start_time=?", start_time])
+#         Google.create({:start_time => start_time, :end_time => end_time, :title => title, :where => where })
+# 	 end				
+#  	end
 
  
 respond_to do |format|

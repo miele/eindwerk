@@ -1,5 +1,7 @@
 Skarminkels::Application.routes.draw do
 
+  get "videos/index"
+
   get "gigs/index"
 
   get "backend/index"
