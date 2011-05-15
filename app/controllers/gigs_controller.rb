@@ -26,9 +26,25 @@ respond_to :html, :json, :mobile
   	
   	respond_to do |format|
 	format.html  { render :layout => 'html5' }
-	format.mobile  { render :layout => 'mobile' }
   end
   	
+  end
+  
+    def showmobile
+  	@page_title = 'Skarminkels Gigs'
+  	@json = Google.find(params[:id])
+  	
+  	respond_to do |format|
+	format.mobile  { render :layout => false }
+  end
+  	
+  end
+  
+  def map
+  respond_to do |format|
+	format.mobile  { render :layout => 'mobile' }
+  end
+
   end
   
   def feed

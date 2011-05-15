@@ -13,5 +13,6 @@ $('#coin-slider').coinslider({
 			links : true, // show images as links - true by default
 			hoverPause: true // pause on hover - true by default
 		});
+	
 		
 });

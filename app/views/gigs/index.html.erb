@@ -84,7 +84,7 @@
         itemSelector : '.boxgrid',
         getSortData : {
           day : function( $elem ) {
-            return $elem.attr('data-day');
+            return parseInt( $elem.find('.day').text(), 10 );
           },
           where : function( $elem ) {
             return $elem.find('.where').text();
@@ -93,7 +93,7 @@
             return parseInt( $elem.find('.month').text(), 10 );
           },
           year : function( $elem ) {
-            return parseFloat( $elem.find('.year').text().replace( /[\(\)]/g, '') );
+            return parseInt( $elem.find('.year').text(), 10 );
           },
           name : function ( $elem ) {
             return $elem.find('.name').text();

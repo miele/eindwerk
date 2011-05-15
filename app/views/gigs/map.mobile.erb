@@ -1,0 +1,36 @@
+   <script type="text/javascript">
+                        google.load("maps", "3", {'other_params':'sensor=true'});
+                        google.load("jquery", "1.5");
+                </script>
+                
+                <script type="text/javascript">
+                        // Demonstration purpose only...
+                        $(document).bind("mobileinit", function () {
+                                $.mobile.ajaxEnabled  = true;
+                        });
+                </script>
+                <%= javascript_include_tag 'mobile/jquery.ui.map' %>
+
+                               <script type="text/javascript">
+                                $('#gmap-2').live("pageshow", function() {
+                                        $('#map_canvas').gmap({'center': getLatLng(), 'callback': function() {
+                                                        $('#map_canvas').gmap('addMarker', {'position': getLatLng(), 'title': 'Hello world!'});
+                                                }
+                                        });
+                                        function getLatLng() {
+                                                if ( google.loader.ClientLocation != null ) {
+                                                        return new google.maps.LatLng(google.loader.ClientLocation.latitude, google.loader.ClientLocation.longitude);   
+                                                }
+                                                return new google.maps.LatLng(59.3426606750, 18.0736160278);
+                                        }
+                                });
+                        </script>
+                        
+                        <div data-role="content"> 
+                
+                                <div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
+                                        <div id="map_canvas" style="height:300px;"></div>
+                                </div>
+                   
+                        
+                </div>

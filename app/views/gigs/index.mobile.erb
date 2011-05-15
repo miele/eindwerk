@@ -6,7 +6,7 @@
 <ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
   <li data-role="list-divider">Gigs</li>
 <% @googles.each do |event| %>
-	<li><a href="/Gigs/show/<%= event.id %>"><%= event.title %></a></li>
+	<li><a rel="external" href="/Gigs/showmobile/<%= event.id %>"><%= event.title %></a></li>
 <% end %>
 </ul>
 <div>&nbsp;</div>

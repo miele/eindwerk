@@ -1,0 +1,14 @@
+<div data-role="header">
+  <h1>Video Overview</h1>
+</div>
+
+<div data-role="content">
+
+ <ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
+  <li data-role="list-divider">Video's</li>
+<% @videos.each do |video| %>
+   <li><a href="/Videos/show/<%= video.id %>"><%= video.title %></a></li>	
+<% end %>
+</ul>
+
+</div>
