@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110515083154) do
+ActiveRecord::Schema.define(:version => 20110516174650) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -60,6 +60,19 @@ ActiveRecord::Schema.define(:version => 20110515083154) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+  end
+
+  create_table "config_keys", :force => true do |t|
+    t.string   "twitter_consumer_key"
+    t.string   "twitter_consumer_secret"
+    t.string   "twitter_oauth_token"
+    t.string   "twitter_oauth_secret"
+    t.string   "facebook_fan_page"
+    t.string   "facebook_access_token"
+    t.string   "google_email"
+    t.string   "google_email_password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "contacts", :force => true do |t|

@@ -77,8 +77,12 @@ end
       if @album.save
       
     #token aangemaakt die niet expired om te syncen met Facebook
-    
-    access_token = '155275974530339|f91649e3004eddb324943b1f-100001712295014|5gVUPH4S7ysAnaz0iRPzNfmTSxo'
+     @data = ConfigKeys.find(1)
+     
+     @token = @data.facebook_access_token
+     access_token = @token
+      
+    # access_token = '155275974530339|f91649e3004eddb324943b1f-100001712295014|5gVUPH4S7ysAnaz0iRPzNfmTSxo'
   
  	# via graph api de gebruiken authenticaten
     #me = FbGraph::User.me(access_token)
@@ -86,9 +90,9 @@ end
    page = FbGraph::Page.new('168360839849478', :access_token => access_token)
   
   album = page.album!(
-  :name => 'FbGraph test',
-  :message => 'hello world!',
-  :description => 'hello world!'
+  :name => params[:album][:name],
+  :message => params[:album][:name],
+  :description => 'Skarminkels Upload App'
 )
   
  	# een nieuwe album wordt aangemaakt op de bijhorende facebookpagina

@@ -3081,6 +3081,7 @@ ul.playlist{
           transition: none;
 }
 
+#footer_mobile { height: 100px; }
 
 #isotope {
   border: 1px solid #666;

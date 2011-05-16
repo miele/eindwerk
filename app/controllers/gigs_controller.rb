@@ -23,6 +23,7 @@ respond_to :html, :json, :mobile
  	@footer_subjects = Subject.order("subjects.id DESC").limit(3)
   	@page_title = 'Skarminkels Gigs'
   	@json = Google.find(params[:id]).to_gmaps4rails
+  	@data = Google.find(params[:id])
   	
   	respond_to do |format|
 	format.html  { render :layout => 'html5' }

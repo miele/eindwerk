@@ -54,7 +54,12 @@ class PicturesController < ApplicationController
       @picture = Picture.new(newparams[:picture])
       if @picture.save
       
-      access_token = '155275974530339|f91649e3004eddb324943b1f-100001712295014|5gVUPH4S7ysAnaz0iRPzNfmTSxo'
+        @data = ConfigKeys.find(1)
+     
+     @token = @data.facebook_access_token
+     access_token = @token
+      
+      # access_token = '155275974530339|f91649e3004eddb324943b1f-100001712295014|5gVUPH4S7ysAnaz0iRPzNfmTSxo'
       	
    		me = FbGraph::User.me(access_token)
       
@@ -64,9 +69,12 @@ class PicturesController < ApplicationController
 #     	:image => File.new('/Users/michiel_bogaert/Sites/skarminkels/public/system/uploads/' + @picture.id.to_s + '/medium/' + @picture.upload_file_name.to_s), 
 #     	:message => 'Automatic uploadz'
 #   		)
+  	
+  	@fanpage = @data.facebook_fan_page
+    
   		
 	page = me.accounts.detect do |p| 
-	  p.name == 'Grawiiti' 
+	  p.name == @fanpage 
 	end 
 
 		page.photo!( 
