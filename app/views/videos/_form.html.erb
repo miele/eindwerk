@@ -1,0 +1,15 @@
+<%= render "shared/error_messages" , :target => @video %>
+<fieldset>
+						<legend>HTML5 Video</legend>
+			<p>
+			Youtube/Vimeo Url (vb. http://www.youtube.com/watch?v=ryynskKq3XU)</p>
+			<p>
+			<label for="name">Video Url</label>
+			<%= f.text_field(:body,{:class => "lf"})%>
+			</p>
+		
+			<p>
+			<label for="name">Title</label>
+			<%= f.text_field(:title, :class => "lf")%>
+			</p>
+			

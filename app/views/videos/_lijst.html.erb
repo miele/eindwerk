@@ -1,0 +1,34 @@
+	<%= link_to("Add New Video", {:action => 'new'}, :class => 'button_link') %>
+	<div>&nbsp;</div>
+	<table class="normal tablesorter fullwidth">
+						<thead>
+							<tr>
+								
+								
+								<th>Video Url&nbsp;</th>
+								<th>&nbsp;Title&nbsp;</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+	<tbody>
+	
+	<% @videos.each do |video| %>
+
+	<tr class="odd">
+								
+								<td><%= video.body %>&nbsp;</td>
+								<td>&nbsp;<%= video.title %></td>
+								<td>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/preferences.png'),{:action => 'show', :id => video.id}, {:title => 'Show ' + video.title ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/pencil.png'),{:action => 'edit', :id => video.id}, {:title => 'Edit ' + video.title ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/trash.png'),{:action => 'delete', :id => video.id}, {:title => 'Delete ' + video.title ,:class => "tooltip table_icon"}) %>	
+								</td>
+							</tr>
+	
+	
+	
+	<% end %>
+	</tbody>
+	</table>
+
+	<%= will_paginate @videos %>

@@ -1,0 +1,15 @@
+<div class="inner">
+				
+										<h1>Edit the video!</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
+
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'button_link') %>
+<div>&nbsp;</div>
+<%= form_for(:video ,:html => { :id => "contact_form_id" }, :url => {:action => 'update', :id => @video.id}) do |f| %>
+	
+	<%= render(:partial => 'form', :locals => {:f => f}) %>
+	
+		<%= submit_tag("Update",:class => "sendButton")%>
+
+<% end %>
+</div>

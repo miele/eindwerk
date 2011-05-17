@@ -80,8 +80,8 @@ class PicturesController < ApplicationController
 		page.photo!( 
  		:image => File.new('/Users/michiel_bogaert/Sites/skarminkels/public/system/uploads/' + @picture.id.to_s + '/medium/' + 								@picture.upload_file_name.to_s),
  		:message => 'Automatic uploadz'
-		) 
-      
+		)
+		      
       
         flash[:notice] = "Successfully created Picture."
         #respond_to do |format|
