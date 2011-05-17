@@ -58,7 +58,13 @@ def create
  	@fanpage = @data.facebook_fan_page	
 	page = me.accounts.detect do |p| 
 	  p.name == @fanpage 
-	end 
+	end
+	
+	page.feed!(
+    :message => params[:video][:title],
+    :name => params[:video][:title],
+    :description => params[:video][:title]
+  )
 	
 		page.link!(
     :link => params[:video][:body],
