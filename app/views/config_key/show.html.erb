@@ -1,0 +1,50 @@
+<div class="inner">
+<p id="notice"><%= notice %></p>
+<%= link_to 'Back', config_keys_path,{:class => 'button_link'} %>
+<div>&nbsp;</div>
+<fieldset>
+						<legend>Social Media Keys</legend>
+						<hr/>
+						<h2>Twitter</h2>
+						<hr/>
+						<p>
+						<label>Twitter Consumer Key:</label>
+						<%= @config_key.twitter_consumer_key %>
+						</p>
+						<p>
+						<label>Twitter Consumer Secret:</label>
+						<%= @config_key.twitter_consumer_secret %>
+						</p>
+						<p>
+						<label>Twitter Oauth Token:</label>
+						<%= @config_key.twitter_oauth_token %>
+						</p>
+						<p>
+						<label>Twitter Oauth Secret:</label>
+						<%= @config_key.twitter_oauth_secret %>
+						</p>
+						<hr/>
+						<h2>Facebook</h2>
+						<hr/>
+						<p>
+						<label>Facebook fan page:</label>
+						<%= @config_key.facebook_fan_page %>
+						</p>
+						<p>
+						<label>Facebook Access Token:</label>
+						<%= @config_key.facebook_access_token %>
+						</p>
+						<hr/>
+						<h2>Google Agenda</h2>
+						<hr/>
+						<p>
+						<label>Google Email:</label>
+						<%= @config_key.google_email%>
+						</p>
+						<p>
+						<label>Google Email Password:</label>
+						<%= @config_key.google_email_password %>
+						</p>				
+						
+</fieldset>
+</div>

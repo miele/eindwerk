@@ -1,5 +1,7 @@
 Skarminkels::Application.routes.draw do
 
+  get "config_key/index"
+
   get "videos/index"
 
   get "gigs/index"

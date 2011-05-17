@@ -33,22 +33,28 @@ end
 end
 
 def feed
-inlog()
- @calendar = Calendar.find(@account,{:id => 'terrormic@gmail.com'})
+
+ inlog()
+ @dataz = ConfigKeys.find(1)
+ @id = @dataz.google_email
+ @calendar = Calendar.find(@account,{:id => @id})
  @calendars = []
  @events = @calendar.events
  
- # @events.each do |event|
-#  	
-#  	 start_time = event.start_time.strftime("%Y-%m-%d %H:%M:%S")
-#  	 end_time = event.end_time.strftime("%Y-%m-%d %H:%M:%S")
-#  	 title = event.title
-#  	 where = event.where
-#  	 
-#  	 unless Google.exists?(["start_time=?", start_time])
-#         Google.create({:start_time => start_time, :end_time => end_time, :title => title, :where => where })
-# 	 end				
-#  	end
+ # indien er nieuwe events zijn bijgekomen, download ze anders doe niks
+ 
+ @events.each do |event|
+ 	
+ 	 start_time = event.start_time.strftime("%Y-%m-%d %H:%M:%S")
+ 	 end_time = event.end_time.strftime("%Y-%m-%d %H:%M:%S")
+ 	 title = event.title
+ 	 where = event.where
+ 
+ #indien nieuw record, wordt de plaats automatisch omgezet naar longitude/latitude cošrdinaten	 
+ 	 unless Google.exists?(["start_time=?", start_time])
+        Google.create({:start_time => start_time, :end_time => end_time, :title => title, :where => where })
+	 end				
+ 	end
 
  
 respond_to do |format|
@@ -170,9 +176,14 @@ def sort_direction
 end
 
 def inlog
+
+ @data = ConfigKeys.find(1)
+ @gmail = @data.google_email
+ @gmail_pass = @data.google_email_password
+
 	@account = Service.new()
     @account.debug = true
-    @account.authenticate('terrormic@gmail.com','bogaert')
+    @account.authenticate(@gmail,@gmail_pass)
     @account.check_public = false
     @calendars = @account.calendars
     #GData4Ruby::Request.new(:get, "http://localhost:3000/", nil, nil, {"max_results" => "100"})

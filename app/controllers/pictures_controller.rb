@@ -84,10 +84,10 @@ class PicturesController < ApplicationController
       
       
         flash[:notice] = "Successfully created Picture."
-         respond_to do |format|
-          format.html # {redirect_to @picture.album}
-          format.json {render :json => { :result => 'success', :picture => pictures_path(@picture) } }
-        end
+        #respond_to do |format|
+#           format.html # {redirect_to @picture.album}
+#           format.json {render :json => { :result => 'success', :picture => pictures_path(@picture) } }
+#         end
       else
         render :action => 'new'
       end

@@ -1,0 +1,52 @@
+<div class="inner">
+				
+										<h1>A list off config keys!!</h1>
+					<p>Volg het stappenplan hieronder en verander vervolgens de sleutels in de databank.</p>
+					<p>Stap 1 : Maak een Twitter account.</p>
+					<p>Stap 2 : Ga naar dev.twitter.com</p>
+					<p>Stap 3 : Login en maak een twitter applicatie aan.</p>
+					<p>Stap 4 : Kopieer de consumer key & consumer secret
+					...</p>
+
+<div class="hr dotted clearfix">&nbsp;</div>
+<div class="config_keys_list" id="config_keys">
+
+	<div>&nbsp;</div>
+	<table class="normal tablesorter fullwidth">
+						<thead>
+							<tr>
+								
+								<th>ID</th>
+								<th>Twitter Consumer</th>
+								<th>Twitter Consumer Secret</th>
+								<th>Fanpage</th>
+								<th>Gmail</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+	<tbody>
+	
+	
+								<tr class="odd">
+								
+								<td><%= @config_key.id.to_s %>&nbsp;</td>
+								<td><%= @config_key.twitter_consumer_key %>&nbsp;</td>
+								<td><%= @config_key.twitter_consumer_secret %>&nbsp;</td>
+								<td><%= @config_key.facebook_fan_page %>&nbsp;</td>
+								<td><%= @config_key.google_email %>&nbsp;</td>
+								
+								<td>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/preferences.png'),{:action => 'show', :id => @config_key.id}, {:title => 'Show Keys' ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/pencil.png'),{:action => 'edit', :id => @config_key.id}, {:title => 'Edit Keys' ,:class => "tooltip table_icon"}) %>	
+								</td>
+							</tr>
+	
+	
+	
+	</tbody>
+	</table>
+
+</section>
+</section>
+</div>
+
