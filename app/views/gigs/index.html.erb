@@ -31,13 +31,13 @@
 <div id="isotope" class="clearfix">
 <% @googles.each do |event| %>
 	<article class="date">
-	<a class="boxgrid box alpha tl tooltip" href="/Gigs/show/<%= event.id.to_s %>" title="<%= event.id.to_s %>" data-day="hier" data-category="transition">
+	<div class="boxgrid box alpha tl tooltip" href="/Gigs/show/<%= event.id.to_s %>" title="<%= event.id.to_s %>" data-day="hier" data-category="transition">
       <h4 class="month"><%= event.start_time.strftime("%b") %></h4>
       <h4 class="day"><%= event.start_time.strftime("%d") %></h4>
       <h4 class="year"><%= event.start_time.strftime("%Y") %></h4>
       <p>&nbsp;</p>
       <div class="info_event">
-			<h4 class="name"><%= event.title%></h4>
+			<p class="name"><%= event.title%></p>
 			<p class="e_time"><%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
 			<p class="where"><%= event.where %></p>
 			</div>   
@@ -84,7 +84,7 @@
         itemSelector : '.boxgrid',
         getSortData : {
           day : function( $elem ) {
-            return parseFloat($elem.find('.day').text().replace( /[\(\)]/g, ''));
+            return parseFloat( $elem.find('.day').text() );
           },
           where : function( $elem ) {
             return $elem.find('.where').text();

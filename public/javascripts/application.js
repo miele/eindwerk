@@ -80,6 +80,11 @@ $("#news .pagination a").live("click", function(){
  return false;
 });
 
+$("#videos .pagination a").live("click", function(){
+ $.getScript(this.href);
+ return false;
+});
+
 function mycarousel_initCallback(carousel)
 {
     // Disable autoscrolling if the user clicks the prev or next button.

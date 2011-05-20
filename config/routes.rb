@@ -1,5 +1,9 @@
 Skarminkels::Application.routes.draw do
 
+  resource :facebook, :except => :create do
+    get :callback, :to => :create
+  end
+
   get "config_key/index"
 
   get "videos/index"
@@ -20,6 +24,8 @@ Skarminkels::Application.routes.draw do
 
   resources :albums
   resources :pictures
+  
+
 
 
   get "tracks/player"

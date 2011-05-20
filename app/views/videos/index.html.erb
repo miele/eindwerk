@@ -1,3 +1,7 @@
-<% @videos.each do |video| %>
-   <li><%= raw video.body_html %><p></p></li>
-<% end %>
+<aside>
+		<h2 class="grid_12 message_board clearfix">Video's overview</h2>
+</aside>
+
+<div class="videos list" id="videos">
+<%= render "videos" %>
+</div>

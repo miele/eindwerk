@@ -3,9 +3,20 @@
 </aside>
 <script type="text/javascript" charset="utf-8">
   function gmaps4rails_callback() {
+  
+   if (Modernizr.geolocation){
+            	navigator.geolocation.getCurrentPosition(register_coords);
+            }
+    function register_coords(position){
+    
+    var lat = position.coords.latitude;
+    var long = position.coords.longitude;
+    
+    }
+            
     if (Gmaps4Rails.markers.length == 1) {
      //only one marker, choose the zoom level you expect
-     Gmaps4Rails.map.setZoom(14);
+     Gmaps4Rails.map.setZoom(14);     
     }
     else{
      //more than one marker, let's auto_zoom
@@ -37,3 +48,4 @@
 <%= link_to("Overview", '/Gigs', :class => 'textlink') %>
 
 </section>
+<h1><%= @testing %></h1>

@@ -1,0 +1,17 @@
+<% @videos.each do |video| %>
+
+	<section id="left_col" class="grid_6">
+	<article>
+
+	<div class="hr dotted clearfix">&nbsp;</div>
+	<h4 class="form_title">
+		<%= video.title %></h4>
+		<%= raw video.body_html %>
+
+	</article>
+	</section>
+
+<% end %>
+
+<div class="hr dotted clearfix">&nbsp;</div>
+<div><%= will_paginate @videos %></div>
