@@ -76,20 +76,22 @@ end
     respond_to do |format|
       if @album.save
       
-    #token aangemaakt die niet expired om te syncen met Facebook
-     @data = ConfigKeys.find(1)
+       @data = ConfigKeys.find(1)
      
      @token = @data.facebook_access_token
      access_token = @token
-      
-    # access_token = '155275974530339|f91649e3004eddb324943b1f-100001712295014|5gVUPH4S7ysAnaz0iRPzNfmTSxo'
-  
- 	# via graph api de gebruiken authenticaten
-    #me = FbGraph::User.me(access_token)
+
+   		me = FbGraph::User.me(access_token)
+   
+  	
+  	@fanpage = @data.facebook_fan_page
     
-   page = FbGraph::Page.new('168360839849478', :access_token => access_token)
+  		
+	page = me.accounts.detect do |p| 
+	  p.name == @fanpage 
+	end 
   
-  album = page.album!(
+   page.album!(
   :name => params[:album][:name],
   :message => params[:album][:name],
   :description => 'Skarminkels Upload App'

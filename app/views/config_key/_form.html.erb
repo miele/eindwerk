@@ -53,11 +53,9 @@
     
                FB.getLoginStatus(function(response) {
                  if (response.session) {
-                   alert('sjance');
-               $('#token').append(response.session['access_token']);
-                    // document.write(response.session['access_token']);
+               $("input#config_key_facebook_access_token").val(response.session['access_token']);
                  } else {
-                     alert('geen sjance');
+                     // mss een andere callback actie
                  }
                });
            </script>

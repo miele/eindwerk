@@ -108,6 +108,36 @@ def create
  @subject = Subject.new(params[:subject])
  
  if @subject.save
+ 
+  @data = ConfigKeys.find(1)
+     
+     @token = @data.facebook_access_token
+     access_token = @token
+   	 me = FbGraph::User.me(access_token)
+    @fanpage = @data.facebook_fan_page
+    
+	page = me.accounts.detect do |p| 
+	  p.name == @fanpage 
+	end
+	
+	@gmail = @data.google_email
+ 	@gmail_pass = @data.google_email_password
+	
+	client = Googl.client(@gmail,@gmail_pass)
+
+   url = client.shorten('http://localhost:3000/Subjects/show/' + @subject.id.to_s)
+  
+	
+	page.feed!(
+    :message => params[:subject][:content],
+    :picture => File.new('/Users/michiel_bogaert/Sites/skarminkels/public/system/photos/' + @subject.id.to_s + '/thumb/' + 								@subject.photo_file_name.to_s),
+    :link => url.short_url,
+    :name => params[:subject][:name],
+    :description => params[:subject][:name]
+  )
+
+ 
+ 
  	flash[:notice] = "Subject has been created succesfully"
  	redirect_to(:action => 'list')
  else

@@ -78,7 +78,7 @@ class PicturesController < ApplicationController
 	end 
 
 		page.photo!( 
- 		:image => File.new('/Users/michiel_bogaert/Sites/skarminkels/public/system/uploads/' + @picture.id.to_s + '/medium/' + 								@picture.upload_file_name.to_s),
+ 		:image => File.new('/Users/michiel_bogaert/Sites/skarminkels/public/system/uploads/' + @picture.id.to_s + '/large/' + 								@picture.upload_file_name.to_s),
  		:message => 'Automatic uploadz'
 		)
 		      
