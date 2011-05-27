@@ -20,7 +20,7 @@ module Skarminkels
 #        config.autoload_paths << "#{Rails.root.to_s}/app/#{dir}"
 #     end
 	
-	config.autoload_paths += %W(#{config.root}/app/middlewares)
+	config.autoload_paths += %W(#{config.root}/app/middleware)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.

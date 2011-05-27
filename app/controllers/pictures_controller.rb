@@ -1,6 +1,9 @@
 class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.xml
+  
+  respond_to :html,:js,:xml, :json,:mobile
+  
   def index
     @pictures = Picture.all
 
@@ -47,19 +50,20 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.xml
   def create
-  
-  respond_to :js
-  
-      newparams = coerce(params)
-      @picture = Picture.new(newparams[:picture])
+		
+	  if(params[:file])
+      params[:picture][:upload] = params[:file]
+    end
+
+      @picture = Picture.new(params[:picture])
       if @picture.save
-      
+    
+ 
         @data = ConfigKeys.find(1)
      
      @token = @data.facebook_access_token
      access_token = @token
-      
-      # access_token = '155275974530339|f91649e3004eddb324943b1f-100001712295014|5gVUPH4S7ysAnaz0iRPzNfmTSxo'
+   
       	
    		me = FbGraph::User.me(access_token)
       
@@ -84,10 +88,14 @@ class PicturesController < ApplicationController
 		      
       
         flash[:notice] = "Successfully created Picture."
-        #respond_to do |format|
-#           format.html # {redirect_to @picture.album}
-#           format.json {render :json => { :result => 'success', :picture => pictures_path(@picture) } }
-#         end
+        
+        
+
+        respond_to do |format|
+          format.js	  {render :json => { :result => 'success', :picture => pictures_path(@picture) }}
+          format.html {redirect_to @picture.album}
+          format.json {render :json => { :result => 'success', :picture => pictures_path(@picture) } }
+        end
       else
         render :action => 'new'
       end
@@ -123,11 +131,12 @@ class PicturesController < ApplicationController
   
   private 
   def coerce(params)
-    if params[:picture].nil? 
+    if params[:picture].nil?
+    
       h = Hash.new 
       h[:picture] = Hash.new 
-      h[:picture][:album_id] = params[:album_id] 
-      h[:picture][:upload] = params[:Filedata] 
+      h[:picture][:album_id] = params[:album_id]
+      h[:picture][:upload] = params[:upload][:file]
       h[:picture][:upload].content_type = MIME::Types.type_for(h[:picture][:upload].original_filename).to_s
       h
     else 

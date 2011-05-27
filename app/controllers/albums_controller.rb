@@ -28,16 +28,13 @@ respond_to :html, :xml, :json,:mobile
   # GET /albums/1
   # GET /albums/1.xml
   # TODO 
-  def show
-  @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
- @footer_subjects = Subject.order("subjects.id DESC").limit(3)
-@page_title = 'Skarminkels Band'
+ def show
     @album = Album.find(params[:id], :include => :pictures)
-     respond_to do |format|
-format.html  { render :layout => 'backend' }
-format.js  { render :layout => 'backend' }
-end
-    
+
+    respond_to do |format|
+      format.html { render :layout => 'backend_upload' }
+      format.xml  { render :xml => @album }
+    end
   end
   
   def detail

@@ -1,21 +1,15 @@
-<%= javascript_include_tag "plupload/plupload.full.min", "plupload/jquery.plupload.queue.min" %>
-<%= stylesheet_link_tag "plupload.queue" %>
-<div class="inner">
-<div>
-  <div id="filelist"></div>
-  <br />
-  <a id="pickfiles" href="#">[Select files]</a>
-  <a id="uploadfiles" href="#">[Upload files]</a>
-</div>
-</div>
-
+<%= render :partial => 'show' %>
+ <div class="inner">
 <%= form_for Picture.new(:album_id => @album.id), :html => {:multipart => true, :id => "file_upload"} do |f| %>
   <%= f.hidden_field :album_id, "value" => @album.id %>
-  <div id="file_upload_container">
+  <div id="uploader">
+        <p>You browser doesn't have Flash, Silverlight, Gears, BrowserPlus or HTML5 support.</p>
+  </div>
     <%= f.file_field :upload %> </p>
 <p><%= f.submit "Upload" %></p>
 <p><%= link_to "All albums", albums_path, :class => 'textlink' %></p>
   </div>
 <% end %>
+</div>
 
 

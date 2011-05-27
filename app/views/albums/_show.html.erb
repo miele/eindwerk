@@ -1,35 +1,54 @@
 <script type="text/javascript" charset="utf-8">
-<%- session_key = Rails.application.config.session_options[:key] -%> 
 $(document).ready(function() {
-alert('geladen');
-	$('#picture_upload').click(function(event){ 
-		event.preventDefault();
-	}); 
-	
-	$('#picture_upload').uploadify({
-  	uploader : '../javascripts/uploadify/uploadify.swf',
-		cancelImg : '../images/cancel.png',
-		multi : true,
-		auto : true,
-  	script : '/pictures',
-		onComplete : function(event, queueID, fileObj, response, data) { 
-			var dat = eval('(' + response + ')');
-			$.getScript(dat.upload);},
-  	scriptData : {
-	        '_http_accept': 'application/javascript',
-					'format' : 'json',
-	        '_method': 'post',
-	        '<%= session_key %>' : encodeURIComponent('<%= u cookies[session_key] %>'),
-	        'authenticity_token': encodeURIComponent('<%= u form_authenticity_token %>'),
-					'album_id' : '<%= @album.id %>'
-	      }
-	});
-	
-	$('#picture_submit').click(function(event){ 
-			event.preventDefault(); 
-			$('#picture_upload').uploadifyUpload(); 
-		});
+ //RoR - capture authenticity token
+      var atoken = $("input[name=authenticity_token]").val();
+      $("#uploader").pluploadQueue({
+        // General settings
+        runtimes : 'html5,flash,silverlight,gears,browserplus',
+        url : '/pictures',
+        max_file_size : '10mb',
+        unique_names : true,
+        //RoR - make sure form is multipart
+        multipart: true,
+        //RoR - make sure to send authenticity token and any other parameters that are on the plain html form
+        multipart_params : {"picture[album_id]" : <%= @album.id %>, authenticity_token : atoken},
+
+        // Specify what files to browse for
+        filters : [
+          {title : "Image files", extensions : "jpg,gif,png"},
+          {title : "Zip files", extensions : "zip"}
+        ],
+
+        // Flash settings
+        flash_swf_url : '/plupload/js/plupload.flash.swf',
+
+        // Silverlight settings
+        silverlight_xap_url : '/plupload/js/plupload.silverlight.xap'
+      });
+
+      // Client side form validation
+      $('form[picture]').submit(function(e) {
+        var uploader = $('#uploader').pluploadQueue();
 		
+        // Validate number of uploaded files
+        if (uploader.total.uploaded == 0) {
+          // Files in queue upload them first
+          if (uploader.files.length > 0) {
+            // When all files are uploaded submit form
+            uploader.bind('UploadProgress', function() {
+              if (uploader.total.uploaded == uploader.files.length)
+                $('form[picture]').submit();
+            });
+				
+            uploader.start();
+          } else
+            alert('You must at least upload one file.');
+
+          e.preventDefault();
+        }
+      });
+
+
 }); 
 </script>
 
