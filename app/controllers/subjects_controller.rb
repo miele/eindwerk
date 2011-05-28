@@ -24,8 +24,8 @@ def top
  @subjects = Subject.order("subjects.id DESC").limit(4)
  @tweets = Tweet.order("tweets.created DESC").limit(10)
   # @events = Event.order("events.id DESC").limit(2)
- @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
- @footer_subjects = Subject.order("subjects.id DESC").limit(3)
+ @footer_tweets = Tweet.order("tweets.created DESC").limit(2)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(2)
  respond_to do |format|
   format.html
   format.mobile {render :layout => 'mobile'}

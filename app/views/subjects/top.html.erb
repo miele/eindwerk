@@ -60,15 +60,19 @@
 				<div>&nbsp;</div>
 			</aside>
 	<section class="box_entries grid_12">
+	<% @s = 0 %>
    <% @subjects.each do |subject| %>
    
    <article>
-					<a class="boxgrid box alpha tl tooltip" href="/Subjects/show/<%= subject.id %>" title="<%= subject.name %>">
+					<a class="boxgrid box alpha tl tooltip" id="sub<%= @s.to_s %>" href="/Subjects/show/<%= subject.id %>" title="<%= subject.name %>">
 						<h4 class="title nocufon"><%= subject.name %></h4>
-						<p class"sub"><%= subject.content %></p>
+						<p class"sub">
+						<%  str = subject.content %>
+						<%= str[0..25] + '...' %></p>
 						<figure><%= image_tag(subject.photo.url(:thumb)) %></figure>
 					</a>
 				</article>
+	<% @s+=1; %>
     <% end %>
     </section>
 	

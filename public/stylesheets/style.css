@@ -9,6 +9,18 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'GoodDogRegular';
+    src: url('fonts/GoodDog-webfont.eot');
+    src: url('fonts/GoodDog-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/GoodDog-webfont.woff') format('woff'),
+         url('fonts/GoodDog-webfont.ttf') format('truetype'),
+         url('fonts/GoodDog-webfont.svg#GoodDogRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 
 html, body, div, span, object, iframe,
@@ -247,6 +259,45 @@ a.textlink:hover, #search_button, .pagination a:hover, .prev:hover, .next:hover 
 	padding-bottom: 0;
 	padding-top: 5px
 	}*/
+
+/* =Google Calendar
+-------------------------------------------------------------- */
+
+
+#gcal0{
+background-image: url(../images/gcal0.png);
+
+}
+
+#gcal1{
+background-image: url(../images/gcal1.png);
+}
+
+#gcal2{
+background-image: url(../images/gcal5.png);
+}
+
+#gcal3{
+background-image: url(../images/gcal3.png);
+}
+
+/* = Popular News
+-------------------------------------------------------------- */
+
+#sub0{
+background-image: url(../images/sub0.png);
+}
+
+#sub1{
+background-image: url(../images/sub1.png);
+}
+
+#sub2{
+background-image: url(../images/sub2.png);
+}
+#sub3{
+background-image: url(../images/sub3.png);
+}
 
 
 /* =Search
@@ -586,7 +637,7 @@ ol {padding: 0 0 0 5px;}
 
 	background: #000 url(../images/test.png);
 
-	border-bottom: 3px solid #333;
+	/* border-bottom: 3px solid #333; */
 	width: 1020px;
 	z-index: 1000;
 	min-height: 90px;
@@ -2580,9 +2631,9 @@ border: none;
 
 
 ul.polaroids { width: 960px; margin: 0 0 18px -30px; }
-		ul.polaroids li { display: inline; }
-		ul.polaroids a { background: #fff; display: inline; float: left; margin: 0 0 27px 30px; width: auto; padding: 10px 10px 15px; text-align: center; font-family: "Marker Felt", sans-serif; text-decoration: none; color: #333; font-size: 18px; -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); -webkit-transform: rotate(-2deg); -webkit-transition: -webkit-transform .15s linear; -moz-transform: rotate(-2deg); }
-		ul.polaroids img { display: block; width: 180px; margin-bottom: 12px;}
+		ul.polaroids li { display: inline;  }
+		ul.polaroids a { background: #e5e4e4; background-image: url('../images/polaroid.png');display: inline; float: left; margin: 0 0 27px 30px; width: auto; padding: 10px 10px 15px; text-align: center;font-family: "GoodDogRegular", sans-serif; text-decoration: none; color: #333; font-size: 24px; -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); -webkit-transform: rotate(-2deg); -webkit-transition: -webkit-transform .15s linear; -moz-transform: rotate(-2deg); }
+		ul.polaroids img { display: block; width: 180px; margin-bottom: 12px; border: 2px solid black;}
 		ul.polaroids a:after { content: attr(title);}
 		
 		ul.polaroids li:nth-child(even) a { -webkit-transform: rotate(2deg);  -moz-transform: rotate(2deg); }

@@ -6,7 +6,7 @@
 
 <ul class="polaroids">
 <% @albums.each do |album| %>
-<section class="grid_2">
+<section class="grid_3">
 <li>
     <a title="<%= album.name %>" href="<%= 'albums/detail/' + album.id.to_s %>"><img src="<%= 'system/uploads/' + album.foto.to_s + '/medium/' + album.upload_file_name %>" /></a>
 </li>
