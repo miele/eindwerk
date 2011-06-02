@@ -29,10 +29,8 @@ Skarminkels::Application.routes.draw do
 
 
   get "tracks/player"
-  get "albums/list"
-  
-  # to match the mobile url off albums
-   match "/#/albums", :to => "albums#index"
+
+
   
   match "/download_pdf/:id/(.:format)" => 'contacts#index_pdf', :method => :get, :as=>:index_pdf
 

@@ -9,7 +9,7 @@ respond_to :html, :json, :mobile
    	@footer_tweets = Tweet.order("tweets.created DESC").limit(3)
  	@footer_subjects = Subject.order("subjects.id DESC").limit(3)
   	@page_title = 'Skarminkels Gigs'
-  	@googles = Google.order("googles.start_time DESC");
+  	@googles = Google.order("googles.start_time DESC").paginate(:per_page => 8,:page => params[:page]);
   
   respond_to do |format|
 	format.html  { render :layout => 'html5' }

@@ -1,0 +1,31 @@
+	<%= link_to("Add New Album", {:controller =>'albums' ,:action => 'new'}, :class => 'button_link') %>
+	<div>&nbsp;</div>
+	<table class="normal tablesorter fullwidth">
+						<thead>
+							<tr>
+								
+								<th>Name</th>
+								<th>Aantal foto's</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+	<tbody>
+	
+	<% @albums.each do |album| %>
+
+	<tr class="odd">
+								
+								<td><%= album.name %>&nbsp;</td>
+								<td><%= album.pictures.count %>&nbsp;</td>
+								<td>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/preferences.png'),{:controller =>'albums',:action => 'detail', :id => album.id}, {:title => 'Show ' + album.name ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/pencil.png'),{:controller =>'albums',:action => 'edit', :id => album.id}, {:title => 'Edit ' + album.name ,:class => "tooltip table_icon"}) %>
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/trash.png'),{:controller =>'allbums',:action => 'destroy', :id => album.id}, {:title => 'Delete ' + album.name ,:class => "tooltip table_icon"}) %>	
+								</td>
+							</tr>
+	
+	
+	
+	<% end %>
+	</tbody>
+	</table>

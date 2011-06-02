@@ -3,8 +3,8 @@ class Subject < ActiveRecord::Base
  has_many :pages
  
  validates_presence_of :name, :content
- validates_length_of :name, :within => 2..15, :too_short => "Je moet meer tekens gebruiken", :too_long => "Je titel is te lang!"
- validates_length_of :content, :within => 10..250, :too_short => "Je moet meer tekst gebruiken", :too_long => "Je tekst is te lang!"
+ #validates_length_of :name, :within => 2..15, :too_short => "Je moet meer tekens gebruiken", :too_long => "Je titel is te lang!"
+ #validates_length_of :content, :within => 10..250, :too_short => "Je moet meer tekst gebruiken", :too_long => "Je tekst is te lang!"
 
  scope :visible, where(:visible => true)
  scope :invisible, where(:visible => false)

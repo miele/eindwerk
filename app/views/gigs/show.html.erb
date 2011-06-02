@@ -16,7 +16,9 @@
             
     if (Gmaps4Rails.markers.length == 1) {
      //only one marker, choose the zoom level you expect
-     Gmaps4Rails.map.setZoom(14);     
+     alert(Gmpas4Rails.userLocation);
+     Gmaps4Rails.map.setZoom(14);
+          
     }
     else{
      //more than one marker, let's auto_zoom
@@ -37,7 +39,8 @@
                     "data"    => { "from" => "Bruxxels", "to" => @data.where} , 
                     "options" => {"display_panel" => true, "panel_id" => "instructions"}
               },
-       "map_options" => { "auto_zoom" => false, "center_latitude" => @data.latitude, "center_longitude" => @data.longitude},
+       "map_options" => { "auto_zoom" => false, "center_latitude" => @data.latitude, "center_longitude" => @data.longitude,
+       					"detect_location" => true},
        "markers"     => { "data" => @json }
       })
 %>

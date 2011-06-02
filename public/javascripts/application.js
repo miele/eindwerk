@@ -153,10 +153,31 @@ $("a.portfolio_item[rel^='prettyPhoto'], a.isphoto_m[rel^='prettyPhoto'], a.isph
 			slideshow: 4000,
 			autoplay_slideshow: false});
 
-	$('.delete_post').bind('ajax:success', function() {
-		$(this).closest('td').fadeOut();
-	});
-
+  var $container = $('#isotope_gigs');
+    
+      $container.isotope({
+      animationEngine : 'best-available',
+        itemSelector : '.boxgrid'
+      });
+      
+      $container.infinitescroll({
+        navSelector  : '.pagination',    // selector for the paged navigation 
+        nextSelector : '.next_page',  // selector for the NEXT link (to page 2)
+        itemSelector : '.date',     // selector for all items you'll retrieve
+        donetext  : 'Geen optredens meer.',
+        loadingImg : 'http://i.imgur.com/qkKy8.gif',
+        debug: true,
+        errorCallback: function() { 
+          // fade out the error message after 2 seconds
+          $('#infscr-loading').animate({opacity: .8},2500).fadeOut('normal');   
+        }
+        },
+        // call Isotope as a callback
+        function( newElements ) {
+          $container.isotope( 'appended', $( newElements ) ); 
+        }
+      );
+     
 $("#contact_form_id").formToWizard({ submitButton: 'contact_submit' });
 
 

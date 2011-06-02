@@ -1,30 +1,30 @@
+<% @array = [6,6,3,3,3,3]
+@kleur = ["news_title_odd","news_title_even"]
+	@getal = 0;
+%>
 <% @subjects.each do |subject| %>
 
-<section id="left_col" class="grid_6">
+<section id="left_col" class="grid_<%= @array[@getal] %>">
 
 
 
-<article>
+<article class="news_page">
 <div class="hr dotted clearfix">&nbsp;</div>
 
-		<h4 class="form_title"><%= subject.name %></h4>
+		<h4 class="<%= @kleur.choice %>"><%= subject.name %></h4>
 		<p><a class="portfolio_item" href="<%= '/Subjects/show/' + subject.id.to_s %>" title="<%= subject.name %>">
 		<img class="float_left" title="" src="<%= subject.photo.url(:large)%>" alt="" />
 		</a>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor mattis neque at bibendum. Fusce uploadsus semper justo a dictum. Suspendisse 				pulvinar nisi nec arcu interdum laoreet. Ut at magna ut erat ultrices varius id vel nunc. Aliquam uploadsus euismod nunc, a convallis erat facilisis id. 			Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+		<p><%= raw subject.content %>
+		<!-- <p>Aangemaakt op : --> <% subject.created_at %><!-- </p> -->
+		<%= link_to("Read more", '/Subjects/show/' + subject.id.to_s, :class => 'textlink') %></p>
 		
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Donec auctor mattis </strong>neque at bibendum. Fusce uploadsus semper justo a dictum. 			Suspendisse pulvinar nisi nec arcu interdum laoreet. Ut at magna ut erat ultrices varius id vel nunc.<%= subject.content %></p>
-		<div>&nbsp;</div>
-		<p>Aangemaakt op : <%= subject.created_at %></p>
-		<div>&nbsp;</div>
-		<%= link_to("Read more", '/Subjects/show/' + subject.id.to_s, :class => 'textlink') %>
 		<div class="hr dotted clearfix">&nbsp;</div>
-
-		<hr/>
 </article>
 
 
 </section>
+<% @getal+=1;%>
 <% end %>
 <div class="hr dotted clearfix">&nbsp;</div>
 <div><%= will_paginate @subjects %></div>
