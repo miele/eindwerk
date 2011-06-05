@@ -1,6 +1,6 @@
 <!-- =Message board -->
 			<aside>
-				<h2 class="grid_12 message_board clearfix">Book the Skarminkels!</h2>
+				<h2 class="grid_12 message_board clearfix">&nbsp;</h2>
 			</aside>
 
 			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
@@ -9,5 +9,15 @@
 
 <%= render 'form_stripped' %>
 </section>
+<div>&nbsp;</div>
 </section>
-<%= javascript_include_tag 'formToWizard'%>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/jquery.validate.js"></script>
+<script>
+$("#contact_form_id").validate({
+	rules: {
+         name: { required: true },
+         phone: { required: true },
+         email: { required: true, email:true }
+        }
+});
+</script>

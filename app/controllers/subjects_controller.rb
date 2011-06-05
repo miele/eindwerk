@@ -33,6 +33,7 @@ end
 end
 
 def feed
+# automatisch inloggen met de geconfigureerde gegevens
 
  inlog()
  @dataz = ConfigKeys.find(1)
@@ -71,6 +72,9 @@ format.js  { render :layout => 'backend' }
 end
 
 end
+
+#nieuws wordt opgesplits met vooruitzicht op mobile
+#paginatie kan dan via ajax gerendered worden
 
 def news
 @subjects = Subject.order("subjects.id DESC").paginate(:per_page => 6,:page => params[:page])

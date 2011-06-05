@@ -7,7 +7,7 @@
 			<span class="image-holder-medium"><img class="thumb" alt="" src="<%= @subject.photo.url(:medium)%>" /></span>
 			</figure>
 
-  <p><%= @subject.content %></p>
+  <p><%= raw @subject.content %></p>
   <p>Aangemaakt op : <%= @subject.created_at %></p>
 </div>
 

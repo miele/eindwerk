@@ -8,7 +8,9 @@
 
 <%= form_for(:subject,:html => { :id => "contact_form_id" },:url => {:action => 'update', :id => @subject.id}) do |f| %>
 	
+		
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
+	<p><%= image_tag(@subject.photo.url(:medium), :id => "cropbox") %></p>
 	
 		<%= submit_tag("Update",:class => "button_link")%>
 

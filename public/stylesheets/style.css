@@ -168,7 +168,7 @@ a img {outline:0;}
 -------------------------------------------------------------- */
 .textlink {}
 
-a.textlink, #search_button, .pagination a, .prev, .next  {
+a.textlink, #search_button, .pagination a, .prev, .next ,.more_news_link {
 	border: 1px solid #777c82;
 	background: #f1f1f1; /* for non-css3 browsers */
 	filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#ffffff,endColorStr=#dddddd); /* for IE */
@@ -180,6 +180,23 @@ a.textlink, #search_button, .pagination a, .prev, .next  {
 	font-weight: bold;
 	padding: 3px 8px;
 	color: #333;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	text-decoration: none
+	}
+
+.more_news_link {
+	border: 1px solid #777c82;
+	background: #f1f1f1; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#333333,endColorStr=#333333); /* for IE */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#333333,endColorStr=#333333)"; /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#333333)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #333333,  #333333); /* for firefox 3.6+ */
+	font-size: 11px;
+	margin: -3px 0 0 0;
+	font-weight: bold;
+	padding: 3px 8px;
+	color: #fff;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	text-decoration: none
@@ -208,7 +225,7 @@ a.textlink, #search_button, .pagination a, .prev, .next  {
 
 .footer .toplink:hover {text-decoration: none}
 
-a.textlink:hover, #search_button, .pagination a:hover, .prev:hover, .next:hover  {
+a.textlink:hover, #search_button, .pagination a:hover, .prev:hover, .next:hover,   {
 	background: #333;
 	filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#333333,endColorStr=#333333); /* for IE */
 	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#333333,endColorStr=#333333)"; /* for IE */
@@ -399,7 +416,9 @@ ul.social_profiles img {border: none}
 
 h1 {font-size: 42px;}
 
-h2 {font-size: 36px;font-family: 'Rock Salt', arial, serif;}
+h2 {font-size: 36px;font-family: 'Rock Salt', arial, serif; font-weight: normal;}
+
+.new_contact h2{font-size: 36px;font-family: 'Rock Salt', arial, serif; font-weight: normal; color: gray;margin-top: 5px;}
 
 h3 {font-size: 30px;}
 
@@ -434,6 +453,7 @@ p {
 p,
 li,
 dl {line-height: 21px;}
+
 
 p,
 dl,
@@ -474,6 +494,7 @@ img {
 	}
 
 img.float_left {
+	border:none;
     float: left;
     margin: 5px 20px 10px 0;
 	}
@@ -557,10 +578,10 @@ ol {padding: 0 0 0 5px;}
 
 .container_12 .grid_1 {width: 45px;}
 .container_12 .grid_2 {width: 130px;}
-.container_12 .grid_3 {width: 210px;margin: 0;float: left;}
+.container_12 .grid_3 {width: 210px;height:auto;margin: 0;float: left;padding:5px;}
 .container_12 .grid_4 {width: 290px;}
 .container_12 .grid_5 {width: 385px;}
-.container_12 .grid_6 {width: 450px; height: 250px;padding-bottom:5px;margin: 0;float: left;}
+.container_12 .grid_6 {width: 450px; height: 250px;padding:5px;margin: 0;float: left;}
 .container_12 .grid_7 {width: 555px;}
 .container_12 .grid_8 {width: 640px;}
 .container_12 .grid_9 {width: 725px;}
@@ -665,11 +686,15 @@ h1#logo img {
 h1#logo.grid_4 {width: 190px}
 
 h4.news_title_odd{
+margin : 0px;
 padding-top: 5px;
+padding-bottom: 3px;
 border-top: 15px solid #F30;
 }
 
 h4.news_title_even{
+margin: 0;
+padding-bottom: 3px;
 padding-top: 5px;
 border-top: 15px solid #777c82;
 }
@@ -693,6 +718,7 @@ ul#navigation li {
 ul#navigation li a {
 	display: block;
 	font-family: 'Rock Salt', arial, serif !important;
+	font-weight: normal;
 	padding: 15px 30px 15px 30px;
 	text-decoration: none;
 	color: #bbb;
@@ -981,6 +1007,7 @@ color : red;
 font-size: 30px;
 margin-top: 20px;
 font-family: 'Rock Salt', arial, serif;
+font-weight: normal;
 
 }
 #navigation li p a{
@@ -994,6 +1021,7 @@ margin-top: -10px;
 color : red ;
 margin-top: -10px;
 font-family: 'Rock Salt', arial, serif;
+font-weight: normal;
 }
 
 /*a .title:hover {color: #777c82;}*/
@@ -1063,6 +1091,7 @@ font-family: 'Rock Salt', arial, serif;
 	color: #777c82;
 	text-decoration: none
 	font-family: 'Rock Salt', arial, serif;
+	font-weight: normal;
 	}
 
 a.boxgrid {text-decoration: none}
@@ -1168,6 +1197,7 @@ float: left;
 p.tweet_content{
 padding-top: 20px;
 font-family: 'Rock Salt', arial, serif;
+font-weight: normal;
 height: 80px;
 overflow: hidden;
 }
@@ -1412,11 +1442,11 @@ overflow: hidden;
 	
 	border: 1px solid #000;
 	width: 196px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
 	background: #000;
-	padding-bottom: 5px;
-	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-right: 3px;
 	
 	}
 
@@ -1502,5 +1532,26 @@ p.portfolio_cat_desc {
 	font-size: 11px;
 	line-height: 18px
 	}
+
+#contact_image{
+float: right;
+overflow: hidden;
+margin-right: 10px;
+border: none;
+}
+
+form.new_contact{
+height: 670px;
+width: 100%;
+float: left;
+color: #201D1D;
+background-image: url(../images/contact_bg.png);
+padding-left: 10px;
+-webkit-box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.5);
+box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+
 
 

@@ -1,33 +1,32 @@
 <%= form_for(@contact ,:html => { :id => "contact_form_id" }) do |f| %>
+
 <%= render "shared/error_messages" , :target => @contact %>
+<%= image_tag('contact_box.png', :id => 'contact_image') %>
 <fieldset>
-	<legend>Contact Details</legend>
-  	<p>
+	<h2>Book the Skarminkels!</h2>
+	
+  
 	<label for="name">Name</label>
-    <%= f.text_field :name,{:id => "name"} %>
-  	</p>
+    <%= f.text_field :name,{:id => "name",:class=> "required"} %>
+
 	
 	<p>
-	<label for="name">Email</label>
-    <%= f.text_field :email,{:id => "name"} %>
+	<label for="email">Email</label>
+    <%= f.text_field :email,{:id => "email",:class=> "required email"} %>
   	</p>
-</fieldset>
-<fieldset>
-	<legend>Booking Info</legend>
-	<br/>
   	<p>
-	<label for="name">Info</label>
-    <%= f.text_area(:info,{:class => "editor"}) %>
+	<label for="info">Additionel Information</label>
+    <%= f.text_area(:info,{:class => "editor",:class=> "required"}) %>
   	</p>
 	
   	<p>
-	<label for="name">Phone</label>
-    <%= f.text_field :tel ,{:id => "name"}%>
+	<label for="phone">Phone</label>
+    <%= f.text_field :tel ,{:id => "phone",:class=> "required"}%>
   	</p>
   	</fieldset>
   	
   		<p>
-    <%= f.submit "Submit" ,:class => "sendButton"%>
+    <%= f.submit "Book Us!" ,:class => "sendButton"%>
  	</p>
 
 <% end %>

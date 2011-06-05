@@ -3,7 +3,7 @@
 </aside>
 
 <!-- Column -->
-		<section id="left_col" class="grid_8">
+		<section id="left_col" class="grid_9">
 		
 					<div class="hr dotted clearfix">&nbsp;</div>
 
@@ -14,8 +14,7 @@
 			<span class="image-holder-medium"><img class="thumb" alt="" src="<%= @subject.photo.url(:medium)%>" /></span>
 			</figure>
 				<div class="hr dotted clearfix">&nbsp;</div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor mattis neque at bibendum. Fusce uploadsus semper justo a dictum. Suspendisse pulvinar nisi nec arcu interdum laoreet. Ut at magna ut erat ultrices varius id vel nunc. Aliquam uploadsus euismod nunc, a convallis erat facilisis id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Donec auctor mattis </strong>neque at bibendum. Fusce uploadsus semper justo a dictum. Suspendisse pulvinar nisi nec arcu interdum laoreet. Ut at magna ut erat ultrices varius id vel nunc.<%= @subject.content %></p>
+				<p><%= raw @subject.content %></p>
 		
 		<p>Aangemaakt op : <%= @subject.created_at %></p>
 <%= link_to("Overview", '/Subjects/news', :class => 'textlink') %>

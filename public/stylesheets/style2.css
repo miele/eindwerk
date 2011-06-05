@@ -22,7 +22,7 @@
 	z-index: 5;
 	}
 
-.isphoto_m:hover {background: transparent url(../images/isphoto_b.png) scroll 50% 50% no-repeat;}
+.isphoto_m:hover {background: transparent url(../images/magnify.png) scroll 5% 25% no-repeat;}
 
 /* =photo big */
 .isphoto_b {
@@ -361,7 +361,8 @@ margin-bottom: 0px;
 }
 
 fieldset { border:none; width:640px;}
-        legend { font-size:18px; margin:0px; padding:10px 0px; color:#b0232a; font-weight:bold;font-family: Helvetica;}
+        legend { font-size:22px; margin:0px; padding:10px 0px; color:#000000; font-weight:bold;font-family: Helvetica;
+        		border-bottom: 5px solid #000000;width: 95%; }
         label { display:block; margin:15px 0 5px;}
         input[type=text], input[type=password] { width:300px; padding:5px; border:solid 1px #000;}
         .prev, .next {  padding:5px 10px; color:#000000; text-decoration:none; margin-top: 10px;}
@@ -399,11 +400,13 @@ contact_form ul li {
 
 #contact_form label {
 	line-height: 35px;
-	width: 100px;
+	width: 100%;
+	display: block;
 	text-align: left;
 	font-weight: bold;
 	float: left;
 	margin-right: 10px;
+	margin-left: 5px;
 	}
 
 .sendButton {
@@ -1136,7 +1139,7 @@ border: none;
 ul.polaroids { width: 960px; margin: 0 0 18px -30px; }
 		ul.polaroids li { display: inline;  }
 		ul.polaroids a { background: #e5e4e4; background-image: url('../images/polaroid.png');display: inline; float: left; margin: 0 0 27px 30px; width: auto; padding: 10px 10px 15px; text-align: center;font-family: "GoodDogRegular", sans-serif; text-decoration: none; color: #333; font-size: 24px; -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); -webkit-transform: rotate(-2deg); -webkit-transition: -webkit-transform .15s linear; -moz-transform: rotate(-2deg); }
-		ul.polaroids img { display: block; width: 180px; margin-bottom: 12px; border: 2px solid black;}
+		ul.polaroids img { display: block; width: 180px; margin-bottom: 12px; border: 2px solid black;height: 150px;overflow: hidden;}
 		ul.polaroids a:after { content: attr(title);}
 		
 		ul.polaroids li:nth-child(even) a { -webkit-transform: rotate(2deg);  -moz-transform: rotate(2deg); }
