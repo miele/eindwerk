@@ -418,7 +418,7 @@ h1 {font-size: 42px;}
 
 h2 {font-size: 36px;font-family: 'Rock Salt', arial, serif; font-weight: normal;}
 
-.new_contact h2{font-size: 36px;font-family: 'Rock Salt', arial, serif; font-weight: normal; color: gray;margin-top: 5px;}
+.new_contact h2{font-size: 36px;font-family: 'Rock Salt', arial, serif; font-weight: normal; color: gray;margin-top: 5px;padding-top: 15px;}
 
 h3 {font-size: 30px;}
 
@@ -638,9 +638,6 @@ ol {padding: 0 0 0 5px;}
 	width: 0;
 	height: 0;
 	}
-
-.error,
-.success {display: none;}
 
 .page_title {
 	border-top: 1px solid #777c82;
@@ -1540,16 +1537,40 @@ margin-right: 10px;
 border: none;
 }
 
+#messageBox label.error{
+color: red;
+font-size: 12px;
+margin: 0;
+padding: 2px;
+}
+
+label.error valid{
+background-image: url(../images/check32.png);
+height: 20px;
+float: right;
+}
+
 form.new_contact{
-height: 670px;
+height: auto;
 width: 100%;
 float: left;
 color: #201D1D;
 background-image: url(../images/contact_bg.png);
 padding-left: 10px;
--webkit-box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.5);
--moz-box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.5);
-box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 5px 5px 5px black;
+-webkit-box-shadow: 5px 5px 5px black;
+box-shadow: 5px 5px 5px black;
+}
+
+article.video{
+width: 400px;
+height: 250px;
+margin-top: 0px;
+margin-bottom: 30px;
+padding:0px;
+-moz-box-shadow: 5px 5px 5px black;
+-webkit-box-shadow: 5px 5px 5px black;
+box-shadow: 5px 5px 5px black;
 }
 
 

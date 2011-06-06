@@ -1,16 +1,12 @@
 <% @videos.each do |video| %>
 
-	<section id="left_col" class="grid_6">
-	<article>
-
-	<div class="hr dotted clearfix">&nbsp;</div>
-	<h4 class="form_title">
-		<%= video.title %></h4>
+	<section id="left_col" class="grid_5">
+	<article class="video">
 		<%= raw video.body_html %>
-
+		<h4 class="form_title">
+		<% video.title %></h4>
 	</article>
 	</section>
-
 <% end %>
 
 <div class="hr dotted clearfix">&nbsp;</div>

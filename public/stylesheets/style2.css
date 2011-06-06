@@ -439,7 +439,8 @@ contact_form ul li {
 	text-decoration: none
 	}
 
-
+#contact_form input#phone:focus,
+#contact_form input#info:focus,
 #contact_form input#name:focus,
 #contact_form input#email:focus,
 #contact_form input#subject:focus,
@@ -448,6 +449,8 @@ contact_form ul li {
 	}
 
 #contact_form input#name,
+#contact_form input#phone,
+#contact_form input#info,
 #contact_form input#recurrence_start,
 #contact_form input#recurrence_end,
 #contact_form input#recurrence_until,

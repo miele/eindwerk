@@ -1,12 +1,8 @@
 <!-- =Message board -->
-			<aside>
-				<h2 class="grid_12 message_board clearfix">&nbsp;</h2>
-			</aside>
-
+			<div>&nbsp;</div>
 			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
 <section id="left_col" class="grid_12">
 <section id="contact_form">
-
 <%= render 'form_stripped' %>
 </section>
 <div>&nbsp;</div>
@@ -14,10 +10,9 @@
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/jquery.validate.js"></script>
 <script>
 $("#contact_form_id").validate({
-	rules: {
-         name: { required: true },
-         phone: { required: true },
-         email: { required: true, email:true }
-        }
+	errorLabelContainer: "#messageBox",
+	success: "valid",
+	onkeyup: true,
+  	onclick: true,
 });
 </script>
