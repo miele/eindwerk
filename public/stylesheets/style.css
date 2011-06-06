@@ -1178,7 +1178,8 @@ top: 38px;
   rotation: -90deg !important;
   /* ** Hacks ** */
   -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);  
+  -moz-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); 
   }
   
 #twitter_update_list{
@@ -1571,6 +1572,10 @@ padding:0px;
 -moz-box-shadow: 5px 5px 5px black;
 -webkit-box-shadow: 5px 5px 5px black;
 box-shadow: 5px 5px 5px black;
+}
+
+#videos{
+/* background-image: url(../images/video_bg.png); */
 }
 
 
