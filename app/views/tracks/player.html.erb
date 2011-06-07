@@ -35,7 +35,7 @@
 <ul class="playlist">
 <% @tracks.each do |track|%>
 	 <li>
-        <a href="<%= track.song.url %>" rel="/images/1.jpg" ><%= track.name %></a>
+        <a href="<%= track.song.url %>" rel="<%= track.cover.url(:large) %>" ><%= track.name %></a>
     </li>
   <% end %>
   </ul>	

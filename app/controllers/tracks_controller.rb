@@ -48,13 +48,12 @@ def create
         @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
  		@footer_subjects = Subject.order("subjects.id DESC").limit(3)
 		@page_title = 'Skarminkels Music Player'
-		render :layout => 'backend'
-        render :action => "lijst" 
+		redirect_to(:action => 'lijst') 
       else
        	@footer_tweets = Tweet.order("tweets.created DESC").limit(3)
  		@footer_subjects = Subject.order("subjects.id DESC").limit(3)
 		@page_title = 'Skarminkels Music Player'
-        render :action => "new"
+        redirect_to(:action => 'new')
       end
     end
 
