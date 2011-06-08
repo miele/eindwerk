@@ -357,19 +357,22 @@ img.twitter {
 -------------------------------------------------------------- */
 .breadcrumbs {
 /*	border-bottom: 1px solid #777c82;*/
-	padding-bottom: 20px;
-	margin-bottom: 20px;
+	margin-left: 40px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
 	font-size: 11px;
 	font-weight: bold;
 	color: #777c82;
+	font-family: Helvetica;
+	font-weight: normal;
 	}
 
 .breadcrumbs a {
-	color: #333;
+	color: #000000;
 	text-decoration: none;
 	}
 
-.breadcrumbs a:hover {text-decoration: underline;}
+.breadcrumbs a:hover {color: #ff0000;text-decoration: none;}
 
 
 
@@ -689,8 +692,8 @@ border-top: 15px solid #F30;
 }
 
 h4.news_title_even{
-margin: 0;
-padding-bottom: 3px;
+margin-bottom: 20px;
+padding-bottom: 15px;
 padding-top: 5px;
 border-top: 15px solid #777c82;
 }
@@ -824,6 +827,8 @@ color : red;
 #left_col {
 	margin-left: 30px;
 	margin-right: 0;
+	margin-bottom: 25px;
+	padding: 5px;
 	}
 
 
@@ -1101,7 +1106,14 @@ a.boxgrid {text-decoration: none}
 .boxgrid h4 a:hover {text-decoration: none}
 
 
-.boxgrid img {border: 1px solid #000;}
+.boxgrid img:before{/* border: 1px solid #000; */
+-moz-box-shadow: inset 10px 10px 10px #000; /* for Firefox 3.5+ */
+   	-webkit-box-shadow: inset 10px 10px 10px #000; /* for Safari and Chrome */
+   	box-shadow: inset 10px 10px 10px #000; /* CSS 3 Spec */
+   	 -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+       -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+            box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
+}
 
 .box {background: #000;}
 
@@ -1156,7 +1168,7 @@ color: #999;
 .e_title, .info_event.name{
 margin-top: 0;
 padding-bottom: 2px;
-font-size: 20px;
+font-size: 30px;
 height: 50px;
 }
 
@@ -1439,6 +1451,7 @@ overflow: hidden;
 	
 	border: 1px solid #000;
 	width: 196px;
+	height: 145px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	background: #000;

@@ -133,7 +133,7 @@ def create
   
 	
 	page.feed!(
-    :message => params[:subject][:content],
+    :message => (params[:subject][:content]).html_safe,
     :picture => File.new('/Users/michiel_bogaert/Sites/skarminkels/public/system/photos/' + @subject.id.to_s + '/thumb/' + 								@subject.photo_file_name.to_s),
     :link => url.short_url,
     :name => params[:subject][:name],

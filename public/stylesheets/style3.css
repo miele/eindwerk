@@ -1,3 +1,9 @@
+.news_page{
+
+margin-bottom: 25px;
+}
+
+
 .news_page:hover{
 
 cursor: pointer;
