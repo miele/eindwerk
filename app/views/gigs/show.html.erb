@@ -3,22 +3,42 @@
 </aside>
 <script type="text/javascript" charset="utf-8">
   function gmaps4rails_callback() {
+   $("#instructions").hide();
+   $("#untoggleInfo").hide();
+   
+   $('#toggleInfo').click(function() {
+  	 $("#instructions").slideDown(800);
+  	 $("#untoggleInfo").show();
+  	 $("#toggleInfo").hide();
+	});
+	
+	$('#untoggleInfo').click(function() {
+  	 $("#instructions").slideUp(800);
+  	 $("#untoggleInfo").hide();
+  	 $("#toggleInfo").show();
+	});
   
    if (Modernizr.geolocation){
             	navigator.geolocation.getCurrentPosition(register_coords);
             }
     function register_coords(position){
     
+    
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
+    geocoder = new google.maps.Geocoder();
     
+    var latlng = new google.maps.LatLng(lat, long);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+          current = results[1].formatted_address;
+         document.cookie = "current_location="+current+expires+"7; path=/gigs";
+        }
+      });
     }
             
     if (Gmaps4Rails.markers.length == 1) {
-     //only one marker, choose the zoom level you expect
-     alert(Gmpas4Rails.userLocation);
-     Gmaps4Rails.map.setZoom(14);
-          
+     Gmaps4Rails.map.setZoom(14);   
     }
     else{
      //more than one marker, let's auto_zoom
@@ -36,19 +56,18 @@
 
 <%= gmaps({
 	   "direction" => {
-                    "data"    => { "from" => "Bruxxels", "to" => @data.where} , 
+                    "data"    => { "from" => "Schelderode", "to" => @data.where} , 
                     "options" => {"display_panel" => true, "panel_id" => "instructions"}
               },
-       "map_options" => { "auto_zoom" => false, "center_latitude" => @data.latitude, "center_longitude" => @data.longitude,
-       					"detect_location" => true},
+       "map_options" => { "auto_zoom" => false, "center_latitude" => @data.latitude, "center_longitude" => @data.longitude},
        "markers"     => { "data" => @json }
       })
 %>
 
-
-<div>&nbsp;</div>
+<div>Stand is :<%= cookies[:current_location] %></div>
+<div><a id="toggleInfo" class="textlink">Toggle</a><a id="untoggleInfo" class="textlink">UnToggle</a>&nbsp;<%= link_to("Overview", '/Gigs', :class => 'textlink') %></div>
 <div id="instructions"></div>
-<%= link_to("Overview", '/Gigs', :class => 'textlink') %>
+
 
 </section>
 <h1><%= @testing %></h1>

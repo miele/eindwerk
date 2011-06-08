@@ -1,8 +1,10 @@
-<div data-role="header">
-  <h1><%= @subject.name %></h1>
+<div data-role="header" data-position="inline" data-backbtn="false">
+	<h1>Detail</h1>
+	<a href="/convert" data-icon="gear" class="ui-btn-right" data-transition="flip">Pagina's</a>
 </div>
 
 <div data-role="content">
+<h1><%= @subject.name %></h1>
 <figure><a class="isphoto_m" href="<%= @subject.photo.url(:medium) %>" rel="prettyPhoto[mixed]" title="<%= @subject.name %>"></a>
 			<span class="image-holder-medium"><img class="thumb" alt="" src="<%= @subject.photo.url(:medium)%>" /></span>
 			</figure>
@@ -11,10 +13,4 @@
   <p>Aangemaakt op : <%= @subject.created_at %></p>
 </div>
 
- <div data-role="footer" class="ui-bar" data-position="fixed">
-	<a href="." data-role="button">Home</a>
-	<a href="/Bands" data-role="button">Band</a>
-	<a href="/Tracks/player" data-role="button">Music</a>
-	<a href="/Contacts/new" data-role="button">Book us!</a>
-</div
 

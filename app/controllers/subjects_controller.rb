@@ -78,7 +78,7 @@ end
 
 def news
 @subjects = Subject.order("subjects.id DESC").paginate(:per_page => 6,:page => params[:page])
-@page_title = 'Skarminkels News'
+@page_title = 'News'
 @footer_tweets = Tweet.order("tweets.created DESC").limit(2)
 @footer_subjects = Subject.order("subjects.id DESC").limit(2)
 

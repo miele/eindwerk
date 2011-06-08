@@ -1,14 +1,15 @@
-<div data-role="header">
-  <h1>Video Overview</h1>
+<div data-role="header" data-position="inline" data-backbtn="false">
+	<h1>Video's</h1>
+	<a href="/convert" data-icon="gear" class="ui-btn-right" data-transition="flip">Pagina's</a>
 </div>
 
 <div data-role="content">
 
- <ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
+ <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="c">
   <li data-role="list-divider">Video's</li>
 <% @videos.each do |video| %>
    <li><a href="/Videos/show/<%= video.id %>"><%= video.title %></a></li>	
 <% end %>
 </ul>
-
+<div><%= will_paginate @videos %></div>
 </div>

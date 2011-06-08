@@ -1,9 +1,10 @@
-<div data-role="header">
-  <h1>Index Page</h1>
+<div data-role="header" data-position="inline" data-backbtn="false">
+	<h1>Gigs</h1>
+	<a href="/convert" data-icon="gear" class="ui-btn-right" data-transition="flip">Pagina's</a>
 </div>
 
 <div data-role="content">
-<ul data-role="listview" data-inset="true" data-theme="a" data-dividertheme="a">
+<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="c">
   <li data-role="list-divider">Gigs</li>
 <% @googles.each do |event| %>
 	<li><a rel="external" href="/Gigs/showmobile/<%= event.id %>"><%= event.title %></a></li>
@@ -13,11 +14,3 @@
 
 </div>
 
-<div data-role="footer" data-position="fixed">
-	<a class='navi' href="/Subjects/news"><%= image_tag 'mobile/news.png' %></a>
-	<a class='navi' href="/Bands" data-role="button"><%= image_tag 'mobile/band.png' %></a>
-	<a class='navi' href="/Gigs" data-role="button"><%= image_tag 'mobile/gigs.png' %></a>
-	<a class='navi' href="/albums" data-role="button"><%= image_tag 'mobile/media.png' %></a>
-	<a class='navi' href="/Tracks/player" data-role="button"><%= image_tag 'mobile/music.png' %></a>
-	<a class='navi' href="/Contacts/new" data-role="button"><%= image_tag 'mobile/contact.png' %></a>
-</div>
