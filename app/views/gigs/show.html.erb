@@ -3,7 +3,7 @@
 <a href="/">Home</a> > <a href="/gigs">Gigs</a> > <%= @data.title %></div>
 
 <aside>
-		<h2 class="grid_12 message_board clearfix">Detail <%= @data.where %></h2>
+		<h2 class="grid_12 message_board clearfix"><%= @data.title %></h2>
 </aside>
 <script type="text/javascript" charset="utf-8">
   function gmaps4rails_callback() {
@@ -68,10 +68,25 @@
       })
 %>
 
-<div>Stand is :<%= cookies[:current_location] %></div>
-<div><a id="toggleInfo" class="textlink">Toggle</a><a id="untoggleInfo" class="textlink">UnToggle</a>&nbsp;<%= link_to("Overview", '/Gigs', :class => 'textlink') %></div>
+<div>&nbsp;</div>
+<!-- <div>Stand is :<%cookies[:current_location] %></div> -->
+
 <div id="instructions"></div>
 
 
 </section>
-<h1><%= @testing %></h1>
+<section class="grid_4">
+	<article class="gig_detail">
+		<h4>Practical Info:</h4>
+		<h6>Place to be :</h6>
+		<p class="even"><%= @data.where%></p>
+		<h6 >Datum:</h6>
+		<pclass="odd"><%= @data.start_time.strftime("%d/%m/%Y") %> </p>
+		<h6 >Wanneer:</h6>
+		<p class="odd">Begin : <%= @data.start_time.strftime("%H:%M")%></p>
+		<p class="odd"> Einde : <%= @data.end_time.strftime("%H:%M")%></p>
+		<div><a id="toggleInfo" class="textlink">Get Directions</a><a id="untoggleInfo" class="textlink">Hide Directions</a>&nbsp;<%= link_to("Overview", '/Gigs', :class => 'textlink') %></div>
+	</article>
+	
+	</section>
+<%= stylesheet_link_tag('gmap_show') %>

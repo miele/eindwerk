@@ -91,11 +91,15 @@ end
 end
 
 def show
+
  @subject = Subject.find(params[:id])
  @page_title = 'Skarminkels News Detail'
  @other_news = Subject.order("subjects.id DESC").limit(2)
  @footer_tweets = Tweet.order("tweets.created DESC").limit(2)
  @footer_subjects = Subject.order("subjects.id DESC").limit(2)
+ 
+ 
+ 
  respond_to do |format|
   format.html
   format.mobile {render :layout => 'mobile'}

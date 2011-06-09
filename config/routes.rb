@@ -49,7 +49,7 @@ Skarminkels::Application.routes.draw do
   get "testier/index"
 
   root :to => "subjects#top"
- 
+   
 
   #get "demo/index"
 
@@ -110,4 +110,6 @@ Skarminkels::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   
   match ':controller(/:action(/:id(.:format)))'
+  
+  match '*a', :to => 'errors#routing'
 end
