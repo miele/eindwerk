@@ -433,7 +433,7 @@ h6 {font-size: 18px;}
 
 ol {list-style: decimal;}
  
-ul {list-style: disc;}
+ul {list-style:none;}
 
 /* =li */
 li {
@@ -945,7 +945,7 @@ ul.sidebar a:hover {
 .message_board {
 	background: transparent url(../images/mboard_BG.png) top center no-repeat;
 	padding-top: 25px;
-	padding-bottom: 25px;
+	padding-bottom: 10px;
 	}
 
 .heading_page {

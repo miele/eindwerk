@@ -1,3 +1,6 @@
+<div data-role="header" data-position="inline" data-backbtn="false">
+	<h1>Ska-Webapp!</h1>
+</div>
 		<div><%= image_tag('mobile/logo.png') %></div>				
 			<div data-role="content">
   <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="c">
@@ -6,7 +9,7 @@
 			<li><a href="/gigs"><img src="<%= image_path('mobile/gigs.png')%>" alt="gigs" class="ui-li-icon">Optredens<span class="ui-li-count"><%= Google.all.count %></span></a></li>
 			<li><a href="/bands"><img src="<%= image_path('mobile/band.png')%>" alt="band" class="ui-li-icon">The Band</a></li>
 			<li><a href="/albums"><img src="<%= image_path('mobile/media.png')%>" alt="albums" class="ui-li-icon">Photo's<span class="ui-li-count"><%= Album.all.count %></span></a></li>
-			<li><a href="/videos"><img src="<%= image_path('mobile/media.png')%>" alt="videos" class="ui-li-icon">Video's<span class="ui-li-count"><%= Video.all.count %></span></a></li>
+			<li><a href="/videos"><img src="<%= image_path('mobile/video.png')%>" alt="videos" class="ui-li-icon">Video's<span class="ui-li-count"><%= Video.all.count %></span></a></li>
 			<li><a href="/tracks/player"><img src="<%= image_path('mobile/music.png')%>" alt="music" class="ui-li-icon">Music<span class="ui-li-count"><%= Track.all.count %></span></a></li>
 			<li><a href="/contacts/new"><img src="<%= image_path('mobile/contact.png')%>" alt="contac" class="ui-li-icon">Book us!</a></li>
 		</ul>

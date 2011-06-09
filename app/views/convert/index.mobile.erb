@@ -1,5 +1,8 @@
 <div data-role="page">
 
+<div data-role="header" data-backbtn="false">
+	<h1>Pagina's</h1>
+</div>
 
 <div data-role="content">
 
@@ -8,7 +11,7 @@
 			<li><a href="/gigs"><img src="<%= image_path('mobile/gigs.png')%>" alt="gigs" class="ui-li-icon">Optredens<span class="ui-li-count"><%= @gigs_count %></span></a></li>
 			<li><a href="/bands"><img src="<%= image_path('mobile/band.png')%>" alt="band" class="ui-li-icon">The Band</a></li>
 			<li><a href="/albums"><img src="<%= image_path('mobile/media.png')%>" alt="albums" class="ui-li-icon">Photo's<span class="ui-li-count"><%= @pictures_count %></span></a></li>
-			<li><a href="/videos"><img src="<%= image_path('mobile/media.png')%>" alt="videos" class="ui-li-icon">Video's<span class="ui-li-count"><%= @videos_count %></span></a></li>
+			<li><a href="/videos"><img src="<%= image_path('mobile/video.png')%>" alt="videos" class="ui-li-icon">Video's<span class="ui-li-count"><%= @videos_count %></span></a></li>
 			<li><a href="/tracks/player"><img src="<%= image_path('mobile/music.png')%>" alt="music" class="ui-li-icon">Music<span class="ui-li-count"><%= @tracks_count %></span></a></li>
 			<li><a href="/contacts/new"><img src="<%= image_path('mobile/contact.png')%>" alt="contac" class="ui-li-icon">Book us!</a></li>
 		</ul>

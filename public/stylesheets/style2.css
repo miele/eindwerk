@@ -16,10 +16,13 @@
 	background: transparent url(../images/spacer.gif) scroll 50% 50% repeat;
 	display: block;
 	position: absolute;
-	float: right;
-	width: 640px;
-	height: 300px;
+	float: left;
+	width: 300px;
+	height: 215px;
 	z-index: 5;
+	-moz-box-shadow: 5px 5px 5px 5px black;
+-webkit-box-shadow: 5px 5px 5px 5px black;
+box-shadow: 5px 5px 5px 5px black;
 	}
 
 .isphoto_m:hover {background: transparent url(../images/magnify.png) scroll 5% 25% no-repeat;}
@@ -578,7 +581,7 @@ float: left;
 /* ---------- Footer ---------- */
 
 .post, .lastpost {
-	border-bottom: 1px solid #666666;
+	
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 }

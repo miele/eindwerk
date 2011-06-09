@@ -1,10 +1,26 @@
 .news_page{
-
 margin-bottom: 25px;
 }
 
+.news_bar_divider{
+border-left: 1px dashed black;
+}
 
-.news_page:hover{
+.news_bar{
+margin-bottom: 15px;
+width: 215px;
+padding-left: 15px;
+}
+
+.news_detail{
+width: 300px;
+float: left;
+margin-left: 30px;
+margin-top: 20px;
+margin-right: 10px;
+}
+
+.news_page:hover,.news_bar:hover{
 
 cursor: pointer;
 -moz-box-shadow: 5px 5px 5px 5px black;
