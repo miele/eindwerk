@@ -1,3 +1,12 @@
+<style type="text/css">
+  .ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+  </style>
+
+
 <fieldset>
 						<legend>Google Agenda Event</legend>
 
@@ -26,7 +35,7 @@
 						
 						<p>
 						<label for="name">Content</label>
-						<%= e.text_area :content,{:class => 'editor'} %>
+						<%= e.text_field :content,{:class => 'editor'} %>
 						</p>
 						
 						<p>
@@ -41,7 +50,7 @@
 						
 						<p>
 						<label for="name">End Date/Time</label>
-						<%= e.text_field :end_time,{:id => "name"} %>
+						<%= e.text_field :end_time,{:class => "datum"} %>
 						</p>						
 						
 						<p>

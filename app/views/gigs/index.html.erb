@@ -1,3 +1,10 @@
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('p#gigs').html("<br>Gigs");
+    });
+  </script>
+<% end %>
 <%= javascript_include_tag 'jquery.isotope','jquery.infinitescroll.min' %>
 <div class="breadcrumbs">
 <div>&nbsp;</div>

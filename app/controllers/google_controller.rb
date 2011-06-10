@@ -32,10 +32,17 @@ before_filter :authenticate, :except => [:login, :verify]
   
   def edit
     @event = Event.find(@account, {:id => params[:event_id]})
+     respond_to do |format|
+format.html  { render :layout => 'backend_google' }
+end
   end
   
   def new
     @event = Event.new(@account)
+    respond_to do |format|
+format.html  { render :layout => 'backend_google' }
+end
+
   end
   
   def save
