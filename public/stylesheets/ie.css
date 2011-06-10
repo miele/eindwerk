@@ -40,6 +40,84 @@ float:left;
 	text-decoration: none
 	}
 
-#navigation p{
-color : red;
+#fullscreen-bg{
+    width:1000px;
+    position:absolute;
+    top:40%;
+    left:-10%;
+     right:20%;
+    overflow:hidden;
 }
+#fullscreen-bg img {
+    left:12%;
+    right:10%;
+    position:absolute;
+    top:15%;
+    width:100%;
+    overflow:hidden;
+    border: none;
+}
+
+#openPlayer.fullscreen{
+    background:url("../images/player_bg.png") repeat scroll 0 0 transparent;
+	bottom:15%;
+	padding:20px;
+	top: 80%;
+    left: 5%;
+	position:fixed;
+	width:85%;
+	height: 65px;
+	z-index:5;
+}
+#openPlayer.fullscreen #media-description{
+    font-size:40px;
+    color:#fff;
+    margin: 0 30px 25px 0;
+    position:relative;
+    float:left;
+    cursor: pointer !important;
+}
+
+#openPlayer.fullscreen #statusbar{
+    width:80%;
+    float: left;
+    height:10px;
+    position:relative;
+    bottom:20px;
+    z-index:6;
+    clear:both;
+}
+
+.play-container{
+   position: absolute;
+   top:104px;
+   right:160px;
+   height:32px;
+   width:32px;
+   background-color:#333;
+   z-index: 15;
+}
+
+#volume .value{
+    height:5px;
+    width:100px;
+    position:absolute;
+    top:104px;
+    background-color:#ccc;
+}
+
+#volume #min{
+    display:block;
+    float:left;
+    height:32px;
+    width:16px;
+     top:104px;
+    padding-right:6px;
+    padding-left:3px;
+    background: #333 url(../images/min.png) no-repeat 6px 11px scroll;
+     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */   
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */ 
+	z-index: 15;
+}
+
+
