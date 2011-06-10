@@ -1,12 +1,3 @@
-<style type="text/css">
-  .ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
-.ui-timepicker-div dl{ text-align: left; }
-.ui-timepicker-div dl dt{ height: 25px; }
-.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
-.ui-timepicker-div td { font-size: 90%; }
-  </style>
-
-
 <fieldset>
 						<legend>Google Agenda Event</legend>
 
@@ -40,7 +31,7 @@
 						
 						<p>
 						<label for="name">All Day?</label>
-						<%= e.select :all_day, [['Yes', 'true'], ['No', 'false']] %>
+						<%= e.select :all_day, [['No', 'false'],['Yes', 'true']] %>
 						</p>
 						
 						<p>
@@ -53,30 +44,32 @@
 						<%= e.text_field :end_time,{:class => "datum"} %>
 						</p>						
 						
-						<p>
+						<!--
+<p>
 						<label for="name">Recurring Event</label>
-						<%= select_tag :recurrence, options_for_select([['No', 0], ['Yes', 1]]) %>
+						<% select_tag :recurrence, options_for_select([['No', 0], ['Yes', 1]]) %>
 						</p>
 						
 						<p>
 						<label for="name">Recurrence Start Date/Time</label>
-						<%= text_field_tag :recurrence_start %>
+						<% text_field_tag :recurrence_start %>
 						</p>
 						
 						<p>
 						<label for="name">Recurrence End Date/Time</label>
-						<%= text_field_tag :recurrence_end %>
+						<% text_field_tag :recurrence_end %>
 						</p>
 						
 						<p>
 						<label for="name">Frequency</label>
-						<%= select_tag :recurrence_freq, options_for_select(['Weekly', 'Daily']) %> on <%= select_tag :recurrence_on, options_for_select(['MO', 							'TU', 'WE', 'TH', 'FR', 'SA', "SU"])%>
+						<% select_tag :recurrence_freq, options_for_select(['Weekly', 'Daily']) %> on <%= select_tag :recurrence_on, options_for_select(['MO', 							'TU', 'WE', 'TH', 'FR', 'SA', "SU"])%>
 						</p>
 
 						<p>
 						<label for="name">Recur until</label>
-						<%= text_field_tag :recurrence_until %>
+						<% text_field_tag :recurrence_until %>
 						</p>
+-->
 						
 												<%= submit_tag 'Save',:class => "sendButton" %>
 						<% end %>

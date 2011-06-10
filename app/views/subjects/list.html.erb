@@ -12,6 +12,7 @@
 </div> 
 </div> 
   <% end %>
+  <fieldset><legend>Search</legend>
   <%= hidden_field_tag :direction, params[:direction] %>  
   <%= hidden_field_tag :sort, params[:sort] %>   
   <p>  
@@ -19,6 +20,7 @@
     <%= submit_tag "Search", :name => nil,:id => "search_button"%>  
   </p>  
 <% end %>
+</fieldset>
 <div class="hr dotted clearfix">&nbsp;</div>
 <div class="subject list" id="subjects">
 <%= render "lijst" %>
