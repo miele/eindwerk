@@ -704,7 +704,8 @@ ul#navigation {
 	float: right;
 	width: 100%;
 	margin-top: 1px;
-	margin-right: 5px;
+	margin-left: 0px;
+	margin-right: 0px;
 	margin-bottom: 0;
 	}
 
@@ -943,9 +944,11 @@ ul.sidebar a:hover {
 	}
 
 .message_board {
-	background: transparent url(../images/mboard_BG.png) top center no-repeat;
+	background: transparent url(../images/mboard_BG-trans.png) top center no-repeat;
 	padding-top: 25px;
 	padding-bottom: 10px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */   
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */  
 	}
 
 .heading_page {
@@ -1187,10 +1190,9 @@ top: 38px;
   padding: 0;
   font-size: 32px;
   rotation: -90deg !important;
-  /* ** Hacks ** */
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); 
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* IE fix  */
   }
   
 #twitter_update_list{
@@ -1285,6 +1287,8 @@ overflow: hidden;
 	margin: 0 10px 0 10px;
 	padding-top: 20px;
 	background: transparent url(../images/slider-BG.png) top center no-repeat;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */   
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */  
 	}
 
 #featured {

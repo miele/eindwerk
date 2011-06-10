@@ -1,7 +1,7 @@
 <% content_for :head do %>
   <script type="text/javascript">
     $(function() {
-      $('p#news').html("<br>News");
+      $('p#news').html("<br>News").css('color','red');
     });
   </script>
 <% end %>
@@ -12,7 +12,6 @@
 <aside>
 		<h2 class="grid_12 message_board clearfix">News Overview</h2>
 </aside>
-<hr/>
 
 <div id="news">
 <%= render "news" %>

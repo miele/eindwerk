@@ -28,6 +28,7 @@ cursor: pointer;
 -moz-box-shadow: 5px 5px 5px 5px black;
 -webkit-box-shadow: 5px 5px 5px 5px black;
 box-shadow: 5px 5px 5px 5px black;
+/* filter: progid:DXImageTransform.Microsoft.dropShadow(color=#818181, offX=5, offY=5, positive=true); */
 
 -webkit-transition-duration: 0.25s;
 	-webkit-transition-timing-function: ease-in-out;
