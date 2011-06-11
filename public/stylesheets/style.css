@@ -1006,7 +1006,7 @@ a .title {
 	}
 
 
-#navigation p:not(a),#navigation #news a.active{
+#navigation p:not(a){
 color : red;
 font-size: 30px;
 margin-top: 20px;

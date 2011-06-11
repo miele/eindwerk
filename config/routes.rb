@@ -1,5 +1,7 @@
 Skarminkels::Application.routes.draw do
 
+  get "succes/index"
+
   resource :facebook, :except => :create do
     get :callback, :to => :create
   end
@@ -25,6 +27,7 @@ Skarminkels::Application.routes.draw do
   resources :albums
   resources :pictures
   
+  resources :succes
 
 
 

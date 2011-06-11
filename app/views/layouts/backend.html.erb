@@ -27,25 +27,25 @@
 
 				<div id="menu"> <!-- navigation menu -->
 					<ul>
-						<li><a href="/backend"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/dashboard.png') %><span class="current">Dashboard</span></a></li>
-						<li><a href="/subjects/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/news.png') %><span>News</span></a></li>
-						<li><a href="/bands/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/band.png') %><span>The band</span></a></li>
-						<li><a href="/videos/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/video.png') %><span>Video's</span></a></li>
+						<li id="dashboard"><a href="/backend"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/dashboard.png') %><span>Dashboard</span></a></li>
+						<li id="news"><a href="/subjects/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/news.png') %><span>News</span></a></li>
+						<li id="band"><a href="/bands/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/band.png') %><span>The band</span></a></li>
+						<li id="video"><a href="/videos/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/video.png') %><span>Video's</span></a></li>
 
-						<li><a href="/allbums/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/jpeg_image.png') %><span>Albums</span></a>
+						<li id="album"><a href="/allbums/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/jpeg_image.png') %><span>Albums</span></a>
 							<!--<ul>
 								<li><a href="#">Upload</a></li>
 								<li><a href="#">Add new</a></li>
 								<li><a href="#">Categories</a></li>
 							</ul>-->
 						</li>
-						<li><a href="/config_key"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/config.png') %><span>Config Keys</span></a></li>
+						<li id="config"><a href="/config_key"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/config.png') %><span>Config Keys</span></a></li>
 
-						<li><a href="/tracks/lijst"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/music.png') %><span>Music</span></a></li>
-						<li><a href="/tweet/new" ><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/twitter.png') %><span>Social</span></a></li>
-						<li><a href="/google"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/google.png') %><span>Google</span></a></li>
-						<li><a href="/contacts"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/booking.png') %><span>Contact</span></a></li>
-						<li><a href="/users"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/users.png') %><span>Users</span></a></li>
+						<li id="music"><a href="/tracks/lijst"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/music.png') %><span>Music</span></a></li>
+						<li id="social"><a href="/tweet/new" ><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/twitter.png') %><span>Social</span></a></li>
+						<li id="google"><a href="/google"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/google.png') %><span>Google</span></a></li>
+						<li id="booking"><a href="/contacts"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/booking.png') %><span>Bookings</span></a></li>
+						<li id="user"><a href="/users"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/users.png') %><span>Users</span></a></li>
 					</ul>
 				</div> <!-- navigation menu end -->
 			</div> <!-- sidebar end -->

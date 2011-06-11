@@ -1,13 +1,8 @@
 <div class="inner">
 				
-										<h1>A list off config keys!!</h1>
-					<p>Volg het stappenplan hieronder en verander vervolgens de sleutels in de databank.</p>
-					<p>Stap 1 : Maak een Twitter account.</p>
-					<p>Stap 2 : Ga naar dev.twitter.com</p>
-					<p>Stap 3 : Login en maak een twitter applicatie aan.</p>
-					<p>Stap 4 : Kopieer de consumer key & consumer secret
-					...</p>
-
+										<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/config.png') %>
+										<%= image_tag('/stylesheets/backend/assets/icons/big_icons/config_title.png',:id => 'big_title') %>
+										</p>
 <div class="hr dotted clearfix">&nbsp;</div>
 <div class="config_keys_list" id="config_keys">
 
@@ -49,4 +44,13 @@
 </section>
 </section>
 </div>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#config').addClass('current').html("<a><span>Config Keys</span></a>");
+    });
+  </script>
+<% end %>
+
 

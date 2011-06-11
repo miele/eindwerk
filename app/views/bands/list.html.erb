@@ -1,6 +1,8 @@
 <div class="inner">
 				
-					<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/band.png') %></p>
+					<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/band.png') %>
+					<%= image_tag('/stylesheets/backend/assets/icons/big_icons/band_title.png',:id => 'big_title') %>
+					</p>
 
 <%= form_for(:band,:html => {:method => :get, :id => "bands_search"}) do %>
 <% if flash[:notice] %>
@@ -26,3 +28,11 @@
 </section>
 </section>
 </div>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#band').addClass('current').html("<a><span>The Band</span></a>");
+    });
+  </script>
+<% end %>

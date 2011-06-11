@@ -1,7 +1,9 @@
 <div class="inner">
 				
 									
-					<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/video.png') %></p>
+					<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/video.png') %>
+					<%= image_tag('/stylesheets/backend/assets/icons/big_icons/video_title.png',:id => 'big_title') %>
+					</p>
 
 </fieldset>
 <div class="hr dotted clearfix">&nbsp;</div>
@@ -10,3 +12,11 @@
 </section>
 </section>
 </div>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#video').addClass('current').html("<a><span>Video's</span></a>");
+    });
+  </script>
+<% end %>

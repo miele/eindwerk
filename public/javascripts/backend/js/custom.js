@@ -23,22 +23,9 @@ function initMenu() {
   });
 }
 
-function clearCurrentLink(){
-    var a = document.getElementsByTagName("A");
-    for(var i=0;i<a.length;i++)
-        if(a[i].href == window.location.href.split("#")[0])
-            removeNode(a[i]);
-}
-
-function removeNode(n){
-    if(n.hasChildNodes())
-        for(var i=0;i<n.childNodes.length;i++)
-            n.parentNode.insertBefore(n.childNodes[i].cloneNode(true),n);
-    n.parentNode.removeChild(n);
-}
  
 jQuery(document).ready(function() {
-	clearCurrentLink();
+	//clearCurrentLink();
 	Cufon.replace('h1, h2, h5, .notification strong', { hover: 'true' }); // Cufon font replacement
 	//initMenu(); // Initialize the menu!
 	

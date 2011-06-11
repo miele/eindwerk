@@ -114,7 +114,7 @@ h1 span {
 	clear:both;
 	float:left;
 	width:275px;
-	height:200px;
+	height:165px;
 	overflow:hidden;
 	background:url('assets/skarminkels_backend.png') 0 0 no-repeat;
 	padding-top:15px;
@@ -192,9 +192,9 @@ background:url('assets/menu_spacer.png') 0 100% no-repeat;
 
 
 .current span {
-	background:url('assets/menu_arrow.png')  100% 50% no-repeat;
+	/* background:url('assets/menu_arrow.png')  100% 50% no-repeat; */
 	color:#fff;
-	margin-left:5px;
+	margin-left:0px;
 	text-shadow:#0A5482 1px 1px 0px;
 }
 
@@ -210,8 +210,10 @@ background:url('assets/menu_spacer.png') 0 100% no-repeat;
 	/*padding-left:43px;*/
 }
 
-a.dashboard {
-	background:url('assets/menu_current.png') top right no-repeat;
+li.current a span {
+	font-size: 20px;
+	color: red;
+	/* background:url('assets/menu_current.png')no-repeat; */
 }
 
 a.bands:active {
@@ -1032,6 +1034,10 @@ ul.paginator li a.current {
 
 table {
 	border-spacing:0;
+}
+
+img#big_title{
+padding-left: 50px;
 }
 
 /* css for timepicker */

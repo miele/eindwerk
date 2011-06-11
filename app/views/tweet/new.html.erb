@@ -1,10 +1,20 @@
 <div class="inner">
 				
-										<h1>A new social message!</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
+			<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/social.png') %>
+			<%= image_tag('/stylesheets/backend/assets/icons/big_icons/social_title.png') %>
+			</p>
+			
 <%= form_for(:tweet, :html => { :id => "contact_form_id" }, :url => {:action => 'post_update'}) do |t| %>
 	<%= render(:partial => 'form', :locals => {:t => t}) %>
 <%= submit_tag("Submit",:class => "button_link")%>
 
 <% end %>
 </div>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#social').addClass('current').html("<a><span>Social</span></a>");
+    });
+  </script>
+<% end %>

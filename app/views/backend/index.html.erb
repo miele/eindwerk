@@ -84,3 +84,11 @@
 					</ul> <!-- end dashboard items -->
 					
 									</div> <!-- inner -->
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#dashboard').addClass('current').html("<a><span>Dashboard</span></a>");
+    });
+  </script>
+<% end %>

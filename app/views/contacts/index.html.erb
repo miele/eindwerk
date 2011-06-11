@@ -1,5 +1,7 @@
 <div class ="inner">
-<h1>Boeking lijst</h1>
+<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/booking.png') %>
+<%= image_tag('/stylesheets/backend/assets/icons/big_icons/booking_title.png',:id => 'big_title') %>
+</p>
 
 
 	<table class="normal tablesorter fullwidth">
@@ -38,3 +40,11 @@
 <%= will_paginate @contacts %>
 
 </div>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#booking').addClass('current').html("<a><span>Contact</span></a>");
+    });
+  </script>
+<% end %>

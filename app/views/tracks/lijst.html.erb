@@ -1,7 +1,9 @@
 <div class="inner">
 				
-										<h1>A songs overview</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
+<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/music.png') %>
+<%= image_tag('/stylesheets/backend/assets/icons/big_icons/music_title.png',:id => 'big_title') %>
+</p>
+
 <%= form_for(:track,:html => {:method => :get, :id => "tracks_search"}) do %>
 <% if flash[:notice] %>
 <div class="notification success"> 
@@ -23,3 +25,11 @@
 <div class="track list" id="tracks">
 <%= render "lijst" %>
 </div>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#music').addClass('current').html("<a><span>Music</span></a>");
+    });
+  </script>
+<% end %>

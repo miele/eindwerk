@@ -74,16 +74,23 @@ $("#tracks_search input").keyup(function(){
 	return false;
 });
 
-$("#news .pagination a").live("click", function(){
-
+if ( $.browser.msie ) {
+    // eventueel ie fix
+ } else {
+ $("#news_list .pagination a").live("click", function(){
  $.getScript(this.href);
  return false;
 });
+}
 
+if ( $.browser.msie ) {
+    // eventueel ie fix
+ } else {
 $("#videos .pagination a").live("click", function(){
  $.getScript(this.href);
  return false;
 });
+}
 
 function mycarousel_initCallback(carousel)
 {
@@ -177,5 +184,7 @@ $("a.portfolio_item[rel^='prettyPhoto'], a.isphoto_m[rel^='prettyPhoto'], a.isph
           $container.isotope( 'appended', $( newElements ) ); 
         }
       );
+      
+      
 
 			});

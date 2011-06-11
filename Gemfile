@@ -7,7 +7,7 @@ gem 'rails', '3.0.3'
 
 gem 'mysql2'
 gem "paperclip", "~> 2.3"
-gem 'jquery-rails', '>= 0.2.6'
+gem "jquery-rails", "~> 1.0.9"
 gem 'event-calendar', :require => 'event_calendar'
 gem 'grackle', :require => 'grackle'
 gem 'whenever', :require => 'whenever'
