@@ -25,3 +25,11 @@
 			<label for="name">Content</label>
 			<%= f.text_area(:content,{:class => "editor"})%>
 			</p>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#band').addClass('current').html("<a><span>The Band</span></a>");
+    });
+  </script>
+<% end %>

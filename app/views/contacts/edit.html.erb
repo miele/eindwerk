@@ -1,7 +1,10 @@
 <div class="inner">
 				
+				<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/booking.png') %>
+<%= image_tag('/stylesheets/backend/assets/icons/big_icons/booking_title.png',:id => 'big_title') %>
+</p>
 										<h1>Edit the contract!</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
+					
 
 <%= link_to("<< Back to list", {:action => 'index'}, :class => 'button_link') %>
 <div>&nbsp;</div>
@@ -12,3 +15,11 @@
 
 <% end %>
 </div>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#booking').addClass('current').html("<a><span>Bookings</span></a>");
+    });
+  </script>
+<% end %>

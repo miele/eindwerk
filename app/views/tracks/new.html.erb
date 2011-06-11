@@ -1,7 +1,9 @@
 <div class="inner">
-				
-										<h1>Bring home the news!</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
+				<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/music.png') %>
+<%= image_tag('/stylesheets/backend/assets/icons/big_icons/music_title.png',:id => 'big_title') %>
+</p>
+										<h1>Insert a new song!</h1>
+					
 
 
 <%= form_for(:track, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>

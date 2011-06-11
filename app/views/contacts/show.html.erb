@@ -1,4 +1,7 @@
 <div class="inner">
+<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/booking.png') %>
+<%= image_tag('/stylesheets/backend/assets/icons/big_icons/booking_title.png',:id => 'big_title') %>
+</p>
 <p id="notice"><%= notice %></p>
 <%= link_to 'Back', contacts_path,{:class => 'button_link'} %>
 <div>&nbsp;</div>
@@ -34,3 +37,11 @@
 <%= link_to (image_tag('/stylesheets/backend/assets/pdf_icon.png')), index_pdf_path(@contact,:id => @contact.id, :format => :pdf) %>
 </fieldset>
 </div>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#booking').addClass('current').html("<a><span>Bookings</span></a>");
+    });
+  </script>
+<% end %>

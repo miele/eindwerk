@@ -23,3 +23,11 @@
 			<label>Song</label>
 			<%= f.file_field(:song) %>
 			</p>
+			
+			<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#music').addClass('current').html("<a><span>Music</span></a>");
+    });
+  </script>
+<% end %>

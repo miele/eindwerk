@@ -17,8 +17,8 @@
 					
 						<p>
 						<label>Photo</label>
-						<%= link_to image_tag('fancy_nav_left.png', {:alt => 'Rotate Clockwise'}), :action => 'rotate', :id => 								@subject.id, :deg => '-90' %>
-						<%= link_to image_tag('fancy_nav_right.png', {:alt => 'Rotate Clockwise'}), :action => 'rotate', :id => 								@subject.id, :deg => '90' %>
+						<% link_to image_tag('fancy_nav_left.png', {:alt => 'Rotate Clockwise'}), :action => 'rotate', :id => 								@subject.id, :deg => '-90' %>
+						<% link_to image_tag('fancy_nav_right.png', {:alt => 'Rotate Clockwise'}), :action => 'rotate', :id => 								@subject.id, :deg => '90' %>
 						<%= f.file_field(:photo,{:id => "name"})%>
 						</p>
 						
@@ -26,5 +26,13 @@
 						<label>Content</label><br/>
 						<%= f.text_area(:content,{:class => "editor"})%>
 						</p>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#news').addClass('current').html("<a><span>News</span></a>");
+    });
+  </script>
+<% end %>
 						
 						

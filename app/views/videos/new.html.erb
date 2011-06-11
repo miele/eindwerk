@@ -1,7 +1,9 @@
 <div class="inner">
-				
+				<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/video.png') %>
+					<%= image_tag('/stylesheets/backend/assets/icons/big_icons/video_title.png',:id => 'big_title') %>
+					</p>
 										<h1>Insert new video!</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
+					
 
 <%= form_for(:video, :html => { :multipart => true, :id => "contact_form_id" }, :url => {:action => 'create'}) do |f| %>
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
