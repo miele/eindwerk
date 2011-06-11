@@ -7,6 +7,7 @@
 			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
 <section id="left_col" class="grid_12">
 <section id="contact_form">
+<div id="contact_feedback"></div>
 <%= render 'form_stripped' %>
 </section>
 <div>&nbsp;</div>
@@ -17,6 +18,9 @@ $("#contact_form_id").validate({
 	errorLabelContainer: "#messageBox",
 	success: "valid",
 	onkeyup: true,
-  	onclick: true,
+  	onclick: true
 });
 </script>
+
+
+	

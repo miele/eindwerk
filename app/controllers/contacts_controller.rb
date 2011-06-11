@@ -37,7 +37,9 @@ layout 'html5'
   respond_to do |format|  
     if @contact.save  
       ContactMailer.feedback_confirmation(@contact).deliver  
-      format.html { redirect_to(@contact, :notice => 'Contact mail was successfully send.') }  
+      # format.html { redirect_to(@contact, :notice => 'Contact mail was successfully send.') }
+      format.html # { redirect_to succes_path }
+      format.js  { render :layout => 'html5' } 
       format.xml  { render :xml => @contact, :status => :created, :location => @contact } 
       format.mobile { redirect_to(@contact, :notice => 'Contact mail was successfully send.') }  
     else  
@@ -46,7 +48,7 @@ layout 'html5'
       format.mobile { render :action => "new" }   
     end  
   end  
-end  
+end 
 
   # GET /contacts/1
   # GET /contacts/1.xml
@@ -69,6 +71,7 @@ end
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js  { render :layout => 'html5' }
       format.xml  { render :xml => @contact }
       format.mobile { render :layout => 'mobile'}
     end
@@ -111,6 +114,9 @@ end
       format.xml  { head :ok }
       format.mobile { render :layout => 'mobile'}
     end
+  end
+  
+  def succes
   end
   
 end
