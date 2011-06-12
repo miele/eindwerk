@@ -581,7 +581,7 @@ ol {padding: 0 0 0 5px;}
 .container_12 .grid_1 {width: 45px;}
 .container_12 .grid_2 {width: 130px;}
 .container_12 .grid_3 {width: 210px;height:auto;margin: 0;float: left;padding:5px;}
-.container_12 .grid_4 {width: 290px;}
+.container_12 .grid_4 {width: 280px;}
 .container_12 .grid_5 {width: 385px;}
 .container_12 .grid_6 {width: 450px; height: 250px;padding:5px;margin: 0;float: left;}
 .container_12 .grid_7 {width: 555px;}
@@ -1590,8 +1590,46 @@ padding:0px;
 box-shadow: 5px 5px 5px black;
 }
 
-#videos{
-/* background-image: url(../images/video_bg.png); */
+#photo_stack{
+border-image: url('../images/polaroid.png') 27 27 27 27 round round;
+background-image: url('../images/polaroid.png');
+ padding: 10px 10px 15px;
+left: 15px;
+margin-bottom: 15px;
+background-color: black;
+border-left: 10px solid #FFF;
+border-right: 10px solid #FFF;
+border-top: 10px solid #FFF;
+border-bottom: 35px solid #FFF;
+height: 150px;
+width: 180px;
+background-color: black;
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+	z-index: 9998;
+	-webkit-transform: rotate(-2deg);
+   	-moz-transform: rotate(-2deg);
+   	transform: rotate(-2deg);
+}
+
+#photo_stack2{
+background-image: url('../images/polaroid.png');
+left: 15px;
+ padding: 10px 10px 15px;
+height: 150px;
+width: 180px;
+margin-bottom: 15px;
+background-color: black;
+border-left: 10px solid #FFF;
+border-right: 10px solid #FFF;
+border-top: 10px solid #FFF;
+border-bottom: 35px solid #FFF;
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+	-moz-box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+	z-index: 9999;
+
 }
 
 

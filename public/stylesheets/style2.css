@@ -1144,7 +1144,7 @@ border: none;
 
 ul.polaroids { width: 960px; margin: 0 0 18px -30px; }
 		ul.polaroids li { display: inline;  }
-		ul.polaroids a { background: #e5e4e4; background-image: url('../images/polaroid.png');display: inline; float: left; margin: 0 0 27px 30px; width: auto; padding: 10px 10px 15px; text-align: center;font-family: "GoodDogRegular", sans-serif; text-decoration: none; color: #333; font-size: 24px; -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); -webkit-transform: rotate(-2deg); -webkit-transition: -webkit-transform .15s linear; -moz-transform: rotate(-2deg); }
+		ul.polaroids a { background: #e5e4e4; background-image: url('../images/polaroid.png');display: inline; float: left; margin: 0 0 40px 5px; width: auto; padding: 10px 10px 15px; text-align: center;font-family: "GoodDogRegular", sans-serif; text-decoration: none; color: #333; font-size: 24px; -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25); -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25); -webkit-transform: rotate(-2deg); -webkit-transition: -webkit-transform .30s linear; -moz-transform: rotate(10deg); }
 		ul.polaroids img { display: block; width: 180px; margin-bottom: 12px; border: 2px solid black;height: 150px;overflow: hidden;}
 		ul.polaroids a:after { content: attr(title);}
 		
