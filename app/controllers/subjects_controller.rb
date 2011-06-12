@@ -25,7 +25,7 @@ def top
  @tweets = Tweet.order("tweets.created DESC").limit(10)
   # @events = Event.order("events.id DESC").limit(2)
  @footer_tweets = Tweet.order("tweets.created DESC").limit(2)
- @footer_subjects = Subject.order("subjects.id DESC").limit(2)
+ @footer_subjects = Subject.order("subjects.id DESC").limit(3)
  respond_to do |format|
   format.html
   format.mobile {render :layout => 'mobile'}
@@ -80,7 +80,7 @@ def news
 @subjects = Subject.order("subjects.id DESC").paginate(:per_page => 6,:page => params[:page])
 @page_title = 'News'
 @footer_tweets = Tweet.order("tweets.created DESC").limit(2)
-@footer_subjects = Subject.order("subjects.id DESC").limit(2)
+@footer_subjects = Subject.order("subjects.id DESC").limit(3)
 
 respond_to do |format|
 format.html  { render :layout => 'html5' }

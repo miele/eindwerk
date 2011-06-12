@@ -134,11 +134,17 @@
 				</div>
 				<div class="box_240px_right">
 					<h2>Follow Us!</h2>
-					<ul>
-					<li><a href="http://www.facebook.com/Skarminkels" target="_blank"><%= image_tag('facebook_footer.png') %></a></li>
-					<li><a href="http://twitter.com/skarminkels" target="_blank"><%= image_tag('twitter_footer.png') %></a></li>
-					<li><a href="#"></a><%= image_tag('mail_footer.png') %></a></li>
-					<li><a href="http://www.myspace.com/skarminkels" target="_blank"><%= image_tag('myspace_footer.png') %></a></li>
+					<ul class="social">
+					<% @data = ConfigKeys.find(1)
+					   @fb = @data.facebook_link
+					   @twit = @data.twitter_link
+					   @myspace = @data.myspace_link
+					   @mail = @data.booking_mail
+					%>
+					<li><a href="<%= @fb %>" target="_blank"><%= image_tag('facebook_footer.png') %></a></li>
+					<li><a href="<%= @twit %>" target="_blank"><%= image_tag('twitter_footer.png') %></a></li>
+					<li><a href="<%= "Mailto:" +  @mail %>"></a><%= image_tag('mail_footer.png') %></a></li>
+					<li><a href="<%= @myspace %>" target="_blank"><%= image_tag('myspace_footer.png') %></a></li>
 					
 					</ul>
 				</div>

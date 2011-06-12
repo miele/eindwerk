@@ -1,6 +1,9 @@
 class Tweet < ActiveRecord::Base
 
-  MY_APPLICATION_NAME = "grawiiti_live"
+  @data = ConfigKeys.find(1)
+  @username = @data.twitter_username
+
+  MY_APPLICATION_NAME = @username
   
   """Connect to the Twitter API and pull down the latest tweets"""
   def self.get_latest

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110612094218) do
+ActiveRecord::Schema.define(:version => 20110612152517) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20110612094218) do
     t.string   "myspace_link"
     t.string   "facebook_app_id"
     t.string   "booking_mail"
+    t.string   "twitter_username"
   end
 
   create_table "contacts", :force => true do |t|

@@ -1,6 +1,9 @@
 class ContactMailer < ActionMailer::Base
+
+  @data = ConfigKeys.find(1)
+  @mail = @data.booking_mail
   
-  default :from => "terrormic@gmail.com"  
+  default :from => @mail  
   
   def registration_confirmation(contact)
   	t = Time.now  
@@ -12,7 +15,9 @@ class ContactMailer < ActionMailer::Base
   
   def feedback_confirmation(contact)
   	@contact = contact
-    mail(:to => contact.email, :subject => "Automatische Feedback")  
+  	 @data = ConfigKeys.find(1)
+  	@mail = @data.booking_mail
+    mail(:to => @mail, :subject => "Automatische Feedback")  
   end   
   
   

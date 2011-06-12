@@ -27,7 +27,7 @@
 <% @events.sort{|a,b| b.start_time <=> a.start_time}.each do |event| %>
 <% break event if (@i.to_s == '4') %>
 	<article class="date">
-	<a class="boxgrid box alpha tl tooltip" id="gcal<%= @i.to_s %>" href="#" title="<%= event.title %>">
+	<a class="boxgrid box alpha tl tooltip" id="gcal<%= @i.to_s %>" href="/gigs" title="<%= event.title %>">
 			<h4 class="month"><%= event.start_time.strftime("%b") %></h4><br/>
 			<h4 class="day"><%= event.start_time.strftime("%d") %></h4>
 			<h4 class="year"><%= event.start_time.strftime("%Y") %></h4>

@@ -2,6 +2,26 @@
   <script type="text/javascript">
     $(function() {
       $('p#gigs').html("<br>Gigs");
+      
+      if (Modernizr.geolocation){
+            	navigator.geolocation.getCurrentPosition(register_coords);
+            }
+    function register_coords(position){
+    
+    
+    var lat = position.coords.latitude;
+    var long = position.coords.longitude;
+    geocoder = new google.maps.Geocoder();
+    
+    var latlng = new google.maps.LatLng(lat, long);
+    geocoder.geocode({'latLng': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+          current = results[1].formatted_address;
+         document.cookie = "current_location="+current+"expires7;path=/";
+        }
+      });
+    }
+      
     });
   </script>
 <% end %>

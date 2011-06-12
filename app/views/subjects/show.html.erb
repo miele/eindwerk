@@ -39,10 +39,12 @@
 <section class="grid_3">
 <ul class="news_bar_divider">
 <% @other_news.each do |other| %>
+<a href="<%= "/subjects/show/" + other.id.to_s %>">
 <li class="news_bar">
 	<h4><%= other.name %></h4>
     <%= image_tag(other.photo.url(:thumb)) %>
 </li>
+</a>
 <% end %>
 </ul>
 </section>
