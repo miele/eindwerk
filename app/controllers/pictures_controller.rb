@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
   # GET /pictures
   # GET /pictures.xml
+  before_filter :authenticate_user!, :except => [:show]
   
   respond_to :html,:js,:xml, :json,:mobile
   

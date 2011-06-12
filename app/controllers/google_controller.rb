@@ -1,5 +1,5 @@
 class GoogleController < ApplicationController
-
+before_filter :authenticate_user!
 require 'gcal4ruby'
 include GCal4Ruby
 

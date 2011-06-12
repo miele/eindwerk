@@ -1,5 +1,7 @@
 class ContactsController < ApplicationController
 
+before_filter :authenticate_user!, :except => [:new]
+
 layout 'html5'
 
 	def index_pdf

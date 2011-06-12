@@ -1,5 +1,7 @@
 class AlbumsController < ApplicationController
 
+before_filter :authenticate_user!, :except => [:index, :show, :detail]
+
 layout 'html5' 
 # before_filter :authenticate_user!, :except => [:index,:show]
 respond_to :html, :xml, :json,:mobile

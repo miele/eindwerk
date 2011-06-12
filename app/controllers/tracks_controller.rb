@@ -1,5 +1,5 @@
 class TracksController < ApplicationController
-
+before_filter :authenticate_user!, :except => [:player]
 layout 'html5'
 respond_to :html, :json, :mobile
 

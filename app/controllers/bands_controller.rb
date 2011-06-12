@@ -1,5 +1,7 @@
 class BandsController < ApplicationController
 
+before_filter :authenticate_user!, :except => [:index]
+
 layout 'html5'
 
 helper_method :sort_column, :sort_direction

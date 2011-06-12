@@ -1,5 +1,6 @@
 require 'GCal4Ruby'
 class SubjectsController < ApplicationController
+before_filter :authenticate_user!, :except => [:top, :feed, :news,:inlog,:show]
 include GCal4Ruby
 layout 'html5'
 

@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
 
+before_filter :authenticate_user!, :except => [:index, :show]
 layout 'html5'
 
   def index

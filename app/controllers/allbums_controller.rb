@@ -1,5 +1,7 @@
 class AllbumsController < ApplicationController
 
+before_filter :authenticate_user!
+
 layout 'backend'
 
 respond_to :html,:js
