@@ -3,7 +3,7 @@
 <%= image_tag('/stylesheets/backend/assets/icons/big_icons/music_title.png',:id => 'big_title') %>
 </p>
 
-										<h1>Edit the music!</h1>
+										<h1>Edit <%= @track.name %></h1>
 					
 <%= link_to("<< Back to list", {:action => 'lijst'}, :class => 'button_link') %>
 <div>&nbsp;</div>

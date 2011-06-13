@@ -2,6 +2,14 @@
 <p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/booking.png') %>
 <%= image_tag('/stylesheets/backend/assets/icons/big_icons/booking_title.png',:id => 'big_title') %>
 </p>
+<% if flash[:notice] %>
+<div class="notification success"> 
+<span></span> 
+<div class="text"> 
+<p><strong><%= flash[:notice] %></strong>.</p> 
+</div> 
+</div> 
+  <% end %>
 
 
 	<table class="normal tablesorter fullwidth">

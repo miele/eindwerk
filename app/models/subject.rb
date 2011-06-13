@@ -12,7 +12,7 @@ class Subject < ActiveRecord::Base
  
  #het omvormen van de opgeladen foto's naar zwart/wit voor het grafische design te volgen
  
- has_attached_file :photo, :styles => { :large => "1280x960",
+ has_attached_file :photo, :styles => { :large => "1000x800",
  									    :medium => "300x300>",
  									    :thumb => "200x200>" },
  				    :convert_options => { 	:thumb => "-colorspace Gray",

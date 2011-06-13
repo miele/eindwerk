@@ -1,3 +1,17 @@
 <div class="inner">
-<p>De tweet werd succesvol verzonden.</p>
+<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/social.png') %>
+			<%= image_tag('/stylesheets/backend/assets/icons/big_icons/social_title.png') %>
+			</p>
+<div style="height:40px;"class="notification success"><p id="tweet_ok">Het bericht werd succesvol verzonden.</p></div>
+
+<%= link_to("<< Another message?", {:action => 'new'}, :class => 'button_link') %>
+<div>&nbsp;</div>
+
 </div>
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#social').addClass('current').html("<a><span>Social</span></a>");
+    });
+  </script>
+<% end %>

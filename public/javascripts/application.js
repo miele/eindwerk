@@ -159,7 +159,10 @@ $("a.portfolio_item[rel^='prettyPhoto'], a.isphoto_m[rel^='prettyPhoto'], a.isph
 			theme: 'nitro_dark_rounded',
 			slideshow: 4000,
 			autoplay_slideshow: false});
-  
+
+if ( $.browser.msie ) {
+    // eventueel ie fix
+ } else {  
    var $container = $('#isotope_gigs');
     
       $container.isotope({
@@ -183,8 +186,7 @@ $("a.portfolio_item[rel^='prettyPhoto'], a.isphoto_m[rel^='prettyPhoto'], a.isph
         function( newElements ) {
           $container.isotope( 'appended', $( newElements ) ); 
         }
-      );
-      
-      
+      );    
+ }     
 
 			});

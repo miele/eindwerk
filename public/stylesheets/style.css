@@ -1635,6 +1635,19 @@ ul.social{
 width: 220px;
 }
 
+p.sub{
+height: 47px;
+overflow: hidden;
+margin-bottom: 0;
+padding-bottom: 0;
+}
+
+p.dots{
+float: left;
+margin: 0;
+padding: 0;
+}
+
 
 
 

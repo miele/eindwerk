@@ -1,8 +1,10 @@
 <div class="inner">
+				<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/news.png') %>
+								<%= image_tag('/stylesheets/backend/assets/icons/big_icons/news_title.png') %>
+								</p>
 				
-										<h1>Edit the news!</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
-
+										<h1>Edit <%= @subject.name %></h1>
+					
 <%= link_to("<< Back to list", {:action => 'list'}, :class => 'button_link') %>
 <div>&nbsp;</div>
 

@@ -17,6 +17,7 @@
 <script type="text/javascript" src="/plupload/js/gears_init.js"></script>
 <script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
 <%= javascript_include_tag "plupload/plupload.full.min", "plupload/jquery.plupload.queue.min" %>
+<%= yield :head %>
 <%= stylesheet_link_tag "plupload.queue" %>
 	
 <meta charset="UTF-8"></head>
@@ -36,7 +37,7 @@
 						<li><a href="/backend"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/dashboard.png') %><span class="current">Dashboard</span></a></li>
 						<li><a href="/subjects/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/news.png') %><span>News</span></a></li>
 						<li><a href="/bands/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/band.png') %><span>The band</span></a></li>
-						<li><a href="/allbums/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/jpeg_image.png') %><span>Albums</span></a>
+						<li><a href="/allbums/list"><%= image_tag('/stylesheets/backend/assets/icons/small_icons_3/jpeg_image.png',:id => 'album_icon') %><span>Albums</span></a>
 							<!--<ul>
 								<li><a href="#">Upload</a></li>
 								<li><a href="#">Add new</a></li>

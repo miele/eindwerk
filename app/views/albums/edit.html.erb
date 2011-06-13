@@ -1,9 +1,15 @@
 <div class="inner">
-<h1>Editing Album</h1>
-
+<h1>Editing <%= @album.name %></h1>
+<a href="/allbums/list" class="button_link">&lt;&lt; Back to list</a>
+<div>&nbsp;</div>
 <%= render 'form' %>
 
 
-<%= link_to 'Show', @album %> |
-<%= link_to 'Back', albums_path %>
 </div>
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#album').addClass('current').html("<a><span>Albums</span></a>");
+    });
+  </script>
+<% end %>

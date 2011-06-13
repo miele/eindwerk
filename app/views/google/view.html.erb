@@ -1,9 +1,11 @@
 <div class="inner">
+<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/google.png') %>
+										<%= image_tag('/stylesheets/backend/assets/icons/big_icons/google_title.png',:id => 'big_title') %>
+										</p>
 				
-										<h1>Google Agenda Event Details</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum bibendum, risus lacinia scelerisque facilisis, tellus felis tristique mauris, nec dignissim felis mi ac quam. Nulla at justo eget augue congue feugiat vel ut leo. Vestibulum magna sem, sollicitudin nec gravida vel, feugiat viverra eros.</p>
-
-<%= link_to("Edit Event", {:action => :edit, :event_id => @event.id}, :class => 'button_link') %>
+										<h1>Event Details</h1>
+					
+<%= link_to("<< Back to list", {:action => 'index'}, :class => 'button_link') %>&nbsp;<%= link_to("Edit Event", {:action => :edit, :event_id => @event.id}, :class => 'button_link') %>
 <div>&nbsp;</div>
 <fieldset>
 						<legend>Google Agenda Event</legend>
@@ -78,7 +80,7 @@
 						</p>
 						
 						<p>
-						<%= submit_tag 'Save',:class => "sendButton"%>
+						<%= submit_tag 'Save reminder',:class => "sendButton"%>
 						</p>
 <% end %>
 
@@ -105,7 +107,7 @@
 						</p>
 						
 						<p>
-						<%= submit_tag 'Add',:class => "sendButton"%>
+						<%= submit_tag 'Add attendee',:class => "sendButton"%>
 						</p>
 					<% end %>
 					</fieldset>
@@ -140,3 +142,11 @@
 
 
 </div>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#google').addClass('current').html("<a><span>Google</span></a>");
+    });
+  </script>
+<% end %>

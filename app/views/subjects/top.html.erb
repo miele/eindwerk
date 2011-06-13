@@ -69,15 +69,14 @@
    <article>
 					<a class="boxgrid box alpha tl tooltip" id="sub<%= @s.to_s %>" href="/Subjects/show/<%= subject.id %>" title="<%= subject.name %>">
 						<h4 class="title nocufon"><%= subject.name %></h4>
-						<p class"sub">
-						<%  str = subject.content %>
-						<%= str[0..25] + '...' %></p>
 						<figure><%= image_tag(subject.photo.url(:thumb)) %></figure>
+						<p class="sub">
+						<%= raw subject.content %><p class="dots">...</p>
+						</p>
 					</a>
 				</article>
 	<% @s+=1; %>
     <% end %>
     </section>
-	
-   
+
        

@@ -17,11 +17,11 @@
 			
 			<p>
 			<label>Cover</label>
-			<%= f.file_field(:cover) %>
+			<%= f.file_field(:cover,{:class => "styled_upload"}) %>
 			</p>
 			<p>
 			<label>Song</label>
-			<%= f.file_field(:song) %>
+			<%= f.file_field(:song,{:class => "styled_upload"}) %>
 			</p>
 			
 			<% content_for :head do %>

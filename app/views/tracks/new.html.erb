@@ -4,6 +4,8 @@
 </p>
 										<h1>Insert a new song!</h1>
 					
+<%= link_to("<< Back to list", {:action => 'lijst'}, :class => 'button_link') %>
+<div>&nbsp;</div>
 
 
 <%= form_for(:track, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>

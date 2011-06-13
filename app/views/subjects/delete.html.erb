@@ -13,3 +13,10 @@
 		<%= submit_tag("Delete",:class => "button_link")%>
 <% end %>
 </div>
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#news').addClass('current').html("<a><span>News</span></a>");
+    });
+  </script>
+<% end %>
