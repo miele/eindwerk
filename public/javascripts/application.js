@@ -158,6 +158,7 @@ $("a.portfolio_item[rel^='prettyPhoto'], a.isphoto_m[rel^='prettyPhoto'], a.isph
 			animationSpeed: 'slow',
 			theme: 'nitro_dark_rounded',
 			slideshow: 4000,
+			overlay_gallery: false,
 			autoplay_slideshow: false});
 
 if ( $.browser.msie ) {

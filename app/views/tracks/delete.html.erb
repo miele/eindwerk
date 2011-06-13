@@ -1,7 +1,12 @@
-<%= link_to("<< Back to list", {:action => 'list'}, :class => 'back-link') %>
+<div class="inner">
+				<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/music.png') %>
+<%= image_tag('/stylesheets/backend/assets/icons/big_icons/music_title.png',:id => 'big_title') %>
+</p>
 
-<div class="delete track">
-<h2>Delete Track</h2>
+<h1>Delete <%= @track.name %></h1>
+
+<%= link_to("<< Back to list", {:action => 'lijst'}, :class => 'button_link') %>
+<div>&nbsp;</div>
 
 <%= form_for(:track, :url => {:action => 'destroy', :id => @track.id}) do |f| %>
 	<p>Are you sure you want to delete this record?</p>
@@ -11,3 +16,10 @@
 	</div>
 <% end %>
 </div>
+	<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#music').addClass('current').html("<a><span>Music</span></a>");
+    });
+  </script>
+<% end %>

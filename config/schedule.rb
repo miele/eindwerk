@@ -5,7 +5,7 @@
 
 # Example:
 #
-set :output, "/path/to/my/cron_log.log"
+#set :output, "/path/to/my/cron_log.log"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -21,7 +21,7 @@ set :output, "/path/to/my/cron_log.log"
 every 10.minutes do
     runner "Tweet.get_latest" , :environment => :development
   end
-
-every 5.minutes do
-    runner "Gigs.feed" , :environment => :development
-  end
+# 
+# every 5.minutes do
+#     runner "Gigs.feed" , :environment => :development
+#   end

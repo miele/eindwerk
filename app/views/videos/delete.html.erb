@@ -13,3 +13,10 @@
 	</div>
 <% end %>
 </div>
+<% content_for :head do %>
+<script type="text/javascript">
+    $(function() {
+      $('#video').addClass('current').html("<a><span>Video's</span></a>");
+    });
+  </script>
+<% end %>

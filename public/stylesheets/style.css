@@ -655,12 +655,19 @@ ol {padding: 0 0 0 5px;}
 	margin: 0;
 	padding: 0;	
 
-	background: #000 url(../images/test.png);
+	background: #000 url(../images/test2.png);
 
 	/* border-bottom: 3px solid #333; */
 	width: 1020px;
 	z-index: 1000;
 	min-height: 90px;
+	}
+
+#home_logo{
+	z-index: 900;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
 	}
 
 	
@@ -1141,6 +1148,7 @@ a.boxgrid {text-decoration: none}
   position: relative;
   font-family: Georgia, serif;
   color: #999;
+  float: left;
  }
 
  
@@ -1636,6 +1644,7 @@ width: 220px;
 }
 
 p.sub{
+padding-top: 10px;
 height: 47px;
 overflow: hidden;
 margin-bottom: 0;

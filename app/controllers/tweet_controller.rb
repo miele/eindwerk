@@ -5,6 +5,24 @@ layout 'backend'
  def post_update
   	# client.statuses.update! :status=> (params[:tweet][:content] + "#fb") 
   	client.statuses.update! :status=> (params[:tweet][:content]) #POST to http://twitter.com/statuses/update.json
+  	
+  	@data = ConfigKeys.find(1)
+    @token = @data.facebook_access_token
+    access_token = @token      	
+   	me = FbGraph::User.me(access_token)
+ 	
+ 	@fanpage = @data.facebook_fan_page	
+	page = me.accounts.detect do |p| 
+	  p.name == @fanpage 
+	end
+	
+	page.feed!(
+    :message => params[:tweet][:content],
+    :name => params[:tweet][:content],
+    :description => params[:tweet][:content]
+  )
+
+  	
   	redirect_to(:action => 'succes')
   end
   

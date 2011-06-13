@@ -30,6 +30,10 @@ end
 
 def show
  @band = Band.find(params[:id])
+  respond_to do |format|
+      format.html { render :layout => 'backend' }
+    end
+
 end
 
 def new

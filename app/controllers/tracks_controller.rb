@@ -31,6 +31,10 @@ end
 
 def show
  @track = Track.find(params[:id])
+ respond_to do |format|
+format.html  { render :layout => 'backend' }
+format.js  { render :layout => 'backend' }
+end
 end
 
 def new
@@ -76,7 +80,11 @@ def update
 end
 
 def delete
-  @track = Track.find(params[:id]) 
+  @track = Track.find(params[:id])
+  respond_to do |format|
+format.html  { render :layout => 'backend' }
+format.js  { render :layout => 'backend' }
+end
 end
 
 def destroy

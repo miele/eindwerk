@@ -1,29 +1,31 @@
-<%= link_to("<< Back to list", {:action => 'lijst'}, :class => 'back-link') %>
+<div class="inner">
+				<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/music.png') %>
+<%= image_tag('/stylesheets/backend/assets/icons/big_icons/music_title.png',:id => 'big_title') %>
+</p>
+										<h1>Show <%= @track.name %></h1>
 
-<div class="track show">
+<%= link_to("<< Back to list", {:action => 'lijst'}, :class => 'button_link') %>
+<div>&nbsp;</div>
 
-<h2>Show Track</h2>
+<fieldset>
+						<legend>Track details</legend>
+						
+<p>
 
-<table summary="Track detail view">
-	<tr>
-		<th>Name</th>
-		<td><%= @track.name %></td>
-	</tr>
-	<tr>
-		<th>MP3</th>
-		<td><%= @track.mp3 %></td>
-	</tr>
-	<tr>
-		<th>OGA</th>
-		<td><%= @track.oga %></td>
-	</tr>
-	<tr>
-		<th>Created</th>
-		<td><%= @track.created_at %></td>
-	</tr>
-	<tr>
-		<th>Updated</th>
-		<td><%= @track.updated_at %></td>
-	</tr>
-	</table>
+		<label>Name</label>
+		<%= @track.name %></p>
+	
+		<p><label>MP3</label>
+		<%= @track.mp3 %></p>
+
+		<p><label>OGA</label>
+		<%= @track.oga %></p>
+
+		<p><label>Created</label>
+		<%= @track.created_at %></p>
+	
+		<p><label>Updated</label>
+		<%= @track.updated_at %></p>
+
+</fieldset>
 </div>

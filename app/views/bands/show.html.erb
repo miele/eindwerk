@@ -1,19 +1,34 @@
-<!-- =Message board -->
-		<aside>
-			<h2 class="grid_12 message_board clearfix"><%= @band.name %> details:</h2>
-		</aside>
+<div class="inner">
+				
+				<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/band.png') %>
+					<%= image_tag('/stylesheets/backend/assets/icons/big_icons/band_title.png',:id => 'big_title') %>
+					</p>
 
-			<div class="hr grid_12 clearfix boxhr">&nbsp;</div>
-		<section id="left_col" class="grid_12">
-		
-			<div class="hr dotted clearfix">&nbsp;</div>
 
-			<p>Hij speelt <strong><%= @band.instrument %></strong></p>
-			<p>Geboren op : <%= @band.birthday %></p>
+										<h1><%= "Details" + @band.name %></h1>
+				
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'button_link') %>
+<div>&nbsp;</div>	
+			<fieldset>
+						<legend>Tha Band</legend>
+			<p><label>Instrument:</label>
+			<%= @band.instrument %></p>
+			
+			<p><label>Geboren op :</label>
+			<%= @band.birthday %></p>
 	
-			<p><a class="portfolio_item" href="<%= @band.picture.url(:original) %>" rel="prettyPhoto[mixed]" title="<%= @band.name %>">
-			<img class="float_left" title="" src="<%= @band.picture.url(:large)%>" alt="" /></a>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor mattis neque at bibendum. Fusce uploadsus semper justo a dictum. Suspendisse 					pulvinar nisi nec arcu interdum laoreet. Ut at magna ut erat ultrices varius id vel nunc. Aliquam uploadsus euismod nunc, a convallis erat facilisis id. 			Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p> 
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Donec auctor mattis </strong>neque at bibendum. Fusce uploadsus semper justo a 					dictum. Suspendisse pulvinar nisi nec arcu interdum laoreet. Ut at magna ut erat ultrices varius id vel nunc.<%= @band.content %></p>		
-			<%= link_to("Overview", '/Bands', :class => 'textlink') %>
-		</section>
+			<p>
+			<label>Foto:</label>
+			<%= image_tag (@band.picture.url(:medium)) %></p>
+			<p><label>Bio:</label>
+			<%= @band.content %></p>		
+			
+		</fieldset>
+		</div>
+	<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#band').addClass('current').html("<a><span>The Band</span></a>");
+    });
+  </script>
+<% end %>

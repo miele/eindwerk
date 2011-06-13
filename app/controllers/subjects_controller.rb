@@ -27,6 +27,7 @@ def top
   # @events = Event.order("events.id DESC").limit(2)
  @footer_tweets = Tweet.order("tweets.created DESC").limit(2)
  @footer_subjects = Subject.order("subjects.id DESC").limit(3)
+ @googles = Google.order("googles.start_time ASC").limit(4)
  respond_to do |format|
   format.html
   format.mobile {render :layout => 'mobile'}

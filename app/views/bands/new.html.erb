@@ -8,6 +8,9 @@
 										<h1>Insert new band member!</h1>
 					
 
+<%= link_to("<< Back to list", {:action => 'list'}, :class => 'button_link') %>
+<div>&nbsp;</div>
+
 <%= form_for(:band, :html => { :multipart => true, :id => "contact_form_id" }, :url => {:action => 'create'}) do |f| %>
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
 <%= submit_tag("Create",:class => "button_link")%>

@@ -24,7 +24,7 @@
 -->
 
 <% @i = 0 %>
-<% @events.sort{|a,b| b.start_time <=> a.start_time}.each do |event| %>
+<% @events.sort{|a,b| a.start_time.to_i <=> b.start_time.to_i}.each do |event| %>
 <% break event if (@i.to_s == '4') %>
 	<article class="date">
 	<a class="boxgrid box alpha tl tooltip" id="gcal<%= @i.to_s %>" href="/gigs" title="<%= event.title %>">
