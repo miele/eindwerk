@@ -1,8 +1,31 @@
 <div class="inner">
+<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/album.png') %>
+									<%= image_tag('/stylesheets/backend/assets/icons/big_icons/album_title.png',:id => 'big_title') %>
+									</p>
 <h1>Editing <%= @album.name %></h1>
 <a href="/allbums/list" class="button_link">&lt;&lt; Back to list</a>
 <div>&nbsp;</div>
 <%= render 'form' %>
+
+<%= render :partial => 'show' %>
+
+<%= form_for Picture.new(:album_id => @album.id), :html => {:multipart => true, :id => "file_upload"} do |f| %>
+  <%= f.hidden_field :album_id, "value" => @album.id %>
+  <div id="uploader">
+        <p>You browser doesn't have Flash, Silverlight, Gears, BrowserPlus or HTML5 support.</p>
+  </div>
+
+<% end %>
+
+<% @album.pictures.each do |picture| %>
+<li class="edit_album"><%= image_tag(picture.upload.url(:thumb))%>
+<%= form_for(:picture,:html => { :id => "contact_form_id" }, :url => {:action => 'destroy_edit', :id => picture.id}) do |f| %>
+<div class="form-buttons">
+		<%= submit_tag("Delete Photo",:class => 'button_link')%>
+	</div>
+<% end %>
+</li>
+<% end %>
 
 
 </div>

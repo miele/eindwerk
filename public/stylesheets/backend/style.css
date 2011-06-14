@@ -1115,3 +1115,24 @@ opacity : 0.65;
 #menu ul li a img#album_icon{
 height: 28px;
 }
+
+.edit_album img{
+	padding: 0;
+	margin-top: 0;
+	margin-left : 0;
+	margin-right: 0;
+	margin-bottom: 3px;
+	-moz-box-shadow: 5px 5px 5px #000000;
+	-webkit-box-shadow: 5px 5px 5px #000000;
+	box-shadow: 5px 5px 5px #000000;
+
+}
+
+li.edit_album{
+list-style-type: none;
+list-style: none;
+float: left;
+width: 200px;
+height: 200px;
+padding: 30px;
+}

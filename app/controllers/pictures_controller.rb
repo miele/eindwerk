@@ -130,6 +130,18 @@ class PicturesController < ApplicationController
     end
   end
   
+    # DELETE /pictures/1
+  # DELETE /pictures/1.xml
+  def destroy_edit
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(pictures_url) }
+      format.xml  { head :ok }
+    end
+  end
+  
   private 
   def coerce(params)
     if params[:picture].nil?

@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
 
-before_filter :authenticate_user!, :except => [:index, :show, :detail]
+before_filter :authenticate_user!, :except => [:index, :detail]
 
 layout 'html5' 
 # before_filter :authenticate_user!, :except => [:index,:show]
@@ -62,9 +62,9 @@ respond_to :html, :xml, :json,:mobile
   
   # GET /albums/1/edit
   def edit
-    @album = Album.find(params[:id])
+    @album = Album.find(params[:id], :include => :pictures)
     respond_to do |format|
-      format.html { render :layout => 'backend' }
+      format.html { render :layout => 'backend_upload' }
       format.xml  { render :xml => @album }
     end
   end
@@ -118,9 +118,19 @@ respond_to :html, :xml, :json,:mobile
 
     respond_to do |format|
       if @album.update_attributes(params[:album])
-    flash[:notice] = "Album has been updated succesfully"
- 	redirect_to(:controller => 'allbums',:action => 'list')
+    	format.html { redirect_to(:controller => 'albums',:id => @album.id,:action => 'edit') }
+      	format.xml  { head :ok }
  	end
+    end
+  end
+  
+   def destroy_edit
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(:controller => 'albums',:id => @picture.album_id,:action => 'edit') }
+      format.xml  { head :ok }
     end
   end
 
