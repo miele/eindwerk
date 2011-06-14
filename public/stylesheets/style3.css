@@ -685,8 +685,6 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
   border: none;
 }
 
-
-
 /* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
 .clearfix:after { clear: both; }
@@ -705,6 +703,8 @@ font-family: Helvetica;
 font-size: 24px;
 }
 
-
+#toggleInfo,#untoggleInfo{
+cursor: pointer;
+}
 
 /* THE END */

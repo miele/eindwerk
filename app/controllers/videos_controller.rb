@@ -4,7 +4,7 @@ before_filter :authenticate_user!, :except => [:index, :show]
 layout 'html5'
 
   def index
-  @footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+  @footer_tweets = Tweet.order("tweets.created DESC").limit(2)
  @footer_subjects = Subject.order("subjects.id DESC").limit(3)
   @page_title = 'Skarminkels Videos'
   @videos = Video.order("videos.id DESC").paginate(:per_page => 4,:page => params[:page])

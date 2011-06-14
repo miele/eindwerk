@@ -74,7 +74,7 @@
 
 <%= gmaps({
 	   "direction" => {
-                    "data"    => { "from" => cookies[:current_location], "to" => @data.where} , 
+                    "data"    => { "from" => "Lint", "to" => @data.where} , 
                     "options" => {"display_panel" => true, "panel_id" => "instructions"}
               },
        "map_options" => { "auto_zoom" => false, "center_latitude" => @data.latitude, "center_longitude" => @data.longitude},

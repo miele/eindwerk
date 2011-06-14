@@ -1641,6 +1641,16 @@ border-bottom: 35px solid #FFF;
 
 ul.social{
 width: 220px;
+float: left;
+margin-left: 0;
+}
+
+ul.social li{
+float: left;
+margin-left: 0;
+padding-left: 0;
+padding-right: 15px;
+padding-bottom: 5px;
 }
 
 p.sub{

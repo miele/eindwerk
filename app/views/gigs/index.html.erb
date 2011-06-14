@@ -40,11 +40,11 @@
       <h4 class="month"><%= event.start_time.strftime("%b") %></h4>
       <h4 class="day"><%= event.start_time.strftime("%d") %></h4>
       <h4 class="year"><%= event.start_time.strftime("%Y") %></h4>
-      <p>&nbsp;</p>
+      &nbsp;
       <div class="info_event">
-			<p class="name"><%= event.title%></p>
+			<h4 class="e_title"><%= event.title%></h4>
 			<p class="e_time"><%= event.start_time.strftime("%H:%M") %> - <%= event.end_time.strftime("%H:%M") %></p>
-			<p class="where"><%= event.where %></p>
+			<p class="e_loc"><%= event.where %></p>
 			</div>   
     </a>
     </article>

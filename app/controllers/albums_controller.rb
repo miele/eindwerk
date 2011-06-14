@@ -9,7 +9,7 @@ respond_to :html, :xml, :json,:mobile
   # GET /albums
   # GET /albums.xml
   def index
-   	@footer_tweets = Tweet.order("tweets.created DESC").limit(3)
+   	@footer_tweets = Tweet.order("tweets.created DESC").limit(2)
  	@footer_subjects = Subject.order("subjects.id DESC").limit(3)
 	@page_title = 'Skarminkels Albums'
   
