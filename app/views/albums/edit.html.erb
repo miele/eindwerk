@@ -33,6 +33,24 @@
   <script type="text/javascript">
     $(function() {
       $('#album').addClass('current').html("<a><span>Albums</span></a>");
+      window.onscroll = function()
+{
+    if( window.XMLHttpRequest ) {
+        if (document.documentElement.scrollTop > 0 || self.pageYOffset > 0) {
+            jQuery('#primary_left').css('position','fixed');
+            jQuery('#primary_left').css('top','0');
+        } else if (document.documentElement.scrollTop < 0 || self.pageYOffset < 0) {
+            jQuery('#primary_left').css('position','absolute');
+            jQuery('#primary_left').css('top','175px');
+        }
+    }
+}
+
     });
   </script>
 <% end %>
+<style rel="stylesheet">
+#menu{
+margin-top: 45px;
+}
+</style>

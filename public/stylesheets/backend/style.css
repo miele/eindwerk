@@ -1134,5 +1134,8 @@ list-style: none;
 float: left;
 width: 200px;
 height: 200px;
-padding: 30px;
+padding-bottom: 30px;
+padding-left: 0px;
+padding-right: 30px;
+padding-top: 30px;
 }

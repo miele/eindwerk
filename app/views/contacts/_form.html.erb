@@ -28,7 +28,7 @@
   	<br/>
   	<p>
 	<label for="name">Datum optreden</label>
-    <%= f.text_field :datum_optreden,{:id => "name"} %>
+    <%= f.text_field :datum_optreden,{:id => "name",:class => "datum"} %>
   	</p>
   	
   	<p>
@@ -55,22 +55,24 @@
 	<label for="name">Loon optreden</label>
     <%= f.text_field :loon,{:id => "name"} %>
   	</p>
-  	<p>
-  	<%= check_box_tag(:pa,1) %>
-<%= label_tag(:pa, "Eigen PA meebrengen") %></p>
-<p><%= check_box_tag(:pa,0) %>
-<%= label_tag(:pa, "Geen PA meebrengen") %>
+  <!--
+	<p>
+  	<% check_box_tag(:pa,1) %>
+<% label_tag(:pa, "Eigen PA meebrengen") %></p>
+<p><% check_box_tag(:pa,0) %>
+<% label_tag(:pa, "Geen PA meebrengen") %>
 </p>
+-->
 
   	
   	<p>
 	<label for="name">Arriveren ter plaatse</label>
-    <%= f.text_field :arriveren,{:id => "name"} %>
+    <%= f.text_field :arriveren,{:id => "name",:class => "datum"} %>
   	</p>
   	
   	<p>
 	<label for="name">Soundcheck</label>
-    <%= f.text_field :soundcheck,{:id => "name"} %>
+    <%= f.text_field :soundcheck,{:id => "name",:class => "datum"} %>
   	</p>
   	
   	<p>
