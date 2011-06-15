@@ -4,16 +4,16 @@
 						
 						<p>
 						<label>Name:</label>
-						<%= f.text_field(:name,{:class => "lf"})%>
+						<%= f.text_field(:name,{:class=> "required",:minlength => "5"})%>
 						</p>
 						<!--
 <p>
 						<label>Position:</label>
-						<% f.text_field(:position,{:class => "lf"})%>
+						<% f.text_field(:position,{:class=> "required digits",:minlength => "1"})%>
 						</p>
 						<p>
 						<label>Visible:</label>
-						<% f.text_field(:visible,{:class => "lf"})%>
+						<% f.text_field(:visible,{:class=> "required",:minlength => "5"})%>
 						</p>
 -->
 					

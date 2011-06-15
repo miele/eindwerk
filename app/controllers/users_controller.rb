@@ -26,7 +26,7 @@ def create
  @user = User.new(params[:user])
  if @user.save
  	flash[:notice] = "User has been created succesfully"
- 	redirect_to(:action => 'list')
+ 	redirect_to(:action => 'index')
  else
  	render('new')
  end
@@ -47,14 +47,15 @@ def update
 end
 
 def delete
-  @user = User.find(params[:id]) 
+  @user = User.find(params[:id])
+   redirect_to(:action => 'destroy', :id => @user.id)
 end
 
 def destroy
   @user = User.find(params[:id])
   @user.destroy
   flash[:notice] = "User has been deleted succesfully"
-  redirect_to(:action => 'list')
+  redirect_to(:action => 'index')
 end
 
 

@@ -8,10 +8,21 @@
 <%= link_to("<< Back to list", {:action => 'list'}, :class => 'button_link') %>
 <div>&nbsp;</div>
 
-<%= form_for(:subject, :html => { :multipart => true, :id => "contact_form_id" }, :url => {:action => 'create'}) do |f| %>   
+<%= form_for(:subject, :html => { :multipart => true, :id => "news_form_id" }, :url => {:action => 'create'}) do |f| %>
+	<div id="messageBox"></div>  
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
 <%= submit_tag("Create",:class => "button_link")%>
 
 <% end %>
 
+<% content_for :head do %>
+<script>
+$("#news_form_id").validate({
+	errorLabelContainer: "#messageBox",
+	success: "valid",
+	onkeyup: true,
+  	onclick: true
+});
+</script>
+<% end %>
 </div>

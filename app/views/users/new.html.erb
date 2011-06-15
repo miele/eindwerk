@@ -1,8 +1,16 @@
 <div class="inner">
+<p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/user.png') %>
+<%= image_tag('/stylesheets/backend/assets/icons/big_icons/user_title.png',:id => 'big_title') %>
+</p>
+
+<h1>New Admin User</h1>
+
+<%= link_to("<< Back to list", {:action => 'index'}, :class => 'button_link') %>
+<div>&nbsp;</div>
+
 <fieldset>
 						<legend>Sign up</legend>
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
 
   <p><%= f.label :email %><br />
   <%= f.text_field :email %></p>
@@ -18,3 +26,11 @@
 </fieldset>
 
 </div>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#user').addClass('current').html("<a><span>Users</span></a>");
+    });
+  </script>
+<% end %>

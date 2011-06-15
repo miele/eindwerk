@@ -5,7 +5,7 @@
 <%= image_tag('/stylesheets/backend/assets/icons/big_icons/user_title.png',:id => 'big_title') %>
 </p>
 	
-	<%= link_to "New User", "/admin/users/sign_up",{:class => 'button_link'} %>
+	<%= link_to "New User", "/users/new",{:class => 'button_link'} %>
 	<div>&nbsp;</div>
 	<table class="normal tablesorter fullwidth">
 						<thead>
@@ -32,7 +32,7 @@
 								<td>
 								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/preferences.png'),{:action => 'show', :id => user.id}, {:title => 'Show ' + user.email ,:class => "tooltip table_icon"}) %>
 								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/pencil.png'),{:action => 'edit', :id => user.id}, {:title => 'Edit ' + user.email ,:class => "tooltip table_icon"}) %>
-								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/trash.png'),{:action => 'destroy', :id => user.id}, {:title => 'Delete ' + user.email ,:class => "tooltip table_icon"}) %>	
+								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/trash.png'),{:action => 'delete', :id => user.id}, {:title => 'Delete ' + user.email ,:class => "tooltip table_icon"}) %>	
 								</td>
 							</tr>
 	
