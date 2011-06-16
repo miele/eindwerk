@@ -19,7 +19,7 @@
 								
 								<td><%= band.name %>&nbsp;</td>
 								<td><%= band.birthday %>&nbsp;</td>
-								<td><%= band.content %>&nbsp;</td>
+								<td><%= raw band.content %>&nbsp;</td>
 								<td>&nbsp;<%= band.instrument %></td>
 								<td>
 								<%= link_to(image_tag('/stylesheets/backend/assets/icons/actions_small/preferences.png'),{:action => 'show', :id => band.id}, {:title => 'Show ' + band.name ,:class => "tooltip table_icon"}) %>

@@ -4,6 +4,8 @@ before_filter :authenticate_user!
 
 layout 'backend'
 
+respond_to :html,:js,:mobile,:xml
+
 def index
 	list
 	render('list')
@@ -32,7 +34,7 @@ def create
  end
 end
 
-def edit
+def ediit
  @user = User.find(params[:id]) 
 end
 
@@ -57,6 +59,5 @@ def destroy
   flash[:notice] = "User has been deleted succesfully"
   redirect_to(:action => 'index')
 end
-
 
 end

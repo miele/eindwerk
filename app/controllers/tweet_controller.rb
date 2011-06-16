@@ -4,7 +4,7 @@ layout 'backend'
 
  def post_update
   	# client.statuses.update! :status=> (params[:tweet][:content] + "#fb") 
-  	client.statuses.update! :status=> (params[:tweet][:content]) #POST to http://twitter.com/statuses/update.json
+  	client.statuses.update! :status=> (params[:tweet][:content] + ' #skarminkels') #POST to http://twitter.com/statuses/update.json
   	
   	@data = ConfigKeys.find(1)
     @token = @data.facebook_access_token

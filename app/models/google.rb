@@ -5,6 +5,7 @@ include GCal4Ruby
 
 acts_as_gmappable
 
+
 def gmaps4rails_address
    where
 end

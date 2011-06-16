@@ -43,7 +43,7 @@ Skarminkels::Application.routes.draw do
 # separate the devise logic from the user crud
 # devise has a prefix now example "localhost:3000/admin/users/sign_in"
   devise_for :users, :path_prefix => "/admin"
-  resources :users
+  
   #resources :tracks # takes care off the routes for responses/get calls
  resources :convert
  
@@ -113,6 +113,6 @@ Skarminkels::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   
   match ':controller(/:action(/:id(.:format)))'
-  
+  #resources :users
   match '*a', :to => 'errors#routing'
 end
