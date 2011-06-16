@@ -1232,15 +1232,13 @@ a:hover{
 }
 .content {
 	margin:0 auto;
-	padding:0px 0px 58px 0px; /* Footer Padding */
+	padding:0px 0px 5px 0px; /* Footer Padding */
 }
 
 /* Menu style */
 .ei_menu{
 	background:#111;
-	width:90%;
-	padding-left: 5%;
-	padding-right: 5%;
+	width:89%;
 	overflow:hidden;
 }
 .ei_menu ul{
@@ -1260,7 +1258,7 @@ list-style: none;
 	height:350px;
 	position:relative;
 	overflow:hidden;
-	border-right:2px solid #111;
+	border-right:1px solid #111;
 }
 .ei_preview{
 	width:75px;
@@ -1269,7 +1267,8 @@ list-style: none;
 	position:absolute;
 	top:0px;
 	left:0px;
-	background:transparent url(../images/bw.jpg) no-repeat top left;
+	background:transparent url(../images/bw_new.png) no-repeat top left;
+	/* background:transparent url(../images/bw.jpg) no-repeat top left; */
 }
 .ei_image{
 	position:absolute;
@@ -1278,26 +1277,32 @@ list-style: none;
 	width:75px;
 	height:350px;
 	opacity:0.2;
-	background:transparent url(../images/color.jpg) no-repeat top left;
+	background:transparent url(../images/color_new.png) no-repeat top left;
+	/* background:transparent url(../images/color.jpg) no-repeat top left; */
 }
-.pos1 span{
+.pos0 span{
 	background-position:0px 0px;
 }
-.pos2 span{
+.pos1 span{
 	background-position:-75px 0px;
 }
-.pos3 span{
+.pos2 span{
 	background-position:-152px 0px;
 }
-.pos4 span{
+.pos3 span{
 	background-position:-227px 0px;
 }
-.pos5 span{
+.pos4 span{
 	background-position:-302px 0px;
 }
-.pos6 span{
+.pos5 span{
 	background-position:-377px 0px;
 }
+.pos6 span{
+	background-position:-450px 0px;
+}
+
+
 .ei_descr{
 	position:absolute;
 	width:278px;
