@@ -3,10 +3,13 @@ before_filter :authenticate_user!
 layout 'backend'
 
  def post_update
-  	# client.statuses.update! :status=> (params[:tweet][:content] + "#fb") 
-  	client.statuses.update! :status=> (params[:tweet][:content] + ' #skarminkels') #POST to http://twitter.com/statuses/update.json
+ 
+ 	@data = ConfigKeys.find(1)
+ 	@hash_tag = @data.twitter_hash_tag
   	
-  	@data = ConfigKeys.find(1)
+  	client.statuses.update! :status=> (params[:tweet][:content] + ' #' + @hash_tag) #POST to http://twitter.com/statuses/update.json
+  	
+  	
     @token = @data.facebook_access_token
     access_token = @token      	
    	me = FbGraph::User.me(access_token)

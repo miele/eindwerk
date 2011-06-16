@@ -8,7 +8,7 @@
 
 <div>&nbsp;</div>
 
-<%= form_for(:user, :url => {:action => 'destroy', :id => @user.id}) do |f| %>
+
 <fieldset>
 						<legend>Admin User</legend>
 		<p>
@@ -54,8 +54,12 @@
 
 
 </div>
+</fieldset>
 
-		<div class="form-buttons">
-		<%= submit_tag("Delete User",:class => 'button_link')%>
-	</div>
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#user').addClass('current').html("<a><span>Users</span></a>");
+    });
+  </script>
 <% end %>

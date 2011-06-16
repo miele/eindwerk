@@ -7,8 +7,9 @@
 <% @bands.each do |band| %>
 				<div data-role="collapsible" data-state="collapsed">
 	<h3><%= band.name %></h3>
-	<p><%= band.content %><%= image_tag('skarminkels_mobile.png',{:class => 'band_image'}) %></p>
 	<p><%= band.instrument %> dude!</p>
+	<p><%= band.content %></p>
+	
 	</div>
 <% end %>
 </div>
