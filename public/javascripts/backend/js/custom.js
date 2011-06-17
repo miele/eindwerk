@@ -97,7 +97,7 @@ jQuery(document).ready(function() {
 		}
 	); // The fade function
 	
-	jQuery( ".datepicker" ).datepicker();
+	jQuery( "#birthday" ).datepicker({ defaultDate: '-21y',changeMonth: true,changeYear: true });
 	
 	jQuery(".editor").cleditor({
 		width: '800px'

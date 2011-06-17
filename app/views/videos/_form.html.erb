@@ -10,7 +10,7 @@
 		
 			<p>
 			<label for="name">Title</label>
-			<%= f.text_field(:title, :class => "lf")%>
+			<%= f.text_field:title,{:class=> "required",:minlength => "5"}%>
 			</p>
 			<% content_for :head do %>
   <script type="text/javascript">
