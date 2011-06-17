@@ -24,7 +24,7 @@ gem 'gcal4ruby'
 gem 'fb_graph'
 gem 'facebooker2'
 gem 'mogli'
-
+gem "dynamic_form"
 
 
 

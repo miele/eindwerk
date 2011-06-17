@@ -8,7 +8,7 @@
 <%= link_to("<< Back to list", {:action => 'list'}, :class => 'button_link') %>
 <div>&nbsp;</div>
 
-<%= form_for(:subject,:html => { :id => "contact_form_id" },:url => {:action => 'update', :id => @subject.id}) do |f| %>
+<%= form_for(:subject,:html => { :id => "news_form_id" },:url => {:action => 'update', :id => @subject.id}) do |f| %>
 	
 		
 	<%= render(:partial => 'form', :locals => {:f => f}) %>

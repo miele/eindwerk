@@ -6,7 +6,7 @@
 					
 <%= link_to("<< Back to list", {:action => 'list'}, :class => 'button_link') %>
 <div>&nbsp;</div>
-<%= form_for(:video, :html => { :multipart => true, :id => "contact_form_id" }, :url => {:action => 'create'}) do |f| %>
+<%= form_for(:video, :html => { :multipart => true, :id => "video_form_id" }, :url => {:action => 'create'}) do |f| %>
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
 <%= submit_tag("Create",:class => "button_link")%>
 <% end %>

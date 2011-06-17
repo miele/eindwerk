@@ -6,27 +6,14 @@
 						<label>Name:</label>
 						<%= f.text_field(:name,{:class=> "required",:minlength => "5"})%>
 						</p>
-						<!--
-<p>
-						<label>Position:</label>
-						<% f.text_field(:position,{:class=> "required digits",:minlength => "1"})%>
-						</p>
-						<p>
-						<label>Visible:</label>
-						<% f.text_field(:visible,{:class=> "required",:minlength => "5"})%>
-						</p>
--->
-					
 						<p>
 						<label>Photo</label>
-						<% link_to image_tag('fancy_nav_left.png', {:alt => 'Rotate Clockwise'}), :action => 'rotate', :id => 								@subject.id, :deg => '-90' %>
-						<% link_to image_tag('fancy_nav_right.png', {:alt => 'Rotate Clockwise'}), :action => 'rotate', :id => 								@subject.id, :deg => '90' %>
-						<%= f.file_field(:photo,{:class => "styled_upload"})%>
+						<%= f.file_field(:photo,{:class => "styled_upload required"})%>
 						</p>
 						
 						<p>
 						<label>Content</label><br/>
-						<%= f.text_area(:content,{:class => "editor"})%>
+						<%= f.text_area(:content,{:class => "editor required"})%>
 						</p>
 
 <% content_for :head do %>

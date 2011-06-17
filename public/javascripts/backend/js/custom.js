@@ -28,10 +28,6 @@ jQuery(document).ready(function() {
 	//clearCurrentLink();
 	Cufon.replace('h1, h2, h5, .notification strong', { hover: 'true' }); // Cufon font replacement
 	//initMenu(); // Initialize the menu!
-	
-	
-	
-	jQuery(".tablesorter").tablesorter(); // Tablesorter plugin
 			
 	jQuery('#dialog').dialog({
 		autoOpen: false,
@@ -63,8 +59,20 @@ jQuery(document).ready(function() {
 		}
 	); // Top checkbox in a table will select all other checkboxes in a specified column
 			
-	jQuery('.iphone').iphoneStyle(); //iPhone like checkboxes
-
+	jQuery("#band_form_id,#news_form_id,#new_album,#track_form_id").validate({
+	success: "valid",
+	onkeyup: true,
+  	onclick: true,
+  	onchange : true
+	});
+	
+	jQuery("#video_form_id").validate({
+	success: "valid",
+	onkeyup: true,
+  	onclick: true,
+  	onchange : true
+    });
+	
 	jQuery('.notification span').click(function() {
 		jQuery(this).parents('.notification').fadeOut(800);
 	}); // Close notifications on clicking the X button
@@ -88,39 +96,6 @@ jQuery(document).ready(function() {
 			jQuery(this).stop().animate({opacity:1},200);
 		}
 	); // The fade function
-			
-	//sortable, portlets
-	jQuery(".column").sortable({
-		connectWith: '.column',
-		placeholder: 'ui-sortable-placeholder',
-		forcePlaceholderSize: true,
-		scroll: false,
-		helper: 'clone'
-	});
-				
-	jQuery(".portlet").addClass("ui-widget ui-widget-content ui-helper-clearfix ui-corner-all").find(".portlet-header").addClass("ui-widget-header ui-corner-all").prepend('<span class="ui-icon ui-icon-circle-arrow-s"></span>').end().find(".portlet-content");
-
-	jQuery(".portlet-header .ui-icon").click(function() {
-		jQuery(this).toggleClass("ui-icon-minusthick");
-		jQuery(this).parents(".portlet:first").find(".portlet-content").toggle();
-	});
-
-	jQuery(".column").disableSelection();
-	
-	jQuery("table.stats").each(function() {
-		if(jQuery(this).attr('rel')) { var statsType = jQuery(this).attr('rel'); }
-		else { var statsType = 'area'; }
-		
-		var chart_width = (jQuery(this).parent().parent(".ui-widget").width()) - 60;
-		jQuery(this).hide().visualize({		
-			type: statsType,	// 'bar', 'area', 'pie', 'line'
-			width: '800px',
-			height: '240px',
-			colors: ['#6fb9e8', '#ec8526', '#9dc453', '#ddd74c']
-		}); // used with the visualize plugin. Statistics.
-	});
-			
-	jQuery(".tabs").tabs(); // Enable tabs on all '.tabs' classes
 	
 	jQuery( ".datepicker" ).datepicker();
 	

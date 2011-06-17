@@ -40,6 +40,7 @@ def new
  @band = Band.new
   respond_to do |format|
       format.html { render :layout => 'backend' }
+      format.js { render :layout => 'backend' }
     end
 end
 
@@ -49,7 +50,7 @@ def create
  	flash[:notice] = "Band has been created succesfully"
  	redirect_to(:action => 'list')
  else
- 	render('new')
+ 	format.html { redirect_to :back }
  end
 end
 

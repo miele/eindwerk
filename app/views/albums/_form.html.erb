@@ -1,25 +1,12 @@
 <fieldset>
 						<legend>Album</legend>
 <%= form_for(@album) do |f| %>
-  <% if @album.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
-
-      <ul>
-      <% @album.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-  <div>&nbsp;</div>
+    <p>
+    <label>Name</label>
+    <%= f.text_field :name,{:class=> "required",:minlength => "5"} %>
+  	</p>
+  	<p>
     <%= f.submit %>
-  </div>
+  	</p>
 <% end %>
 </fieldset>

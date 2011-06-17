@@ -8,7 +8,7 @@
 <div>&nbsp;</div>
 
 
-<%= form_for(:track, :html => { :multipart => true }, :url => {:action => 'create'}) do |f| %>
+<%= form_for(:track, :html => { :multipart => true, :id => "track_form_id" }, :url => {:action => 'create'}) do |f| %>
 	<%= render(:partial => 'form', :locals => {:f => f}) %>
 <%= submit_tag("Create Track",{:class => 'button_link'})%>
 	</div>

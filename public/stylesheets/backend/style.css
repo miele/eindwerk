@@ -331,27 +331,6 @@ a.bands:active {
 	float: left;	
 }
 
-/*SUCCESS BOX*/
-
-.success {
-	border-top: 1px solid #edf7d0;
-	border-bottom: 1px solid #b7e789;
-
-	background: #dff3a8;
-	background: -moz-linear-gradient(top,#dff3a8,#c4fb92);
-	background: -webkit-gradient(linear, left top, left bottom, from(#dff3a8), to(#c4fb92));
-}
-
-.success:before {
-	content: url(assets/icons/notifications/success.png);
-	float: left;
-	margin: 10px 15px 0px 15px;
-}
-
-.success strong {
-	color: #61b316;
-	margin-right: 15px;
-}
 
 
 /*WARNING BOX*/
@@ -419,6 +398,27 @@ a.bands:active {
 
 .error strong {
 	color: #b31616;
+	margin-right: 15px;
+}
+/*SUCCESS BOX*/
+
+.valid {
+	border-top: 1px solid #edf7d0;
+	border-bottom: 1px solid #b7e789;
+
+	background: #dff3a8;
+	background: -moz-linear-gradient(top,#dff3a8,#c4fb92);
+	background: -webkit-gradient(linear, left top, left bottom, from(#dff3a8), to(#c4fb92));
+}
+
+.valid:before {
+	content: url(assets/icons/notifications/success.png);
+	float: left;
+	margin: 2px;
+}
+
+.valid strong {
+	color: #61b316;
 	margin-right: 15px;
 }
 
@@ -828,9 +828,20 @@ input[type="checkbox"] + label {
 
 p label {
 	display:inline-block;
-	width:150px;
-	font-size:11px;
+	width:160px;
+	font-size:12px;
 	vertical-align:middle;
+	font-family: Helvetica;
+}
+
+p label.valid, p label.error {
+	display:inline-block;
+	width:auto;
+	background: transparent;
+	border: transparent;
+	font-size:12px;
+	vertical-align:middle;
+	font-family: Helvetica;
 }
 
 label.fix {

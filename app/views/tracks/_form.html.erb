@@ -4,24 +4,24 @@
 						
 			<p>
 			<label>Name</label>
-			<%= f.text_field(:name,{:class => 'tf'})%>
+			<%= f.text_field(:name,{:class=> "required",:minlength => "5"})%>
 			</p>
 			<p>
 			<label>MP3</label>
-			<%= f.text_field(:mp3,{:class => 'tf'})%>
+			<%= f.text_field(:mp3,{:class=> "required",:minlength => "5"})%>
 			</p>
 			<p>
 			<label>OGA</label>
-			<%= f.text_field(:oga,{:class => 'tf'})%>
+			<%= f.text_field(:oga,{:class=> "required",:minlength => "5"})%>
 			</p>
 			
 			<p>
 			<label>Cover</label>
-			<%= f.file_field(:cover,{:class => "styled_upload"}) %>
+			<%= f.file_field(:cover,{:class => "styled_upload required"}) %>
 			</p>
 			<p>
 			<label>Song</label>
-			<%= f.file_field(:song,{:class => "styled_upload"}) %>
+			<%= f.file_field(:song,{:class => "styled_upload required"}) %>
 			</p>
 			
 			<% content_for :head do %>

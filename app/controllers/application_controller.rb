@@ -3,12 +3,12 @@ class ApplicationController < ActionController::Base
 
 include Facebooker2::Rails::Controller
 
-rescue_from ActiveRecord::RecordNotFound, :with => :show_errors
-rescue_from ActionController::UnknownAction, :with => :show_errors
-rescue_from Exception, :with => :show_errors
-rescue_from ActiveRecord::RecordNotFound, :with => :show_errors
-rescue_from ActionController::RoutingError, :with => :show_errors
-rescue_from AbstractController::ActionNotFound, :with => :show_errors
+# rescue_from ActiveRecord::RecordNotFound, :with => :show_errors
+# rescue_from ActionController::UnknownAction, :with => :show_errors
+# rescue_from Exception, :with => :show_errors
+# rescue_from ActiveRecord::RecordNotFound, :with => :show_errors
+# rescue_from ActionController::RoutingError, :with => :show_errors
+# rescue_from AbstractController::ActionNotFound, :with => :show_errors
 
 before_filter :prepare_for_mobile
 
