@@ -59,7 +59,7 @@ jQuery(document).ready(function() {
 		}
 	); // Top checkbox in a table will select all other checkboxes in a specified column
 			
-	jQuery("#band_form_id,#news_form_id,#new_album,#track_form_id,#user_form_id,#social_form_id,#google_form_id").validate({
+	jQuery("#band_form_id,#news_form_id,#new_album,#track_form_id,#user_form_id,#social_form_id,#google_form_id,#new_calendar_id_form").validate({
 	success: "valid",
 	onkeyup: true,
   	onclick: true,

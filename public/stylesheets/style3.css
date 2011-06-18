@@ -707,4 +707,45 @@ font-size: 24px;
 cursor: pointer;
 }
 
+.error {
+	border-top: 1px solid #f7d0d0;
+	border-bottom: 1px solid #c87676;
+
+	background: #f3c7c7;
+	background: -moz-linear-gradient(top,#f3c7c7,#eea2a2);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f3c7c7), to(#eea2a2));
+}
+
+.error:before {
+	content: url(assets/icons/notifications/error.png);
+	float: left;
+	margin: 7px 15px 0px 15px;
+}
+
+.error strong {
+	color: #b31616;
+	margin-right: 15px;
+}
+/*SUCCESS BOX*/
+
+.valid {
+	border-top: 1px solid #edf7d0;
+	border-bottom: 1px solid #b7e789;
+
+	background: #dff3a8;
+	background: -moz-linear-gradient(top,#dff3a8,#c4fb92);
+	background: -webkit-gradient(linear, left top, left bottom, from(#dff3a8), to(#c4fb92));
+}
+
+.valid:before {
+	content: url(assets/icons/notifications/success.png);
+	float: left;
+	margin: 2px;
+}
+
+.valid strong {
+	color: #61b316;
+	margin-right: 15px;
+}
+
 /* THE END */

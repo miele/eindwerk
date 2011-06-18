@@ -1,4 +1,15 @@
-
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $("#google_new_form_id").validate({
+	success: "valid",
+	onkeyup: true,
+  	onclick: true,
+  	onchange : true
+	});
+    });
+  </script>
+<% end %>
 <div class="inner"><p><%= image_tag('/stylesheets/backend/assets/icons/big_icons/google.png') %>
 										<%= image_tag('/stylesheets/backend/assets/icons/big_icons/google_title.png',:id => 'big_title') %>
 										</p>

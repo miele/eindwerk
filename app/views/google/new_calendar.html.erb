@@ -10,10 +10,11 @@
 						
 					<fieldset>
 						<legend>New Google Agenda</legend>
-<% form_for '', :url => {:action => :save_calendar} do %>
+<% form_for '', :html => {:id => "new_calendar_id_form"},:url => {:action => :save_calendar} do %>
 		<p>
 		<label>Title:</label>
- 		<%= text_field_tag 'title' %>
+ 		<% text_field_tag 'title' %>
+ 		<input id="title" name="title" type="text" class="required" minlength="4">
  		</p>
 	<%= submit_tag 'Save', {:class => 'button_link'} %>
 <% end %>

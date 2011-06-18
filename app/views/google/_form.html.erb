@@ -21,7 +21,7 @@
 						
 						<p>
 						<label for="where">Where</label>
-						<%= e.text_field :where,{:id => "name",:class =>"required",:minlength => "2"} %>
+						<%= e.text_field :where,{:id => "where",:class =>"required",:minlength => "2"} %>
 						</p>
 						
 						<p>
@@ -36,12 +36,12 @@
 						
 						<p>
 						<label for="start">Start Date/Time</label>
-						<%= e.text_field :start_time,{:class => 'datum required'} %>
+						<%= e.text_field :start_time,{:class => 'datum datumTijd required'} %>
 						</p>
 						
 						<p>
 						<label for="end">End Date/Time</label>
-						<%= e.text_field :end_time,{:class => "datum required"} %>
+						<%= e.text_field :end_time,{:class => "datum datumTijd required"} %>
 						</p>						
 						
 						<!--

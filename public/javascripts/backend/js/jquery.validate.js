@@ -15,6 +15,7 @@
 
 var youtubePattern = /^http:\/\/(?:.*?)\.?(youtube|vimeo)\.com\/(watch\?[^#]*v=(\w+)|(\d+)).+$/;
 var gmailPattern = /^[\.\+_a-z0-9-]+@gmail+(\.[a-z0-9-]+)*(\.[a-z]{2,6})$/;
+var datumTijdPattern = /^\d{1,2}\/\d{1,2}\/\d{4}\s\d{1,2}\:\d{1,2}$/;
 
 $.extend($.fn, {
 	// http://docs.jquery.com/Plugins/Validation/validate
@@ -23,6 +24,10 @@ $.extend($.fn, {
 		jQuery.validator.addMethod("youtubeVideo", function(value) {
     return youtubePattern.test(value);
   }, "Must be a valid Youtube/Vimeo video");
+  
+  jQuery.validator.addMethod("datumTijd", function(value) {
+    return datumTijdPattern.test(value);
+  }, "Must be a valid date + time");
   
   jQuery.validator.addMethod("gmail", function(value) {
     return gmailPattern.test(value);
