@@ -2,27 +2,27 @@
 <fieldset>
 						<legend>Tha Band</legend>
 			<p>
-			<label>Name</label>
-			<%= f.text_field :name,{:id => "name",:class=> "required",:minlength => "4"}%>
+			<label for="name">Name</label>
+			<%= f.text_field :name,{:id => "name",:class=> "required",:minlength => "2"}%>
 			</p>
 		
 			<p>
-			<label for="name">Birthday</label>
+			<label for="birthday">Birthday</label>
 			<%= f.text_field :birthday,{:id => "birthday",:class=> "required"}%>
 			</p>
 			
 			<p>
-			<label for="name">Instrument</label>
+			<label for="instrument">Instrument</label>
 			<%= f.text_field(:instrument,{:id => "instrument",:class=> "required",:minlength => "3"})%>
 			</p>
 			
 			<p>
-			<label for="name">Photo</label>
-			<%= f.file_field :picture,{:class => "styled_upload required"} %>
+			<label for="band_picture">Photo</label>
+			<%= f.file_field :picture,{:class => "styled_upload"} %>
 			</p>
 			
 			<p>
-			<label for="name">Content</label>
+			<label for="band_content">Content</label>
 			<%= f.text_area(:content,{:class => "editor required"})%>
 			</p>
 

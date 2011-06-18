@@ -7,6 +7,21 @@
   	onclick: true,
   	onchange : true
 	});
+	
+	window.onscroll = function()
+{
+    if( window.XMLHttpRequest ) {
+        if (document.documentElement.scrollTop > 0 || self.pageYOffset > 0) {
+            $('#primary_left').css('position','fixed');
+            $('#primary_left').css('top','0');
+        } else if (document.documentElement.scrollTop < 0 || self.pageYOffset < 0) {
+            $('#primary_left').css('position','absolute');
+            $('#primary_left').css('top','175px');
+        }
+    }
+}
+
+
     });
   </script>
 <% end %>

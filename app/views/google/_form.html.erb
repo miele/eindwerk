@@ -62,7 +62,7 @@
 						
 						<p>
 						<label for="name">Frequency</label>
-						<% select_tag :recurrence_freq, options_for_select(['Weekly', 'Daily']) %> on <%= select_tag :recurrence_on, options_for_select(['MO', 							'TU', 'WE', 'TH', 'FR', 'SA', "SU"])%>
+						<% select_tag :recurrence_freq, options_for_select(['Weekly', 'Daily']) %> on <% select_tag :recurrence_on, options_for_select(['MO', 							'TU', 'WE', 'TH', 'FR', 'SA', "SU"])%>
 						</p>
 
 						<p>
@@ -71,6 +71,7 @@
 						</p>
 -->
 						
-												<%= submit_tag 'Save',:class => "sendButton" %>
+						<%= submit_tag 'Save',:class => "sendButton" %>
 						<% end %>
 						</fieldset>
+						

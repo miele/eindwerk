@@ -1,6 +1,7 @@
 <% @videos.each do |video| %>
 
 	<section id="left_col" class="grid_5">
+	<h4><%= video.title %></h4>
 	<article class="video">
 		<%= raw video.body_html %>
 		<p><h4 class="form_title">
