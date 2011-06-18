@@ -17,11 +17,11 @@
 			
 			<p>
 			<label>Cover</label>
-			<%= f.file_field(:cover,{:class => "styled_upload required"}) %>
+			<%= f.file_field(:cover,{:class => "styled_upload required",:accept => "png|jpe?g"}) %>
 			</p>
 			<p>
 			<label>Song</label>
-			<%= f.file_field(:song,{:class => "styled_upload required"}) %>
+			<%= f.file_field(:song,{:class => "styled_upload required",:accept => "mp3"}) %>
 			</p>
 			
 			<% content_for :head do %>

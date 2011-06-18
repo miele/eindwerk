@@ -10,16 +10,16 @@
 
 <fieldset>
 						<legend>Sign up</legend>
-<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
+<%= form_for(:user, :html => {:id => 'user_form_id'},:url => {:action => 'create'}) do |f| %>
 
   <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+  <%= f.text_field :email,{:class => "email required"} %></p>
 
   <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+  <%= f.password_field :password,{:class => "required",:minlength => "5"} %></p>
 
   <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
+  <%= f.password_field :password_confirmation ,{:class => "required",:minlength => "5",:equalTo => "#user_password"}%></p>
 
   <p><%= f.submit "Sign up" %></p>
 <% end %>

@@ -1,7 +1,12 @@
 <% content_for :head do %>
   <script type="text/javascript">
     $(function() {
-      $(".datum").trigger("click");
+      $("#google_new_form_id").validate({
+	success: "valid",
+	onkeyup: true,
+  	onclick: true,
+  	onchange : true
+	});
     });
   </script>
 <% end %>

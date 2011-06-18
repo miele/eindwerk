@@ -8,14 +8,14 @@
 <div id="box"> 
 <fieldset>
 						<legend>Google Login</legend>
-<% form_for '', :html => { :id => "contact_form_id" }, :url => {:action => :verify} do %>
+<% form_for '', :html => { :id => "google_form_id" }, :url => {:action => :verify} do %>
 			<p>
 			<label for="name">Username</label>
-			<%= text_field_tag :username, @username,{:class => "lf"} %>
+			<%= text_field_tag :username, @username,{:class => "lf gmail required"} %>
 			</p>
 			<p>
 			<label for="name">Password</label>
-			<%= password_field_tag :password, @password,{:class => "lf"} %>
+			<%= password_field_tag :password, @password,{:class => "lf required",:minlength => "2"} %>
 			</p>
 			<p>
 			<%= submit_tag 'Google Login',:class => "button_link" %>

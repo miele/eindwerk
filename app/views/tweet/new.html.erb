@@ -4,7 +4,7 @@
 			<%= image_tag('/stylesheets/backend/assets/icons/big_icons/social_title.png') %>
 			</p>
 			
-<%= form_for(:tweet, :html => { :id => "contact_form_id" }, :url => {:action => 'post_update'}) do |t| %>
+<%= form_for(:tweet, :html => { :id => "social_form_id" }, :url => {:action => 'post_update'}) do |t| %>
 	<%= render(:partial => 'form', :locals => {:t => t}) %>
 <%= submit_tag("Submit",:class => "button_link")%>
 </fieldset>

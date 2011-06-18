@@ -1,7 +1,7 @@
 <fieldset>
 						<legend>Google Agenda Event</legend>
 
-<%= form_for 'event',:html => { :id => "contact_form_id" }, :url => {:action => :save} do |e| %>
+<%= form_for 'event',:html => { :id => "google_new_form_id" }, :url => {:action => :save} do |e| %>
 
 <% if not @event.id; @account.check_public = true %>
 
@@ -16,32 +16,32 @@
 
 						<p>
 						<label for="name">Titel</label>
-						<%= e.text_field :title,{:id => "name"} %>
+						<%= e.text_field :title,{:id => "name",:class =>"required",:minlength => "5"} %>
 						</p>
 						
 						<p>
-						<label for="name">Where</label>
-						<%= e.text_field :where,{:id => "name"} %>
+						<label for="where">Where</label>
+						<%= e.text_field :where,{:id => "name",:class =>"required",:minlength => "2"} %>
 						</p>
 						
 						<p>
-						<label for="name">Content</label>
-						<%= e.text_field :content,{:class => 'editor'} %>
+						<label for="content">Content</label>
+						<%= e.text_field :content,{:class => 'editor required',:minlength => "2"} %>
 						</p>
 						
 						<p>
-						<label for="name">All Day?</label>
+						<label for="day">All Day?</label>
 						<%= e.select :all_day, [['No', 'false'],['Yes', 'true']] %>
 						</p>
 						
 						<p>
-						<label for="name">Start Date/Time</label>
-						<%= e.text_field :start_time,{:class => 'datum'} %>
+						<label for="start">Start Date/Time</label>
+						<%= e.text_field :start_time,{:class => 'datum required'} %>
 						</p>
 						
 						<p>
-						<label for="name">End Date/Time</label>
-						<%= e.text_field :end_time,{:class => "datum"} %>
+						<label for="end">End Date/Time</label>
+						<%= e.text_field :end_time,{:class => "datum required"} %>
 						</p>						
 						
 						<!--

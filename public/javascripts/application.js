@@ -35,8 +35,8 @@ $('.word_count').each(function(){
 		//var new_length = $(this).val().split(/\b[\s,\.-:;]*/).length;
 		// update
 		current = max - new_length;
-		if(current == 0){
-			alert("maximum is bereikt");
+		if(current == -1){
+			//alert("maximum is bereikt");
 			$(this).disable();
 		}
 		$(this).parent().find('.counter').html( current + ' characters to go');
